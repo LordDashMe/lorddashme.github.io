@@ -1,0 +1,1367 @@
+/*
+Theme Name: TA Portfolio
+Theme URI: http://themeart.co/free-theme/ta-portfolio/
+Author: ThemeArt
+Author URI: http://themeart.co/
+Description: TA Portfolio is a free one page portfolio WordPress theme with clean and elegant design. This theme is built with Bootstrap 3 which has been optimized for smartphones, tablets, desktops and any other devices. It is perfect designed for creatives, freelancers and small business. Show off your latest works in all their glory with the responsive portfolio grid. Write blog posts with the beautiful, minimal and flexible blog module. The Powerful Redux theme options panel gives you full control over many of the features in this theme. Customize your website with options for logo, social links, footer information, and much more.
+Version: 1.1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ta-portfolio
+Tags: blue, one-page, single-page, portfolio, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, sticky-post, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+TA Portfolio is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/ and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Typography
+2.0 Elements
+	2.1 Button
+	2.2 Tag Cloud
+	2.3 Scroll to Top
+	2.4 Forms
+3.0 Alignments
+4.0 Widgets
+	4.1 Social Widget
+	4.2 About Me Widget
+	4.3 Post Tabs Widget
+5.0 Header
+	5.1 Logo
+	5.2 Navbar
+6.0 Homepage
+	6.1 Section
+	6.2 hr Tag
+	6.3 Timeline Style
+7.0 Portfolio
+8.0 Content
+	8.1 Posts and pages
+	8.2 Asides
+	8.3 Comments
+9.0 Footer
+10.0 Jetpack
+	10.1 Infinite Scroll
+	10.2 Sharing
+	10.3 Related Posts
+11.0 Media
+	11.1 Captions
+	11.2 Galleries
+12.0 Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Typography
+--------------------------------------------------------------*/
+#primary,
+#secondary {
+	-ms-word-wrap: break-word;
+	    word-wrap: break-word;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    color: #18bc9c;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+/*--------------------------------------------------------------
+2.0 Elements
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+2.1 Buttton
+--------------------------------------------------------------*/
+.btn {
+	margin-bottom: 10px;
+}
+
+.btn-outline {
+    margin-top: 15px;
+    border: solid 2px #fff;
+    font-size: 20px;
+    color: #fff;
+    background: 0 0;
+    transition: all .3s ease-in-out;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+    border: solid 2px #fff;
+    color: #18bc9c;
+    background: #fff;
+}
+
+
+.btn-social {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 45px;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active {
+    outline: 0;
+}
+
+/*--------------------------------------------------------------
+2.2 Tag Cloud
+--------------------------------------------------------------*/
+.tagcloud a {
+	margin: 0 5px 5px 0;
+}
+
+.tags-links .btn {
+	margin: 0 5px 5px 0;
+	font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+2.3 Scroll to Top
+--------------------------------------------------------------*/
+.scroll-top {
+    z-index: 1049;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 50px;
+    height: 50px;
+	opacity: 0.7;
+}
+
+.scroll-top .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.scroll-top .btn:focus {
+    outline: 0;
+}
+
+/*--------------------------------------------------------------
+2.4 Forms
+--------------------------------------------------------------*/
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #eee;
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 1.5em;
+    background: 0 0;
+    box-shadow: none!important;
+    resize: none;
+}
+
+.floating-label-form-group label {
+    display: block;
+    z-index: 0;
+    position: relative;
+    top: 2em;
+    margin: 0;
+    font-size: .85em;
+    line-height: 1.764705882em;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0;
+    -webkit-transition: top .3s ease,opacity .3s ease;
+       -moz-transition: top .3s ease,opacity .3s ease;
+        -ms-transition: top .3s ease,opacity .3s ease;
+            transition: top .3s ease,opacity .3s ease;
+}
+
+.floating-label-form-group::not(:first-child) {
+    padding-left: 14px;
+    border-left: 1px solid #eee;
+}
+
+.floating-label-form-group-with-value label {
+    top: 0;
+    opacity: 1;
+}
+
+.floating-label-form-group-with-focus label {
+    color: #18bc9c;
+}
+
+form .row:first-child .floating-label-form-group {
+    border-top: 1px solid #eee;
+}
+
+/*--------------------------------------------------------------
+3.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+4.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+4.1 Social Widget
+--------------------------------------------------------------*/
+.widget .btn-social {
+	border: 2px solid #18bc9c;
+	width: 45px;
+	height: 45px;
+	line-height: 40px;
+}
+
+.widget .fa {
+	color: #18bc9c;
+}
+
+/*--------------------------------------------------------------
+4.2 About Me Widget
+--------------------------------------------------------------*/
+.about-me-thumb,
+.about-me-widget h5 {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.about-me-widget img {
+	border-radius: 80%;
+}
+
+/*--------------------------------------------------------------
+4.3 Post Tabs Widget
+--------------------------------------------------------------*/
+.tabbed-widget ul li {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.tabbed-widget .fa {
+	margin-right: 5px;
+}
+
+.tabbed-widget .tab-content {
+	margin-top: 15px;
+	overflow: hidden;
+}
+
+.tabbed-widget .post-content {
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.tabbed-widget .post-content p {
+	margin: 0;
+}
+
+.tabbed-widget .tab-image {
+	width: 60px;
+	height: 60px;
+	float: left;
+	display: block;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background-color: #dadada;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.tabbed-widget .tab-image img {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-transition: all 0.3s linear;
+	   -moz-transition: all 0.3s linear;
+	     -o-transition: all 0.3s linear;
+		    transition: all 0.3s linear;
+}
+
+.tabbed-widget .tab-image img:hover {
+  opacity: 0.8;
+}
+
+.tabbed-widget .post-title {
+	margin-left: 75px;
+}
+
+/*--------------------------------------------------------------
+5.0 Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.1 Logo
+--------------------------------------------------------------*/
+.header-logo {
+	max-height: 60px;
+}
+
+/*--------------------------------------------------------------
+5.2 Navbar
+--------------------------------------------------------------*/
+.nav .glyphicon {
+	margin-right: 5px;
+}
+
+.navbar {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.navbar a:focus {
+    outline: 0;
+}
+
+.navbar .navbar-nav {
+    letter-spacing: 1px;
+}
+
+.navbar .navbar-nav li a:focus {
+    outline: 0;
+}
+
+.navbar-default,
+.navbar-inverse {
+    border: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Homepage
+--------------------------------------------------------------*/
+.home #content {
+	padding-top: 0;
+}
+
+/*--------------------------------------------------------------
+6.1 Section
+--------------------------------------------------------------*/
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+section.blog {
+    color: #fff;
+    background: #18bc9c;
+}
+
+/*--------------------------------------------------------------
+6.2 hr Tag
+--------------------------------------------------------------*/
+hr.star-light,
+hr.star-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: center;
+	overflow: visible;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-light {
+    border-color: #fff;
+}
+
+hr.star-light:after {
+    color: #fff;
+    background-color: #18bc9c;
+}
+
+hr.star-primary {
+    border-color: #2c3e50;
+}
+
+hr.star-primary:after {
+	color: #2c3e50;
+    background-color: #fff;
+}
+
+hr.header:after {
+	content: "\f005";
+}
+
+hr.portfolio:after {
+	content: "\f07c";
+}
+
+hr.blog:after {
+	content: "\f073";
+}
+
+hr.contact:after {
+	content: "\f0e0";
+}
+
+/*--------------------------------------------------------------
+6.3 Timeline Style
+--------------------------------------------------------------*/
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    margin-left: -1.5px;
+    background-color: #f1f1f1;
+}
+
+.timeline a {
+	color: #fff
+}
+
+.timeline>li {
+    position: relative;
+    margin-bottom: 50px;
+    min-height: 50px;
+}
+
+.timeline>li:before,
+.timeline>li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline>li:after {
+    clear: both;
+}
+
+.timeline>li .timeline-panel {
+    float: right;
+    position: relative;
+    width: 100%;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+
+.timeline>li .timeline-panel:before {
+    right: auto;
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline>li .timeline-panel:after {
+    right: auto;
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline>li .timeline-image {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    border: 7px solid #f1f1f1;
+    border-radius: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.timeline>li .timeline-image h3 {
+    margin-top: 12px;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel {
+    float: right;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:before {
+    right: auto;
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:after {
+    right: auto;
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline>li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline .timeline-heading h3 {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline .timeline-heading h3.subheading {
+    text-transform: none;
+}
+
+.timeline .timeline-body>p,
+.timeline .timeline-body>ul {
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+7.0 Portfolio
+--------------------------------------------------------------*/
+.img-centered {
+    margin: 0 auto;
+}
+
+.portfolio-header {
+    text-align: center;
+    color: #fff;
+    background: #18bc9c;
+}
+
+.portfolio-header .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.portfolio-header img {
+    display: block;
+    margin: 0 auto 20px;
+	border-radius: 50%;
+}
+
+.portfolio-header .intro-text .name {
+    display: block;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.portfolio-header .intro-text .skills {
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+#portfolio .filters ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+
+#portfolio .filters li {
+	display: block;
+	margin-right: 5px;
+	border: 1px solid #ebebeb;
+	font: 400 12px/31px 'Montserrat';
+	padding: 0 12px;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+#portfolio .filters li.active {
+	border-color: #18bc9c;
+	background-color: #18bc9c;
+	color: #fff;
+}
+
+#portfolio .portfolio-item {
+    right: 0;
+    margin: 0 0 15px;
+}
+
+#portfolio .portfolio-item h3 {
+	text-align: center;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(24,188,156,.9);
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption:hover {
+    opacity: 1;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption .caption-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption .caption-content i {
+    margin-top: -12px;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
+#portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
+    margin: 0;
+}
+
+#portfolio * {
+    z-index: 2;
+}
+
+.portfolio-modal .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.portfolio-modal .modal-content h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.portfolio-modal .modal-content p {
+    font-size: 20px;
+}
+
+.portfolio-modal .modal-content img {
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content .item-details {
+    margin: 30px 0;
+}
+
+.portfolio .entry-content strong,
+.portfolio-modal .modal-content .item-details strong{
+	color: #18bc9c;
+}
+
+.portfolio-modal .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.portfolio-modal .close-modal:hover {
+    opacity: .3;
+}
+
+.portfolio-modal .close-modal .lr {
+    z-index: 1051;
+    width: 1px;
+    height: 75px;
+    margin-left: 35px;
+    background-color: #2c3e50;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.portfolio-modal .close-modal .lr .rl {
+    z-index: 1052;
+    width: 1px;
+    height: 75px;
+    background-color: #2c3e50;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.portfolio-modal .modal-backdrop {
+    display: none;
+    opacity: 0;
+}
+
+/*--------------------------------------------------------------
+8.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+8.1 Posts and Pages
+--------------------------------------------------------------*/
+#content {
+	padding-top: 70px;
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.author-meta {
+	margin-top: 40px;
+	text-align: center;
+	border: 1px solid #e5e5e5;
+}
+
+.author-meta .avatar {
+	border-radius: 50%;
+}
+
+.author-meta .media-object {
+	float: none;
+	margin: 0 0 15px;
+}
+
+.author-meta .fa {
+	font-size: 22px;
+	margin-right: 10px;
+}
+
+.pager li>a {
+	margin-bottom: 10px;
+}
+
+.more-link {
+	margin-top: 30px;
+}
+
+/*--------------------------------------------------------------
+8.2 Post Meta
+--------------------------------------------------------------*/
+.entry-meta>span {
+	margin-right: 5px;
+	display: block;
+}
+
+.entry-meta .fa {
+	margin-right: 5px;
+}
+
+.entry-meta span:last-child {
+	margin-right: 0;
+}
+
+.entry-meta span a {
+	text-decoration: none;
+}
+
+.entry-meta {
+	margin: 30px 0;
+}
+
+.entry-footer {
+	color: inherit;
+}
+
+.posted-on a, .byline a {
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+8.3 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+8.4 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	-ms-word-wrap: break-word;
+	    word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comments-title, .comment-reply-title {
+	padding-bottom: 9px;
+	margin: 40px 0 20px 0;
+}
+
+ol.comment-list {
+	list-style:none;
+	padding-left: 0;
+}
+
+.comment-author .avatar {
+	margin: 5px 15px 0 0;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-transition: all 0.2s ease-in-out;
+	   -moz-transition: all 0.2s ease-in-out;
+	     -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+
+.comment-meta {
+	margin-bottom: 5px;
+}
+
+.comment-details {
+	overflow: hidden;
+	zoom: 1;
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+}
+
+.comment-details .reply {
+	margin-top: 10px;
+}
+
+.comment-date a {
+	margin-right: 10px;
+}
+
+#commentform #comment {
+	width: 100% !important;
+}
+
+/*--------------------------------------------------------------
+8.5 404
+--------------------------------------------------------------*/
+.error404 .input-group {
+	margin: 20px 0;
+}
+
+/*--------------------------------------------------------------
+9.0 Footer
+--------------------------------------------------------------*/
+footer {
+    color: #fff;
+}
+
+footer h3 {
+    margin-bottom: 30px;
+}
+
+footer .footer-above {
+    padding-top: 50px;
+    background-color: #2c3e50;
+}
+
+footer .footer-above .textwidget {
+	font-size: 20px;
+}
+
+footer .footer-col {
+    margin-bottom: 50px;
+}
+
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #233140;
+}
+
+/*--------------------------------------------------------------
+10.0 Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+#infinite-handle {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.container #infinite-handle span {
+	background: none;
+	text-align: center;
+	color: inherit;
+	font-size: inherit;
+}
+
+/*--------------------------------------------------------------
+10.2 Sharing
+--------------------------------------------------------------*/
+.sd-sharing {
+	text-align: center;
+}
+
+div.sharedaddy h3.sd-title {
+	margin: 1em 0 !important;
+}
+
+/*--------------------------------------------------------------
+10.3 Related Posts
+--------------------------------------------------------------*/
+div#jp-relatedposts h3.jp-relatedposts-headline {
+	display: block !important;
+	text-align: center;
+	float: none !important;
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline {
+	display: block !important;
+	text-align: center;
+	float: none !important;
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline em {
+	border-top: 1px solid #ddd;
+	padding-top: 1em;
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline em:before {
+	border: none !important;
+}
+
+/*--------------------------------------------------------------
+11.0 Media
+--------------------------------------------------------------*/
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object,
+img {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+.post-thumbnail {
+	display: block;
+	position: relative;
+	width: 100%;
+	z-index: 0;
+}
+
+.post-thumbnail .featured  {
+	display: block;
+	margin: 0 auto;
+	-webkit-transition: all 0.3s linear;
+	   -moz-transition: all 0.3s linear;
+         -o-transition: all 0.3s linear;
+		    transition: all 0.3s linear;
+}
+
+.post-thumbnail .featured:hover {
+	opacity: 0.8;
+}
+
+/*--------------------------------------------------------------
+11.1 Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+/*--------------------------------------------------------------
+11.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+12.0 Media Queries 
+--------------------------------------------------------------*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	#portfolio .filters li {
+		display: inline-block;
+	}
+
+	.entry-meta>span {
+	display: inline-block;
+}
+
+	.author-meta {
+		text-align: inherit;
+	}
+
+	.author-meta .media-object {
+		float: left;
+		margin: 0 15px 15px 0;
+	}
+}
+
+/* Small Devices, Tablets */
+@media(min-width:767px) {
+	#content {
+		padding-top: 180px;
+	}
+
+    #portfolio .portfolio-item {
+        margin: 0 0 30px;
+    }
+}
+
+@media(max-width:767px) {
+    section {
+        padding: 75px 0;
+    }
+
+    section.first {
+        padding-top: 75px;
+    }
+}
+
+@media only screen and (max-width: 640px){
+	div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post {
+		width: 100%!important;
+	}
+	
+	div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img{
+		width: 100%!important;
+	}
+
+	div#jp-relatedposts div.jp-relatedposts-items-visual{
+		margin-right: 0!important;
+	}
+
+	div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post{
+		padding-right: 0!important;
+	}
+}
+
+@media only screen and (min-width : 768px) {
+    .portfolio-header .container {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+
+    .portfolio-header .intro-text .name {
+        font-size: 4.75em;
+    }
+
+    .portfolio-header .intro-text .skills {
+        font-size: 1.75em;
+    }
+
+    .navbar-fixed-top {
+        padding: 25px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+    }
+
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+
+    .timeline:before {
+        left: 50%;
+    }
+
+    .timeline>li {
+        margin-bottom: 100px;
+        min-height: 100px;
+    }
+
+    .timeline>li .timeline-panel {
+        float: left;
+        width: 41%;
+        padding: 0 20px 20px 30px;
+        text-align: right;
+    }
+
+    .timeline>li .timeline-image {
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+    }
+
+    .timeline>li .timeline-image h3 {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        float: right;
+        padding: 0 30px 20px 20px;
+        text-align: left;
+    }
+
+	.post-inner-content {
+		padding: 15px 40px 30px;
+	}
+
+	.widget {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .timeline>li {
+        min-height: 150px;
+    }
+
+    .timeline>li .timeline-panel {
+        padding: 0 20px 20px;
+    }
+
+    .timeline>li .timeline-image {
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+    }
+
+    .timeline>li .timeline-image h3 {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        padding: 0 20px 20px;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .timeline>li {
+        min-height: 170px;
+    }
+
+    .timeline>li .timeline-panel {
+        padding: 0 20px 20px 100px;
+    }
+
+    .timeline>li .timeline-image {
+        width: 170px;
+        height: 170px;
+        margin-left: -85px;
+    }
+
+    .timeline>li .timeline-image h3 {
+        margin-top: 40px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        padding: 0 100px 20px 20px;
+    }
+}
