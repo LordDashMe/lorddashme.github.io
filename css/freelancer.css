@@ -339,8 +339,8 @@ footer .footer-below {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #1a242f;
-  border-color: #161f29;
+  background-color: #ca8936;
+  border-color: #ca8936;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -362,8 +362,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #2C3E50;
-  border-color: #2C3E50;
+  background-color: #ca8936;
+  border-color: #ca8936;
 }
 .btn-primary .badge {
   color: #2C3E50;
@@ -381,7 +381,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: white;
-  background-color: #ca8936;
+  background-color: #926c3c;
   border-color: #11866f;
 }
 .btn-success:active,
