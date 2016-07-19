@@ -8,7 +8,7 @@ To begin using this template, choose one of the following options to get started
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? Contact Me(https://github.com/LordDashMe/) here on GitHub
+Have a bug or an issue with this template? Contact Me (https://github.com/LordDashMe/) here on GitHub
 
 ## Creator
 
