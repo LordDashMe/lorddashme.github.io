@@ -2,7 +2,7 @@
 
 ## Introduction
 
-:neckbeard: :coffee: My Personal Website. :sparkles: :rocket:
+:neckbeard: :coffee: :sparkles: My Personal Website.
 
 ## Bugs and Issues
 
