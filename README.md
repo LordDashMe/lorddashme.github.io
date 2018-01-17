@@ -6,9 +6,5 @@
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? Contact Me (https://github.com/lorddashme) here on GitHub
-
-## Creator
-
-* https://www.facebook.com/LordDash.Me
-* https://github.com/lorddashme/
+Have seen a bug or an issue with this template?
+You can tell it to me by just creating a pull request :bowtie:
