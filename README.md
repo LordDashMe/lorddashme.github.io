@@ -2,7 +2,7 @@
 
 ## Introduction
 
-:coffee: :eyeglasses: :sparkles: It's all about me.
+:coffee: :eyeglasses: :sparkles: Portfolio.
 
 ## Bugs and Issues
 
