@@ -1,3 +1,3 @@
-# [lorddashme.github.io](https://github.com/lorddashme/lorddashme.github.io)
+# [lorddashme.github.io](https://lorddashme.github.io/)
 
 :coffee: :eyeglasses: :sparkles: Portfolio.
