@@ -297,7 +297,7 @@ footer .footer-col {
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: #010c19;
+  background-color: #010608;
 }
 .btn-outline {
   color: white;
@@ -415,6 +415,7 @@ fieldset[disabled] .btn-success.active {
   outline: none;
 }
 .scroll-top {
+  display: none;
   position: fixed;
   right: 2%;
   bottom: 2%;
@@ -681,5 +682,16 @@ p.small {
   /*section h2 {
     font-size: 2em;
   }*/
+}
+
+.btn-transparent {
+  color: #cccc;
+  border: 2px solid #cccc;
+}
+.btn-transparent:focus,
+.btn-transparent:active,
+.btn-transparent:hover {
+  color: #86867ecc;
+  border: 2px solid #86867ecc;
 }
 /* ======================= */

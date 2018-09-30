@@ -1,6 +1,20 @@
 (function($) {
     "use strict"; // Start of use strict
 
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementsByClassName('scroll-top')[0].style.display = 'block';
+        } else {
+            document.getElementsByClassName('scroll-top')[0].style.display = 'none';
+            document.getElementsByClassName('btn-transparent')[0].blur();
+        }
+    }
+
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
