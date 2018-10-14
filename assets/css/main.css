@@ -737,9 +737,7 @@ p.small {
   color: #cccc;
   border: 2px solid #cccc;
 }
-.btn-transparent:focus,
-.btn-transparent:active,
-.btn-transparent:hover {
+.btn-transparent.custom-focus {
   color: #86867ecc;
   border: 2px solid #86867ecc;
 }
