@@ -300,8 +300,6 @@ section.success {
   margin: 0;
   font-size: 0.85em;
   line-height: 1.764705882em;
-  vertical-align: middle;
-  vertical-align: baseline;
   opacity: 0;
   -webkit-transition: top 0.3s ease,opacity 0.3s ease;
   -moz-transition: top 0.3s ease,opacity 0.3s ease;
@@ -609,7 +607,7 @@ p.small {
   font-size: 16px;
 }
 .custom-border {
-  border: 1px solid #000000;
+  border: 1px solid #a8a8a8;
 }
 .custom-border-thin {
   border: 0px solid #000000;
