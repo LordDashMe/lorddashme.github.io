@@ -1,4 +1,4 @@
-/* PAGE LOAD */
+/* PRE-LOADER */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .signal-background {
@@ -36,7 +36,7 @@
     opacity: 0;
   }
 }
-/* PAGE LOAD */
+/* PRE-LOADER */
 
 a,
 a:hover,
@@ -534,74 +534,65 @@ fieldset[disabled] .btn-success.active {
 }
 
 /* ======================= */
-/*
+
+/**
  * Custom CSS Implementation
  * By: Joshua Clifford Reyes
  */
 
 html,body {
   width: 100%;
-  /*height: 100%;*/
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
 }
-
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
-
 p {
   font-size: 20px;
 }
-
 p.small {
   font-size: 16px;
 }
-
 .img-responsive {
   max-width: 30%; 
   border: 2px solid #000000;
 }
-
 .custom-company-logo {
   width: 65px; max-width: 12%;
 }
-
 .custom-small-header {
   font-size: 15px;
   color: #000;
 }
-
 .custom-small-header-content {
   margin-left: 20px;
   font-size: 14px;
   color: #777;
 }
-
 .custom-small-header-content.highligted {
   color: #111;
 }
-
 .custom-small-content {
   margin-left: 30px;
   font-size: 13px;
   color: #777;
 }
-
+.custom-small-content.sub {
+  margin-left: 45px;
+}
 .custom-small-content.highligted {
   color: #111;
   font-weight: bold;
 }
-
 .custom-skills-content {
   font-size: 14px;
   color: #000;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
-
 .custom-name-content {
   font-size: 45px;
   display: block;
@@ -610,20 +601,16 @@ p.small {
   font-weight: 700;
   color: #000000;
 }
-
 .custom-small-about-content {
   font-size: 15px;
   color: #000;
 }
-
 .custom-small-location-content {
   font-size: 16px;
 }
-
 .custom-border {
   border: 1px solid #000000;
 }
-
 .custom-border-thin {
   border: 0px solid #000000;
 }
@@ -703,18 +690,6 @@ p.small {
 }
 
 @media (width: 768px), (width: 800px), (width: 1024px) {
-  /*.custom-small-header {
-    font-size: 18px;
-  }
-  .custom-small-header-content {
-    font-size: 16px;
-  }
-  .custom-small-content {
-    font-size: 14px;
-  }*/ 
-  /* .navbar-brand {
-    font-size: 16px;
-  } */
   .img-responsive {
     max-width: 60%;
     border: 2px solid #000000;
@@ -728,9 +703,6 @@ p.small {
   .navbar-nav {
     font-size: .7em;
   }
-  /*section h2 {
-    font-size: 2em;
-  }*/
 }
 
 .btn-transparent {
@@ -761,6 +733,12 @@ p.small {
   transition: 0.5s;
 }
 
+.display-image-container img {
+  position: absolute;
+  width: 100%;
+  transition: 0.5s;
+}
+
 @media screen and (max-width: 600px) {
   .display-image-container {
     width: 160px;
@@ -781,12 +759,6 @@ p.small {
   }
 }
 
-.display-image-container img {
-  position: absolute;
-  width: 100%;
-  transition: 0.5s;
-}
-
 .display-image-container.custom-hover img:nth-child(4) {
   transform: translate(50px, -50px);
   opacity: 1;
@@ -804,3 +776,31 @@ p.small {
   opacity: .2;
 }
 /* ISOMETRIC DISPLAY IMAGE */
+
+/* LEGEND NOTE AND SAYING QUOTE CONTENT FONT SIZE */
+.legend-note-content p {
+  font-size: 85%;
+  margin-left: 20px;
+}
+.saying-quote-content p {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .legend-note-content p {
+    font-size: 60%;
+  }
+  .saying-quote-content p {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .legend-note-content p {
+    font-size: 60%;
+  }
+  .saying-quote-content p {
+    font-size: 75%;
+  }
+}
+/* LEGEND NOTE AND SAYING QUOTE CONTENT */
