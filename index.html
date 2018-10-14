@@ -20,8 +20,11 @@
         <link href="assets/css/main.css?ver=2.1.0" rel="stylesheet">
         <link href="assets/libraries/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <script src="assets/libraries/jquery-3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     </head>
     <body id="page-top" class="index">
+        <!-- PRE-LOADER -->
+        <div class="signal-background"><div class="signal"></div></div>
         <!-- NAVIGATION -->
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
             <div class="container">
@@ -63,7 +66,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <img class="img-responsive" src="assets/img/profile-cropped.jpg" alt="Joshua Clifford Reyes">
+                        <div class="display-image-body">
+                            <div class="display-image-container custom-hover">
+                                <img src="assets/img/profile-cropped.jpg" alt="Joshua Clifford Reyes">
+                                <img src="assets/img/profile-cropped.jpg" alt="Joshua Clifford Reyes">
+                                <img src="assets/img/profile-cropped.jpg" alt="Joshua Clifford Reyes">
+                                <img src="assets/img/profile-cropped.jpg" alt="Joshua Clifford Reyes">
+                            </div>
+                        </div>
+                        <!-- <img class="img-responsive" src="assets/img/profile-cropped.jpg" alt="Joshua Clifford Reyes"> -->                
                         <div class="intro-text">
                             <span class="custom-name-content">Joshua Clifford Reyes</span>
                             <hr class="star-primary">
@@ -87,24 +98,26 @@
                     <div class="col-lg-4">
                     <!-- <div class="col-lg-4 col-lg-offset-2"> -->
                         <p class="custom-small-header"><b><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp; WEB APP DEVELOPMENT</b></p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-file" aria-hidden="true"></i> &nbsp; PHP</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Laravel</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Wordpress</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Drupal</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-file" aria-hidden="true"></i> &nbsp; PHP</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Laravel</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Wordpress</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Drupal</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; CodeIgniter</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-file-o" aria-hidden="true"></i> &nbsp; JavaScript</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; JQuery</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; PHPUnit</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-file-o" aria-hidden="true"></i> &nbsp; JavaScript</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; JQuery</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; NodeJS</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; ReactJS</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; AngularJS</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-database" aria-hidden="true"></i> &nbsp; SQL</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; MySQL</p>
+                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Jest</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-database" aria-hidden="true"></i> &nbsp; SQL</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; MySQL</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; MsSQL</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; SQLite</p>
                         <p class="custom-small-header-content"><b><i class="fa fa-database" aria-hidden="true"></i> &nbsp; NoSQL</b></p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; MongoDB</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-html5" aria-hidden="true"></i> &nbsp; HTML</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Markdown</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-html5" aria-hidden="true"></i> &nbsp; HTML</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Markdown</p>
                         <p class="custom-small-header-content"><b><i class="fa fa-css3" aria-hidden="true"></i> &nbsp; CSS</b></p>
                         <br>
                         <p class="custom-small-header"><b><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp; MOBILE APP DEVELOPMENT</b></p>
@@ -120,31 +133,32 @@
                     </div>
                     <div class="col-lg-4">
                         <p class="custom-small-header"><i class="fa fa-server" aria-hidden="true"></i><b>&nbsp;&nbsp; DEVELOPMENT AND OPERATIONS</b></p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-cubes" aria-hidden="true"></i> &nbsp; OS Virtualization</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Docker</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-bolt" aria-hidden="true"></i> &nbsp; Continuous Integration</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Travis CI</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Jenkins</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Bitbucket Pipelines</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-bug" aria-hidden="true"></i> &nbsp; Test Coverage</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Coveralls</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; CodeCov</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Code Climate</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-cube" aria-hidden="true"></i> &nbsp;&nbsp; Web Servers</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Apache</p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Nginx</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-linux" aria-hidden="true"></i> &nbsp; Linux Server</b></p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-cubes" aria-hidden="true"></i> &nbsp; OS Virtualization</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Docker</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-linux" aria-hidden="true"></i> &nbsp; Linux Server</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Ubuntu</p>
                         <p class="custom-small-header-content"><b><i class="fa fa-windows" aria-hidden="true"></i> &nbsp; Windows Server</b></p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-cube" aria-hidden="true"></i> &nbsp;&nbsp; Web Servers</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Apache</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Nginx</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-bolt" aria-hidden="true"></i> &nbsp; Continuous Integration</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Jenkins</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; TravisCI</p>
+                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Bitbucket Pipelines</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-bug" aria-hidden="true"></i> &nbsp; Test Coverage</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Coveralls</p>
+                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; Code Climate</p>
+                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i> &nbsp;&nbsp; CodeCov</p>
                         <br>
                         <p class="custom-small-header"><i class="fa fa-wifi" aria-hidden="true"></i><b>&nbsp;&nbsp; COMPUTER NETWORKING</b></p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-sitemap" aria-hidden="true"></i> &nbsp; Networks Nodes Setup</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Repeaters</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-sitemap" aria-hidden="true"></i> &nbsp; Networks Nodes Setup</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Repeaters</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Bridges</p>
                         <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Switches</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-dashboard" aria-hidden="true"></i> &nbsp; Network Performance</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Quality of Service (QoS)</p>
-                        <p class="custom-small-header-content"><b><i class="fa fa-lock" aria-hidden="true"></i> &nbsp; Network Security</b></p>
-                        <p class="custom-small-content"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; MAC | IP Filter</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-dashboard" aria-hidden="true"></i> &nbsp; Network Performance</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; Quality of Service (QoS)</p>
+                        <p class="custom-small-header-content highligted"><b><i class="fa fa-lock" aria-hidden="true"></i> &nbsp; Network Security</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;&nbsp; MAC | IP Filter</p>
                         <p class="custom-small-header-content"><b><i class="fa fa-share" aria-hidden="true"></i> &nbsp; Port Forwarding</b></p>
                         <p class="custom-small-header-content"><b><i class="fa fa-retweet" aria-hidden="true"></i> &nbsp; Network Load Balancing</b></p>
                         <p class="custom-small-header-content"><b><i class="fa fa-rss" aria-hidden="true"></i> &nbsp; Connectify Hotspot Software</b></p>
@@ -153,34 +167,36 @@
                         <br>
                     </div>
                     <div class="col-lg-4">
+                        <p class="custom-small-header"><i class="fa fa-users" aria-hidden="true"></i><b>&nbsp;&nbsp; COLLABORATION</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-git" aria-hidden="true"></i>&nbsp; Git</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-github" aria-hidden="true"></i>&nbsp; Github</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-slack" aria-hidden="true"></i>&nbsp; Slack</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-bitbucket" aria-hidden="true"></i>&nbsp; Bitbucket</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Jira</p>
+                        <p class="custom-small-content"><i class="fa fa-trello" aria-hidden="true"></i>&nbsp; Trello</p>
+                        <br>
                         <p class="custom-small-header"><b><i class="fa fa-code-fork" aria-hidden="true"></i> &nbsp; TECHNOLOGIES</b></p>
-                        <p class="custom-small-content"><i class="fa fa-git" aria-hidden="true"></i>&nbsp; Git</p>
-                        <p class="custom-small-content"><i class="fa fa-git-square" aria-hidden="true"></i>&nbsp; Git Bash</p>
-                        <p class="custom-small-content"><i class="fa fa-github-alt" aria-hidden="true"></i>&nbsp; Git Desktop</p>
-                        <p class="custom-small-content"><i class="fa fa-github" aria-hidden="true"></i>&nbsp; Github</p>
-                        <p class="custom-small-content"><i class="fa fa-bitbucket" aria-hidden="true"></i>&nbsp; Bitbucket</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Composer</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Packagist</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; npm</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Boostnote</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; VSCode</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; SublimeText</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; FileZilla</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; XAMPP | WAMP</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; NetBeans</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Git Bash</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Github Desktop</p>
                         <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; SourceTree</p>
                         <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; TortoiseSVN</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; NetBeans</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; WAMP</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; XAMPP</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; SublimeText</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Brackets</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; npm</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Packagist</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Composer</p>
-                        <p class="custom-small-content"><i class="fa fa-slack" aria-hidden="true"></i>&nbsp; Slack</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Jira</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Boostnote</p>
-                        <p class="custom-small-content"><i class="fa fa-trello" aria-hidden="true"></i>&nbsp; Trello</p>
-                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; VSCode</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Brackets Editor</p>
+                        <p class="custom-small-content"><i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp; Android Studio</p>
                         <br>
                         <p class="custom-small-header"><b><i class="fa fa-cogs" aria-hidden="true"></i> &nbsp; OTHER SKILLS</b></p>
-                        <p class="custom-small-content"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Computer assembling and maintenance.</p>
-                        <p class="custom-small-content"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Troubleshooting hardware and software problems.</p>
-                        <p class="custom-small-content"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Installing and configuring the peripherals, components and drivers.</p>
-                        <p class="custom-small-content"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Installing software and application to user standards.</p>
-                        <p class="custom-small-content"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Photo and video editing using Adobe Photoshop and Premiere.</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Computer assembling and maintenance.</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Troubleshooting computer hardware and software problems.</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Installing computer software and application to user standards.</p>
+                        <p class="custom-small-content"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Photo and video editing using Adobe software tools.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -226,16 +242,16 @@
 
                         <p class="custom-small-header">
                             <b>
-                                <img src="assets/img/company/logo-nuworks.png" class="custom-company-logo" alt="">
+                                <img src="assets/img/companies/logo-nuworks.png" class="custom-company-logo" alt="">
                                 &nbsp; NuWorks Interactive Labs, Inc. (NuWorks)
                             </b>
                         </p>
 
-                        <p class="custom-small-header-content"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2017 - Present</b></p>
-                        <p class="custom-small-header-content"><b>Back End Developer</b></p>
-                        <!-- <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Website Development and Maintenance</p> -->
+                        <p class="custom-small-header-content highligted"><b>Back End Developer</b></p>
+                        <p class="custom-small-header-content highligted"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2017 - Present</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Website Development and Maintenance</p>
                         
-                        <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Neuland PH Website</p>
+                        <!-- <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Neuland PH Website</p>
                         <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Decidium PH Microsite</p>
                         <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Monde Nissin Website (Maintenance)</p>
                         <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Marlboro Website (Maintenance)</p>
@@ -244,81 +260,88 @@
                         <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Creamsilk PH Website</p>
                         <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Imagenation Canon PH Website (Maintenance)</p>
                         <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Chevrolet PH Website</p>
-                        <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Nestle Nestea Beach 2017 PH Microsite</p> 
+                        <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;Nestle Nestea Beach 2017 PH Microsite</p>  -->
                         
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Code Library</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; PHP Simple Captcha</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Wordpress DB Schema Extender</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; PHP Static Class Interface</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; PHP Mailchimp</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Continuous Integration</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Jenkins</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Travis CI</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Code Package | Library</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; PHP Simple Captcha</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Wordpress DB Schema Extender</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; PHP Static Class Interface</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; PHP Mailchimp</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Continuous Integration</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Jenkins</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; TravisCI</p>
                         <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Bitbucket Pipelines</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Test Coverage</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Coveralls</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; CodeCov</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Test Coverage</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Coveralls</p>
                         <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Code Climate</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;PHP CMS</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Wordpress</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Drupal</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;PHP Framework</p>
+                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; CodeCov</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;PHP CMS</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Wordpress</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Drupal</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;PHP Framework</p>
                         <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; CodeIgniter</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Laravel</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Docker - OS Virtualization</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Linux Server</p>
-                        <p class="custom-small-content"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp;Server Security</p>
-                        <p class="custom-small-content"><i class="fa fa-microphone" aria-hidden="true"></i> &nbsp;Speaker - "Composer Basic - Autoloading" (NWTalks Meetup | May 11, 2018)</p>
-                        <p class="custom-small-content"><i class="fa fa-microphone" aria-hidden="true"></i> &nbsp;Speaker - "Hardening Wordpress Security" (Coding Girl's Manila Meetup | January 26, 2018)</p>
-                        <p class="custom-small-content"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended Laravel PH Meetup (September 20, 2018)</p>
-                        <p class="custom-small-content"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended Wordpress - Wordcamp Manila 2018 (September 8, 2018)</p>
-                        <p class="custom-small-content"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended Laravel PH Meetup (July 28, 2017)</p>
-                        <p class="custom-small-content"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended Manila Javascript Meetup (June 21, 2017)</p>
-                        <p class="custom-small-content"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended Royale Rumble DevCon Meetup (January 26, 2017)</p>
-                        <p class="custom-small-content"><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Laravel Training (Inventive Media | March 24 - 27, 2017)</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Laravel</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;OS Virtualization</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Docker</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Linux Server</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Ubuntu</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp;Server Security</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Web Application Security Standards</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-microphone" aria-hidden="true"></i> &nbsp;Guest Speaker</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; "Composer Basic - Autoloading" (NWTalks Meetup | May 11, 2018)</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; "Hardening Wordpress Security" (Coding Girl's Manila Meetup | January 26, 2018)</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Meetup | Conference Attended</p>
+                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Attended Laravel PH Meetup (September 20, 2018)</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Attended Wordpress - Wordcamp Manila 2018 (September 8, 2018)</p>
+                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Attended Laravel PH Meetup (July 28, 2017)</p>
+                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Attended Manila Javascript Meetup (June 21, 2017)</p>
+                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Attended Royale Rumble DevCon Meetup (January 26, 2017)</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Training</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Laravel Training (Inventive Media | March 24 - 27, 2017)</p>
                         <br>
 
                         <p class="custom-small-header">
                             <b>
-                                <img src="assets/img/company/gs3_logo.svg" class="custom-company-logo" alt="">
+                                <img src="assets/img/companies/gs3_logo.svg" class="custom-company-logo" alt="">
                                 &nbsp; Global Strategic Solutions and Services, Inc. (GS3)
                             </b>
                         </p>
 
-                        <p class="custom-small-header-content"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2016 - 2017</b></p>
-                        <p class="custom-small-header-content"><b>Web and Mobile Developer</b></p>
-                        <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;FORMA eForms - Mobile Application</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; A mobile version of the Formalistics Web Application</p>
-                        <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i></i> &nbsp;Formalistics - Web Application</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Contributed in the Core Libraries of the Custom Framework used</p>
-                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Ionic (Hybrid Mobile Application Framework)</p>
+                        <p class="custom-small-header-content highligted"><b>Web and Mobile Developer</b></p>
+                        <p class="custom-small-header-content highligted"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2016 - 2017</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;FORMA eForms - Mobile Application</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; A mobile version of the Formalistics Web Application</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-certificate" aria-hidden="true"></i></i> &nbsp;Formalistics - Web Application</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Contributed in the Core Libraries of the Custom Framework used</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Ionic (Hybrid Mobile Application Framework)</p>
                         <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;API Libraries (REST)</p>
                         <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Custom PHP Compiler</p>
                         <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></i> &nbsp;Google Map API Integration</p>
-                        <p class="custom-small-content"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended PHP Conference 2016 Philippines (October 13 - 14, 2016)</p>
-                        <p class="custom-small-header-content"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2015 - 2016</b></p>
-                        <p class="custom-small-header-content"><b>Web Developer</b></p>
-                        <p class="custom-small-content"><i class="fa fa-certificate" aria-hidden="true"></i></i> &nbsp;Formalistics - Web Application</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Custom Implementation</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Attended PHP Conference 2016 Philippines (October 13 - 14, 2016)</p>
+                        <p class="custom-small-header-content highligted"><b>Web Developer</b></p>
+                        <p class="custom-small-header-content highligted"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2015 - 2016</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-certificate" aria-hidden="true"></i></i> &nbsp;Formalistics - Web Application</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Custom Implementation</p>
                         <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></i> &nbsp;Custom PHP Libraries</p>
                         <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp;Custom PHP Framework</p>
+                        <p class="custom-small-content"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></i> &nbsp;Windows Server</p>
                         <p class="custom-small-content"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp;Technical Support</p>
                         <br>
 
                         <p class="custom-small-header">
                             <b>
-                                <img src="assets/img/company/STI300.png" style="width: 100px; max-width: 20%;" alt="">
+                                <img src="assets/img/companies/STI300.png" style="width: 100px; max-width: 20%;" alt="">
                                 &nbsp; STI College of Sta. Maria Bulacan
                             </b>
                         </p>
 
-                        <p class="custom-small-header-content"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2011 - 2015</b></p>
-                        <p class="custom-small-header-content"><b>Bachelor of Science in Information Technology</b></p>
-                        <p class="custom-small-content"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp;Cum laude</p>
-                        <p class="custom-small-content"><i class="fa fa-star" aria-hidden="true"></i> &nbsp;Best Programmer of the Year (Batch 2015)</p>
-                        <p class="custom-small-content"><i class="fa fa-star" aria-hidden="true"></i> &nbsp;Best in Thesis</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Map Locator (Android Application)</p>
-                        <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Team Leader and Main Programmer</p>
+                        <p class="custom-small-header-content highligted"><b>Bachelor of Science in Information Technology</b></p>
+                        <p class="custom-small-header-content highligted"><i class="fa fa-calendar" aria-hidden="true"></i><b> &nbsp; 2011 - 2015</b></p>
+                        <p class="custom-small-content highligted"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp;Cum laude</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-star" aria-hidden="true"></i> &nbsp;Best Programmer of the Year (Batch 2015)</p>
+                        <p class="custom-small-content highligted"><i class="fa fa-star" aria-hidden="true"></i> &nbsp;Best in Thesis</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Team Leader and Main Programmer</p>
+                        <p class="custom-small-content highligted">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; Map Locator (Android Application)</p>
                         <p class="custom-small-content"><i class="fa fa-star-o" aria-hidden="true"></i></i> &nbsp;1st Runner-up in App and Running (Mobile Development)</p>
                         <p class="custom-small-content">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp; STI Tagisan ng Talino (Dagupan Cluster Level | February 2015)</p>
                     </div>
