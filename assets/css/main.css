@@ -704,14 +704,14 @@ p.small {
 }
 
 .btn.btn-transparent {
-  color: #cccc;
-  border: 2px solid #cccc;
+  color: #cccc !important;
+  border: 2px solid #cccc !important;
 }
 .btn.btn-transparent:focus,
 .btn.btn-transparent:active,
 .btn.btn-transparent:hover {
-  color: #86867ecc;
-  border: 2px solid #86867ecc;
+  color: #86867ecc !important;
+  border: 2px solid #86867ecc !important;
 }
 /* ======================= */
 
