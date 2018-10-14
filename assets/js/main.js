@@ -7,6 +7,7 @@
             $(".signal-background").fadeOut('slow');
         }, 1000);
         init();
+        chart();
     });
 
     function init() {
@@ -65,6 +66,34 @@
             }).on("blur", ".floating-label-form-group", function() {
                 $(this).removeClass("floating-label-form-group-with-focus");
             });
+        });
+    }
+
+    function chart()
+    {
+        var radarData = {
+            labels: ["WebDev", "MobileDev", "DesktopDev", "DevOps", "ComNet"],
+            datasets: [
+                {
+                    label: "2018",
+                    data: [10, 5, 3, 8, 6],
+                    backgroundColor: [
+						"#000",
+						"#ccc",
+						"#ccc",
+						"#777",
+						"#777",
+					]
+                }
+            ]
+        };
+
+        new Chart(document.getElementById("general-skills-graph"), {
+            type: 'pie',
+            data: radarData,
+            options: {
+                defaultFontStyle: "'Montserrat'"
+            }
         });
     }
 
