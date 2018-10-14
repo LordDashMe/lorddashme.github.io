@@ -18,14 +18,12 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementsByClassName('scroll-top')[0].style.display = 'block';
-                $('.btn-transparent').addClass('custom-focus');
+                $('.scroll-top.autoup').attr('style', 'display:block;');
                 // Isometric Display Image Animation Disable
                 $('.display-image-container').removeClass('custom-hover');
             } else {
-                document.getElementsByClassName('scroll-top')[0].style.display = 'none';
-                document.getElementsByClassName('btn-transparent')[0].blur();
-                $('.btn-transparent').removeClass('custom-focus');
+                $('.scroll-top.autoup').attr('style', 'display:none;');
+                $('.btn-transparent').blur();
                 // Isometric Display Image Animation Enable
                 $('.display-image-container').addClass('custom-hover');
             }

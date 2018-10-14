@@ -703,11 +703,13 @@ p.small {
   }
 }
 
-.btn-transparent {
+.btn.btn-transparent {
   color: #cccc;
   border: 2px solid #cccc;
 }
-.btn-transparent.custom-focus {
+.btn.btn-transparent:focus,
+.btn.btn-transparent:active,
+.btn.btn-transparent:hover {
   color: #86867ecc;
   border: 2px solid #86867ecc;
 }
@@ -726,7 +728,7 @@ p.small {
   position: relative;
   width: 285px;
   height: 395px;
-  border: 1px solid #000000;
+  border: 1px solid #86867ecc;
   transform: rotate(-380deg) skew(18deg) scale(.8);
   transition: 0.5s;
 }
