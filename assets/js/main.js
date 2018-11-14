@@ -1,13 +1,21 @@
 (function($) {
 
-    "use strict"; // Start of use strict
+    "use strict";
 
     $(document).ready(function () {
         setTimeout(function () {
             $(".signal-background").fadeOut('slow');
         }, 1000);
+        
         init();
-        chart();
+        
+        if ($('.home-section-body').is(':visible')) {
+            chart();
+        }
+        
+        if ($('.contact-me-section-body').is(':visible')) {
+            sendMail();
+        }
     });
 
     function init() {
@@ -69,8 +77,7 @@
         });
     }
 
-    function chart()
-    {
+    function chart() {
         var radarData = {
             labels: ["WebDev", "MobileDev", "DesktopDev", "DevOps", "ComNet"],
             datasets: [
@@ -94,6 +101,30 @@
             options: {
                 defaultFontStyle: "'Montserrat'"
             }
+        });
+    }
+
+    function sendMail() {
+        $('.btn-send-mail').on('click', function () {
+            $.post({
+                url: 'https://lorddashme.cf/sendmail.php',
+                data: {
+                    send_message: true,
+                    name: $('input[name="name"]').val(),
+                    email: $('input[name="email"]').val(),
+                    message: $('textarea[name="message"]').val(),
+                }
+            }, function (result) {
+                
+                if (typeof result.error !== 'undefined') {
+                    alert(result.error);
+                    return;
+                }
+
+                alert(result.message);
+                window.location.replace("index.html");
+                return;
+            });
         });
     }
 

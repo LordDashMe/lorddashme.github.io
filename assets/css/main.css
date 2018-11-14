@@ -600,6 +600,7 @@ p.small {
   color: #000000;
 }
 .custom-small-about-content {
+  text-align: left;
   font-size: 15px;
   color: #000;
 }
@@ -804,3 +805,24 @@ p.small {
   }
 }
 /* LEGEND NOTE AND SAYING QUOTE CONTENT */
+
+/* ABOUT CUSTOM */
+.custom-about-alignment {
+  text-align: center;
+}
+.custom-about-fa-icons {
+  font-size: 5em !important;
+  color: #000;
+}
+@media screen and (max-width: 600px) {
+  .custom-about-fa-icons {
+    font-size: 4em !important;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .custom-about-fa-icons {
+    font-size: 3em !important;
+  }
+}
+/* ABOUT CUSTOM */
