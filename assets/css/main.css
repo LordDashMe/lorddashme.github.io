@@ -70,10 +70,15 @@ hr.star-primary:after {
   content: "\f005";
   font-family: FontAwesome;
   display: inline-block;
-  position: relative;
-  top: -0.8em;
+  /* position: relative; */
+  /* top: -0.8em; */
   font-size: 2em;
   padding: 0 0.25em;
+
+  /* TO FIX ISSUE IN CHROME */
+  position: absolute;
+  margin-top: -23px;
+  margin-left: -20px;
 }
 hr.star-light {
   border-color: white;
@@ -705,14 +710,14 @@ p.small {
 }
 
 .btn.btn-transparent {
-  color: #cccc !important;
-  border: 2px solid #cccc !important;
+  color: #d2d2d2 !important;
+  border: 2px solid #d2d2d2 !important;
 }
 .btn.btn-transparent:focus,
 .btn.btn-transparent:active,
 .btn.btn-transparent:hover {
-  color: #86867ecc !important;
-  border: 2px solid #86867ecc !important;
+  color: #4d87c1 !important;
+  border: 2px solid #4d87c1 !important;
 }
 /* ======================= */
 
@@ -729,7 +734,7 @@ p.small {
   position: relative;
   width: 285px;
   height: 395px;
-  border: 1px solid #86867ecc;
+  border: 1px solid #d2d2d2 !important;
   transform: rotate(-380deg) skew(18deg) scale(.8);
   transition: 0.5s;
 }
