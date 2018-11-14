@@ -713,12 +713,7 @@ p.small {
   color: #d2d2d2 !important;
   border: 2px solid #d2d2d2 !important;
 }
-.btn.btn-transparent:focus,
-.btn.btn-transparent:active,
-.btn.btn-transparent:hover {
-  color: #4d87c1 !important;
-  border: 2px solid #4d87c1 !important;
-}
+
 /* ======================= */
 
 /* ISOMETRIC DISPLAY IMAGE */
