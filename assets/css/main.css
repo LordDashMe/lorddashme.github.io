@@ -826,3 +826,7 @@ p.small {
   }
 }
 /* ABOUT CUSTOM */
+
+.section-page-header-container {
+  padding-top: 40px;
+}
