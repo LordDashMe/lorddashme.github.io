@@ -197,7 +197,7 @@ header .intro-text .skills {
     transition: padding 0.3s;
   }
   .navbar-custom .navbar-brand {
-    font-size: 2em;
+    font-size: 1.5em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -206,7 +206,7 @@ header .intro-text .skills {
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 section {
@@ -575,6 +575,12 @@ p.small {
   font-size: 14px;
   color: #777;
 }
+.custom-small-header-content.role {
+  margin-bottom: 1px;
+}
+.custom-small-header-content.date {
+  font-size: 0.8em;
+}
 .custom-small-header-content.highligted {
   color: #111;
 }
@@ -626,6 +632,9 @@ p.small {
   .custom-small-header-content {
     font-size: 10px;
   }
+  .custom-small-header-content.date {
+    font-size: 0.6em;
+  }
   .custom-small-content {
     font-size: 9px;
   }
@@ -662,6 +671,9 @@ p.small {
   }
   .custom-small-header-content {
     font-size: 12px;
+  }
+  .custom-small-header-content.date {
+    font-size: 0.7em;
   }
   .custom-small-content {
     font-size: 10px;
@@ -705,7 +717,7 @@ p.small {
     font-size: .7em;
   }
   .navbar-nav {
-    font-size: .7em;
+    font-size: .5em;
   }
 }
 
@@ -760,21 +772,29 @@ p.small {
   }
 }
 
-.display-image-container.custom-hover img:nth-child(4) {
+.display-image-container.custom-hover img:nth-child(6) {
   transform: translate(50px, -50px);
   opacity: 1;
 }
-.display-image-container.custom-hover img:nth-child(3) {
-  transform: translate(35px, -35px);
+.display-image-container.custom-hover img:nth-child(5) {
+  transform: translate(41px, -41px);
+  opacity: .8;
+}
+.display-image-container.custom-hover img:nth-child(4) {
+  transform: translate(32px, -32px);
   opacity: .6;
 }
-.display-image-container.custom-hover img:nth-child(2) {
-  transform: translate(20px, -20px);
+.display-image-container.custom-hover img:nth-child(3) {
+  transform: translate(23px, -23px);
   opacity: .4;
+}
+.display-image-container.custom-hover img:nth-child(2) {
+  transform: translate(14px, -14px);
+  opacity: .2;
 }
 .display-image-container.custom-hover img:nth-child(1) {
   transform: translate(5px, -5px);
-  opacity: .2;
+  opacity: .1;
 }
 /* ISOMETRIC DISPLAY IMAGE */
 
