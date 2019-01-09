@@ -2,22 +2,6 @@
 
     "use strict";
 
-    $(document).ready(function () {
-        setTimeout(function () {
-            $(".signal-background").fadeOut('slow');
-        }, 1000);
-        
-        init();
-        
-        if ($('.home-section-body').is(':visible')) {
-            chart();
-        }
-        
-        if ($('.contact-me-section-body').is(':visible')) {
-            sendMail();
-        }
-    });
-
     function init() {
         
         // When the user scrolls down 20px from the top of the document, show the button
@@ -79,11 +63,11 @@
 
     function chart() {
         var radarData = {
-            labels: ["WebDev", "MobileDev", "DesktopDev", "DevOps", "ComNet"],
+            labels: ["Web Development", "Mobile Development", "Desktop Development", "DevOps", "Computer Networking"],
             datasets: [
                 {
                     label: "2018",
-                    data: [10, 5, 3, 8, 6],
+                    data: [9, 4, 3, 8, 6],
                     backgroundColor: [
 						"#000",
 						"#ccc",
@@ -115,7 +99,6 @@
                     message: $('textarea[name="message"]').val(),
                 }
             }, function (result) {
-                
                 if (typeof result.error !== 'undefined') {
                     alert(result.error);
                     return;
@@ -127,5 +110,21 @@
             });
         });
     }
+    
+    $(document).ready(function () {
+        setTimeout(function () {
+            $(".signal-background").fadeOut('slow');
+        }, 1000);
+        
+        init();
+        
+        if ($('.home-section-body').is(':visible')) {
+            chart();
+        }
+        
+        if ($('.contact-me-section-body').is(':visible')) {
+            sendMail();
+        }
+    });
 
 })(jQuery);
