@@ -563,9 +563,18 @@ p.small {
   max-width: 30%; 
   border: 2px solid #000000;
 }
-.custom-company-logo {
-  width: 65px; max-width: 12%;
+.custom-company-logo.gma-nmi {
+  width: 150px; 
+  max-width: 35%;
 }
+.custom-company-logo.sti-college {
+  width: 100px;
+  max-width: 25%;
+}
+.custom-company-logo {
+  width: 53px; 
+  max-width: 15%;
+} 
 .custom-small-header {
   font-size: 15px;
   color: #000;
