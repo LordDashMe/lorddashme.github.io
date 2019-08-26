@@ -2,7 +2,10 @@
 
 :coffee: :eyeglasses: :sparkles: To know me more.
 
-## Production Files
+
+## Folders and Files
+
+### Production Files
 
 ```text
 archives/
@@ -13,7 +16,7 @@ index.html
 tools-projects.html
 ```
 
-## Common Files
+### Common Files
 
 ```text
 .vscode/
@@ -22,7 +25,7 @@ LICENSE
 README.md
 ```
 
-## Version Archives 
+### Version Archives 
 
 ```text
 v1/
