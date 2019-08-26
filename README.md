@@ -2,7 +2,6 @@
 
 :coffee: :eyeglasses: :sparkles: To know me more.
 
-
 ## Folders and Files
 
 ### Production Files
