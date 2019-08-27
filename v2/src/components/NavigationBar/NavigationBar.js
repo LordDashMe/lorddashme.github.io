@@ -35,19 +35,20 @@ class NavigationBar extends Component {
 
   toggleCollapse = () => {
     let toggled = false;
+    
+    this.collapseStyle = {
+      'display': 'none'
+    }
+    
     if (! this.state.toggleCollapse) {
+      toggled = true;
+
       this.collapseStyle = {
         'display': 'block'
       };
-      toggled = true;
-    } else {
-      this.collapseStyle = {
-        'display': 'none'
-      }
     }
-    this.setState({
-      toggleCollapse: toggled
-    });
+
+    this.setState({ toggleCollapse: toggled });
   }
 
   routesList = () => {

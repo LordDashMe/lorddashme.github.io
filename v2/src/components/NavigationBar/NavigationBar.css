@@ -25,17 +25,19 @@
 .NavigationBar .navbar-toggle {
   margin-left: 5px;
   border-color: unset;
-  border-radius: 0;
+  border-radius: 1px;
   color: #fff;
   font-weight: bold;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.7em;
+  font-size: 0.9em;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .NavigationBar .navbar-toggle:hover,
 .NavigationBar .navbar-toggle:focus,
 .NavigationBar .navbar-toggle:active {
-  background-color: #1b4065;
+  background-color: unset;
   border-color: #fff;
 }
 
