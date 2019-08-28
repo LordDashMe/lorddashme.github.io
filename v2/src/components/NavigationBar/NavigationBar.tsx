@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 
-import './NavigationBar.css';
+import './NavigationBar.scss';
 
-class NavigationBar extends Component {
+interface IRoutes {
+  id: string;
+  href: string;
+  label: string;
+  icon: string;
+}
+
+export default class NavigationBar extends Component {
 
   state = {
     toggleCollapse: false,
   };
 
-  collapseStyle = {
+  private collapseStyle: Object = {
     'display': 'none'
   };
 
-  routes = [
+  private routes: Array<IRoutes> = [
     {
       id: 'home',
       href: '/',
@@ -33,7 +40,7 @@ class NavigationBar extends Component {
     }
   ];
 
-  toggleCollapse = () => {
+  private toggleCollapse = (): void => {
     let toggled = false;
     
     this.collapseStyle = {
@@ -51,7 +58,7 @@ class NavigationBar extends Component {
     this.setState({ toggleCollapse: toggled });
   }
 
-  routesList = () => {
+  private routesList = (): JSX.Element => {
     return (
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={this.collapseStyle}>
         <ul className="nav navbar-nav navbar-right">
@@ -71,7 +78,7 @@ class NavigationBar extends Component {
     );
   }
 
-  render() {
+  public render(): JSX.Element {
     return (
       <div className="NavigationBar">
         <nav className="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -89,5 +96,3 @@ class NavigationBar extends Component {
     );
   }
 }
-
-export default NavigationBar;

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import './Footer.css';
+import './Footer.scss';
 
-class Footer extends Component {
+export default class Footer extends Component {
 
-  render() {
+  public render(): JSX.Element {
     return (
       <div className="Footer">
         <footer className="text-center">
@@ -43,5 +43,3 @@ class Footer extends Component {
     );
   }
 }
-
-export default Footer;

@@ -5,7 +5,7 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
 
-function Home () {
+const Home = () => {
 
   const [loaderVisibility, setLoaderVisibility] = useState(true);
 
@@ -22,8 +22,8 @@ function Home () {
       <NavigationBar />
       <div className="page-wrapper">
         <h1>Home</h1>
+        <Statement />
       </div>
-      <Statement />
       <Footer />
     </div>
   );

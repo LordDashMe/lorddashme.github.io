@@ -7,11 +7,11 @@ import Contact from './pages/Contact/Contact';
 import Projects from './pages/Projects/Projects';
 import Page404 from './pages/Page404/Page404';
 
-import './index.css';
+import './index.scss';
 
 import * as serviceWorker from './serviceWorker';
 
-function AppStarter() {
+const AppStarter = () => {
   return (
     <BrowserRouter basename="/">
       <Switch>

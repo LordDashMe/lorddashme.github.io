@@ -1,0 +1,37 @@
+$default-font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin screen-mobile-small () {
+  @media (max-width: 320px) {
+    @content;
+  } 
+}
+
+@mixin screen-mobile () {
+  @media (max-width: 767px) {
+    @content;
+  } 
+}
+
+@mixin screen-tablet () {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  } 
+}
+
+@mixin screen-desktop-small () {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    @content;
+  } 
+}
+
+@mixin screen-desktop-medium () {
+  @media (min-width: 1280px) and (max-width: 1440px) {
+    @content;
+  } 
+}
+
+@mixin screen-desktop-large () {
+  @media (min-width: 1441px) and (max-width: 1907px) {
+    @content;
+  } 
+}

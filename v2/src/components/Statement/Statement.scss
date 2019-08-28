@@ -1,0 +1,22 @@
+@import '../../mixins';
+
+.Statement {
+  
+  .content {
+    margin: 50px 0;
+    p {
+      font-size: 1.4em;
+      text-align: center;
+      
+      @include screen-tablet {
+        font-size: 1.2em;
+      }
+      @include screen-mobile {
+        font-size: 1em;
+      }
+      @include screen-mobile-small {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

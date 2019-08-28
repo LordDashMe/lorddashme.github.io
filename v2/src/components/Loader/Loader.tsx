@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import './Loader.css';
+import './Loader.scss';
 
-class Loader extends Component {
+export default class Loader extends Component<{ visibility: boolean }, {}> {
 
-  render() {
+  public render() {
     let loaderClasses = 'signal-background';
     if (! this.props.visibility) {
       loaderClasses = 'signal-background out';
@@ -18,5 +18,3 @@ class Loader extends Component {
     );
   }
 }
-
-export default Loader;
