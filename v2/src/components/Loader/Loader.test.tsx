@@ -4,6 +4,6 @@ import Loader from './Loader';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Loader />, div);
+  ReactDOM.render(<Loader visibility={true} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

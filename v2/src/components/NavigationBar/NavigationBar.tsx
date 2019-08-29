@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import './NavigationBar.scss';
 
+interface INavigationBarState {
+  toggleCollapse: boolean;
+}
+
 interface IRoutes {
   id: string;
   href: string;
@@ -9,11 +13,9 @@ interface IRoutes {
   icon: string;
 }
 
-export default class NavigationBar extends Component {
+export default class NavigationBar extends Component<{}, INavigationBarState> {
 
-  state = {
-    toggleCollapse: false,
-  };
+  private brandName: string = 'JOSHUA CLIFFORD REYES';
 
   private collapseStyle: Object = {
     'display': 'none'
@@ -40,7 +42,25 @@ export default class NavigationBar extends Component {
     }
   ];
 
-  private toggleCollapse = (): void => {
+  public constructor(properties: any) {
+    super(properties);
+    this.state = {
+      toggleCollapse: false,
+    };
+  }
+
+  private defaultDetails(): JSX.Element {
+    return (
+      <div className="navbar-header page-scroll">
+        <button onClick={this.toggleCollapse.bind(this, '')} type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span className="sr-only">Toggle navigation</span><i className="fa fa-bars"></i> MENU
+        </button>
+        <h1 className="navbar-brand">{this.brandName}</h1>
+      </div>
+    );
+  }
+
+  private toggleCollapse(): void {
     let toggled = false;
     
     this.collapseStyle = {
@@ -58,7 +78,7 @@ export default class NavigationBar extends Component {
     this.setState({ toggleCollapse: toggled });
   }
 
-  private routesList = (): JSX.Element => {
+  private routesList(): JSX.Element {
     return (
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={this.collapseStyle}>
         <ul className="nav navbar-nav navbar-right">
@@ -83,12 +103,7 @@ export default class NavigationBar extends Component {
       <div className="NavigationBar">
         <nav className="navbar navbar-default navbar-fixed-top navbar-custom">
           <div className="container">
-            <div className="navbar-header page-scroll">
-              <button onClick={this.toggleCollapse} type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span className="sr-only">Toggle navigation</span><i className="fa fa-bars"></i> MENU
-              </button>
-              <h1 className="navbar-brand">JOSHUA CLIFFORD REYES</h1>
-            </div>
+            {this.defaultDetails()}
             {this.routesList()}
           </div>
         </nav>
