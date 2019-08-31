@@ -1,6 +1,6 @@
 .Loader {
 
-  .signal-background {
+  .loader-signal-background {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -11,9 +11,14 @@
     display: block;
     transition: opacity 0.9s ease-in-out;
     opacity: 1;
+    &.out {
+      opacity: 0;
+      transition: visibility 0.9s, opacity 0.9s linear;
+      visibility: hidden;
+    }
   }
-
-  .signal {
+  
+  .loader-signal {
     border: 5px solid #333;
     border-radius: 30px;
     height: 30px;
@@ -25,14 +30,6 @@
     width: 30px;
     animation: pulsate 1s ease-out;
     animation-iteration-count: infinite;
-  }
-
-  .signal-background {
-    &.out {
-      opacity: 0;
-      transition: visibility 0.9s, opacity 0.9s linear;
-      visibility: hidden;
-    }
   }
 }
 

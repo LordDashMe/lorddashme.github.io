@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import './NavigationBar.scss';
 
+interface INavigationBarProperty {}
+
 interface INavigationBarState {
   toggleCollapse: boolean;
 }
@@ -13,7 +15,7 @@ interface IRoutes {
   icon: string;
 }
 
-export default class NavigationBar extends Component<{}, INavigationBarState> {
+export default class NavigationBar extends Component<INavigationBarProperty, INavigationBarState> {
 
   private brandName: string = 'JOSHUA CLIFFORD REYES';
 

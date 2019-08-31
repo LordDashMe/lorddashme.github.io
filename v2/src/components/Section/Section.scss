@@ -1,0 +1,30 @@
+.Section {
+  padding: 60px 0;
+
+  .section-title {
+    text-align: center;
+    color: #000;
+  }
+  
+  .section-hr {
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 45px;
+    border-color: #000;
+    &:after {
+      content: "\f005";
+      font-family: FontAwesome;
+      display: inline-block;
+      font-size: 2em;
+      padding: 0 .25em;
+      position: absolute;
+      margin-top: -23px;
+      margin-left: -20px;
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}

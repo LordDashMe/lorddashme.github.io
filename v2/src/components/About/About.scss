@@ -1,0 +1,15 @@
+.About {
+  text-align: center;
+  .about-details {
+    display: inline-block;
+    width: 300px;
+    .about-icon {
+      font-size: 5em;
+      color: #000;
+    }
+    .about-statement {
+      text-align: left;
+      font-size: 1.1em;
+    }
+  }
+}

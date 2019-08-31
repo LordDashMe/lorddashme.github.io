@@ -6,20 +6,22 @@ interface ILoaderProperty {
   visibility: boolean;
 }
 
-export default class Loader extends Component<ILoaderProperty, {}> {
+interface ILoaderState {}
+
+export default class Loader extends Component<ILoaderProperty, ILoaderState> {
 
   public render(): JSX.Element {
 
-    let loaderClasses = 'signal-background';
+    let loaderClasses = 'loader-signal-background';
     
     if (! this.props.visibility) {
-      loaderClasses = 'signal-background out';
+      loaderClasses = 'loader-signal-background out';
     }
 
     return (
       <div className="Loader">
         <div className={loaderClasses}>
-          <div className="signal"></div>
+          <div className="loader-signal"></div>
         </div>
       </div>
     );

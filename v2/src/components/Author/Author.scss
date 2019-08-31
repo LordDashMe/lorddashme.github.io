@@ -1,0 +1,15 @@
+.Author {
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1;
+  
+  .author-img {
+    display: inline-block;
+    border: 1px solid #a3a3a3;
+    padding: 3px;
+    margin: 0 0 40px 0;
+    img {
+      width: 300px;
+    }
+  }
+}

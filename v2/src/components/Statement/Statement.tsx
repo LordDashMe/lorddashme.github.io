@@ -2,21 +2,19 @@ import React, { Component } from 'react';
 
 import './Statement.scss';
 
-export default class Statement extends Component {
+interface IStatementProperty {
+  statement: string;
+  author: string;
+}
 
-  private statement: string = '"Write code as if you had to support it for the rest of your life."';
-  private author: string = 'Yuriy Zubarev';
+interface IStatementState {}
+
+export default class Statement extends Component<IStatementProperty, IStatementState> {
 
   public render(): JSX.Element {
     return (
       <div className="Statement">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="content">
-              <p>{this.statement} - <i>{this.author}</i></p>
-            </div>
-          </div>
-        </div>
+        <p className="statement-content">"{this.props.statement}" - <i>{this.props.author}</i></p>
       </div>
     );
   }
