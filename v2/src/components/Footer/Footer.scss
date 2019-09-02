@@ -30,6 +30,9 @@
   .custom-small-location-content {
     font-size: 1.1em;
     color: #fff;
+    @include screen-mobile-small {
+      font-size: 0.9em;
+    }
   }
   
   .btn-social {
@@ -47,9 +50,9 @@
       line-height: 2.1;
     }
     @include screen-mobile-small {
-      width: 45px;
-      height: 45px;
-      font-size: 1.4em;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2em;
     }
   }
 

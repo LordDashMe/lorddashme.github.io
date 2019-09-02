@@ -1,9 +1,18 @@
+@import '../../mixins';
+
 .Section {
-  padding: 60px 0;
+  padding: 40px 0 40px 0;
 
   .section-title {
     text-align: center;
     color: #000;
+    margin: 0 10px 0 10px;
+    @include screen-mobile {
+      font-size: 2.3em;
+    }
+    @include screen-mobile-small {
+      font-size: 2.2em;
+    }
   }
   
   .section-hr {
@@ -14,6 +23,11 @@
     max-width: 250px;
     margin: 25px auto 45px;
     border-color: #000;
+    @include screen-mobile-small {
+      border-top: solid 5px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
     &:after {
       content: "\f005";
       font-family: "Font Awesome 5 Pro";
@@ -26,6 +40,11 @@
       margin-left: -18px;
       background-color: #fff;
       color: #000;
+      @include screen-mobile-small {
+        font-size: 1.5em;
+        margin-top: -18px;
+        margin-left: -14px;
+      }
     }
   }
 }
