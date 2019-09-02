@@ -1,8 +1,15 @@
+@import '../../mixins';
+
 .About {
   text-align: center;
+  
   .about-details {
     display: inline-block;
-    width: 300px;
+    width: 320px;
+    padding: 0 20px;
+    @include screen-mobile-small {
+      width: 280px;
+    }
     p {
       margin-bottom: 20px;
     }
@@ -14,6 +21,9 @@
     .about-statement {
       text-align: left;
       font-size: 1.1em;
+      @include screen-mobile-small {
+        font-size: 0.9em;
+      }
     }
   }
 }

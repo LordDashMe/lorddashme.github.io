@@ -36,6 +36,7 @@ const Home = () => {
         </Section>
         <Section id="career-history" 
                  title="CAREER HISTORY"></Section>
+
         <Statement statement="Write code as if you had to support it for the rest of your life." 
                    author="Yuriy Zubarev" />
       </div>

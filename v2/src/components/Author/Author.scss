@@ -18,17 +18,17 @@
 
   .author-description {
     p {
-      font-size: 1em;
+      font-size: 1.1em;
       width: 80%;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      line-height: 1.1;
+      line-height: 1.5;
       @include screen-mobile {
-        font-size: 0.9em;  
+        font-size: 1em;  
       }
       @include screen-mobile-small {
-        font-size: 0.8em;  
+        font-size: 0.9em;  
       }
     }
   }
