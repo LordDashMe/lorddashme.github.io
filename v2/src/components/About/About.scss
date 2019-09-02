@@ -3,9 +3,13 @@
   .about-details {
     display: inline-block;
     width: 300px;
+    p {
+      margin-bottom: 20px;
+    }
     .about-icon {
       font-size: 5em;
       color: #000;
+      margin: 0 0 15px 0;
     }
     .about-statement {
       text-align: left;

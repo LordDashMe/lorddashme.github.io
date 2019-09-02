@@ -21,21 +21,21 @@ const Home = () => {
 
   return (
     <div className="Home">
-      
       <Loader visibility={loaderVisibility} />
       <NavigationBar />
-
       <div className="page-wrapper">
-        <Section id="author" title="HELLO, WORLD! I'M...">
+        <Section id="author" 
+                 title="HELLO, WORLD!">
           <Author />
         </Section>
-
-        <Section id="skills-technologies" title="SKILLS | TECHNOLOGIES"></Section>
-        <Section id="about" title="ABOUT">
+        <Section id="skills-technologies" 
+                 title="SKILLS | TECHNOLOGIES"></Section>
+        <Section id="about" 
+                 title="ABOUT">
           <About />
         </Section>
-        <Section id="career-history" title="CAREER HISTORY"></Section>
-        
+        <Section id="career-history" 
+                 title="CAREER HISTORY"></Section>
         <Statement statement="Write code as if you had to support it for the rest of your life." 
                    author="Yuriy Zubarev" />
       </div>

@@ -26,7 +26,7 @@ export default class Footer extends Component {
     {
       id: 'facebook',
       href: 'https://www.facebook.com/LordDash.Me',
-      icon: 'fa-facebook'
+      icon: 'fa-facebook-square'
     },
     {
       id: 'twitter',
@@ -57,7 +57,7 @@ export default class Footer extends Component {
           {
             this.socialButtons.map(socialButton => {
               const href = socialButton.href;
-              const icon = 'fa fa-fw ' + socialButton.icon;
+              const icon = 'fab fa-fw ' + socialButton.icon;
               return (
                 <li key={socialButton.id}>
                   <a target="_blank" href={href} className="btn-social btn-outline" rel="noopener noreferrer">
@@ -78,7 +78,7 @@ export default class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <p>&copy; 2019 <a href="/" rel="noopener noreferrer">LordDashMe</a></p>
+              <p><small>&copy; 2019</small> <a href="/" rel="noopener noreferrer">LordDashMe</a></p>
               <p><small>Powered by React and Github Pages</small></p>
             </div>
           </div>

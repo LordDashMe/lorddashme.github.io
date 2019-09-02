@@ -16,13 +16,14 @@
     border-color: #000;
     &:after {
       content: "\f005";
-      font-family: FontAwesome;
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 900;
       display: inline-block;
-      font-size: 2em;
+      font-size: 1.8em;
       padding: 0 .25em;
       position: absolute;
-      margin-top: -23px;
-      margin-left: -20px;
+      margin-top: -22px;
+      margin-left: -18px;
       background-color: #fff;
       color: #000;
     }

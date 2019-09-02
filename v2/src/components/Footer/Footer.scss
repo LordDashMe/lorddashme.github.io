@@ -21,8 +21,15 @@
     }
   }
 
+  .footer-below {
+    p, small {
+      color: #fff;
+    }
+  }
+
   .custom-small-location-content {
-    font-size: 1.1em;  
+    font-size: 1.1em;
+    color: #fff;
   }
   
   .btn-social {
@@ -31,19 +38,18 @@
     border-radius: 100%;
     text-align: center;
     font-size: 1.6em;
-    line-height: 2;
+    line-height: 2.2;
     width: 52px;
     height: 52px;
     @include screen-mobile {
       width: 50px;
       height: 50px;
-      line-height: 2;
+      line-height: 2.1;
     }
     @include screen-mobile-small {
       width: 45px;
       height: 45px;
       font-size: 1.4em;
-      line-height: 2;
     }
   }
 
