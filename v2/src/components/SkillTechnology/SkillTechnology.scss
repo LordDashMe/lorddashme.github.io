@@ -1,0 +1,24 @@
+.SkillTechnology {
+
+  .skill-technology-details {
+    width: 300px;
+    margin: 0 auto 0 auto;
+    .skill-technology-role-title {
+      font-size: 1.5em;
+    }
+    .skill-technology-brand {
+      font-size: 1.2em;
+      margin-left: 20px;
+      i {
+        font-weight: 400;
+      }
+    }
+    .skill-technology-library {
+      font-size: 1em;
+      margin-left: 30px;
+      &.inactive {
+        color: #777;
+      }
+    }
+  }
+}
