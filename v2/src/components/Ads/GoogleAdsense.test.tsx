@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Section from './Section';
+import GoogleAdsense from './GoogleAdsense';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Section id="test" title="TEST" showThematicBreak={true} />, div);
+  ReactDOM.render(<GoogleAdsense />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -1,0 +1,54 @@
+@import '../../mixins';
+
+.Page404 {
+
+  .page-wrapper {
+    flex-direction: column;
+    flex-basis: auto;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    min-height: 100vh;
+    margin-top: 0;
+    padding-bottom: 200px;
+    @include screen-tablet-and-mobile {
+      margin-top: 50px;
+      padding-bottom: 0;
+    }
+  }
+
+  .page404-content {
+    text-align: center;
+    width: 80%;
+    margin: 25px auto 25px auto;
+    .page-404-icon {
+      font-size: 6em;
+      color: #000;
+      margin: 0 0 20px 0;
+    }
+    .page-404-description {
+      font-size: 1.8em;
+      @include screen-mobile {
+        font-size: 1.4em;
+      }
+      @include screen-mobile-small {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .Footer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    @include screen-tablet-and-mobile {
+      position: relative;
+      right: unset;
+      left: unset;
+      bottom: unset; 
+    }
+  }
+}

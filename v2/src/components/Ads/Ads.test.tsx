@@ -4,6 +4,6 @@ import Ads from './Ads';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Ads />, div);
+  ReactDOM.render(<Ads appearance="" />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

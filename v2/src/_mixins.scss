@@ -35,3 +35,12 @@ $default-font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif
     @content;
   } 
 }
+
+@mixin screen-tablet-and-mobile () {
+  @include screen-tablet() {
+    @content;
+  }
+  @include screen-mobile() {
+    @content;
+  }
+}
