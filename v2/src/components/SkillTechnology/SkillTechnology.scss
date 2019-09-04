@@ -1,24 +1,54 @@
+@import '../../mixins';
+
 .SkillTechnology {
 
-  .skill-technology-details {
-    width: 300px;
+  .st-full-details {
+    width: 365px;
     margin: 0 auto 0 auto;
-    .skill-technology-role-title {
+    @include screen-mobile {
+      width: 320px;
+    }
+    @include screen-mobile-small {
+      width: 280px;
+    }
+    .st-role__icon {
+      display: inline-block;
       font-size: 1.5em;
+      @include screen-mobile {
+        font-size: 1.3em;
+      }
+      @include screen-mobile-small {
+        font-size: 1.1em;
+      }
     }
-    .skill-technology-brand {
-      font-size: 1.2em;
+    .st-role__title {
+      display: inline-block;
+      font-size: 1.5em;
+      @include screen-mobile {
+        font-size: 1.3em;
+      }
+      @include screen-mobile-small {
+        font-size: 1.1em;
+      }
+    }
+    .st-tool {
       margin-left: 20px;
-      i {
-        font-weight: 400;
-      }
     }
-    .skill-technology-library {
+    .st-tool__icon {
+      display: inline-block;
+      font-size: 1.1em;
+    }
+    .st-tool__name {
+      display: inline-block;
       font-size: 1em;
+    }
+    .st-library {
+      font-size: 0.89em;
+      // font-weight: 600;
       margin-left: 30px;
-      &.inactive {
-        color: #777;
-      }
+    }
+    .st-inactive {
+      color: #777;
     }
   }
 }

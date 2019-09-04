@@ -43,7 +43,7 @@ export default class Footer extends Component {
   private authorLocation(): JSX.Element {
     return (
       <div className="footer-col col-md-6">
-        <h3><i className="fa fa-map-marker" aria-hidden="true"></i>&nbsp; LOCATION</h3>
+        <h3><i className="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp; LOCATION</h3>
         <p className="custom-small-location-content">{this.location}</p>
       </div>
     );
@@ -52,12 +52,12 @@ export default class Footer extends Component {
   private socialButtonsList(): JSX.Element {
     return (
       <div className="footer-col col-md-6">
-        <h3><i className="fa fa-share-square-o" aria-hidden="true"></i>&nbsp; LOOK FOR ME IN THE WEB</h3>
+        <h3><i className="fas fa-share-square" aria-hidden="true"></i>&nbsp; LOOK FOR ME IN THE WEB</h3>
         <ul className="list-inline">
           {
             this.socialButtons.map(socialButton => {
               const href = socialButton.href;
-              const icon = 'fab fa-fw ' + socialButton.icon;
+              const icon = 'fab ' + socialButton.icon;
               return (
                 <li key={socialButton.id}>
                   <a target="_blank" href={href} className="btn-social btn-outline" rel="noopener noreferrer">

@@ -4,9 +4,10 @@ import Loader from '../../components/Loader/Loader';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Section from '../../components/Section/Section';
 import Author from '../../components/Author/Author';
+import StatusChart from '../../components/SkillTechnology/StatusChart/StatusChart';
 import SkillTechnology from '../../components/SkillTechnology/SkillTechnology';
-import Ads from '../../components/Ads/Ads';
-import GoogleAdsense from '../../components/Ads/GoogleAdsense';
+// import Ads from '../../components/Ads/Ads';
+// import GoogleAdsense from '../../components/Ads/GoogleAdsense';
 import About from '../../components/About/About';
 import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
@@ -32,11 +33,12 @@ const Home = () => {
           <Author />
         </Section>
         <Section id="skills-technologies" title="SKILLS | TECHNOLOGIES" showThematicBreak={true}>
+          <StatusChart />
           <SkillTechnology />
         </Section>
-        <Ads appearance="horizontal">
+        {/* <Ads appearance="horizontal">
           <GoogleAdsense />
-        </Ads>
+        </Ads> */}
         <Section id="about" title="ABOUT" showThematicBreak={true}>
           <About />
         </Section>

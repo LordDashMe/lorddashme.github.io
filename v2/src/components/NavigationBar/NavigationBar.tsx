@@ -28,19 +28,19 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
       id: 'home',
       href: '/',
       label: 'HOME',
-      icon: 'fa-home',
+      icon: 'fas fa-home',
     },
     {
       id: 'contact',
       href: 'contact',
       label: 'CONTACT',
-      icon: 'fa-paper-plane-o'
+      icon: 'fas fa-paper-plane'
     },
     {
       id: 'projects',
       href: 'projects',
       label: 'PROJECTS',
-      icon: 'fa-magic'
+      icon: 'fas fa-magic'
     }
   ];
 
@@ -87,10 +87,9 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
           {
             this.routes.map(route => {
               const href = route.href;
-              const iconClassName = 'fa ' + route.icon;
               return (
                 <li key={route.id} className="page-scroll">
-                  <a href={href} rel="nofollow"><i className={iconClassName} aria-hidden="true"></i> {route.label}</a>
+                  <a href={href} rel="nofollow"><i className={route.icon} aria-hidden="true"></i> {route.label}</a>
                 </li>
               );
             })
