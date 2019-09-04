@@ -28,7 +28,7 @@ function Page404 () {
         <Section id="404" title="PAGE NOT FOUND" showThematicBreak={false}>
           <div className="page404-content">
             <i className="page-404-icon fas fa-map-marked-alt"></i>
-            <p className="page-404-description">Hmm. Looks like the page you're trying to visit is not exist or available. Maybe check the address again.</p>
+            <p className="page-404-description">Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again.</p>
           </div>
         </Section>
       </div>
