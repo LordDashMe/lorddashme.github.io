@@ -9,6 +9,7 @@ import SkillTechnology from '../../components/SkillTechnology/SkillTechnology';
 // import Ads from '../../components/Ads/Ads';
 // import GoogleAdsense from '../../components/Ads/GoogleAdsense';
 import About from '../../components/About/About';
+import CareerHistory from '../../components/CareerHistory/CareerHistory';
 import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
 
@@ -42,7 +43,9 @@ const Home = () => {
         <Section id="about" title="ABOUT" showThematicBreak={true}>
           <About />
         </Section>
-        <Section id="career-history" title="CAREER HISTORY" showThematicBreak={true}></Section>
+        <Section id="career-history" title="CAREER HISTORY" showThematicBreak={true}>
+          <CareerHistory />
+        </Section>
         <Statement statement="Write code as if you had to support it for the rest of your life." 
                    author="Yuriy Zubarev" />
       </div>
