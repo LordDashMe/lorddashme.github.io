@@ -1,33 +1,53 @@
 .CareerHistory {
+  
   .ch-organization {
     width: 450px;
     margin: 0 auto 0 auto;
+    
     .ch-org-logo {
       display: inline-block;
       width: 100px;
       max-width: 25%;
     }
+    
     .ch-org-name {
       display: inline-block;
       font-size: 1.2em;
       font-weight: 600;
     }
+    
     .ch-position {
       margin: 0 0 0 20px;
+      
       .ch-role {
         font-size: 1.1em;
         font-weight: 600;
         margin-bottom: 5px;
       }
+      
       .ch-role-term {
-        font-weight: 600;
+        font-weight: 400;
       }
     }
+
     .ch-organization-details {
       margin: 0 0 0 30px;
-      .ch-highlight {
-        font-size: 0.9em;
-        font-weight: 600;
+      
+      .ch-highlight-wrapper {
+        
+        .ch-highlight {
+          font-size: 0.9em;
+          font-weight: 600;
+        }
+        
+        .ch-highlight-desc {
+          margin: 0 0 0 20px;
+          
+          .ch-highlight-specific {
+            font-size: 0.8em;
+            font-weight: 400;
+          }
+        }
       }
     }
   }
