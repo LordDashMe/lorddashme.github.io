@@ -79,7 +79,11 @@ export default class Footer extends Component {
           <div className="row">
             <div className="col-lg-12">
               <p><small>&copy; 2019</small> <a href="/" rel="noopener noreferrer">LordDashMe</a></p>
-              <p><small>Powered by React and Github Pages</small></p>
+              <p>
+                <small>Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
+                <br/>
+                <small>Powered by React and Github Pages</small>
+              </p>
             </div>
           </div>
         </div>

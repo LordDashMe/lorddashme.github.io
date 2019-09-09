@@ -61,6 +61,50 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'GMA News Online - Eleksyon 2019 Microsite',
                   logo: 'fas fa-certificate',
                   descriptions: []
+                },
+                {
+                  id: 'code-page-library',
+                  name: 'Code Package | Library',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'NodeJS Image Squeezer'
+                  ]
+                },
+                {
+                  id: 'amazon-web-services',
+                  name: 'Amazon Web Services',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Simple Storage Service (S3)'
+                  ]
+                },
+                {
+                  id: 'php',
+                  name: 'PHP',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'CodeIgniter'
+                  ]
+                },
+                {
+                  id: 'javascript',
+                  name: 'JavaScript',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'NodeJS',
+                    'Angular',
+                    'RxJS',
+                    'TypeScript',
+                    'React'
+                  ]
+                },
+                {
+                  id: 'python',
+                  name: 'Python',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Falcon'
+                  ]
                 }
               ]
             }
@@ -71,14 +115,298 @@ export default class CareerHistory extends Component<IProperty, IState> {
           logo: 'resources/img/companies/logo-nuworks.png',
           logoStyle: {},
           name: 'NuWorks Interactive Labs, Inc. (NuWorks)',
-          roles: []
+          roles: [
+            {
+              id: 'backend-developer-and-devops',
+              name: 'Back End Developer and DevOps',
+              term: 'December 2017 - January 2019',
+              highlights: [
+                {
+                  id: 'neuland-ph-website',
+                  name: 'Neuland PH Website',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'decidium-ph-website',
+                  name: 'Decidium PH Website',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'monde-nissin-website',
+                  name: 'Monde Nissin Website (Maintenance)',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'marlboro-website',
+                  name: 'Marlboro Website (Maintenance)',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'nuworks-website',
+                  name: 'NuWorks Website (Maintenance)',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'belo-men-website',
+                  name: 'Belo Men Website (Maintenance)',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'code-page-library',
+                  name: 'Code Package | Library',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Wordpress Scaffolding',
+                    'PHP Simple Captcha',
+                    'Wordpress DB Schema Extender',
+                    'PHP Static Class Interface',
+                    'PHP MailChimp'
+                  ]
+                },
+                {
+                  id: 'continuous-integration',
+                  name: 'Continuous Integration',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Jenkins',
+                    'TravisCI',
+                    'Bitbucket Pipelines'
+                  ]
+                },
+                {
+                  id: 'test-coverage',
+                  name: 'Test Coverage',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Coveralls',
+                    'Code Climate',
+                    'CodeCov'
+                  ]
+                },
+                {
+                  id: 'os-virtualization',
+                  name: 'OS Virtualization',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Docker'
+                  ]
+                },
+                {
+                  id: 'server',
+                  name: 'Server',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Linux'
+                  ]
+                },
+                {
+                  id: 'web-server',
+                  name: 'Web Server',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Apache',
+                    'Nginx'
+                  ]
+                },
+                {
+                  id: 'server-security',
+                  name: 'Server Security',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Web Server and Application Security Standards'
+                  ]
+                },
+                {
+                  id: 'guest-speaker',
+                  name: 'Guest Speaker',
+                  logo: 'fas fa-microphone-alt',
+                  descriptions: [
+                    '"Composer Basic - Autoloading" (NWTalks Meetup | May 11, 2018)',
+                    '"Hardening Wordpress Security" (Coding Girl\'s Manila Meetup | January 26, 2018)'
+                  ]
+                },
+                {
+                  id: 'meetup-conference-attended',
+                  name: 'Meetup | Conference Attended',
+                  logo: 'fas fa-users',
+                  descriptions: [
+                    'Laravel PH Meetup (September 20, 2018',
+                    'Wordpress - Wordcamp Manila 2018 (September 8, 2018)'
+                  ]
+                }
+              ]
+            },
+            {
+              id: 'backend-developer',
+              name: 'Back End Developer',
+              term: 'January 2017 - December 2017',
+              highlights: [
+                {
+                  id: 'creamsilk-ph-website',
+                  name: 'Creamsilk PH Website',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'imagenation-canon-ph-website',
+                  name: 'Imagenation Canon PH Website (Maintenance)',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'chevrolet-ph-website',
+                  name: 'Chevrolet PH Website',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'nestle-nestea-beach-2017-ph-microsite',
+                  name: 'Nestle Nestea Beach 2017 PH Microsite',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'php',
+                  name: 'PHP',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Laravel',
+                    'Drupal',
+                    'CodeIgniter',
+                    'Wordpress'
+                  ]
+                },
+                {
+                  id: 'meetup-conference-attended',
+                  name: 'Meetup | Conference Attended',
+                  logo: 'fas fa-users',
+                  descriptions: [
+                    'Laravel PH Meetup (July 28, 2017)',
+                    'Manila Javascript Meetup (June 21, 2017)',
+                    'Royale Rumble DevCon Meetup (January 26, 2017)'
+                  ]
+                },
+                {
+                  id: 'training',
+                  name: 'Training',
+                  logo: 'fas fa-book',
+                  descriptions: [
+                    'Laravel Training (Inventive Media | March 24 - 27, 2017)'
+                  ]
+                }
+              ] 
+            }
+          ]
         },
         {
           id: 'gs3',
           logo: 'resources/img/companies/gs3_logo.svg',
           logoStyle: {},
           name: 'Global Strategic Solutions and Services, Inc. (GS3)',
-          roles: []
+          roles: [
+            {
+              id: 'web-and-mobile-developer',
+              name: 'Web and Mobile Developer',
+              term: 'June 2016 - January 2017',
+              highlights: [
+                {
+                  id: 'forma-eforms-mobile-application',
+                  name: 'Formalistics Mobile Application',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'forma-eforms-web-application',
+                  name: 'Formalistics Web Application',
+                  logo: 'fas fa-certificate',
+                  descriptions: [
+                    'Contribute to the source code of the Custom Framework used by the company'
+                  ]
+                },
+                {
+                  id: 'mobile-hybrid-framework',
+                  name: 'Mobile Hybrid Framework',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Ionic'
+                  ]
+                },
+                {
+                  id: 'custom-compiler',
+                  name: 'Custom Compiler',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Built on top of PHP and used by the Formalistics form builder for formula syntax.'
+                  ]
+                },
+                {
+                  id: 'rest-api-implementation',
+                  name: 'REST API Implementation',
+                  logo: 'far fa-lightbulb',
+                  descriptions: []
+                },
+                {
+                  id: 'google-map-api-integration',
+                  name: 'Google Map API Integration',
+                  logo: 'far fa-lightbulb',
+                  descriptions: []
+                },
+                {
+                  id: 'meetup-conference-attended',
+                  name: 'Meetup | Conference Attended',
+                  logo: 'fas fa-users',
+                  descriptions: [
+                    'PHP Conference 2016 Philippines (October 13 - 14, 2016)'
+                  ]
+                }
+              ]
+            },
+            {
+              id: 'web-developer',
+              name: 'Web Developer',
+              term: 'April 2015 - June 2016',
+              highlights: [
+                {
+                  id: 'forma-eforms-web-application',
+                  name: 'Formalistics Web Application',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'server',
+                  name: 'Server',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Windows'
+                  ]
+                },
+                {
+                  id: 'php',
+                  name: 'PHP',
+                  logo: 'far fa-lightbulb',
+                  descriptions: []
+                },
+                {
+                  id: 'javascript',
+                  name: 'JavaScript',
+                  logo: 'far fa-lightbulb',
+                  descriptions: []
+                },
+                {
+                  id: 'technical-support',
+                  name: 'Technical Support',
+                  logo: 'fas fa-wrench',
+                  descriptions: []
+                }
+              ]
+            }
+          ]
         },
         {
           id: 'sti',
@@ -160,10 +488,10 @@ export default class CareerHistory extends Component<IProperty, IState> {
                             {
                               highlight.descriptions.map((description, index) => {
                                 return (
-                                  <div className="ch-highlight-desc">
+                                  <div key={index} className="ch-highlight-desc">
                                     <span className="ch-highlight-specific-span">
                                       <i className="fas fa-angle-right" aria-hidden="true"></i>
-                                      <p key={index} className="ch-highlight-specific">{description}</p>
+                                      <p className="ch-highlight-specific">{description}</p>
                                     </span>
                                   </div>
                                 );
