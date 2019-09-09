@@ -11,6 +11,7 @@
 ```text
 resources/
 static/
+404.html
 asset-manifest.json
 index.html
 manifest.json
