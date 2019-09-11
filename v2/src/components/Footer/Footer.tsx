@@ -10,7 +10,7 @@ interface ISocialButton {
 
 export default class Footer extends Component {
 
-  private location: string = 'TDSM, Pulong Buhangin, Sta. Maria, Bulacan, Philippines.';
+  private location: string = 'Pulong Buhangin, Sta. Maria, Bulacan, Philippines.';
 
   private socialButtons: Array<ISocialButton> = [
     {
@@ -42,17 +42,17 @@ export default class Footer extends Component {
 
   private authorLocation(): JSX.Element {
     return (
-      <div className="footer-col col-md-6">
-        <h3><i className="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp; LOCATION</h3>
-        <p className="custom-small-location-content">{this.location}</p>
+      <div className="f-upper__wrapper col-md-6">
+        <h3 className="f-upper__title"><i className="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp; LOCATION</h3>
+        <p className="f-location">{this.location}</p>
       </div>
     );
   }
 
   private socialButtonsList(): JSX.Element {
     return (
-      <div className="footer-col col-md-6">
-        <h3><i className="fas fa-share-square" aria-hidden="true"></i>&nbsp; LOOK FOR ME IN THE WEB</h3>
+      <div className="f-upper__wrapper col-md-6">
+        <h3 className="f-upper__title"><i className="fas fa-share-square" aria-hidden="true"></i>&nbsp; LOOK FOR ME IN THE WEB</h3>
         <ul className="list-inline">
           {
             this.socialButtons.map(socialButton => {
@@ -60,7 +60,7 @@ export default class Footer extends Component {
               const icon = 'fab ' + socialButton.icon;
               return (
                 <li key={socialButton.id}>
-                  <a target="_blank" href={href} className="btn-social btn-outline" rel="noopener noreferrer">
+                  <a target="_blank" href={href} className="f-btn__social" rel="noopener noreferrer">
                     <i className={icon}></i>
                   </a>
                 </li>
@@ -74,17 +74,38 @@ export default class Footer extends Component {
 
   private copyrights(): JSX.Element {
     return (
-      <div className="footer-below">
+      <div className="col-lg-12">
+        <p className="f-copyright">
+          <small className="f-copyright__small">&copy; 2019</small> <a href="/" rel="noopener noreferrer">LordDashMe</a>
+        </p>
+        <p className="f-copyright">
+          <small className="f-copyright__small">Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
+          <br/>
+          <small className="f-copyright__small">Powered by React and Github Pages</small>
+        </p>
+      </div>
+    );
+  }
+
+  private upperPart(): JSX.Element {
+    return (
+      <div className="f-upper">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
-              <p><small>&copy; 2019</small> <a href="/" rel="noopener noreferrer">LordDashMe</a></p>
-              <p>
-                <small>Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
-                <br/>
-                <small>Powered by React and Github Pages</small>
-              </p>
-            </div>
+            {this.authorLocation()}
+            {this.socialButtonsList()}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  private lowerPart(): JSX.Element {
+    return (
+      <div className="f-lower">
+        <div className="container">
+          <div className="row">
+            {this.copyrights()}
           </div>
         </div>
       </div>
@@ -93,19 +114,10 @@ export default class Footer extends Component {
 
   public render(): JSX.Element {
     return (
-      <div className="Footer">
-        <footer>
-          <div className="footer-above">
-            <div className="container">
-              <div className="row">
-                {this.authorLocation()}
-                {this.socialButtonsList()}
-              </div>
-            </div>
-          </div>
-          {this.copyrights()}
-        </footer>
-      </div>
+      <footer className="Footer">
+        {this.upperPart()}
+        {this.lowerPart()}
+      </footer>
     );
   }
 }

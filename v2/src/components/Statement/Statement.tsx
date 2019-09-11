@@ -14,7 +14,7 @@ export default class Statement extends Component<IStatementProperty, IStatementS
   public render(): JSX.Element {
     return (
       <div className="Statement">
-        <p className="statement-content">"{this.props.statement}" - <i>{this.props.author}</i></p>
+        <p className="s-content">"{this.props.statement}" - <i>{this.props.author}</i></p>
       </div>
     );
   }

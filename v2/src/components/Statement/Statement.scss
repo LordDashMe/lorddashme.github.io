@@ -2,13 +2,15 @@
 
 .Statement {
   
-  .statement-content {
+  .s-content {
     margin: 0 20px 60px 20px;
     font-size: 1.4em;
     text-align: center;
+    
     @include screen-mobile {
       font-size: 1.1em;
     }
+    
     @include screen-mobile-small {
       font-size: 1em;
     }
