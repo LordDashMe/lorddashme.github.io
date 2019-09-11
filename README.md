@@ -2,11 +2,9 @@
 
 :coffee: :eyeglasses: :sparkles: To know me more.
 
-## Folders and Files
+## Production Files
 
-### Production Files
-
-#### v2
+### v2
 
 ```text
 resources/
@@ -20,7 +18,7 @@ robots.txt
 service-worker.js
 ```
 
-#### v1
+### v1
 
 ```text
 archives/
@@ -31,7 +29,7 @@ index.html
 tools-projects.html
 ```
 
-### Common Files
+## Common Files
 
 ```text
 .vscode/
@@ -40,9 +38,8 @@ LICENSE
 README.md
 ```
 
-### Version Archives
+## Version Archives
 
-```text
-v1/
-v2/
-```
+- [v1](v1/)
+
+- [v2](v2/)
