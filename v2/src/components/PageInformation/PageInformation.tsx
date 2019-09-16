@@ -34,7 +34,7 @@ export default class PageInformation extends Component<IProperty, IState> {
       this.setState({
         loaderVisibility: false 
       });
-    }, 1500);
+    }, 500);
   }
 
   public render(): JSX.Element {

@@ -29,7 +29,7 @@ export default class About extends Component {
         {
           this.aboutContents.map(aboutContents => {
             return (
-              <div className="a-wrapper">
+              <div key={aboutContents.id} className="a-wrapper">
                 <i className={'a-icon ' + aboutContents.icon}></i>
                 <p className="a-statement">{aboutContents.statement}</p>
               </div> 

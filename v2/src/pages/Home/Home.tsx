@@ -21,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoaderVisibility(false);
-    }, 1500);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 

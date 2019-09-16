@@ -410,7 +410,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         },
         {
           id: 'sti',
-          logo: 'resources/img/companies/STI300.png',
+          logo: 'resources/img/companies/STI300-min.png',
           logoStyle: {
             width: '100px',
             maxWidth: '25%',
