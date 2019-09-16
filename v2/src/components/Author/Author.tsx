@@ -8,7 +8,7 @@ export default class Author extends Component {
     return (
       <div className="Author">
         <div className="author-img">
-          <img src="resources/img/profile-shanghai-min.jpg" alt="Joshua Clifford Reyes Profile" />
+          <img src="resources/img/profile-shanghai-min-super.jpg" alt="Joshua Clifford Reyes Profile" />
         </div>
         <div className="author-description">
           <p>INFORMATION TECHNOLOGY | WEB DEVELOPER | MOBILE DEVELOPER | DEVOPS | COMPUTER NETWORK | DATA STRUCTURE | MULTIMEDIA</p>
