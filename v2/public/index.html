@@ -48,14 +48,22 @@
     <meta name="og:url" content="https://lorddashme.github.io/">
     <meta name="og:type" content="website">
     <meta name="og:title" content="LordDashMe | JCR">
-    <meta name="og:image" content="%PUBLIC_URL%/resources/img/profile-cropped.jpg">
+    <meta name="og:image" content="%PUBLIC_URL%/resources/img/profile-shanghai-min.jpg">
     <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia">
     <meta name="author" content="Joshua Clifford Reyes">
     <meta name="description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia">
     
-    <!-- CRITICAL SCRIPS OR STYLE-SHEETS -->
-    <link href="%PUBLIC_URL%/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- End CRITICAL SCRIPS OR STYLE-SHEETS -->
+    <!-- Critical Resources Load -->
+    <link rel="preload" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" type="text/css" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" type="text/css" crossorigin>
+    <link rel="stylesheet" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/css/all.css" type="text/css">
+    <!-- <script defer src="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/js/all.js"></script> -->
+    <!-- <script src="https://kit.fontawesome.com/5b5686886e.js"></script> -->
+    <link rel="stylesheet"  href="%PUBLIC_URL%/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css">
+    <!-- End Critical Resources Load -->
     
     <!-- Google Analytics -->
     <script async>
@@ -93,17 +101,9 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <!-- NON CRITICAL SCRIPS OR STYLE-SHEETS -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet" type="text/css">
-    <link rel="preload" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2" as="font">
-    <link rel="preload" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font">
-    <link rel="preload" href="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font">
-    <!-- <script defer src="%PUBLIC_URL%/resources/vendor/fontawesome-free-5.10.2-web/js/all.js"></script> -->
-    <!-- <script src="https://kit.fontawesome.com/5b5686886e.js"></script> -->
+    <!-- Non Critical Resources Load -->
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-    <!-- End NON CRITICAL SCRIPS OR STYLE-SHEETS -->
+    <!-- End Non Critical Resources Load -->
 
   </body>
 </html>
