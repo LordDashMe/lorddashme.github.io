@@ -466,14 +466,14 @@ export default class CareerHistory extends Component<IProperty, IState> {
         <div key={organization.id} className="ch-organization">
           <span>
             <img className="ch-org-logo" src={organization.logo} alt="STI" style={organization.logoStyle}/>
-            <h2 className="ch-org-name">{organization.name}</h2>
+            <h3 className="ch-org-name">{organization.name}</h3>
           </span>
           {
             organization.roles.map(role => {
               return (
                 <div key={role.id} className="ch-position-wrapper">
                   <div className="ch-position">
-                    <h3 className="ch-role">{role.name}</h3>
+                    <h4 className="ch-role">{role.name}</h4>
                     <p className="ch-role-term"><i className="far fa-calendar-alt" aria-hidden="true"></i> <small>{role.term}</small></p>
                   </div>
                   <div className="ch-highlight-details">

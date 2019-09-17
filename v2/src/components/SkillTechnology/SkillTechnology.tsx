@@ -466,7 +466,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
         <div key={detail.id} className="st-full-details">
           <span className="st-role">
             <i className={'st-role__icon ' + detail.icon} aria-hidden="true"></i>
-            <h2 className="st-role__title">&nbsp;{detail.role}</h2>
+            <h3 className="st-role__title">&nbsp;{detail.role}</h3>
           </span>
           {
             detail.tools.map(tool => {
@@ -478,7 +478,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
                 <div key={tool.id}>
                   <span className={toolClassName}>
                     <i className={ 'st-tool__icon ' + tool.icon } aria-hidden="true"></i>
-                    <h3 className="st-tool__name">&nbsp;{tool.name}</h3>
+                    <h4 className="st-tool__name">&nbsp;{tool.name}</h4>
                   </span>
                   {
                     tool.libraries.map(library => {

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-import './GoogleAdsense.scss';
+import style from './GoogleAdsense.module.scss';
+
+// Line Item: LordDashMe_Horizontal_Home
+const GOOGLE_AD_CLIENT = 'ca-pub-3427694918014398';
+const GOOGLE_AD_SLOT = '4220072227';
 
 declare global {
   
@@ -16,16 +20,17 @@ export default class GoogleAdsense extends Component {
   }
 
   public render(): JSX.Element {
+    
     const googleAdsStyle = {
       'display': 'block'
     };
+
     return (
-      <div className="GoogleAdsense">
-        {/* LordDashMe_Horizontal_Home */}
+      <div className={style['container']}>
         <ins className="adsbygoogle"
              style={googleAdsStyle}
-             data-ad-client="ca-pub-3427694918014398"
-             data-ad-slot="4220072227"
+             data-ad-client={GOOGLE_AD_CLIENT}
+             data-ad-slot={GOOGLE_AD_SLOT}
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
       </div>

@@ -19,7 +19,7 @@ export default class Section extends Component<ISectionProperty, ISectionState> 
     }
     return (
       <section key={this.props.id} className="Section">
-        <h1 className="section-title">{this.props.title}</h1>
+        <h2 className="section-title">{this.props.title}</h2>
         {thematicBreak}
         {this.props.children}
       </section>

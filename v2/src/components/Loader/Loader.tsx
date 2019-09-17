@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Loader.scss';
+import style from './Loader.module.scss';
 
 interface ILoaderProperty {
   visibility: boolean;
@@ -12,16 +12,16 @@ export default class Loader extends Component<ILoaderProperty, ILoaderState> {
 
   public render(): JSX.Element {
 
-    let loaderClasses = 'loader-signal-background';
+    let loaderClasses = style['signal-wrapper'];
     
     if (! this.props.visibility) {
-      loaderClasses = 'loader-signal-background out';
+      loaderClasses += ' ' + style['off'];
     }
 
     return (
-      <div className="Loader">
+      <div className={style['container']}>
         <div className={loaderClasses}>
-          <div className="loader-signal"></div>
+          <div className={style['signal']}></div>
         </div>
       </div>
     );

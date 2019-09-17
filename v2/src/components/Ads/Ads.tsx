@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Ads.scss';
+import style from './Ads.module.scss';
 
 interface IAdsProperty {
   appearance: string;
@@ -11,10 +11,13 @@ interface IAdsState {}
 export default class Ads extends Component<IAdsProperty, IAdsState> {
 
   public render(): JSX.Element {
-    let adsClassName = 'Ads';
+    
+    let adsClassName = style['container'];
+    
     if (this.props.appearance === 'horizontal') {
-      adsClassName += ' ads-style-horizontal';
+      adsClassName += ' ' + style['style-horizontal'];
     }
+
     return (
       <div className={adsClassName}>
         {this.props.children}

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import Loader from '../Loader/Loader';
-import NavigationBar from '../NavigationBar/NavigationBar';
-import Section from '../Section/Section';
-import Footer from '../Footer/Footer';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import Section from '../../components/Section/Section';
+import Footer from '../../components/Footer/Footer';
 
 import './PageInformation.scss';
 
@@ -15,33 +14,14 @@ interface IProperty {
   description: string;
 }
 
-interface IState {
-  loaderVisibility: boolean;
-}
+interface IState {}
 
 export default class PageInformation extends Component<IProperty, IState> {
-
-  public constructor(properties: IProperty) {
-    super(properties);
-
-    this.state = {
-      loaderVisibility: true
-    }
-  }
-
-  public componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        loaderVisibility: false 
-      });
-    }, 0);
-  }
 
   public render(): JSX.Element {
     document.title = this.props.pageTitle;
     return (
       <div className="PageInformation">
-        <Loader visibility={this.state.loaderVisibility} />
         <NavigationBar />
         <div className="page-wrapper">
           <Section id={this.props.id} title={this.props.title} showThematicBreak={false}>

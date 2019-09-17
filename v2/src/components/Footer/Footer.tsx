@@ -10,7 +10,7 @@ interface ISocialButton {
 
 export default class Footer extends Component {
 
-  private location: string = 'Pulong Buhangin, Sta. Maria, Bulacan, Philippines.';
+  private location: string = 'Pulong Buhangin, Santa Maria, Bulacan, Philippines.';
 
   private socialButtons: Array<ISocialButton> = [
     {

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import Loader from '../../components/Loader/Loader';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Section from '../../components/Section/Section';
 import Author from '../../components/Author/Author';
@@ -13,21 +12,10 @@ import CareerHistory from '../../components/CareerHistory/CareerHistory';
 import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
 
-
 const Home = () => {
-
-  const [loaderVisibility, setLoaderVisibility] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoaderVisibility(false);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="Home">
-      <Loader visibility={loaderVisibility} />
       <NavigationBar />
       <div className="page-wrapper">
         <Section id="author" title="HELLO, WORLD!" showThematicBreak={true}>

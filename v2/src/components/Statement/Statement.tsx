@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Statement.scss';
+import style from './Statement.module.scss';
 
 interface IStatementProperty {
   statement: string;
@@ -13,8 +13,8 @@ export default class Statement extends Component<IStatementProperty, IStatementS
 
   public render(): JSX.Element {
     return (
-      <div className="Statement">
-        <p className="s-content">"{this.props.statement}" - <i>{this.props.author}</i></p>
+      <div className={style['container']}>
+        <p className={style['content']}>"{this.props.statement}" - <i>{this.props.author}</i></p>
       </div>
     );
   }
