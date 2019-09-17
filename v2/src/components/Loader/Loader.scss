@@ -14,7 +14,7 @@
     &.out {
       opacity: 0;
       transition: visibility 0.9s, opacity 0.9s linear;
-      visibility: hidden;
+      display: none;
     }
   }
   
