@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './SkillTechnology.scss';
+import style from './SkillTechnology.module.scss';
 
 interface IProperty {}
 
@@ -460,51 +460,61 @@ export default class SkillTechnology extends Component<IProperty, IState> {
     };
   }
 
-  public getSkillTechnologyDetails(): JSX.Element[] {
+  private getSkillTechnologyDetails(): JSX.Element[] {
     return this.state.skillTechnologyDetails.map(detail => {
       return (
-        <div key={detail.id} className="st-full-details">
+        <div key={detail.id} className={style['wrapper']}>
           <span className="st-role">
-            <i className={'st-role__icon ' + detail.icon} aria-hidden="true"></i>
-            <h3 className="st-role__title">&nbsp;{detail.role}</h3>
+            <i className={style['role-icon'] + ' ' + detail.icon} aria-hidden="true"></i>
+            <h3 className={style['role-title']}>&nbsp;{detail.role}</h3>
           </span>
-          {
-            detail.tools.map(tool => {
-              let toolClassName = 'st-tool';
-              if (! tool.is_active) {
-                toolClassName += ' st-inactive';
-              }
-              return (
-                <div key={tool.id}>
-                  <span className={toolClassName}>
-                    <i className={ 'st-tool__icon ' + tool.icon } aria-hidden="true"></i>
-                    <h4 className="st-tool__name">&nbsp;{tool.name}</h4>
-                  </span>
-                  {
-                    tool.libraries.map(library => {
-                      let libraryClassName = 'st-library';
-                      if (! library.is_active) {
-                        libraryClassName += ' st-inactive';
-                      }
-                      return (
-                        <p key={library.id} className={libraryClassName}><i className="fa fa-angle-right" aria-hidden="true"></i> {library.name}</p> 
-                      );
-                    })
-                  }
-                </div>
-              );
-            })
-          }
+          {this.getTools(detail.tools)}
         </div> 
+      );
+    });
+  }
+
+  private getTools(tools: Array<ITool>): Array<JSX.Element> {
+    return tools.map(tool => {
+
+      let toolClassName = style['tool'];
+      
+      if (! tool.is_active) {
+        toolClassName += ' ' + style['inactive'];
+      }
+
+      return (
+        <div key={tool.id}>
+          <span className={toolClassName}>
+            <i className={style['tool-icon'] + ' ' + tool.icon} aria-hidden="true"></i>
+            <h4 className={style['tool-name']}>&nbsp;{tool.name}</h4>
+          </span>
+          {this.getLibraries(tool.libraries)}
+        </div>
+      );
+    });
+  }
+
+  private getLibraries(libraries: Array<ILibrary>): Array<JSX.Element> {
+    return libraries.map(library => {
+      
+      let libraryClassName = style['library'];
+      
+      if (! library.is_active) {
+        libraryClassName += ' ' + style['inactive'];
+      }
+
+      return (
+        <p key={library.id} className={libraryClassName}><i className="fa fa-angle-right" aria-hidden="true"></i> {library.name}</p> 
       );
     });
   }
 
   public render(): JSX.Element {
     return (
-      <div className="SkillTechnology">
+      <div className={style['container']}>
         {this.getSkillTechnologyDetails()}
-        <div className="st-note">
+        <div className={style['note']}>
           <p>
             <small>*The dark and bold fonts are the skills | technologies that are currently in use. Last updated July 14, 2019.</small>
           </p>

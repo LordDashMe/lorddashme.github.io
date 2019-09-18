@@ -1,9 +1,10 @@
 @import '../../../mixins';
 
-.StatusChart {
+.container {
   width: 50%;
   height: 50%;
   margin: 0 auto 30px auto;
+
   @include screen-mobile {
     width: 100%;
     height: 100%;

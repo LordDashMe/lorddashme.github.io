@@ -1,0 +1,74 @@
+@import '../../mixins';
+
+.container {
+  display: block;
+}
+
+.wrapper {
+  width: 365px;
+  margin: 0 auto 0 auto;
+
+  @include screen-mobile {
+    width: 320px;
+  }
+
+  @include screen-mobile-small {
+    width: 280px;
+  } 
+}
+
+.role-icon {
+  display: inline-block;
+  font-size: 1.5em;
+
+  @include screen-mobile {
+    font-size: 1.3em;
+  }
+
+  @include screen-mobile-small {
+    font-size: 1.1em;
+  }  
+}
+
+.role-title {
+  display: inline-block;
+  font-size: 1.5em;
+
+  @include screen-mobile {
+    font-size: 1.3em;
+  }
+
+  @include screen-mobile-small {
+    font-size: 1.1em;
+  } 
+}
+
+.tool {
+  margin-left: 20px;
+}
+
+.tool-icon {
+  display: inline-block;
+  font-size: 1em;
+}
+
+.tool-name {
+  display: inline-block;
+  font-size: 1em; 
+}
+
+.library {
+  font-size: 1em;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.inactive {
+  color: #777;
+}
+
+.note {
+  margin: 30px 0 0 0;
+  padding: 0 10px 0 10px;
+  text-align: center; 
+}

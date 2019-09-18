@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import { Pie }  from 'react-chartjs-2';
 
-import './StatusChart.scss';
+import style from './StatusChart.module.scss';
 
 export default class StatusChart extends Component {
 
   public render(): JSX.Element {
+    
     const data = {
-      labels: ['WEB DEVELOPMENT', 'MOBILE APP DEVELOPMENT', 'DESKTOP APP DEVELOPMENT', 'DEVOPS', 'COMPUTER NETWORKING'],
+      labels: [
+        'WEB DEVELOPMENT', 
+        'MOBILE APP DEVELOPMENT', 
+        'DESKTOP APP DEVELOPMENT', 
+        'DEVOPS', 
+        'COMPUTER NETWORKING'
+      ],
       datasets: [
         {
           label: '2018',
-          data: [9, 4, 3, 8, 6],
+          data: [
+            9, 
+            4, 
+            3, 
+            8, 
+            6
+          ],
           backgroundColor: [
             '#000',
             '#ccc',
@@ -22,6 +35,7 @@ export default class StatusChart extends Component {
         }
       ]
     };
+
     const options = {
       maintainAspectRatio: false,
       legend: {
@@ -34,8 +48,9 @@ export default class StatusChart extends Component {
         bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
       }
     };
+
     return (
-      <div className="StatusChart">
+      <div className={style['container']}>
         <Pie data={data} options={options} width={350} height={350} />
       </div>
     );
