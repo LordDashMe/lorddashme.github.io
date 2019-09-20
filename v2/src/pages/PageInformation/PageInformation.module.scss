@@ -1,0 +1,47 @@
+@import '../../mixins';
+
+.container {
+  display: block;
+}
+
+.wrapper {
+  flex-direction: column;
+  flex-basis: auto;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  min-height: 100vh;
+  margin-top: 0;
+  padding-bottom: 200px;
+  
+  @include screen-tablet-and-mobile {
+    margin-top: 50px;
+    padding-bottom: 0;
+  }
+}
+
+.content {
+  text-align: center;
+  width: 80%;
+  margin: 25px auto 25px auto;
+}
+
+.icon {
+  font-size: 6em;
+  color: #000;
+  margin: 0 0 20px 0;
+}
+
+.description {
+  font-size: 1.8em;
+
+  @include screen-mobile {
+    font-size: 1.4em;
+  }
+
+  @include screen-mobile-small {
+    font-size: 1.2em;
+  } 
+}

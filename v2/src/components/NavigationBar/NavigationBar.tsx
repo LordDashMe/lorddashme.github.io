@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
-import './NavigationBar.scss';
+import style from './NavigationBar.module.scss';
 
 interface INavigationBarProperty {}
 
 interface INavigationBarState {
+  brandName: string;
+  routes: Array<IRoutes>;
+  collapseStyle: object;
   toggleCollapse: boolean;
 }
 
@@ -17,36 +20,33 @@ interface IRoutes {
 
 export default class NavigationBar extends Component<INavigationBarProperty, INavigationBarState> {
 
-  private brandName: string = 'JOSHUA CLIFFORD REYES';
-
-  private collapseStyle: Object = {
-    'display': 'none'
-  };
-
-  private routes: Array<IRoutes> = [
-    {
-      id: 'home',
-      href: '/',
-      label: 'HOME',
-      icon: 'fas fa-home',
-    },
-    {
-      id: 'contact',
-      href: 'contact',
-      label: 'CONTACT',
-      icon: 'fas fa-paper-plane'
-    },
-    {
-      id: 'projects',
-      href: 'projects',
-      label: 'PROJECTS',
-      icon: 'fas fa-magic'
-    }
-  ];
-
   public constructor(properties: any) {
     super(properties);
     this.state = {
+      brandName: 'JOSHUA CLIFFORD REYES',
+      routes: [
+        {
+          id: 'home',
+          href: '/',
+          label: 'HOME',
+          icon: 'fas fa-home',
+        },
+        {
+          id: 'contact',
+          href: 'contact',
+          label: 'CONTACT',
+          icon: 'fas fa-paper-plane'
+        },
+        {
+          id: 'projects',
+          href: 'projects',
+          label: 'PROJECTS',
+          icon: 'fas fa-magic'
+        }
+      ],
+      collapseStyle: {
+        'display': 'none'
+      },
       toggleCollapse: false,
     };
   }
@@ -54,42 +54,55 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
   private defaultDetails(): JSX.Element {
     return (
       <div className="navbar-header page-scroll">
-        <button onClick={this.toggleCollapse.bind(this, '')} type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <button onClick={this.toggleCollapse.bind(this, '')} 
+                type="button" 
+                className={'navbar-toggle ' + style['navigation-bar-toggle']} 
+                data-toggle="collapse" 
+                data-target="#navigation-bar-collapsable">
           <span className="sr-only">Toggle navigation</span><i className="fa fa-bars"></i> MENU
         </button>
-        <h1 className="navbar-brand">{this.brandName}</h1>
+        <h1 className={'navbar-brand ' + style['navigation-bar-title']}>{this.state.brandName}</h1>
       </div>
     );
   }
 
   private toggleCollapse(): void {
-    let toggled = false;
     
-    this.collapseStyle = {
+    let toggled = false;
+    let collapseStyle = {
       'display': 'none'
-    }
+    };
     
     if (! this.state.toggleCollapse) {
+      
       toggled = true;
-
-      this.collapseStyle = {
+      collapseStyle = {
         'display': 'block'
       };
     }
 
-    this.setState({ toggleCollapse: toggled });
+    this.setState({ 
+      brandName: this.state.brandName,
+      routes: this.state.routes,
+      collapseStyle: collapseStyle,
+      toggleCollapse: toggled,
+    });
   }
 
-  private routesList(): JSX.Element {
+  private getMenuLinks(): JSX.Element {
     return (
-      <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={this.collapseStyle}>
+      <div className={'collapse navbar-collapse ' + style['navigation-bar-collapse']} 
+           id="navigation-bar-collapsable" 
+           style={this.state.collapseStyle}>
         <ul className="nav navbar-nav navbar-right">
           {
-            this.routes.map(route => {
+            this.state.routes.map(route => {
               const href = route.href;
               return (
                 <li key={route.id} className="page-scroll">
-                  <a href={href} rel="nofollow"><i className={route.icon} aria-hidden="true"></i> {route.label}</a>
+                  <a href={href} rel="nofollow">
+                    <i className={route.icon} aria-hidden="true"></i> {route.label}
+                  </a>
                 </li>
               );
             })
@@ -101,11 +114,11 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
 
   public render(): JSX.Element {
     return (
-      <div className="NavigationBar">
-        <nav className="navbar navbar-default navbar-fixed-top navbar-custom">
+      <div className={style['container']}>
+        <nav className={'navbar navbar-fixed-top ' + style['navigation-bar']}>
           <div className="container">
             {this.defaultDetails()}
-            {this.routesList()}
+            {this.getMenuLinks()}
           </div>
         </nav>
       </div>

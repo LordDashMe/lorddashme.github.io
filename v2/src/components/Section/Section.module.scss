@@ -3,6 +3,10 @@
 .container {
   padding: 40px 0 40px 0;
   border-top: 1px solid #e6e6e6;
+
+  &.hide {
+    border: 0;
+  }
 }
 
 .title {

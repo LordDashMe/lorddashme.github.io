@@ -18,26 +18,38 @@ const Home = () => {
     <div className="Home">
       <NavigationBar />
       <div className="page-wrapper">
-        <Section id="author" title="HELLO, WORLD!" showThematicBreak={true}>
+        <Section id="author" 
+                 title="HELLO, WORLD!" 
+                 showThematicBreak={true} 
+                 showBorderTop={true}>
           <Author />
         </Section>
-        <Section id="skills-technologies" title="SKILLS | TECHNOLOGIES" showThematicBreak={true}>
+        <Section id="skills-technologies" 
+                 title="SKILLS | TECHNOLOGIES" 
+                 showThematicBreak={true} 
+                 showBorderTop={true}>
           <StatusChart />
           <SkillTechnology />
         </Section>
         <Ads appearance="horizontal">
           <GoogleAdsense />
         </Ads>
-        <Section id="about" title="ABOUT" showThematicBreak={true}>
+        <Section id="about" 
+                 title="ABOUT" 
+                 showThematicBreak={true} 
+                 showBorderTop={true}>
           <About />
         </Section>
-        <Section id="career-history" title="CAREER HISTORY" showThematicBreak={true}>
+        <Section id="career-history" 
+                 title="CAREER HISTORY" 
+                 showThematicBreak={true} 
+                 showBorderTop={true}>
           <CareerHistory />
         </Section>
         <Statement statement="Write code as if you had to support it for the rest of your life." 
                    author="Yuriy Zubarev" />
       </div>
-      <Footer />
+      <Footer isFixedPosition={false}/>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Section from '../../components/Section/Section';
 import Footer from '../../components/Footer/Footer';
 
-import './PageInformation.scss';
+import style from './PageInformation.module.scss';
 
 interface IProperty {
   id: string;
@@ -19,19 +19,24 @@ interface IState {}
 export default class PageInformation extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
+
     document.title = this.props.pageTitle;
+    
     return (
-      <div className="PageInformation">
+      <div className={style['container']}>
         <NavigationBar />
-        <div className="page-wrapper">
-          <Section id={this.props.id} title={this.props.title} showThematicBreak={false}>
-            <div className="page-information-content">
-              <i className={'page-information-icon ' + this.props.primaryIcon}></i>
-              <p className="page-information-description">{this.props.description}</p>
+        <div className={style['wrapper']}>
+          <Section id={this.props.id} 
+                   title={this.props.title} 
+                   showThematicBreak={false} 
+                   showBorderTop={false}>
+            <div className={style['content']}>
+              <i className={style['icon'] + ' ' + this.props.primaryIcon}></i>
+              <p className={style['description']}>{this.props.description}</p>
             </div>
           </Section>
         </div>
-        <Footer />
+        <Footer isFixedPosition={true}/>
       </div>
     );
   }

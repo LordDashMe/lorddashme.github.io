@@ -40,6 +40,8 @@ export default class StatusChart extends Component {
       maintainAspectRatio: false,
       legend: {
         labels: {
+          boxWidth: 16,
+          fontSize: 12.9,
           fontColor: '#000',
           fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
         }
@@ -51,7 +53,7 @@ export default class StatusChart extends Component {
 
     return (
       <div className={style['container']}>
-        <Pie data={data} options={options} width={350} height={350} />
+        <Pie data={data} options={options} width={300} height={300} />
       </div>
     );
   }

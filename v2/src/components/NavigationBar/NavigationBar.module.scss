@@ -1,0 +1,61 @@
+@import '../../mixins';
+
+.container {
+  display: block;
+}
+
+.navigation-bar {
+  background-color: #000;
+  border-color: unset;
+  padding: 5px 0;
+
+  @include screen-mobile {
+    padding: 0;
+  }
+}
+
+.navigation-bar-title {
+  font-weight: bold;
+  font-family: $default-font-family;
+  padding: 15px 15px;
+  font-size: 1.5em;
+  color: #fff;
+  margin: 0; 
+  &:hover, 
+  &:focus, 
+  &:active {
+    color: #fff;
+  }
+  @include screen-mobile {
+    font-size: 1em;
+  }
+}
+
+.navigation-bar-toggle {
+  margin-left: 5px;
+  border-color: unset;
+  border-radius: 1px;
+  color: #fff;
+  font-weight: bold;
+  font-family: $default-font-family;
+  font-size: 0.9em;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.navigation-bar-collapse {
+  border-color: #e7e7e7;
+  li {
+    a {
+      font-family: $default-font-family;
+      color: #fff;
+      font-weight: bold;
+      &:hover, 
+      &:focus, 
+      &:active {
+        background-color: unset;
+        border-color: #fff;
+      }
+    }
+  }
+}

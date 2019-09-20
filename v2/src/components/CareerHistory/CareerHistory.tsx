@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './CareerHistory.scss';
+import style from './CareerHistory.module.scss';
 
 interface IProperty {}
 
@@ -11,6 +11,7 @@ interface IState {
 interface IOrganization {
   id: string;
   logo: string;
+  logoAlt: string;
   logoStyle: object;
   name: string;
   roles: Array<IRole>;
@@ -39,6 +40,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         {
           id: 'nmi',
           logo: 'resources/img/companies/gma-nmi-logo.png',
+          logoAlt: 'NMI',
           logoStyle: {
             width: '128px',
             maxWidth: '26%'
@@ -113,6 +115,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         {
           id: 'nw',
           logo: 'resources/img/companies/logo-nuworks.png',
+          logoAlt: 'NW',
           logoStyle: {},
           name: 'NuWorks Interactive Labs, Inc. (NuWorks)',
           roles: [
@@ -307,6 +310,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         {
           id: 'gs3',
           logo: 'resources/img/companies/gs3_logo.svg',
+          logoAlt: 'GS3',
           logoStyle: {},
           name: 'Global Strategic Solutions and Services, Inc. (GS3)',
           roles: [
@@ -411,6 +415,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         {
           id: 'sti',
           logo: 'resources/img/companies/STI300-min-super.png',
+          logoAlt: 'STI',
           logoStyle: {
             width: '100px',
             maxWidth: '25%',
@@ -463,49 +468,55 @@ export default class CareerHistory extends Component<IProperty, IState> {
   private getCareerHistoryDetails(): JSX.Element[] {
     return this.state.careerHistoryDetails.map(organization => {
       return (
-        <div key={organization.id} className="ch-organization">
+        <div key={organization.id} className={style['organization']}>
           <span>
-            <img className="ch-org-logo" src={organization.logo} alt="STI" style={organization.logoStyle}/>
-            <h3 className="ch-org-name">{organization.name}</h3>
+            <img className={style['organization-logo']} src={organization.logo} alt={organization.logoAlt} style={organization.logoStyle}/>
+            <h3 className={style['organization-name']}>{organization.name}</h3>
           </span>
-          {
-            organization.roles.map(role => {
-              return (
-                <div key={role.id} className="ch-position-wrapper">
-                  <div className="ch-position">
-                    <h4 className="ch-role">{role.name}</h4>
-                    <p className="ch-role-term"><i className="far fa-calendar-alt" aria-hidden="true"></i> <small>{role.term}</small></p>
-                  </div>
-                  <div className="ch-highlight-details">
-                    {
-                      role.highlights.map(highlight => {
-                        return (
-                          <div key={highlight.id} className="ch-highlight-wrapper">
-                            <span className="ch-highlight-span">
-                              <i className={highlight.logo} aria-hidden="true"></i>
-                              <p className="ch-highlight">{highlight.name}</p>
-                            </span>
-                            {
-                              highlight.descriptions.map((description, index) => {
-                                return (
-                                  <div key={index} className="ch-highlight-desc">
-                                    <span className="ch-highlight-specific-span">
-                                      <i className="fas fa-angle-right" aria-hidden="true"></i>
-                                      <p className="ch-highlight-specific">{description}</p>
-                                    </span>
-                                  </div>
-                                );
-                              })
-                            }
-                          </div>  
-                        );
-                      })
-                    }
-                  </div>
-                </div>
-              );
-            })
-          }
+          {this.getOrganization(organization)}
+        </div>
+      );
+    });
+  }
+
+  private getOrganization(organization: IOrganization): Array<JSX.Element> {
+    return organization.roles.map(role => {
+      return (
+        <div key={role.id} className={style['position-wrapper']}>
+          <div className={style['position']}>
+            <h4 className={style['role']}>{role.name}</h4>
+            <p className={style['role-term']}><i className="far fa-calendar-alt" aria-hidden="true"></i> <small>{role.term}</small></p>
+          </div>
+          <div className={style['highlight']}>
+            {this.getRoles(role)}
+          </div>
+        </div>
+      );
+    });
+  }
+
+  private getRoles(role: IRole): Array<JSX.Element> {
+    return role.highlights.map(highlight => {
+      return (
+        <div key={highlight.id} className={style['highlight-wrapper']}>
+          <span>
+            <i className={style['highlight-marker'] + ' ' + highlight.logo} aria-hidden="true"></i>
+            <p className={style['highlight-label']}>{highlight.name}</p>
+          </span>
+          {this.getHighlights(highlight)}
+        </div>  
+      );
+    });
+  }
+
+  private getHighlights(highlight: IHighLight): Array<JSX.Element> {
+    return highlight.descriptions.map((description, index) => {
+      return (
+        <div key={index} className={style['highlight-description']}>
+          <span>
+            <i className={style['highlight-specific-marker'] + ' fas fa-angle-right'} aria-hidden="true"></i>
+            <p className={style['highlight-specific-label']}>{description}</p>
+          </span>
         </div>
       );
     });
@@ -513,7 +524,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className="CareerHistory">
+      <div className={style['container']}>
         {this.getCareerHistoryDetails()}
       </div>
     );

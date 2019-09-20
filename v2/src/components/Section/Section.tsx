@@ -6,6 +6,7 @@ interface ISectionProperty {
   id: string;
   title: string;
   showThematicBreak: boolean;
+  showBorderTop: boolean;
 }
 
 interface ISectionState {}
@@ -20,8 +21,14 @@ export default class Section extends Component<ISectionProperty, ISectionState> 
       thematicBreak = (<hr className={style['breaker']}></hr>);
     }
 
+    let borderTop = null;
+    
+    if (! this.props.showBorderTop) {
+      borderTop = style['hide'];
+    }
+
     return (
-      <section key={this.props.id} className={style['container']}>
+      <section key={this.props.id} className={style['container'] + ' ' + borderTop}>
         <h2 className={style['title']}>{this.props.title}</h2>
         {thematicBreak}
         {this.props.children}

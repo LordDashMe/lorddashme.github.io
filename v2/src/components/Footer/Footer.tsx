@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 import style from './Footer.module.scss';
 
-interface IProperty {}
+interface IProperty {
+  isFixedPosition: boolean;
+}
 
 interface IState {
   location: string;
@@ -120,8 +122,15 @@ export default class Footer extends Component<IProperty, IState> {
   }
 
   public render(): JSX.Element {
+
+    let container = style['container'];
+
+    if (this.props.isFixedPosition) {
+      container += ' ' + style['fixed-position'];
+    }
+
     return (
-      <footer className={style.container}>
+      <footer className={container}>
         {this.upperPart()}
         {this.lowerPart()}
       </footer>
