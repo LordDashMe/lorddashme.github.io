@@ -67,22 +67,26 @@ export default class Footer extends Component<IProperty, IState> {
       <div className={style['upper-section-wrapper'] + ' col-md-6'}>
         <h3 className={style['upper-section-title']}><i className="fas fa-share-square" aria-hidden="true"></i>&nbsp; LOOK FOR ME IN THE WEB</h3>
         <ul className="list-inline">
-          {
-            this.state.socialButtons.map(socialButton => {
-              const href = socialButton.href;
-              const icon = 'fab ' + socialButton.icon;
-              return (
-                <li key={socialButton.id}>
-                  <a target="_blank" href={href} className={style['button-social']} rel="noopener noreferrer">
-                    <i className={icon}></i>
-                  </a>
-                </li>
-              );
-            })
-          }
+          {this.getSocialButtons()}
         </ul>
       </div>
     );
+  }
+
+  private getSocialButtons(): Array<JSX.Element> {
+    return this.state.socialButtons.map(socialButton => {
+      
+      const href = socialButton.href;
+      const icon = 'fab ' + socialButton.icon;
+      
+      return (
+        <li key={socialButton.id}>
+          <a target="_blank" href={href} className={style['button-social']} rel="noopener noreferrer">
+            <i className={icon}></i>
+          </a>
+        </li>
+      );
+    });
   }
 
   private copyright(): JSX.Element {

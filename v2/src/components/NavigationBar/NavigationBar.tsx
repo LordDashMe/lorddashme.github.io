@@ -95,21 +95,25 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
            id="navigation-bar-collapsable" 
            style={this.state.collapseStyle}>
         <ul className="nav navbar-nav navbar-right">
-          {
-            this.state.routes.map(route => {
-              const href = route.href;
-              return (
-                <li key={route.id} className="page-scroll">
-                  <a href={href} rel="nofollow">
-                    <i className={route.icon} aria-hidden="true"></i> {route.label}
-                  </a>
-                </li>
-              );
-            })
-          }
+          {this.getRoutes()}
         </ul>
       </div>
     );
+  }
+
+  private getRoutes(): Array<JSX.Element> {
+    return this.state.routes.map(route => {
+
+      const href = route.href;
+      
+      return (
+        <li key={route.id} className="page-scroll">
+          <a href={href} rel="nofollow">
+            <i className={route.icon} aria-hidden="true"></i> {route.label}
+          </a>
+        </li>
+      );
+    });
   }
 
   public render(): JSX.Element {

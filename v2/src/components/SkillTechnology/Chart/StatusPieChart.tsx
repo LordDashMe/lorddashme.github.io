@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Pie }  from 'react-chartjs-2';
 
-import style from './StatusChart.module.scss';
+import style from './StatusPieChart.module.scss';
 
-export default class StatusChart extends Component {
+export default class StatusPieChart extends Component {
 
   public render(): JSX.Element {
     

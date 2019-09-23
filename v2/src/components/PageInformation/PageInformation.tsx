@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Section from '../../components/Section/Section';
-import Footer from '../../components/Footer/Footer';
+import NavigationBar from '../NavigationBar/NavigationBar';
+import Section from '../Section/Section';
+import Statement from '../Statement/Statement';
+import Footer from '../Footer/Footer';
 
 import style from './PageInformation.module.scss';
 
@@ -35,6 +36,7 @@ export default class PageInformation extends Component<IProperty, IState> {
               <p className={style['description']}>{this.props.description}</p>
             </div>
           </Section>
+          <Statement />
         </div>
         <Footer isFixedPosition={true}/>
       </div>

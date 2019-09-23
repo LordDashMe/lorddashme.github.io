@@ -1,9 +1,10 @@
 import React from 'react';
 
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Section from '../../components/Section/Section';
 import Author from '../../components/Author/Author';
-import StatusChart from '../../components/SkillTechnology/StatusChart/StatusChart';
+import StatusPieChart from '../../components/SkillTechnology/Chart/StatusPieChart';
 import SkillTechnology from '../../components/SkillTechnology/SkillTechnology';
 import Ads from '../../components/Ads/Ads';
 import GoogleAdsense from '../../components/Ads/GoogleAdsense';
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <div className="Home">
       <NavigationBar />
-      <div className="page-wrapper">
+      <PageWrapper>
         <Section id="author" 
                  title="HELLO, WORLD!" 
                  showThematicBreak={true} 
@@ -28,7 +29,7 @@ const Home = () => {
                  title="SKILLS | TECHNOLOGIES" 
                  showThematicBreak={true} 
                  showBorderTop={true}>
-          <StatusChart />
+          <StatusPieChart />
           <SkillTechnology />
         </Section>
         <Ads appearance="horizontal">
@@ -46,9 +47,8 @@ const Home = () => {
                  showBorderTop={true}>
           <CareerHistory />
         </Section>
-        <Statement statement="Write code as if you had to support it for the rest of your life." 
-                   author="Yuriy Zubarev" />
-      </div>
+        <Statement />
+      </PageWrapper>
       <Footer isFixedPosition={false}/>
     </div>
   );

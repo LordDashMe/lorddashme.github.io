@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageInformation from '../PageInformation/PageInformation';
+import PageInformation from '../../components/PageInformation/PageInformation';
 
 import './NotFound.scss';
 

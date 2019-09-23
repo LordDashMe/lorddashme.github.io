@@ -1,15 +1,16 @@
 import React from 'react';
 
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 
 function Projects () {
   document.title = 'Projects';
   return (
     <div className="Projects">
       <NavigationBar />
-      <div className="page-wrapper">
+      <PageWrapper>
         <h1>Projects</h1>
-      </div>
+      </PageWrapper>
     </div>
   );
 }

@@ -18,13 +18,6 @@ h6 {
   font-weight: bold;
 }
 
-.page-wrapper {
-  margin-top: 60px;
-  @include screen-mobile {
-    margin-top: 50px; 
-  }
-}
-
 .row {
   margin-left: unset;
   margin-right: unset;

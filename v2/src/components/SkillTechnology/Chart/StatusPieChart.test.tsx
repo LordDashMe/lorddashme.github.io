@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Statement from './Statement';
+import StatusPieChart from './StatusPieChart';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Statement />, div);
+  ReactDOM.render(<StatusPieChart />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
