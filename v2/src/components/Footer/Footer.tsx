@@ -81,12 +81,16 @@ export default class Footer extends Component<IProperty, IState> {
       
       return (
         <li key={socialButton.id}>
-          <a target="_blank" href={href} className={style['button-social']} rel="noopener noreferrer">
+          <div className={style['button-social']} onClick={this.onSocialButtonClick.bind(this, href)}>
             <i className={icon}></i>
-          </a>
+          </div>
         </li>
       );
     });
+  }
+
+  private onSocialButtonClick(href: string): void {
+    window.open(href, '_blank');
   }
 
   private copyright(): JSX.Element {
