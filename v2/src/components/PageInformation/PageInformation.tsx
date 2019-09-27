@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import NavigationBar from '../NavigationBar/NavigationBar';
+import PageWrapper from '../PageWrapper/PageWrapper';
 import Section from '../Section/Section';
 import Statement from '../Statement/Statement';
 import Footer from '../Footer/Footer';
@@ -26,7 +27,7 @@ export default class PageInformation extends Component<IProperty, IState> {
     return (
       <div className={style['container']}>
         <NavigationBar />
-        <div className={style['wrapper']}>
+        <PageWrapper>
           <Section id={this.props.id} 
                    title={this.props.title} 
                    showThematicBreak={false} 
@@ -37,8 +38,8 @@ export default class PageInformation extends Component<IProperty, IState> {
             </div>
           </Section>
           <Statement />
-        </div>
-        <Footer isFixedPosition={true}/>
+        </PageWrapper>
+        <Footer isFixedPosition={false}/>
       </div>
     );
   }

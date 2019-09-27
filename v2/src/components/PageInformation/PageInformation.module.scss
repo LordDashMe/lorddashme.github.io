@@ -2,23 +2,10 @@
 
 .container {
   display: block;
-}
+  padding-top: 150px;
 
-.wrapper {
-  flex-direction: column;
-  flex-basis: auto;
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  min-height: 100vh;
-  margin-top: 0;
-  padding-bottom: 200px;
-  
-  @include screen-tablet-and-mobile {
-    margin-top: 50px;
-    padding-bottom: 0;
+  @include screen-mobile {
+    padding-top: 70px;
   }
 }
 

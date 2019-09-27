@@ -1,0 +1,45 @@
+@import '../../mixins';
+
+.container {
+  display: block;
+  width: 430px;
+  margin: 0 auto 0 auto;
+
+  @include screen-mobile {
+    width: 85%;
+  }
+}
+
+.form {
+  display: block;
+}
+
+.field {
+  display: block;
+}
+
+.label {
+  display: block;
+  font-size: 1em;
+}
+
+.control {
+  border-radius: 0;
+  color: #000;
+}
+
+textarea.textarea {
+  height: 150px;
+
+  @include screen-mobile {
+    height: 100px;
+  }
+
+}
+
+button.button {
+  display: block;
+  width: 160px;
+  margin: 0 auto 0 auto;
+  border-radius: 0;
+}

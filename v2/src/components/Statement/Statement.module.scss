@@ -5,12 +5,14 @@
 }
 
 .content {
-  margin: 0 20px 60px 20px;
+  width: 50%;
+  margin: 0 auto 60px auto;
   font-size: 1.4em;
   text-align: center;
   
   @include screen-mobile {
     font-size: 1.1em;
+    width: 80%;
   }
   
   @include screen-mobile-small {
