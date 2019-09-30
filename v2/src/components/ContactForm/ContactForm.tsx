@@ -53,7 +53,7 @@ export default class ContactForm extends Component<IProperty, IState> {
       body: JSON.stringify(this.state.contact)
     }).then((response) => {
       if (response.status === 200) {
-        alert('Message sent! Thanks.');
+        alert('Message sent!');
         window.location.reload();
         return;
       }

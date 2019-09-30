@@ -93,6 +93,14 @@
             headers: { 'x-lorddashme-header': '1', 'content-type': 'application/json' }
         });
         $('.btn-send-mail').on('click', function () {
+            if (
+                (typeof $('input[name="name"]').val() === 'undefined' || $('input[name="name"]').val() === '') ||
+                (typeof $('input[name="email"]').val() === 'undefined' || $('input[name="email"]').val() === '') ||
+                (typeof $('textarea[name="message"]').val() === 'undefined' || $('textarea[name="message"]').val() === '')
+              ) {
+                alert('Please fill-up first all the required fields.');
+                return;
+              }
             $.post({
                 url: 'https://lorddashme-github-io-backend.herokuapp.com/contact',
                 data: JSON.stringify({
@@ -103,7 +111,7 @@
                 }),
                 dataType: 'json'
             }, function (result) {
-                alert('Message sent! Thanks.');
+                alert('Message sent!');
                 window.location.reload();
                 return;
             }).fail(function (error) {
