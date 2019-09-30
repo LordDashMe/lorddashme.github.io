@@ -99,14 +99,12 @@
                     webVersion: 'v1'
                 }
             }, function (result) {
-                if (typeof result.message !== 'undefined') {
-                    alert(result.message);
-                    console.error(result.message);
-                    return;
-                }
                 alert('Message sent! Thanks.');
                 window.location.reload();
                 return;
+            }).fail(function (error) {
+                alert(error.responseJSON.message);
+                console.error(error.responseJSON.message);
             });
         });
     }
