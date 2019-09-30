@@ -91,21 +91,21 @@
     function sendMail() {
         $('.btn-send-mail').on('click', function () {
             $.post({
-                url: 'https://lorddashme.cf/sendmail.php',
+                url: 'https://lorddashme-github-io-backend.herokuapp.com/contact',
                 data: {
-                    send_message: true,
                     name: $('input[name="name"]').val(),
                     email: $('input[name="email"]').val(),
                     message: $('textarea[name="message"]').val(),
+                    webVersion: 'v1'
                 }
             }, function (result) {
-                if (typeof result.error !== 'undefined') {
-                    alert(result.error);
+                if (typeof result.message !== 'undefined') {
+                    alert(result.message);
+                    console.error(result.message);
                     return;
                 }
-
-                alert(result.message);
-                window.location.replace("index.html");
+                alert('Message sent! Thanks.');
+                window.location.reload();
                 return;
             });
         });

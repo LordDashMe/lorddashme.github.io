@@ -12,6 +12,7 @@ interface IContact {
   name: string;
   email: string;
   message: string;
+  webVersion: string;
 }
 
 export default class ContactForm extends Component<IProperty, IState> {
@@ -25,13 +26,23 @@ export default class ContactForm extends Component<IProperty, IState> {
       contact: {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        webVersion: 'v2'
       }
     };
   }
 
   private onSubmitFormHandler(): void {
     
+    if (
+      (typeof this.state.contact.name === 'undefined' || this.state.contact.name === '') ||
+      (typeof this.state.contact.email === 'undefined' || this.state.contact.email === '') ||
+      (typeof this.state.contact.message === 'undefined' || this.state.contact.message === '')
+    ) {
+      alert('Please fill-up first all the required fields.');
+      return;
+    }
+
     fetch(ContactForm.API_CONTACT, {
       method: 'POST',
       headers: {
@@ -41,13 +52,11 @@ export default class ContactForm extends Component<IProperty, IState> {
       },
       body: JSON.stringify(this.state.contact)
     }).then((response) => {
-      
       if (response.status === 200) {
-        alert('Message sent! I will reply as soon as I receive the message. Thanks!');
+        alert('Message sent! Thanks.');
         window.location.reload();
-        return
+        return;
       }
-
       response.json().then((data) => {
         alert(data.message);
         console.error(data.message);
@@ -82,18 +91,18 @@ export default class ContactForm extends Component<IProperty, IState> {
       <div className={style['container']}>
         <form className={style['form']}>
           <div className={style['field'] + ' form-group'}>
-            <label className={style['label']}>NAME</label>
+            <label className={style['label']}>NAME*</label>
             <input value={this.state.contact.name} onChange={this.handleFieldChange.bind(this, 'name')} className={style['control'] + ' form-control'} type="text" placeholder="John Doe" />
           </div>
           <div className={style['field'] + ' form-group'}>
-            <label className={style['label']}>EMAIL</label>
+            <label className={style['label']}>EMAIL*</label>
             <input value={this.state.contact.email} onChange={this.handleFieldChange.bind(this, 'email')} className={style['control'] + ' form-control'} type="text" placeholder="john.doe@example.com" />
           </div>
           <div className={style['field'] + ' form-group'}>
-            <label className={style['label']}>MESSAGE</label>
+            <label className={style['label']}>MESSAGE*</label>
             <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['textarea'] + ' ' + style['control'] + ' form-control'} placeholder="Say something..."></textarea>
           </div>
-          <button className={style['button'] + ' btn'} type="button" onClick={this.onSubmitFormHandler.bind(this)}>Submit</button>
+          <button className={style['button'] + ' btn'} type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>Send</b></button>
         </form>
       </div>
     );

@@ -1,6 +1,6 @@
 # V2
 
-Usual used command with using custom docker environment setup: ```HOST=0.0.0.0 npm start```
+**Custom Documentation**: Used command with custom docker environment setup: ```HOST=0.0.0.0 npm start``` or used the npm command ```npm run start:dev```.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
