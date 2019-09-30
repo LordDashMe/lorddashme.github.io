@@ -89,15 +89,19 @@
     }
 
     function sendMail() {
+        $.ajaxSetup({
+            headers: { 'x-lorddashme-header': '1', 'content-type': 'application/json' }
+        });
         $('.btn-send-mail').on('click', function () {
             $.post({
                 url: 'https://lorddashme-github-io-backend.herokuapp.com/contact',
-                data: {
+                data: JSON.stringify({
                     name: $('input[name="name"]').val(),
                     email: $('input[name="email"]').val(),
                     message: $('textarea[name="message"]').val(),
                     webVersion: 'v1'
-                }
+                }),
+                dataType: 'json'
             }, function (result) {
                 alert('Message sent! Thanks.');
                 window.location.reload();
