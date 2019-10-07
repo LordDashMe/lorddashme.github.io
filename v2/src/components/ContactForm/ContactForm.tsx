@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+import Loader from '../Loader/Loader';
+
 import style from './ContactForm.module.scss';
 
 interface IProperty {}
 
 interface IState {
   contact: IContact
+  loader: boolean;
 }
 
 interface IContact {
@@ -22,13 +25,15 @@ export default class ContactForm extends Component<IProperty, IState> {
   public constructor(properties: any) {
     
     super(properties);
+
     this.state = {
       contact: {
         name: '',
         email: '',
         message: '',
         webVersion: 'v2'
-      }
+      },
+      loader: false
     };
   }
 
@@ -43,6 +48,8 @@ export default class ContactForm extends Component<IProperty, IState> {
       return;
     }
 
+    this.triggerLoader(true);
+
     fetch(ContactForm.API_CONTACT, {
       method: 'POST',
       headers: {
@@ -53,15 +60,23 @@ export default class ContactForm extends Component<IProperty, IState> {
       body: JSON.stringify(this.state.contact)
     }).then((response) => {
       if (response.status === 200) {
+        this.triggerLoader(false);
         alert('Message sent!');
         window.location.reload();
         return;
       }
       response.json().then((data) => {
+        this.triggerLoader(false);
         alert(data.message);
         console.error(data.message);
       });
     });
+  }
+
+  private triggerLoader(visiblity: boolean): void {
+    const state = {...this.state};
+    state['loader'] = visiblity;
+    this.setState(state);
   }
 
   private handleFieldChange(key: string, event: any): void {
@@ -69,13 +84,13 @@ export default class ContactForm extends Component<IProperty, IState> {
     let contact = this.state.contact;
     
     if (key === 'name') {
-      contact.name = event.target.value;
+      contact['name'] = event.target.value;
     }
     if (key === 'email') {
-      contact.email = event.target.value;
+      contact['email'] = event.target.value;
     }
     if (key === 'message') {
-      contact.message = event.target.value;
+      contact['message'] = event.target.value;
     }
 
     const state = {...this.state};
@@ -89,6 +104,9 @@ export default class ContactForm extends Component<IProperty, IState> {
     
     return (
       <div className={style['container']}>
+
+        <Loader visibility={this.state.loader}/>
+        
         <form className={style['form']}>
           <div className={style['field'] + ' form-group'}>
             <label className={style['label']}>NAME*</label>

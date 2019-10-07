@@ -21,7 +21,9 @@ interface IImage {
 export default class Author extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
+
     super(properties);
+    
     this.state = {
       author: {
         image: {

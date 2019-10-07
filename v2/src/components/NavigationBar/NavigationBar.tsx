@@ -21,7 +21,9 @@ interface IRoutes {
 export default class NavigationBar extends Component<INavigationBarProperty, INavigationBarState> {
 
   public constructor(properties: any) {
+
     super(properties);
+    
     this.state = {
       brandName: 'JOSHUA CLIFFORD REYES',
       routes: [
@@ -81,12 +83,12 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
       };
     }
 
-    this.setState({ 
-      brandName: this.state.brandName,
-      routes: this.state.routes,
-      collapseStyle: collapseStyle,
-      toggleCollapse: toggled,
-    });
+    const state = {...this.state};
+
+    state['collapseStyle'] = collapseStyle;
+    state['toggleCollapse'] = toggled;
+
+    this.setState(state);
   }
 
   private getMenuLinks(): JSX.Element {

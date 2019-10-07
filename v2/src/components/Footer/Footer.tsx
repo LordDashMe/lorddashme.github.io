@@ -20,7 +20,9 @@ interface ISocialButton {
 export default class Footer extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
+
     super(properties);
+    
     this.state = {
       location: 'Pulong Buhangin, Santa Maria, Bulacan, Philippines.', 
       socialButtons: [

@@ -17,7 +17,9 @@ interface IAbout {
 export default class About extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
+
     super(properties);
+    
     this.state = {
       about: [
         {

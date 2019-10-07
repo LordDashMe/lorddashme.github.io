@@ -32,7 +32,9 @@ interface ILibrary {
 export default class SkillTechnology extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
+
     super(properties);
+    
     this.state = {
       skillTechnologyDetails: [
         {

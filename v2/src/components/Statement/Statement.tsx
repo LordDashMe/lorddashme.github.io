@@ -17,7 +17,9 @@ interface IStatement {
 export default class Statement extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
+
     super(properties);
+    
     this.state = {
       statements: [ // Reference: https://www.goodreads.com/quotes/tag/programming?page=5
         {
