@@ -17,7 +17,7 @@ function Contact () {
       <div className="Contact-wrapper">
       <PageWrapper>
         <Section id="contact"
-                 title="CONTACT ME"
+                 title="CONTACT"
                  showThematicBreak={true}
                  showBorderTop={false}>
           <ContactForm />

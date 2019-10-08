@@ -2,6 +2,9 @@ import React from 'react';
 
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
+import Section from '../../components/Section/Section';
+import Project from '../../components/Project/Project';
+import Footer from '../../components/Footer/Footer';
 
 function Projects () {
   document.title = 'Projects';
@@ -9,8 +12,14 @@ function Projects () {
     <div className="Projects">
       <NavigationBar />
       <PageWrapper>
-        <h1>Projects</h1>
+        <Section id="projects" 
+                 title="PROJECTS" 
+                 showThematicBreak={true} 
+                 showBorderTop={true}>
+          <Project />
+        </Section>
       </PageWrapper>
+      <Footer isFixedPosition={false}/>
     </div>
   );
 }

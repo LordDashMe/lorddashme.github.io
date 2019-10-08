@@ -4,9 +4,9 @@ import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
-// import Projects from './pages/Projects/Projects';
+import Projects from './pages/Projects/Projects';
 import NotFound from './pages/NotFound/NotFound';
-import ComingSoon from './pages/ComingSoon/ComingSoon';
+// import ComingSoon from './pages/ComingSoon/ComingSoon';
 
 import './index.scss';
 
@@ -16,9 +16,9 @@ const AppStarter = () => {
   return (
     <BrowserRouter basename="/">
       <Switch>
-        <Route path="/" exact component={Home}></Route>
-        <Route path="/contact" component={Contact}></Route>
-        <Route path="/projects" component={ComingSoon}></Route>
+        <Route path="/" exact component={Home} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/projects" component={Projects} />
         <Route path="/notfound" component={NotFound} />
         <Redirect to="/notfound" />
       </Switch>
