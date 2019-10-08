@@ -98,7 +98,7 @@ export default class Project extends Component<IProperty, IState> {
           <h3 className={style['title']}>{project.title}</h3>
           <p className={style['description']}>{project.description}</p>
           <img alt={project.imageAlt} className={style['image']} src={project.image} />
-          <a className={style['link']} href={project.link}>View More</a>
+          <a className={style['link']} href={project.link} target="_blank">View More</a>
         </div>
       );
     });
