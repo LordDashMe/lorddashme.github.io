@@ -1,6 +1,14 @@
 # V2
 
-**Custom Documentation**: Used command with custom docker environment setup: ```HOST=0.0.0.0 npm start``` or used the npm command ```npm run start:dev```.
+## Custom Documentation
+
+### Stack
+
+- [Firebase](https://www.npmjs.com/package/firebase) - Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
+
+### Usage
+
+- Used command with custom docker environment setup: ```HOST=0.0.0.0 npm start``` or used the npm command ```npm run start:dev```.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
