@@ -1,15 +1,5 @@
 # V2
 
-## Custom Documentation
-
-### Stack
-
-- [Firebase](https://www.npmjs.com/package/firebase) - Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
-
-### Usage
-
-- Used command with custom docker environment setup: ```HOST=0.0.0.0 npm start``` or used the npm command ```npm run start:dev```.
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -78,3 +68,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Custom Documentation
+
+### Tech Stacks | Packages
+
+- [Firebase](https://www.npmjs.com/package/firebase) - Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
+
+### Usage
+
+- Used command with custom docker environment setup: ```HOST=0.0.0.0 npm start``` or used the npm command ```npm run start:dev```.
