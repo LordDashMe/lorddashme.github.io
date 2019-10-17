@@ -34,12 +34,19 @@ textarea.textarea {
   @include screen-mobile {
     height: 100px;
   }
-
 }
 
 button.button {
   display: block;
-  width: 160px;
+  width: 110px;
   margin: 0 auto 0 auto;
   border-radius: 0;
+  color: #fff;
+  background: #000;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff; 
+  }
 }

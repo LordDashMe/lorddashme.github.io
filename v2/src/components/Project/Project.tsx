@@ -9,7 +9,7 @@ interface IProperty {}
 
 interface IState {
   projects: Array<IProjects>;
-  pageLoaderVisibility: boolean;
+  loader: boolean;
 }
 
 interface IProjects {
@@ -29,7 +29,7 @@ export default class Project extends Component<IProperty, IState> {
     
     this.state = {
       projects: [],
-      pageLoaderVisibility: true 
+      loader: true 
     };
 
     this.fetchProjectsOnFireStore();
@@ -54,7 +54,7 @@ export default class Project extends Component<IProperty, IState> {
       
       this.setState({
         projects: projects,
-        pageLoaderVisibility: false
+        loader: false
       });
     });
   }
@@ -75,7 +75,7 @@ export default class Project extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div className={style['container']}>
-        <Loader visibility={this.state.pageLoaderVisibility}/>
+        <Loader visibility={this.state.loader}/>
         {this.getProjects()}
       </div>
     );
