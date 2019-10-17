@@ -1,4 +1,4 @@
-# V2
+# Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -69,12 +69,30 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-## Custom Documentation
+## V2
 
-### Tech Stacks | Packages
+The version 2 of the LordDashMe Website.
+
+The documentation of Create React App above was retain for the sake of history to note we create the website from scratch.
+
+### Custom Documentation
+
+#### Tech Stacks | Packages
+
+- [TypeScript](https://www.npmjs.com/package/typescript) - TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
+
+- [Node Sass](https://www.npmjs.com/package/node-sass) - Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
+
+- [Chart.js](https://www.npmjs.com/package/chart.js?activeTab=readme) - Simple yet flexible JavaScript charting for designers & developers
 
 - [Firebase](https://www.npmjs.com/package/firebase) - Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
 
-### Usage
+#### Usage
 
-- Used command with custom docker environment setup: ```HOST=0.0.0.0 npm start``` or used the npm command ```npm run start:dev```.
+##### Development
+
+- Use this registered custom npm script command ```npm run start:dev```.
+
+##### Production
+
+- Use this command ```npm run build:deploy``` to deploy the assets on the root directory.
