@@ -73,7 +73,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 The version 2 of the LordDashMe Website.
 
-The documentation of Create React App above was retain for the sake of history to note we create the website from scratch.
+The documentation of Create React App above was retain for the sake of history to note that we create the website from scratch.
 
 ### Custom Documentation
 
