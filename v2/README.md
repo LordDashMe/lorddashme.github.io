@@ -79,7 +79,7 @@ The documentation of Create React App above was retain for the sake of history t
 
 #### Tech Stacks | Packages
 
-- [Create React App](https://www.npmjs.com/package/create-react-app) - Starter kit development tool for the React world.
+- [Create React App](https://www.npmjs.com/package/create-react-app) - Create React App is an officially supported way to create single-page React applications. It offers a modern build setup with no configuration.
 
 - [TypeScript](https://www.npmjs.com/package/typescript) - TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
 
