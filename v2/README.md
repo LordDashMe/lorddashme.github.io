@@ -79,6 +79,8 @@ The documentation of Create React App above was retain for the sake of history t
 
 #### Tech Stacks | Packages
 
+- [Create React App](https://www.npmjs.com/package/create-react-app) - Starter kit development tool for the React world.
+
 - [TypeScript](https://www.npmjs.com/package/typescript) - TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
 
 - [Node Sass](https://www.npmjs.com/package/node-sass) - Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
@@ -96,3 +98,11 @@ The documentation of Create React App above was retain for the sake of history t
 ##### Production
 
 - Use this command ```npm run build:deploy``` to deploy the assets on the root directory.
+
+  - **Note:** Before executing the command this folders and files in the root directoy must be remove.
+
+    ```text
+    resources/
+    static/
+    precache-manifest.<hash-code>.js
+    ```
