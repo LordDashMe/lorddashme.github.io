@@ -71,7 +71,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Code Package | Library',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'NodeJS Image Squeezer'
+                    'NodeJS Image Squeezer',
+                    'Craftman'
                   ]
                 },
                 {
@@ -79,7 +80,30 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Amazon Web Services',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Simple Storage Service (S3)'
+                    'Simple Storage Service (S3)',
+                    'DynamoDB'
+                  ]
+                },
+                {
+                  id: 'google-firebase',
+                  name: 'Google Firebase',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Cloud Firestore'
+                  ]
+                },
+                {
+                  id: 'heroku',
+                  name: 'Heroku',
+                  logo: 'far fa-lightbulb',
+                  descriptions: []
+                },
+                {
+                  id: 'no-sql',
+                  name: 'NoSQL',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'MongoDB'
                   ]
                 },
                 {
@@ -99,7 +123,16 @@ export default class CareerHistory extends Component<IProperty, IState> {
                     'Angular',
                     'RxJS',
                     'TypeScript',
-                    'React'
+                    'React',
+                    'Web Worker'
+                  ]
+                },
+                {
+                  id: 'css',
+                  name: 'CSS',
+                  logo: 'far fa-lightbulb',
+                  descriptions: [
+                    'Sass'
                   ]
                 },
                 {
@@ -108,6 +141,22 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   logo: 'far fa-lightbulb',
                   descriptions: [
                     'Falcon'
+                  ]
+                },
+                {
+                  id: 'meetup-conference-attended',
+                  name: 'Meetup | Conference Attended',
+                  logo: 'fas fa-users',
+                  descriptions: [
+                    'Women Techmakers Manila 2019 (March 30, 2019)'
+                  ]
+                },
+                {
+                  id: 'training',
+                  name: 'Training',
+                  logo: 'fas fa-book',
+                  descriptions: [
+                    'AWS Technical Essentials Day (AWS Philippines | October 29, 2019)'
                   ]
                 }
               ]
@@ -241,8 +290,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Meetup | Conference Attended',
                   logo: 'fas fa-users',
                   descriptions: [
-                    'Laravel PH Meetup (September 20, 2018',
-                    'Wordpress - Wordcamp Manila 2018 (September 8, 2018)'
+                    'Laravel PH Meetup (September 20, 2018)',
+                    'Wordpress Wordcamp Manila 2018 (September 8, 2018)'
                   ]
                 }
               ]

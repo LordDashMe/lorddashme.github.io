@@ -77,7 +77,8 @@ export default class SkillTechnology extends Component<IProperty, IState> {
                 { id: 'jest', name: 'Jest', is_active: true },
                 { id: 'typescript', name: 'TypeScript', is_active: true },
                 { id: 'angular', name: 'Angular', is_active: true },
-                { id: 'rxjs', name: 'RxJS', is_active: true }
+                { id: 'rxjs', name: 'RxJS', is_active: true },
+                { id: 'web-worker', name: 'Web Worker', is_active: true }
               ],
               is_active: true
             },
@@ -204,7 +205,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Continuous Integration',
               icon: 'fas fa-bolt',
               libraries: [
-                { id: 'jenkins', name: 'Jenkins', is_active: true },
+                { id: 'jenkins', name: 'Jenkins', is_active: false },
                 { id: 'travisci', name: 'TravisCI', is_active: true },
                 { id: 'bitbucket_pipelines', name: 'Bitbucket Pipelines', is_active: false }
               ],
@@ -518,7 +519,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
         {this.getSkillTechnologyDetails()}
         <div className={style['note']}>
           <p>
-            <small>*The dark and bold fonts are the skills | technologies that are currently in use. Last updated July 14, 2019.</small>
+            <small>*The dark and bold fonts are the skills | technologies that are currently in use. Last updated November 6, 2019.</small>
           </p>
         </div>
       </div>
