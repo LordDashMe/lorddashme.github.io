@@ -17,6 +17,8 @@ interface ISocialButton {
   icon: string;
 }
 
+declare const ga: Function;
+
 export default class Footer extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
@@ -53,6 +55,13 @@ export default class Footer extends Component<IProperty, IState> {
         }
       ]
     }
+
+    this.loadGoogleAnalyticsPageView();   
+  }
+
+  private loadGoogleAnalyticsPageView(): void {
+    ga('create', 'UA-128894279-1', 'auto');
+    ga('send', 'pageview', window.location.pathname);
   }
 
   private authorLocation(): JSX.Element {
@@ -102,9 +111,11 @@ export default class Footer extends Component<IProperty, IState> {
           <small className={style['copyright']}>&copy; 2019</small> <a href="/" rel="noopener noreferrer">LordDashMe</a>
         </p>
         <p>
-          <small className={style['copyright']}>Made with <i className="fas fa-heart" aria-hidden="true"></i> | Visit the <a href="/v1/">v1</a> site.</small>
+          <small className={style['copyright']}>Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
           <br/>
           <small className={style['copyright']}>Powered by React and Github Pages</small>
+          <br/>
+          <small className={style['copyright']}>Throwback? check the old <a href="/v1/">v1</a> site.</small>
         </p>
       </div>
     );
