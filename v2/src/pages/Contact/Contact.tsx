@@ -12,6 +12,7 @@ import './Contact.scss';
 
 function Contact () {
   document.title = 'Contact';
+  document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
   return (
     <div className="Contact">
       <NavigationBar />

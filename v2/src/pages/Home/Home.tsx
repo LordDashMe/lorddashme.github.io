@@ -14,7 +14,7 @@ import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
-
+  document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
   return (
     <div className="Home">
       <NavigationBar />

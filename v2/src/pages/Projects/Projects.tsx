@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/Footer';
 
 function Projects () {
   document.title = 'Projects';
+  document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
   return (
     <div className="Projects">
       <NavigationBar />

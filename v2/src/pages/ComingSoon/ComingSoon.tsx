@@ -5,6 +5,7 @@ import PageInformation from '../../components/PageInformation/PageInformation';
 import './ComingSoon.scss';
 
 function ComingSoon () {
+  document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
   return (
     <div className="ComingSoon">
       <PageInformation id="coming-soon" 
