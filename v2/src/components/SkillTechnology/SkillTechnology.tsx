@@ -72,13 +72,13 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               libraries: [
                 { id: 'jquery', name: 'JQuery', is_active: true },
                 { id: 'nodejs', name: 'NodeJS', is_active: true },
-                { id: 'react', name: 'React', is_active: true },
                 { id: 'angularjs', name: 'AngularJS', is_active: false },
                 { id: 'jest', name: 'Jest', is_active: true },
                 { id: 'typescript', name: 'TypeScript', is_active: true },
-                { id: 'angular', name: 'Angular', is_active: true },
-                { id: 'rxjs', name: 'RxJS', is_active: true },
-                { id: 'web-worker', name: 'Web Worker', is_active: true }
+                { id: 'react', name: 'React', is_active: true },
+                { id: 'angular', name: 'Angular', is_active: false },
+                { id: 'rxjs', name: 'RxJS', is_active: false },
+                { id: 'web-worker', name: 'Web Worker', is_active: false }
               ],
               is_active: true
             },
@@ -519,7 +519,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
         {this.getSkillTechnologyDetails()}
         <div className={style['note']}>
           <p>
-            <small>*The dark and bold fonts are the skills | technologies that are currently in use. Last updated November 6, 2019.</small>
+            *The dark and bold fonts are the skills | technologies that are currently in use. Last updated February 03, 2020.
           </p>
         </div>
       </div>

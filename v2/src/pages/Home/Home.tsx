@@ -13,8 +13,10 @@ import CareerHistory from '../../components/CareerHistory/CareerHistory';
 import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
 
-const Home = () => {
+const Home = (): JSX.Element => {
+
   document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
+  
   return (
     <div className="Home">
       <NavigationBar />

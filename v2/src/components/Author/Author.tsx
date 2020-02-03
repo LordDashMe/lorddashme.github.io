@@ -27,7 +27,7 @@ export default class Author extends Component<IProperty, IState> {
     this.state = {
       author: {
         image: {
-          path: 'resources/img/profile-shanghai-min-super.jpg',
+          path: 'resources/img/profile-tianzifang-min-super.jpg',
           alt: 'Joshua Clifford Reyes'
         },
         description: 'INFORMATION TECHNOLOGY | WEB DEVELOPER | MOBILE DEVELOPER | DEVOPS | COMPUTER NETWORK | DATA STRUCTURE | MULTIMEDIA'

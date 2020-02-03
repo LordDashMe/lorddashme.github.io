@@ -4,8 +4,10 @@ import PageInformation from '../../components/PageInformation/PageInformation';
 
 import './NotFound.scss';
 
-function NotFound () {
+const NotFound = (): JSX.Element => {
+
   document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
+
   return (
     <div className="NotFound">
       <PageInformation id="not-found" 

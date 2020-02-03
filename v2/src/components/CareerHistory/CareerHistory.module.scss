@@ -30,14 +30,14 @@
 
 .organization-name {
   display: inline-block;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: bold;
   width: 70%;
   margin: 0 0 0 0;
   vertical-align: middle;
 
   @include screen-mobile {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 }
 
@@ -51,17 +51,13 @@
   margin-bottom: 5px;
 
   @include screen-mobile {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }
 
 .role-term {
   font-weight: 600;
-  font-size: 0.9em;
-
-  @include screen-mobile {
-    font-size: 0.8em;
-  }
+  font-size: 1em;
 }
 
 .highlight {
@@ -69,10 +65,10 @@
 }
 
 .highlight-wrapper {
-  font-size: 0.9em;
+  font-size: 1em;
         
   @include screen-mobile {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }
 

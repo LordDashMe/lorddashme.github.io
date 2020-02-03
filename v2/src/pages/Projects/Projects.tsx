@@ -7,9 +7,11 @@ import PoweredBy from '../../components/PoweredBy/PoweredBy';
 import Project from '../../components/Project/Project';
 import Footer from '../../components/Footer/Footer';
 
-function Projects () {
+const Projects = (): JSX.Element => {
+
   document.title = 'Projects';
   document.getElementsByName('canonical')[0].setAttribute('href', document.location.href);
+  
   return (
     <div className="Projects">
       <NavigationBar />

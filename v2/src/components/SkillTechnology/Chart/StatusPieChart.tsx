@@ -37,14 +37,14 @@ export default class StatusPieChart extends Component<IProperty, IState> {
                 10, 
                 3, 
                 3, 
-                7, 
-                5
+                6, 
+                4
               ],
               backgroundColor: [
                 '#000',
                 '#ccc',
                 '#ccc',
-                '#777',
+                '#404040',
                 '#777',
               ]
             }
@@ -55,7 +55,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
           legend: {
             labels: {
               boxWidth: 16,
-              fontSize: 12.9,
+              fontSize: 12,
               fontColor: '#000',
               fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
             }

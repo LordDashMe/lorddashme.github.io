@@ -10,11 +10,9 @@
   padding: 3px;
   margin: 0 0 20px 0;
   width: 450px;
-  height: 450px;
 
   @include screen-mobile {
     width: 270px;
-    height: 270px;
   }
 
   img {

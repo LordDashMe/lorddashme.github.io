@@ -50,20 +50,38 @@ export default class CareerHistory extends Component<IProperty, IState> {
           name: 'GMA New Media Inc. (NMI)',
           roles: [
             {
-              id: 'senior_web_developer',
-              name: 'Senior Web Developer',
+              id: 'analyst-web-developer',
+              name: 'Analyst Developer',
               term: 'January 2019 - Present',
               highlights: [
                 {
-                  id: 'web_development',
+                  id: 'web-development',
                   name: 'Web Development',
                   logo: 'fas fa-certificate',
                   descriptions: []
                 },
                 {
-                  id: 'gma_news_online_eleksyon_2019_microsite',
+                  id: 'gma-news-online-seagames-2019-microsite',
+                  name: 'GMA News Online - SEA Games 2019 Microsite',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'gma-news-online-sona-2019-microsite',
+                  name: 'GMA News Online - Sona 2019 Microsite',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'gma-news-online-eleksyon-2019-microsite',
                   name: 'GMA News Online - Eleksyon 2019 Microsite',
                   logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
+                  id: 'rookie-of-the-year-2019',
+                  name: 'Rookie of the Year 2019',
+                  logo: 'fas fa-medal',
                   descriptions: []
                 },
                 {
