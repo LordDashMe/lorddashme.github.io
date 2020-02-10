@@ -7,8 +7,6 @@ import PoweredBy from '../../components/PoweredBy/PoweredBy';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import Statement from '../../components/Statement/Statement';
 import Footer from '../../components/Footer/Footer';
-import Ads from '../../components/Ads/Ads';
-import GoogleAdsense from '../../components/Ads/GoogleAdsense';
 
 import './Contact.scss';
 
@@ -34,11 +32,6 @@ const Contact = (): JSX.Element => {
           <ContactForm />
         </Section>
         <Statement />
-        {/* Line Item: LordDashMe_Horizontal_Home */}
-        <Ads appearance="horizontal">
-          <GoogleAdsense adClient="ca-pub-3427694918014398"
-                         adSlot="4220072227"/>
-        </Ads>
       </PageWrapper>
       </div>
       <Footer isFixedPosition={false}/>
