@@ -519,7 +519,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
         {this.getSkillTechnologyDetails()}
         <div className={style['note']}>
           <p>
-            *The dark and bold fonts are the skills | technologies that are currently in use. Last updated February 03, 2020.
+            *The dark and bold fonts are the skills | technologies that are currently in use. Last updated February 3, 2020.
           </p>
         </div>
       </div>

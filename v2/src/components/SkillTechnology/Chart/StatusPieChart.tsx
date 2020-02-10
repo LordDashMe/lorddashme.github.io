@@ -55,7 +55,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
           legend: {
             labels: {
               boxWidth: 16,
-              fontSize: 12,
+              fontSize: 14,
               fontColor: '#000',
               fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
             }

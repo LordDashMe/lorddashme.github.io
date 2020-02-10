@@ -34,8 +34,10 @@ const Home = (): JSX.Element => {
           <StatusPieChart />
           <SkillTechnology />
         </Section>
+        {/* Line Item: LordDashMe_Horizontal_Home */}
         <Ads appearance="horizontal">
-          <GoogleAdsense />
+          <GoogleAdsense adClient="ca-pub-3427694918014398"
+                         adSlot="4220072227"/>
         </Ads>
         <Section id="about" 
                  title="ABOUT" 
@@ -50,6 +52,11 @@ const Home = (): JSX.Element => {
           <CareerHistory />
         </Section>
         <Statement />
+        {/* Line Item: LordDashMe_Horizontal_Home_2 */}
+        <Ads appearance="horizontal">
+          <GoogleAdsense adClient="ca-pub-3427694918014398"
+                         adSlot="2369194966"/>
+        </Ads>
       </PageWrapper>
       <Footer isFixedPosition={false}/>
     </div>

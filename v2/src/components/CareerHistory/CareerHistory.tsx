@@ -166,7 +166,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Meetup | Conference Attended',
                   logo: 'fas fa-users',
                   descriptions: [
-                    'Women Techmakers Manila 2019 (March 30, 2019)'
+                    'Women Techmakers Manila 2019 (March 30, 2019)',
+                    'Shopify Meetup Manila (February 8, 2020)'
                   ]
                 },
                 {
@@ -174,7 +175,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Training',
                   logo: 'fas fa-book',
                   descriptions: [
-                    'AWS Technical Essentials Day (AWS Philippines | October 29, 2019)'
+                    'AWS Technical Essentials Day - AWS Philippines (October 29, 2019)'
                   ]
                 }
               ]
@@ -299,8 +300,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Guest Speaker',
                   logo: 'fas fa-microphone-alt',
                   descriptions: [
-                    '"Composer Basic - Autoloading" (NWTalks Meetup | May 11, 2018)',
-                    '"Hardening Wordpress Security" (Coding Girl\'s Manila Meetup | January 26, 2018)'
+                    'Composer Basic Autoloading - NWTalks Meetup (May 11, 2018)',
+                    'Hardening Wordpress Security - Coding Girl\'s Manila Meetup (January 26, 2018)'
                   ]
                 },
                 {
@@ -369,7 +370,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Training',
                   logo: 'fas fa-book',
                   descriptions: [
-                    'Laravel Training (Inventive Media | March 24 - 27, 2017)'
+                    'Laravel Training - Inventive Media (March 24 - 27, 2017)'
                   ]
                 }
               ] 
@@ -523,7 +524,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: '1st Runner-up in App and Running (Mobile Development)',
                   logo: 'fas fa-star',
                   descriptions: [
-                    'STI Tagisan ng Talino (Dagupan Cluster Level | February 2015)'
+                    'STI Tagisan ng Talino - Dagupan Cluster Level (February 2015)'
                   ]
                 }
               ]

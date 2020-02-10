@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import WEBSITE_INFO from '../../info';
+
 import style from './Footer.module.scss';
 
 interface IProperty {
@@ -108,14 +110,12 @@ export default class Footer extends Component<IProperty, IState> {
     return (
       <div className="col-lg-12">
         <p>
-          <small className={style['copyright']}>&copy; 2019</small> <a href="/" rel="noopener noreferrer">LordDashMe</a>
+          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>{WEBSITE_INFO.buildVersion}</small>
         </p>
         <p>
-          <small className={style['copyright']}>Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
-          <br/>
-          <small className={style['copyright']}>Powered by React and Github Pages</small>
-          <br/>
-          <small className={style['copyright']}>Throwback? check the old <a href="/v1/">v1</a> site.</small>
+        <small className={style['copyright']}>Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
+        <br/>
+        <small className={style['copyright']}>Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a> {WEBSITE_INFO.reactVersion} and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a></small>
         </p>
       </div>
     );
