@@ -1,0 +1,103 @@
+@import '../../mixins';
+
+.container {
+  display: block;
+}
+
+.organization {
+  width: 500px;
+  margin: 0 auto 20px auto;
+
+  @include screen-mobile {
+    width: 330px;
+  }
+  
+  @include screen-mobile-small {
+    width: 280px;
+  }
+}
+
+.organization-logo {
+  display: inline-block;
+  width: 53px;
+  max-width: 15%;
+  margin: 0 10px 0 0;
+
+  @include screen-mobile {
+    max-width: 16%;
+  }
+}
+
+.organization-name {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 70%;
+  margin: 0 0 0 0;
+  vertical-align: middle;
+
+  @include screen-mobile {
+    font-size: 1.1em;
+  }
+}
+
+.position {
+  margin: 0 0 0 15px;
+}
+
+.role {
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 5px;
+
+  @include screen-mobile {
+    font-size: 1em;
+  }
+}
+
+.role-term {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.highlight {
+  margin: 20px 0 0 25px;
+}
+
+.highlight-wrapper {
+  font-size: 1em;
+        
+  @include screen-mobile {
+    font-size: 0.9em;
+  }
+}
+
+.highlight-marker {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 5px 0 0;
+}
+
+.highlight-label {
+  display: inline-block;
+  width: 80%;
+  font-weight: 600; 
+  vertical-align: top;
+}
+
+.highlight-description {
+  margin: 0 0 0 15px;
+}
+
+.highlight-specific-marker {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 5px 0 0;
+}
+
+.highlight-specific-label {
+  font-weight: 400;
+  display: inline-block;
+  width: 95%;
+  vertical-align: top;
+}

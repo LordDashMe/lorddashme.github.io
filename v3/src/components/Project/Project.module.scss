@@ -1,0 +1,54 @@
+@import '../../mixins';
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 1200px;
+  margin: 0 auto 0 auto;
+
+  @include screen-desktop-small {
+    width: 1000px;
+  }
+
+  @include screen-tablet-and-mobile {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  display: inline-block;
+  width: 33%;
+  padding: 0 20px 0 20px;
+
+  @include screen-tablet {
+    width: 50%;
+  }
+
+  @include screen-mobile {
+    width: 100%;
+  }
+}
+
+.title {
+  font-size: 1.5em;
+
+  @include screen-mobile-small {
+    font-size: 1.2em;
+  }
+}
+
+.description {
+  font-size: 0.9em;
+}
+
+.image {
+  width: 100%;
+  margin: 5px 0 5px 0;
+  border: 1px solid #eeee;
+  min-height: 150px;
+  height: auto;
+}
+
+.link {
+  font-size: 0.9em;
+}
