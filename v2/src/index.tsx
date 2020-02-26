@@ -14,7 +14,7 @@ import * as serviceWorker from './serviceWorker';
 
 const AppStarter = () => {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/v2/">
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/contact/" component={Contact} />

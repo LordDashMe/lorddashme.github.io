@@ -29,19 +29,19 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
       routes: [
         {
           id: 'home',
-          href: '/',
+          href: '/v2/',
           label: 'HOME',
           icon: 'fas fa-home',
         },
         {
           id: 'contact',
-          href: 'contact/',
+          href: '/v2/contact/',
           label: 'CONTACT',
           icon: 'fas fa-paper-plane'
         },
         {
           id: 'projects',
-          href: 'projects/',
+          href: '/v2/projects/',
           label: 'PROJECTS',
           icon: 'fas fa-magic'
         }
