@@ -35,13 +35,13 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
         },
         {
           id: 'contact',
-          href: 'contact',
+          href: 'contact/',
           label: 'CONTACT',
           icon: 'fas fa-paper-plane'
         },
         {
           id: 'projects',
-          href: 'projects',
+          href: 'projects/',
           label: 'PROJECTS',
           icon: 'fas fa-magic'
         }

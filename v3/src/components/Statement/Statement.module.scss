@@ -1,0 +1,21 @@
+@import '../../common/mixins';
+
+.container {
+  display: block;
+}
+
+.content {
+  width: 50%;
+  margin: 0 auto 60px auto;
+  font-size: 1.4em;
+  text-align: center;
+  
+  @include screen-mobile {
+    font-size: 1.1em;
+    width: 80%;
+  }
+  
+  @include screen-mobile-small {
+    font-size: 1em;
+  }
+}

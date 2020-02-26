@@ -41,7 +41,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
       careerHistoryDetails: [
         {
           id: 'nmi',
-          logo: 'resources/img/companies/gma-nmi-logo.png',
+          logo: '/resources/img/companies/gma-nmi-logo.png',
           logoAlt: 'NMI',
           logoStyle: {
             width: '128px',
@@ -184,7 +184,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         },
         {
           id: 'nw',
-          logo: 'resources/img/companies/logo-nuworks.png',
+          logo: '/resources/img/companies/logo-nuworks.png',
           logoAlt: 'NW',
           logoStyle: {},
           name: 'NuWorks Interactive Labs, Inc. (NuWorks)',
@@ -379,7 +379,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         },
         {
           id: 'gs3',
-          logo: 'resources/img/companies/gs3_logo.svg',
+          logo: '/resources/img/companies/gs3_logo.svg',
           logoAlt: 'GS3',
           logoStyle: {},
           name: 'Global Strategic Solutions and Services, Inc. (GS3)',
@@ -484,7 +484,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
         },
         {
           id: 'sti',
-          logo: 'resources/img/companies/STI300-min-super.png',
+          logo: '/resources/img/companies/STI300-min-super.png',
           logoAlt: 'STI',
           logoStyle: {
             width: '100px',

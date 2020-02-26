@@ -17,10 +17,10 @@ const AppStarter = () => {
     <BrowserRouter basename="/">
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/notfound" component={NotFound} />
-        <Redirect to="/notfound" />
+        <Route path="/contact/" component={Contact} />
+        <Route path="/projects/" component={Projects} />
+        <Route path="/notfound/" component={NotFound} />
+        <Redirect to="/notfound/" />
       </Switch>
     </BrowserRouter>
   );
