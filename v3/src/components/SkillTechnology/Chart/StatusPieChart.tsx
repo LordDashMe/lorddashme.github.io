@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Pie }  from 'react-chartjs-2';
+import loadable from '@loadable/component';
+
+const ReactChartJS2 = loadable(() => import('react-chartjs-2'), { fallback: null });
 
 import style from './StatusPieChart.module.scss';
 
@@ -70,8 +72,8 @@ export default class StatusPieChart extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
-        <Pie data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} width={300} height={300} />
+      <div id="skill-technology-chart-status-pie-chart-component" className={style['container']}>
+        <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={300} height={300} />
       </div>
     );
   }

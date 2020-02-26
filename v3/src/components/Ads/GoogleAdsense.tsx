@@ -29,7 +29,7 @@ export default class GoogleAdsense extends Component<IGoogleAdsenseProperty, IGo
     };
 
     return (
-      <div className={style['container']}>
+      <div id="ads-google-adsense-component" className={style['container']}>
         <ins className="adsbygoogle"
              style={googleAdsStyle}
              data-ad-client={this.props.adClient}

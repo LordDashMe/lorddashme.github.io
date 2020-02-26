@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
 import style from './NavigationBar.module.scss';
 
@@ -35,13 +36,13 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
         },
         {
           id: 'contact',
-          href: 'contact',
+          href: 'contact/',
           label: 'CONTACT',
           icon: 'fas fa-paper-plane'
         },
         {
           id: 'projects',
-          href: 'projects',
+          href: 'projects/',
           label: 'PROJECTS',
           icon: 'fas fa-magic'
         }
@@ -110,9 +111,9 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
       
       return (
         <li key={route.id} className="page-scroll">
-          <a href={href} rel="nofollow">
+          <Link to={href}>
             <i className={route.icon} aria-hidden="true"></i> {route.label}
-          </a>
+          </Link>
         </li>
       );
     });
@@ -120,7 +121,7 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="navigation-bar-component" className={style['container']}>
         <nav className={'navbar navbar-fixed-top ' + style['navigation-bar']}>
           <div className="container">
             {this.defaultDetails()}

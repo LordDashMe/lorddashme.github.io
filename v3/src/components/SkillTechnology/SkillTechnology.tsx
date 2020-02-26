@@ -515,7 +515,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="skill-technology-component" className={style['container']}>
         {this.getSkillTechnologyDetails()}
         <div className={style['note']}>
           <p>

@@ -37,7 +37,7 @@ export default class Author extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="author-component" className={style['container']}>
         <div className={style['display-photo']}>
           <img src={this.state.author.image.path} alt={this.state.author.image.alt} />
         </div>

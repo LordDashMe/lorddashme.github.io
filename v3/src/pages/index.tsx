@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import loadable from '@loadable/component';
 
-import NavigationBar from '../components/NavigationBar/NavigationBar';
-import PageWrapper from '../components/PageWrapper/PageWrapper';
-import Section from '../components/Section/Section';
-import Author from '../components/Author/Author';
-import StatusPieChart from '../components/SkillTechnology/Chart/StatusPieChart';
-import SkillTechnology from '../components/SkillTechnology/SkillTechnology';
-import Ads from '../components/Ads/Ads';
-import GoogleAdsense from '../components/Ads/GoogleAdsense';
-import About from '../components/About/About';
-import CareerHistory from '../components/CareerHistory/CareerHistory';
-import Statement from '../components/Statement/Statement';
-import Footer from '../components/Footer/Footer';
+import { loadableFallbackTemplate } from '../common/helper';
 
-import '../global.scss';
+const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const PageWrapper = loadable(() => import('../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const Section = loadable(() => import('../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
+const Author = loadable(() => import('../components/Author/Author'), { fallback: loadableFallbackTemplate(`#author-component`) });
+const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
+const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
+const Ads = loadable(() => import('../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
+const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
+const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
+const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
+const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
+const Footer = loadable(() => import('../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
+
+import '../common/global.scss';
 import './index.scss';
 
 const Home = (): JSX.Element => {

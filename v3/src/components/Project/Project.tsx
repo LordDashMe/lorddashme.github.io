@@ -1,6 +1,8 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 
-import FireStore from '../Database/Firebase/Firestore';
+import { isSSR } from '../../common/helper';
+
+import Firestore from '../Database/Firebase/Firestore';
 import Loader from '../Loader/Loader';
 
 import style from './Project.module.scss';
@@ -34,11 +36,16 @@ export default class Project extends Component<IProperty, IState> {
   }
 
   public componentDidMount(): void {
-    this.fetchProjectsOnFireStore();
+    if (! isSSR()) {
+      this.fetchProjectsOnFireStore(); 
+    }
   }
 
   private fetchProjectsOnFireStore(): void {
-    FireStore.collection('projects')
+    
+    Firestore.initialize();
+    Firestore.getInstance()
+             .collection('projects')
              .orderBy('order', 'desc')
              .get()
              .then(querySnapshot => {
@@ -76,7 +83,7 @@ export default class Project extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="project-component" className={style['container']}>
         <Loader visibility={this.state.loader}/>
         {this.getProjects()}
       </div>

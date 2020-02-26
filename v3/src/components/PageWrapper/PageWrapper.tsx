@@ -14,7 +14,7 @@ export default class PageWrapper extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="page-wrapper-component" className={style['container']}>
         {this.props.children}
       </div>
     );

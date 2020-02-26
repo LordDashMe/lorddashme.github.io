@@ -19,7 +19,7 @@ export default class Ads extends Component<IAdsProperty, IAdsState> {
     }
 
     return (
-      <div className={adsClassName}>
+      <div id="ads-component" className={adsClassName}>
         {this.props.children}
       </div>
     );

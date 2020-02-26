@@ -103,7 +103,7 @@ export default class ContactForm extends Component<IProperty, IState> {
   public render(): JSX.Element {
     
     return (
-      <div className={style['container']}>
+      <div id="contact-form-component" className={style['container']}>
 
         <Loader visibility={this.state.loader}/>
         

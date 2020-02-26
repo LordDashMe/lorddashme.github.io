@@ -1,6 +1,7 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 
-import __CONFIG from '../../config';
+import { __WEBSITE_INFO } from '../../common/config';
+import { isSSR } from '../../common/helper';
 
 import style from './Footer.module.scss';
 
@@ -57,10 +58,12 @@ export default class Footer extends Component<IProperty, IState> {
         }
       ]
     };
+  }
 
-    useEffect(() => {
+  public componentDidMount() {
+    if (! isSSR()) {
       this.loadGoogleAnalyticsPageView(); 
-    }, []);
+    }
   }
 
   private loadGoogleAnalyticsPageView(): void {
@@ -112,7 +115,7 @@ export default class Footer extends Component<IProperty, IState> {
     return (
       <div className="col-lg-12">
         <p>
-          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>{__CONFIG.buildVersion}</small>
+          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>{__WEBSITE_INFO.buildVersion}</small>
         </p>
         <p>
         <small className={style['copyright']}>
@@ -155,7 +158,7 @@ export default class Footer extends Component<IProperty, IState> {
     }
 
     return (
-      <footer className={container}>
+      <footer id="footer-component" className={container}>
         {this.upperPart()}
         {this.lowerPart()}
       </footer>

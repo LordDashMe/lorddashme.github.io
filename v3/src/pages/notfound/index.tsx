@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import loadable from '@loadable/component';
 
-import PageInformation from '../../components/PageInformation/PageInformation';
+import { loadableFallbackTemplate } from '../../common/helper';
 
-import '../../global.scss';
+const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
+
+import '../../common/global.scss';
 import './index.scss';
 
 const NotFound = (): JSX.Element => {

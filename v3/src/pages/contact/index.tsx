@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
+import loadable from '@loadable/component';
 
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import PageWrapper from '../../components/PageWrapper/PageWrapper';
-import Section from '../../components/Section/Section';
-import PoweredBy from '../../components/PoweredBy/PoweredBy';
-import ContactForm from '../../components/ContactForm/ContactForm';
-import Statement from '../../components/Statement/Statement';
-import Footer from '../../components/Footer/Footer';
+import { loadableFallbackTemplate } from '../../common/helper';
 
-import '../../global.scss';
+const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
+const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
+const ContactForm = loadable(() => import('../../components/ContactForm/ContactForm'), { fallback: loadableFallbackTemplate(`#contact-form-component`) });
+const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
+const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
+
+import '../../common/global.scss';
 import './index.scss';
 
 const Contact = (): JSX.Element => {

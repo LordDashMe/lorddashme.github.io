@@ -594,7 +594,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="career-history-component" className={style['container']}>
         {this.getCareerHistoryDetails()}
       </div>
     );

@@ -28,7 +28,7 @@ export default class Section extends Component<ISectionProperty, ISectionState> 
     }
 
     return (
-      <section key={this.props.id} className={style['container'] + ' ' + borderTop}>
+      <section id="section-component" key={this.props.id} className={style['container'] + ' ' + borderTop}>
         <h2 className={style['title']}>{this.props.title}</h2>
         {thematicBreak}
         {this.props.children}

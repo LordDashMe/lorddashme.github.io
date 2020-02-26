@@ -77,7 +77,7 @@ export default class Statement extends Component<IProperty, IState> {
     const pickedStatement = statements[pickedNumber];
 
     return (
-      <div className={style['container']}>
+      <div id="statement-component" className={style['container']}>
         <p key={pickedStatement.id} className={style['content']}>"{pickedStatement.statement}" - <i>{pickedStatement.author}</i></p>
       </div>
     );

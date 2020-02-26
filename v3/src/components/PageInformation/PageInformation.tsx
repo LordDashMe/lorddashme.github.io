@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import loadable from '@loadable/component';
 
-import NavigationBar from '../NavigationBar/NavigationBar';
-import PageWrapper from '../PageWrapper/PageWrapper';
-import Section from '../Section/Section';
-import Statement from '../Statement/Statement';
-import Footer from '../Footer/Footer';
+import { loadableFallbackTemplate } from '../../common/helper';
+
+const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
+const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
+const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
 import style from './PageInformation.module.scss';
 
@@ -22,7 +25,7 @@ export default class PageInformation extends Component<IProperty, IState> {
   public render(): JSX.Element {
     
     return (
-      <div className={style['container']}>
+      <div id="page-information-component" className={style['container']}>
         <NavigationBar />
         <PageWrapper>
           <Section id={this.props.id} 

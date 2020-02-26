@@ -49,7 +49,7 @@ export default class About extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     return (
-      <div className={style['container']}>
+      <div id="about-component" className={style['container']}>
         {this.getAboutContent()}
       </div>
     );
