@@ -30,16 +30,10 @@ robots.txt
   ./pre-deployment.sh
   ```
 
-## Version Archives
+## Archived Versions
 
-- [v1](v1/)
+- [v1](v1/) Traditional way of creating a website, used of pure HTML, CSS, and JS.
 
-  - Traditional way of creating a website, used of pure HTML, CSS, and JS.
+- [v2](v2/) is powered by [Create React App](https://create-react-app.dev/) (CRA) a toolchain for React Single-Page App (SPA).
 
-- [v2](v2/)
-
-  - This version is powered by [Create React App](https://create-react-app.dev/) (CRA) a toolchain for React Single-Page App (SPA).
-
-- [v3](v3/)
-
-  - This version utilized the [Gatsby](https://www.gatsbyjs.org/) static site generator for React.
+- [v3](v3/) utilized the [Gatsby](https://www.gatsbyjs.org/) static site generator for React.
