@@ -16,11 +16,10 @@ find $(pwd)/* ! \( \
 
 cat <<EOF 
 
-Restoring to common files.
+Restoring to common files original list.
 
 ------------------
 | Clean-up Done! |
 ------------------
-
 
 EOF
