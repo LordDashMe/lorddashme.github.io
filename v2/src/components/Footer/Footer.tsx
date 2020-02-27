@@ -115,7 +115,7 @@ export default class Footer extends Component<IProperty, IState> {
         <p>
         <small className={style['copyright']}>Made with <i className="fas fa-heart" aria-hidden="true"></i></small>
         <br/>
-        <small className={style['copyright']}>Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a> {WEBSITE_INFO.reactVersion} and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a></small>
+        <small className={style['copyright']}>Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a> and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a></small>
         </p>
       </div>
     );

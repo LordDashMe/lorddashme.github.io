@@ -9,8 +9,7 @@
  */
 
 const WEBSITE_INFO = {
-  reactVersion: 'v16.12.0',
-  buildVersion: 'v2.1.1'
+  buildVersion: 'v2.1.3'
 };
 
 export default WEBSITE_INFO;
