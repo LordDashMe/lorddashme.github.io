@@ -44,7 +44,9 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "start:dev": "gatsby develop --host=0.0.0.0",
-    "build:deploy": "gatsby build && . deploy.sh"
+    "build:deploy": "gatsby build && . deploy.sh",
+    "build:clean": "gatsby clean",
+    "build:serve": "gatsby serve --host=0.0.0.0"
   },
   "repository": {
     "type": "git",

@@ -1,97 +1,77 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# lorddashme.github.io v3
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+The version 3 of the [lorddashme.github.io](https://lorddashme.github.io/).
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Documentation
 
-## 🚀 Quick start
+### Requirements
 
-1.  **Create a Gatsby site.**
+- NodeJS v10 or latest.
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+### Tech Stacks | Packages
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+- [@loadable/component](https://www.npmjs.com/package/@loadable/component): Enable Code Splitting in your React application.
 
-1.  **Start developing.**
+- [@loadable/babel-plugin](https://www.npmjs.com/package/@loadable/babel-plugin): For ```@loadable/component``` this plugin is required only if you use Server Side Rendering in your application.
 
-    Navigate into your new site’s directory and start it up.
+- [@loadable/webpack-plugin](https://www.npmjs.com/package/@loadable/webpack-plugin): For ```@loadable/component``` this plugin is required only if you use Server Side Rendering in your application.
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+- [babel-preset-gatsby](https://www.npmjs.com/package/babel-preset-gatsby): Gatsby uses the phenomenal project Babel to enable support for writing modern JavaScript — while still supporting older browsers. This package contains the default Babel setup for all Gatsby projects.
 
-1.  **Open the source code and start editing!**
+- [chart.js](https://www.npmjs.com/package/chart.js?activeTab=readme): Simple yet flexible JavaScript charting for designers & developers.
 
-    Your site is now running at `http://localhost:8000`!
+- [firebase](https://www.npmjs.com/package/firebase): Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+- [gatsby](https://www.npmjs.com/package/gatsby): Blazing fast modern site generator for React.
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+- [gatsby-image](https://www.npmjs.com/package/gatsby-image): Speedy, optimized images without the work. gatsby-image is a React component specially designed to work seamlessly with Gatsby's GraphQL queries.
 
-## 🧐 What's inside?
+- [gatsby-plugin-manifest](https://www.npmjs.com/package/gatsby-plugin-manifest): The web app manifest (part of the PWA specification) enabled by this plugin allows users to add your site to their home screen on most mobile browsers
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+- [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline): Adds drop-in support for making a Gatsby site work offline and more resistant to bad network connections. It creates a service worker for the site and loads the service worker into the client.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+- [gatsby-plugin-react-helmet](https://www.npmjs.com/package/gatsby-plugin-react-helmet): Provides drop-in support for server rendering data added with React Helmet. React Helmet is a component which lets you control your document head using their React component.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+- [gatsby-plugin-sharp](https://www.npmjs.com/package/gatsby-plugin-sharp): Exposes several image processing functions built on the Sharp image processing library. This is a low-level helper plugin generally used by other Gatsby plugins. You generally shouldn't be using this directly but might find it helpful if doing very custom image processing.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+- [gatsby-source-filesystem](https://www.npmjs.com/package/gatsby-source-filesystem): A Gatsby source plugin for sourcing data into your Gatsby application from your local filesystem.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+- [gatsby-transformer-sharp](https://www.npmjs.com/package/gatsby-transformer-sharp): Creates ImageSharp nodes from image types that are supported by the Sharp image processing library and provides fields in their GraphQL types for processing your images in a variety of ways including resizing, cropping, and creating responsive images.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+- [prop-types](https://www.npmjs.com/package/prop-types): Runtime type checking for React props and similar objects.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+- [react](https://www.npmjs.com/package/react): is a JavaScript library for creating user interfaces.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2): React wrapper for Chart.js 2.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- [react-dom](https://www.npmjs.com/package/react-dom): This package serves as the entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+- [react-helmet](https://www.npmjs.com/package/react-helmet): This reusable React component will manage all of your changes to the document head.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+- [gatsby-plugin-typescript](https://www.npmjs.com/package/gatsby-plugin-typescript): Provides drop-in support for TypeScript and TSX.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+- [gatsby-plugin-scss-typescript](https://www.npmjs.com/package/gatsby-plugin-scss-typescript): Includes Gatsby V2 webpack support for SCSS stylesheets modules and automatic generation of accompanying typing declaration (.d.ts) files.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+- [node-sass](https://www.npmjs.com/package/node-sass): Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+- [prettier](https://www.npmjs.com/package/prettier): Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 
-## 🎓 Learning Gatsby
+### Usage
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+#### Development
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- Use this registered custom npm script command ```npm run start:dev``` to start developing with exposed port stated in the CLI output.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+##### Testing Pre Production Build Files
 
-## 💫 Deploy
+- To clean the gatsby build files: ```npm run build:clean```.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+- To build the current source code: ```npm run build```.
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+- To serve the actual build files with temporary server: ```npm run build:serve```.
+
+#### Production
+
+- Execute the restore command in the root directory ```./pre-deployment.sh``` to clean all build files.
+
+- Then use this command ```npm run build:deploy``` to deploy the build files in the root directory.
