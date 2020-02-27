@@ -22,7 +22,7 @@ robots.txt
 
 ### Archived Files
 
-- [archives](archives/) The location where I put or stored some of my notable documentation and workflow about software engineering.
+- [archives](archives/): The location where I put or stored some of my notable documentation and workflow about software engineering.
 
 ### Restore
 
@@ -36,7 +36,7 @@ robots.txt
 
 ## Archived Versions
 
-- [v1](v1/) Traditional way of creating a website, used of pure HTML, CSS, and JS.
+- [v1](v1/) used traditional way of creating a website, just a pure HTML, CSS, and JS.
 
 - [v2](v2/) is powered by [Create React App](https://create-react-app.dev/) (CRA) a toolchain for React Single-Page App (SPA).
 
