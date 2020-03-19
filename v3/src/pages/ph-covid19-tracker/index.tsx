@@ -31,8 +31,8 @@ const Covid19Tracker = (): JSX.Element => {
     "url": currentLocationURL,
     "name": pageTitle,
     "author": "Joshua Clifford Reyes",
-    "image": "/resources/img/profile-tianzifang-min-super.jpg",
-    "description": "A tracking page for philippines COVID19 crisis, statistic overview and chart."
+    "image": "/resources/img/covid19.min.jpg",
+    "description": "A tracking page for philippines COVID19 crisis, statistic and chart overview."
   };
   
   return (
@@ -46,22 +46,22 @@ const Covid19Tracker = (): JSX.Element => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
         <meta name="author" content="Joshua Clifford Reyes" />
-        <meta name="description" content="A tracking page for philippines COVID19 crisis, statistic overview and chart." />
+        <meta name="description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
         <link rel="canonical" href={currentLocationURL} />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@lorddashme" />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content="A tracking page for philippines COVID19 crisis, statistic overview and chart." />
+        <meta name="twitter:description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
         <meta name="twitter:creator" content="@lorddashme" />
-        <meta name="twitter:image" content="/resources/img/profile-tianzifang-min-super.jpg" />
+        <meta name="twitter:image" content="/resources/img/covid19.min.jpg" />
         <meta name="twitter:image:alt" content="Profile Tianzifang" />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
-        <meta name="og:image" content="/resources/img/profile-tianzifang-min-super.jpg" />
-        <meta name="og:description" content="A tracking page for philippines COVID19 crisis, statistic overview and chart." />
+        <meta name="og:image" content="/resources/img/covid19.min.jpg" />
+        <meta name="og:description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
