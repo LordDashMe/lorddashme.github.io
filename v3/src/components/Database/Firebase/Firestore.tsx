@@ -11,10 +11,16 @@ export default class Firestore {
 
   public static initialize(): void {
 
-    if (! firebase.apps.length && ! Firestore.firestoreInstance) {
-      firebase.initializeApp(Firestore.FIRESTORE_CONFIG);
+    if (! Firestore.firestoreInstance) {
+      if (! firebase.apps.length) {
+        firebase.initializeApp(Firestore.FIRESTORE_CONFIG);
+      }
       Firestore.firestoreInstance = firebase.firestore();
     }
+  }
+
+  public static clearInstance(): any {
+    Firestore.firestoreInstance = null;
   }
 
   public static getInstance(): any {

@@ -44,28 +44,28 @@ export default class Project extends Component<IProperty, IState> {
   private fetchProjectsOnFireStore(): void {
     
     Firestore.initialize();
+
     Firestore.getInstance()
-             .collection('projects')
-             .orderBy('order', 'desc')
-             .get()
-             .then(querySnapshot => {
-              const projects = querySnapshot.docs.map((doc): IProjects => {
-                const document = doc.data();
-                return {
-                  id: doc.id,
-                  title: document.title,
-                  description: document.description,
-                  image: document.image,
-                  imageAlt: document.imageAlt,
-                  link: document.link
-                };
-              });
-      
-      this.setState({
-        projects: projects,
-        loader: false
+      .collection('projects')
+      .orderBy('order', 'desc')
+      .get()
+      .then(querySnapshot => { 
+        const projects = querySnapshot.docs.map((doc): IProjects => {
+          const document = doc.data();
+          return {
+            id: doc.id,
+            title: document.title,
+            description: document.description,
+            image: document.image,
+            imageAlt: document.imageAlt,
+            link: document.link
+          };
+        });
+        this.setState({
+          projects: projects,
+          loader: false
+        });
       });
-    });
   }
 
   private getProjects(): Array<JSX.Element> {

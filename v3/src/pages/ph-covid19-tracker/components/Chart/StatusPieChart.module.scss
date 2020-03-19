@@ -1,0 +1,12 @@
+@import '../../../../common/mixins';
+
+.container {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto 30px auto;
+
+  @include screen-mobile {
+    width: 80%;
+    height: 80%;
+  }
+}
