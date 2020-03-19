@@ -31,7 +31,7 @@ const Covid19Tracker = (): JSX.Element => {
     "url": currentLocationURL,
     "name": pageTitle,
     "author": "Joshua Clifford Reyes",
-    "image": "/resources/img/covid19.min.jpg",
+    "image": "/resources/img/covid19-min.jpg",
     "description": "A tracking page for philippines COVID19 crisis, statistic and chart overview."
   };
   
@@ -54,13 +54,13 @@ const Covid19Tracker = (): JSX.Element => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
         <meta name="twitter:creator" content="@lorddashme" />
-        <meta name="twitter:image" content="/resources/img/covid19.min.jpg" />
+        <meta name="twitter:image" content="/resources/img/covid19-min.jpg" />
         <meta name="twitter:image:alt" content="Profile Tianzifang" />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
-        <meta name="og:image" content="/resources/img/covid19.min.jpg" />
+        <meta name="og:image" content="/resources/img/covid19-min.jpg" />
         <meta name="og:description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
