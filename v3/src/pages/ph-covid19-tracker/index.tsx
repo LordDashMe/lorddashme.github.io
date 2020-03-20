@@ -17,7 +17,7 @@ import './index.scss';
 
 const Covid19Tracker = (): JSX.Element => {
 
-  const pageTitle = 'PH COVID19 Tracker';
+  const pageTitle = 'COVID-19 Cases in the Philippines';
   
   let currentLocationURL = '/ph-covid19-tracker';
 
@@ -32,7 +32,7 @@ const Covid19Tracker = (): JSX.Element => {
     "name": pageTitle,
     "author": "Joshua Clifford Reyes",
     "image": "/resources/img/covid19-min.jpg",
-    "description": "A tracking page for philippines COVID19 crisis, statistic and chart overview."
+    "description": "A tracking page for philippines COVID-19 cases."
   };
   
   return (
@@ -46,35 +46,37 @@ const Covid19Tracker = (): JSX.Element => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
         <meta name="author" content="Joshua Clifford Reyes" />
-        <meta name="description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
+        <meta name="description" content="A tracking page for philippines COVID-19 cases." />
         <link rel="canonical" href={currentLocationURL} />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@lorddashme" />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
+        <meta name="twitter:description" content="A tracking page for philippines COVID-19 cases." />
         <meta name="twitter:creator" content="@lorddashme" />
         <meta name="twitter:image" content="/resources/img/covid19-min.jpg" />
-        <meta name="twitter:image:alt" content="Profile Tianzifang" />
+        <meta name="twitter:image:alt" content="COVID19" />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
         <meta name="og:image" content="/resources/img/covid19-min.jpg" />
-        <meta name="og:description" content="A tracking page for philippines COVID19 crisis, statistic and chart overview." />
+        <meta name="og:description" content="A tracking page for philippines COVID-19 cases." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
 
       <PageWrapper>
         <MainTitle />
+        <StatusPieChart />
+        <StatusOverview />
         <PoweredBy>
           <p>
+            <small>Sources: <a href="https://ncovtracker.doh.gov.ph/" target="_blank" rel="noopener noreferrer">NCov Tracker DOH Gov PH</a>, <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" target="_blank" rel="noopener noreferrer">World Health Organization</a>, <a href="https://www.coronatracker.com/" target="_blank" rel="noopener noreferrer">CoronaTracker</a>, and various International Media.</small>
+            <br/>
             <small>Backend is powered by <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a></small>
           </p>
         </PoweredBy>
-        <StatusPieChart />
-        <StatusOverview />
         <Footer />
       </PageWrapper>
 
