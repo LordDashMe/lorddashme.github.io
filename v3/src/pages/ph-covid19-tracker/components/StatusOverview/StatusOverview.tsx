@@ -29,7 +29,36 @@ export default class StatusOverview extends Component<IProperty, IState> {
     
     this.state = {
       loader: true,
-      statusOverview: []
+      statusOverview: [
+        {
+          id: 'id_confirmed_cases',
+          sys_id: 'confirmed_cases',
+          label: 'CONFIRMED CASES',
+          count: 0,
+          color: '#6f6f6f'
+        },
+        {
+          id: 'id_infected',
+          sys_id: 'infected',
+          label: 'INFECTED',
+          count: 0,
+          color: '#b5830f'
+        },
+        {
+          id: 'id_recovered',
+          sys_id: 'recovered',
+          label: 'RECOVERED',
+          count: 0,
+          color: '#38a169'
+        },
+        {
+          id: 'id_deaths',
+          sys_id: 'deaths',
+          label: 'DEATHS',
+          count: 0,
+          color: '#a13838'
+        }
+      ]
     };
   }
 
@@ -72,7 +101,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
         'color': statusOverview.color
       };
       return (
-        <div key={statusOverview.id} className={style['status-overivew-items'] + ' ' + style[statusOverview.id]}>
+        <div key={statusOverview.id} className={style['status-overivew-items'] + ' ' + statusOverview.sys_id}>
           <h2>{statusOverview.label}</h2>
           <p style={countStyle}>{statusOverview.count}</p>
         </div>

@@ -13,10 +13,7 @@ export default function HTML(props) {
         />
         
         {/* DEV CONTROLLED - CRITICAL ASSETS START */}
-          <link rel="shortcut icon" href={`/resources/img/favicon.png`} />
           <meta name="theme-color" content="#000000" />
-          <link rel="apple-touch-icon" href={`/resources/img/favicon.png`} />
-        
         {/* 
           <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2`} as="font" type="font/woff2" />
           <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2`} as="font" type="font/woff2" />

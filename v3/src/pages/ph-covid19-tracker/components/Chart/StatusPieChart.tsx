@@ -36,8 +36,8 @@ export default class StatusPieChart extends Component<IProperty, IState> {
 
     this.state = {
       statusPieChart: {
-        data: {},
-        options: {}
+        data: this.getStatusPieChartData(),
+        options: this.getStatusPieChartOptions()
       }
     };
   }
@@ -46,6 +46,49 @@ export default class StatusPieChart extends Component<IProperty, IState> {
     if (! isSSR()) {
       this.fetchProjectsOnFireStore(); 
     }
+  }
+
+  private getStatusPieChartData(): object {
+    return {
+      labels: [
+        'INFECTED',
+        'RECOVERED',
+        'DEATHS'
+      ],
+      datasets: [
+        {
+          label: 'COVID-19',
+          data: [
+            0,
+            10,
+            0
+          ],
+          backgroundColor: [
+            '#b5830f',
+            '#38a169',
+            '#a13838'
+          ]
+        }
+      ]
+    };
+  }
+
+  private getStatusPieChartOptions(): object {
+    return {
+      maintainAspectRatio: false,
+      legend: {
+        display: false,
+        labels: {
+          boxWidth: 16,
+          fontSize: 14,
+          fontColor: '#000',
+          fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
+        }
+      },
+      tooltips: {
+        bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
+      }
+    };
   }
 
   private fetchProjectsOnFireStore(): void {
@@ -91,21 +134,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
               }
             ]
           },
-          options: {
-            maintainAspectRatio: false,
-            legend: {
-              display: false,
-              labels: {
-                boxWidth: 16,
-                fontSize: 14,
-                fontColor: '#000',
-                fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
-              }
-            },
-            tooltips: {
-              bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
-            }
-          }
+          options: this.getStatusPieChartOptions()
         };
         
         this.setState({
@@ -117,7 +146,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="ph-covid19-tracker-chart-status-pie-chart-component" className={style['container']}>
-        <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={400} height={400} />
+        <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={350} height={350} />
       </div>
     );
   }

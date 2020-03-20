@@ -4,10 +4,12 @@ import loadable from '@loadable/component';
 
 import { loadableFallbackTemplate } from '../../common/helper';
 
-const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
+const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
+const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
 
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
+const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
 const StatusPieChart = loadable(() => import('./components/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-chart-status-pie-chart-component`) });
 const StatusOverview = loadable(() => import('./components/StatusOverview/StatusOverview'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-component`) });
 const Footer = loadable(() => import('./components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
@@ -43,6 +45,9 @@ const Covid19Tracker = (): JSX.Element => {
 
         <title>{pageTitle}</title>
 
+        <link rel="shortcut icon" href="/resources/img/virus.png" />
+        <link rel="apple-touch-icon" href="/resources/img/virus.png" />
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
         <meta name="author" content="Joshua Clifford Reyes" />
@@ -70,13 +75,12 @@ const Covid19Tracker = (): JSX.Element => {
         <MainTitle />
         <StatusPieChart />
         <StatusOverview />
-        <PoweredBy>
-          <p>
-            <small>Sources: <a href="https://ncovtracker.doh.gov.ph/" target="_blank" rel="noopener noreferrer">NCov Tracker DOH Gov PH</a>, <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" target="_blank" rel="noopener noreferrer">World Health Organization</a>, <a href="https://www.coronatracker.com/" target="_blank" rel="noopener noreferrer">CoronaTracker</a>, and various International Media.</small>
-            <br/>
-            <small>Backend is powered by <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a></small>
-          </p>
-        </PoweredBy>
+        <About />
+        {/* Line Item: LordDashMe_Horizontal_Home */}
+        <Ads appearance="horizontal">
+          <GoogleAdsense adClient="ca-pub-3427694918014398"
+                         adSlot="4220072227"/>
+        </Ads>
         <Footer />
       </PageWrapper>
 

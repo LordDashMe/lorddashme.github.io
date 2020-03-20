@@ -15,7 +15,7 @@ export default class MainTitle extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="ph-covid19-tracker-main-title-component" className={style['container']}>
-        <h1 className={style['title']}>COVID-19 Cases in the Philippines</h1>
+        <h1 className={style['title']}>COVID-19 CASES IN THE PHILIPPINES</h1>
       </div>
     );
   }

@@ -42,6 +42,9 @@ const Projects = (): JSX.Element => {
 
         <title>{pageTitle}</title>
 
+        <link rel="shortcut icon" href="/resources/img/favicon.png" />  
+        <link rel="apple-touch-icon" href="/resources/img/favicon.png" />
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
         <meta name="author" content="Joshua Clifford Reyes" />
