@@ -28,26 +28,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
     
     this.state = {
       loader: true,
-      statusOverview: [
-        {
-          id: 'confirmed',
-          label: 'CONFIRMED',
-          count: 217,
-          color: '#a13838'
-        },
-        {
-          id: 'recovered',
-          label: 'RECOVERED',
-          count: 8,
-          color: '#38a169'
-        },
-        {
-          id: 'death',
-          label: 'DEATH',
-          count: 17,
-          color: '#718096'
-        }
-      ]
+      statusOverview: []
     };
   }
 
