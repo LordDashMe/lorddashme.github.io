@@ -22,6 +22,7 @@ interface IStatusPieChart {
 
 interface IStatusOverview {
   id: string;
+  sys_id: string;
   label: string;
   count: number;
   color: string;
@@ -60,6 +61,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
           const document = doc.data();
           return {
             id: doc.id,
+            sys_id: document.sys_id,
             label: document.label,
             count: document.count,
             color: document.color
@@ -68,19 +70,23 @@ export default class StatusPieChart extends Component<IProperty, IState> {
 
         const statusPieChart = {
           data: {
-            labels: [
-              'CONFIRMED', 
-              'RECOVERED', 
-              'DEATH'
-            ],
+            labels: statusOverview.map((details: IStatusOverview): string => {
+              if (details.sys_id !== 'confirmed_cases') {
+                return details.label;
+              }
+            }),
             datasets: [
               {
-                label: 'COVID19',
+                label: 'COVID-19',
                 data: statusOverview.map((details: IStatusOverview): number => {
-                  return details.count;
+                  if (details.sys_id !== 'confirmed_cases') {
+                    return details.count;
+                  } 
                 }),
                 backgroundColor: statusOverview.map((details: IStatusOverview): string => {
-                  return details.color;
+                  if (details.sys_id !== 'confirmed_cases') {
+                    return details.color;
+                  }
                 })
               }
             ]

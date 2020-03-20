@@ -16,6 +16,7 @@ interface IState {
 
 interface IStatusOverview {
   id: string;
+  sys_id: string;
   label: string;
   count: number;
   color: string;
@@ -52,12 +53,12 @@ export default class StatusOverview extends Component<IProperty, IState> {
           const document = doc.data();
           return {
             id: doc.id,
+            sys_id: document.sys_id,
             label: document.label,
             count: document.count,
             color: document.color
           };
         });
-        console.log('qweqweqw', querySnapshot);
         this.setState({
           statusOverview: statusOverview,
           loader: false
