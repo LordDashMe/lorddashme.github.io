@@ -1,12 +1,47 @@
 @import '../../../../common/mixins';
 
 .container {
+  position: relative;
   width: 350px;
   height: 350px;
   margin: 0 auto 30px auto;
 
   @include screen-mobile {
-    width: 70%;
-    height: 70%;
+    width: 320px;
+    height: 320px;
+  }
+
+  @include screen-mobile-small {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+.percentage-wrapper {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.percentage {
+  position: absolute;
+  pointer-events: none;
+  left: 90px;
+  top: 150px;
+  width: 200px;
+  color: #000;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+
+  @include screen-mobile {
+    left: 75px;
+    top: 135px;
+  }
+
+  @include screen-mobile-small {
+    left: 50px;
+    top: 120px;
   }
 }

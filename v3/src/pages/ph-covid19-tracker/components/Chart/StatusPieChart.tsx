@@ -13,6 +13,9 @@ interface IProperty {}
 
 interface IState {
   statusPieChart: IStatusPieChart;
+  totalConfirmedCases: number;
+  percentageVisibility: boolean;
+  percentageValue: number;
 };
 
 interface IStatusPieChart {
@@ -38,7 +41,10 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       statusPieChart: {
         data: this.getStatusPieChartData(),
         options: this.getStatusPieChartOptions()
-      }
+      },
+      totalConfirmedCases: 0,
+      percentageVisibility: false,
+      percentageValue: 0,
     };
   }
 
@@ -64,10 +70,21 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             0
           ],
           backgroundColor: [
-            '#b5830f',
-            '#38a169',
+            '#e29e01',
+            '#60a138',
             '#a13838'
-          ]
+          ],
+          borderColor: '#fff',
+          borderWidth: 1,
+          hoverBorderColor: [
+            '#fff',
+            '#fff',
+            '#fff'
+          ],
+          hoverBorderWidth: 4,
+          mouseout: () => {
+            alert();
+          }
         }
       ]
     };
@@ -86,9 +103,51 @@ export default class StatusPieChart extends Component<IProperty, IState> {
         }
       },
       tooltips: {
-        bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
+        bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
+        custom: (tooltip: any) => {
+          if (tooltip.opacity <= 0) {
+            this.unsetPercentageValue();
+          }
+        }
+      },
+      onClick: (chartEvent: any, chartState: any) => {
+        if (!chartState || typeof chartState[0] === 'undefined' || !chartState[0]) {
+          return;
+        }
+        if (typeof chartState[0]._index !== 'undefined') {
+          this.setPercentageValue(chartState[0]._index);
+        }
+      },
+      onHover: (chartEvent: any, chartState: any) => {
+        if (!chartState || typeof chartState[0] === 'undefined' || !chartState[0]) {
+          return;
+        }
+        if (typeof chartState[0]._index !== 'undefined') {
+          this.setPercentageValue(chartState[0]._index);
+        }
       }
     };
+  }
+
+  private unsetPercentageValue(): void {
+
+    const currentState = {...this.state};
+
+    currentState.percentageVisibility = false;
+    currentState.percentageValue = 0;
+
+    this.setState(currentState);
+  }
+
+  private setPercentageValue(specificIndex: number): void {
+
+    const currentState = {...this.state};
+    const specificCaseCount = currentState.statusPieChart.data['datasets'][0].data[specificIndex];
+
+    currentState.percentageVisibility = true;
+    currentState.percentageValue = parseFloat(((specificCaseCount / currentState.totalConfirmedCases) * 100).toFixed(2));
+
+    this.setState(currentState);
   }
 
   private fetchProjectsOnFireStore(): void {
@@ -100,52 +159,64 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       .orderBy('order', 'desc')
       .get()
       .then(querySnapshot => { 
-        const statusOverview = querySnapshot.docs.map((doc: any): IStatusOverview => {
+
+        const totalConfirmedCases = querySnapshot.docs[0].data().count;
+        
+        const statusOverview = (querySnapshot.docs)
+          .filter((doc: any): IStatusOverview | boolean => {
+            const document = doc.data();
+            if (document.sys_id === 'confirmed_cases') {
+              return false;
+            } 
+            return doc;
+          }).map((doc: any): IStatusOverview => {
           const document = doc.data();
-          return {
-            id: doc.id,
-            sys_id: document.sys_id,
-            label: document.label,
-            count: document.count,
-            color: document.color
-          };
+            return {
+              id: doc.id,
+              sys_id: document.sys_id,
+              label: document.label,
+              count: document.count,
+              color: document.color
+            };
+          });
+
+        const currentState = {...this.state};
+
+        currentState.statusPieChart.data['labels'] = statusOverview.map((details: IStatusOverview): string => {
+          return details.label;
         });
 
-        const statusPieChart = {
-          data: {
-            labels: statusOverview.map((details: IStatusOverview): string => {
-              if (details.sys_id !== 'confirmed_cases') {
-                return details.label;
-              }
-            }),
-            datasets: [
-              {
-                label: 'COVID-19',
-                data: statusOverview.map((details: IStatusOverview): number => {
-                  if (details.sys_id !== 'confirmed_cases') {
-                    return details.count;
-                  } 
-                }),
-                backgroundColor: statusOverview.map((details: IStatusOverview): string => {
-                  if (details.sys_id !== 'confirmed_cases') {
-                    return details.color;
-                  }
-                })
-              }
-            ]
-          },
-          options: this.getStatusPieChartOptions()
-        };
-        
-        this.setState({
-          statusPieChart: statusPieChart
+        currentState.statusPieChart.data['datasets'][0]['data'] = statusOverview.map((details: IStatusOverview): number => {
+          return details.count; 
         });
+
+        currentState.statusPieChart.data['datasets'][0]['backgroundColor'] = statusOverview.map((details: IStatusOverview): string => {
+          return details.color;
+        });
+
+        currentState.totalConfirmedCases = totalConfirmedCases;
+        
+        this.setState(currentState);
       });
+  }
+
+  private getPercentage(): JSX.Element {
+    
+    if (this.state.percentageVisibility) {
+      return (
+        <div className={style['percentage-wrapper']}>
+          <div className={style['percentage']}><span id="percentage-value">{this.state.percentageValue}</span>%</div>
+        </div>
+      );
+    }
+
+    return (<div></div>);
   }
 
   public render(): JSX.Element {
     return (
       <div id="ph-covid19-tracker-chart-status-pie-chart-component" className={style['container']}>
+        {this.getPercentage()}
         <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={350} height={350} />
       </div>
     );

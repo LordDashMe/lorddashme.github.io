@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import loadable from '@loadable/component';
 
-import { isSSR } from '../../../../common/helper';
+import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
 
 import Firestore from '../../../../components/Database/Firebase/Firestore';
 import Loader from '../../../../components/Loader/Loader';
+
+const AnimateNumber = loadable(() => import('../../../../components/AnimateNumber/AnimateNumber'), { fallback: loadableFallbackTemplate(`#animate-number-component`) });
 
 import style from './StatusOverview.module.scss';
 
@@ -42,14 +45,14 @@ export default class StatusOverview extends Component<IProperty, IState> {
           sys_id: 'infected',
           label: 'INFECTED',
           count: 0,
-          color: '#b5830f'
+          color: '#e29e01'
         },
         {
           id: 'id_recovered',
           sys_id: 'recovered',
           label: 'RECOVERED',
           count: 0,
-          color: '#38a169'
+          color: '#60a138'
         },
         {
           id: 'id_deaths',
@@ -96,14 +99,16 @@ export default class StatusOverview extends Component<IProperty, IState> {
   }
 
   private getStatusOverview(): Array<JSX.Element> {
-    return this.state.statusOverview.map((statusOverview) => {
+    return this.state.statusOverview.map((statusOverview: IStatusOverview) => {
       const countStyle = {
         'color': statusOverview.color
       };
       return (
         <div key={statusOverview.id} className={style['status-overivew-items'] + ' ' + statusOverview.sys_id}>
           <h2>{statusOverview.label}</h2>
-          <p style={countStyle}>{statusOverview.count}</p>
+          <p style={countStyle}>
+            <AnimateNumber value={statusOverview.count} />
+          </p>
         </div>
       );
     });
