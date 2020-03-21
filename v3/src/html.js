@@ -37,8 +37,7 @@ export default function HTML(props) {
         
         {/* DEV CONTROLLED - LAZY LOAD ASEETS START */}
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
-          <script defer src={`/resources/vendor/google-analytics/ga.min.js`}></script>
-          <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <script defer src={`/resources/vendor/vendor.js`}></script>
         {/* DEV CONTROLLED - LAZY LOAD ASEETS END */}
         
       </body>

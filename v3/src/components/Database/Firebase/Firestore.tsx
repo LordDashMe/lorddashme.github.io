@@ -24,7 +24,6 @@ export default class Firestore {
   }
 
   public static getInstance(): any {
-    
     return Firestore.firestoreInstance;
   }
 }

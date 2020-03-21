@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import style from './GoogleAdsense.module.scss';
 
-interface IGoogleAdsenseProperty {
+interface IProperty {
   adClient: string;
   adSlot: string;
 }
 
-interface IGoogleAdsenseState {}
+interface IState {}
 
 declare global {
   
@@ -16,7 +16,7 @@ declare global {
   }
 }
 
-export default class GoogleAdsense extends Component<IGoogleAdsenseProperty, IGoogleAdsenseState> {
+export default class GoogleAdsense extends Component<IProperty, IState> {
 
   public componentDidMount(): void {
     (window.adsbygoogle = window.adsbygoogle || []).push({});

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import raf from 'raf';
 
-interface IAnimateNumberProperty {
+interface IProperty {
   value: number;
 }
 
-interface IAnimateNumberState {
+interface IState {
   number: number;
 }
 
-export default class AnimateNumber extends Component<IAnimateNumberProperty, IAnimateNumberState> {
+export default class AnimateNumber extends Component<IProperty, IState> {
 
   private animated: any = null;
 

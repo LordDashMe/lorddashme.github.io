@@ -77,9 +77,9 @@ export default class StatusPieChart extends Component<IProperty, IState> {
           borderColor: '#fff',
           borderWidth: 1,
           hoverBorderColor: [
-            '#fff',
-            '#fff',
-            '#fff'
+            '#ccc',
+            '#ccc',
+            '#ccc'
           ],
           hoverBorderWidth: 4,
           mouseout: () => {
@@ -104,13 +104,13 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       },
       tooltips: {
         bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
-        custom: (tooltip: any) => {
+        custom: (tooltip: any): void => {
           if (tooltip.opacity <= 0) {
             this.unsetPercentageValue();
           }
         }
       },
-      onClick: (chartEvent: any, chartState: any) => {
+      onClick: (chartEvent: any, chartState: any): void => {
         if (!chartState || typeof chartState[0] === 'undefined' || !chartState[0]) {
           return;
         }
@@ -118,7 +118,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
           this.setPercentageValue(chartState[0]._index);
         }
       },
-      onHover: (chartEvent: any, chartState: any) => {
+      onHover: (chartEvent: any, chartState: any): void => {
         if (!chartState || typeof chartState[0] === 'undefined' || !chartState[0]) {
           return;
         }
@@ -158,7 +158,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       .collection('ph-covid19-tracker-status-overview')
       .orderBy('order', 'desc')
       .get()
-      .then(querySnapshot => { 
+      .then((querySnapshot: any): void => { 
 
         const totalConfirmedCases = querySnapshot.docs[0].data().count;
         

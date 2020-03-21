@@ -5,7 +5,7 @@ import style from './Statement.module.scss';
 interface IProperty {}
 
 interface IState {
-  statements: Array<IStatement>
+  statements: IStatement[]
 }
 
 interface IStatement {

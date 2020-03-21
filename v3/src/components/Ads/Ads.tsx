@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import style from './Ads.module.scss';
 
-interface IAdsProperty {
+interface IProperty {
   appearance: string;
 }
 
-interface IAdsState {}
+interface IState {}
 
-export default class Ads extends Component<IAdsProperty, IAdsState> {
+export default class Ads extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     

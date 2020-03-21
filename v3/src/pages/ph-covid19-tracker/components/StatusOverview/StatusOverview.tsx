@@ -75,13 +75,13 @@ export default class StatusOverview extends Component<IProperty, IState> {
     
     Firestore.clearInstance();
     Firestore.initialize();
-
     Firestore.getInstance()
       .collection('ph-covid19-tracker-status-overview')
       .orderBy('order', 'desc')
       .get()
-      .then(querySnapshot => { 
-        const statusOverview = querySnapshot.docs.map((doc): IStatusOverview => {
+      .then((querySnapshot: any): void => {
+
+        const statusOverview = querySnapshot.docs.map((doc: any): IStatusOverview => {
           const document = doc.data();
           return {
             id: doc.id,
@@ -91,6 +91,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
             color: document.color
           };
         });
+
         this.setState({
           statusOverview: statusOverview,
           loader: false
@@ -98,8 +99,8 @@ export default class StatusOverview extends Component<IProperty, IState> {
       });
   }
 
-  private getStatusOverview(): Array<JSX.Element> {
-    return this.state.statusOverview.map((statusOverview: IStatusOverview) => {
+  private getStatusOverview(): JSX.Element[] {
+    return this.state.statusOverview.map((statusOverview: IStatusOverview): JSX.Element => {
       const countStyle = {
         'color': statusOverview.color
       };

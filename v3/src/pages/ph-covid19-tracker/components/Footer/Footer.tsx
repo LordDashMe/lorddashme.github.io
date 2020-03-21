@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import loadable from '@loadable/component';
 
-import { isSSR,  } from '../../../../common/helper';
+import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
+
+const Ads = loadable(() => import('../../../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
+const GoogleAdsense = loadable(() => import('../../../../components/Ads/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
 
 import style from './Footer.module.scss';
 
@@ -41,11 +45,15 @@ export default class Footer extends Component<IProperty, IState> {
               Powered by&nbsp;
               <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a>,&nbsp;
               <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>,&nbsp;
-              <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and&nbsp;
+              <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>,&nbsp;
+              <a href="https://www.chartjs.org/" rel="noopener noreferrer" target="_blank">Chart.js</a>, and&nbsp;
               <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages.</a>
             </small>
-            <br/>
-            <br/>
+            {/* Line Item: LordDashMe_Horizontal_Home */}
+            <Ads appearance="horizontal">
+              <GoogleAdsense adClient="ca-pub-3427694918014398"
+                            adSlot="4220072227"/>
+            </Ads>
             <small>This page is a personal project, the only aim is to share a simplified information related to the confirmed cases of COVID-19 in the Philippines. This is a 100% open source project and available in the Github.</small>
           </div>
         </div>

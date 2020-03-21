@@ -5,7 +5,7 @@ import style from './About.module.scss';
 interface IProperty {}
 
 interface IState {
-  about: Array<IAbout>
+  about: IAbout[]
 }
 
 interface IAbout {
@@ -36,7 +36,7 @@ export default class About extends Component<IProperty, IState> {
     };
   }
 
-  private getAboutContent(): Array<JSX.Element> {
+  private getAboutContent(): JSX.Element[] {
     return this.state.about.map(about => {
       return (
         <div key={about.id} className={style['wrapper']}>

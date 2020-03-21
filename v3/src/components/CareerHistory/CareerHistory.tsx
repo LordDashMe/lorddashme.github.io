@@ -5,7 +5,7 @@ import style from './CareerHistory.module.scss';
 interface IProperty {}
 
 interface IState {
-  careerHistoryDetails: Array<IOrganization>;
+  careerHistoryDetails: IOrganization[];
 }
 
 interface IOrganization {
@@ -14,21 +14,21 @@ interface IOrganization {
   logoAlt: string;
   logoStyle: object;
   name: string;
-  roles: Array<IRole>;
+  roles: IRole[];
 }
 
 interface IRole {
   id: string;
   name: string;
   term: string;
-  highlights: Array<IHighLight>;
+  highlights: IHighLight[];
 }
 
 interface IHighLight {
   id: string;
   name: string;
   logo: string;
-  descriptions: Array<string>;
+  descriptions: string[];
 }
 
 export default class CareerHistory extends Component<IProperty, IState> {
@@ -549,7 +549,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
     });
   }
 
-  private getOrganization(organization: IOrganization): Array<JSX.Element> {
+  private getOrganization(organization: IOrganization): JSX.Element[] {
     return organization.roles.map(role => {
       return (
         <div key={role.id} className={style['position-wrapper']}>
@@ -565,7 +565,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
     });
   }
 
-  private getRoles(role: IRole): Array<JSX.Element> {
+  private getRoles(role: IRole): JSX.Element[] {
     return role.highlights.map(highlight => {
       return (
         <div key={highlight.id} className={style['highlight-wrapper']}>
@@ -579,7 +579,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
     });
   }
 
-  private getHighlights(highlight: IHighLight): Array<JSX.Element> {
+  private getHighlights(highlight: IHighLight): JSX.Element[] {
     return highlight.descriptions.map((description, index) => {
       return (
         <div key={index} className={style['highlight-description']}>

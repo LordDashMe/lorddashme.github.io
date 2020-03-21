@@ -40,6 +40,8 @@ The version 3 of the [lorddashme.github.io](https://lorddashme.github.io/).
 
 - [prop-types](https://www.npmjs.com/package/prop-types): Runtime type checking for React props and similar objects.
 
+- [raf](https://www.npmjs.com/package/raf): requestAnimationFrame polyfill for node and the browser.
+
 - [react](https://www.npmjs.com/package/react): is a JavaScript library for creating user interfaces.
 
 - [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2): React wrapper for Chart.js 2.

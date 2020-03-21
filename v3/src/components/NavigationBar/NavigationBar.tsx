@@ -3,23 +3,23 @@ import { Link } from 'gatsby';
 
 import style from './NavigationBar.module.scss';
 
-interface INavigationBarProperty {}
+interface IProperty {}
 
-interface INavigationBarState {
+interface IState {
   brandName: string;
-  routes: Array<IRoutes>;
+  routes: IRoute[];
   collapseStyle: object;
   toggleCollapse: boolean;
 }
 
-interface IRoutes {
+interface IRoute {
   id: string;
   href: string;
   label: string;
   icon: string;
 }
 
-export default class NavigationBar extends Component<INavigationBarProperty, INavigationBarState> {
+export default class NavigationBar extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
 
@@ -36,13 +36,13 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
         },
         {
           id: 'contact',
-          href: 'contact/',
+          href: '/contact/',
           label: 'CONTACT',
           icon: 'fas fa-paper-plane'
         },
         {
           id: 'projects',
-          href: 'projects/',
+          href: '/projects/',
           label: 'PROJECTS',
           icon: 'fas fa-magic'
         }
@@ -104,10 +104,20 @@ export default class NavigationBar extends Component<INavigationBarProperty, INa
     );
   }
 
-  private getRoutes(): Array<JSX.Element> {
-    return this.state.routes.map(route => {
+  private getRoutes(): JSX.Element[] {
+    return this.state.routes.map((route: IRoute) => {
 
       const href = route.href;
+
+      if (route.id === 'home') {
+        return (
+          <li key={route.id} className="page-scroll">
+            <a href={href}>
+              <i className={route.icon} aria-hidden="true"></i> {route.label}
+            </a>
+          </li>
+        );
+      }
       
       return (
         <li key={route.id} className="page-scroll">

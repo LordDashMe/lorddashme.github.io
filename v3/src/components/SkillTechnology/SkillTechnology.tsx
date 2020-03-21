@@ -5,21 +5,21 @@ import style from './SkillTechnology.module.scss';
 interface IProperty {}
 
 interface IState {
-  skillTechnologyDetails: Array<IRole>;
+  skillTechnologyDetails: IRole[];
 }
 
 interface IRole {
   id: string;
   role: string;
   icon: string;
-  tools: Array<ITool>;
+  tools: ITool[];
 }
 
 interface ITool {
   id: string;
   name: string;
   icon: string;
-  libraries: Array<ILibrary>;
+  libraries: ILibrary[];
   is_active: boolean;
 }
 
@@ -464,21 +464,21 @@ export default class SkillTechnology extends Component<IProperty, IState> {
   }
 
   private getSkillTechnologyDetails(): JSX.Element[] {
-    return this.state.skillTechnologyDetails.map(detail => {
+    return this.state.skillTechnologyDetails.map((role: IRole): JSX.Element => {
       return (
-        <div key={detail.id} className={style['wrapper']}>
+        <div key={role.id} className={style['wrapper']}>
           <span className="st-role">
-            <i className={style['role-icon'] + ' ' + detail.icon} aria-hidden="true"></i>
-            <h3 className={style['role-title']}>&nbsp;{detail.role}</h3>
+            <i className={style['role-icon'] + ' ' + role.icon} aria-hidden="true"></i>
+            <h3 className={style['role-title']}>&nbsp;{role.role}</h3>
           </span>
-          {this.getTools(detail.tools)}
+          {this.getTools(role.tools)}
         </div> 
       );
     });
   }
 
-  private getTools(tools: Array<ITool>): Array<JSX.Element> {
-    return tools.map(tool => {
+  private getTools(tools: ITool[]): JSX.Element[] {
+    return tools.map((tool: ITool): JSX.Element => {
 
       let toolClassName = style['tool'];
       
@@ -498,8 +498,8 @@ export default class SkillTechnology extends Component<IProperty, IState> {
     });
   }
 
-  private getLibraries(libraries: Array<ILibrary>): Array<JSX.Element> {
-    return libraries.map(library => {
+  private getLibraries(libraries: ILibrary[]): JSX.Element[] {
+    return libraries.map((library: ILibrary): JSX.Element => {
       
       let libraryClassName = style['library'];
       

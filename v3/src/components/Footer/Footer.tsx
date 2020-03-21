@@ -11,7 +11,7 @@ interface IProperty {
 
 interface IState {
   location: string;
-  socialButtons: Array<ISocialButton>;
+  socialButtons: ISocialButton[];
 }
 
 interface ISocialButton {
@@ -91,7 +91,7 @@ export default class Footer extends Component<IProperty, IState> {
     );
   }
 
-  private getSocialButtons(): Array<JSX.Element> {
+  private getSocialButtons(): JSX.Element[] {
     return this.state.socialButtons.map(socialButton => {
       
       const href = socialButton.href;

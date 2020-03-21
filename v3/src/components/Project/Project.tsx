@@ -10,11 +10,11 @@ import style from './Project.module.scss';
 interface IProperty {}
 
 interface IState {
-  projects: Array<IProjects>;
+  projects: IProject[];
   loader: boolean;
 }
 
-interface IProjects {
+interface IProject {
   id: string;
   title: string;
   description: string;
@@ -43,14 +43,15 @@ export default class Project extends Component<IProperty, IState> {
 
   private fetchProjectsOnFireStore(): void {
     
+    Firestore.clearInstance();
     Firestore.initialize();
-
     Firestore.getInstance()
       .collection('projects')
       .orderBy('order', 'desc')
       .get()
-      .then(querySnapshot => { 
-        const projects = querySnapshot.docs.map((doc): IProjects => {
+      .then((querySnapshot: any): void => { 
+
+        const projects = querySnapshot.docs.map((doc: any): IProject => {
           const document = doc.data();
           return {
             id: doc.id,
@@ -61,6 +62,7 @@ export default class Project extends Component<IProperty, IState> {
             link: document.link
           };
         });
+
         this.setState({
           projects: projects,
           loader: false
@@ -68,8 +70,8 @@ export default class Project extends Component<IProperty, IState> {
       });
   }
 
-  private getProjects(): Array<JSX.Element> {
-    return this.state.projects.map((project) => {
+  private getProjects(): JSX.Element[] {
+    return this.state.projects.map((project): JSX.Element => {
       return (
         <div key={project.id} className={style['wrapper']}>
           <h3 className={style['title']}>{project.title}</h3>

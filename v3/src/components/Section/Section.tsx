@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 import style from './Section.module.scss';
 
-interface ISectionProperty {
+interface IProperty {
   id: string;
   title: string;
   showThematicBreak: boolean;
   showBorderTop: boolean;
 }
 
-interface ISectionState {}
+interface IState {}
 
-export default class Section extends Component<ISectionProperty, ISectionState> {
+export default class Section extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 

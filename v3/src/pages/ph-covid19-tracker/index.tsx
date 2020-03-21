@@ -4,12 +4,10 @@ import loadable from '@loadable/component';
 
 import { loadableFallbackTemplate } from '../../common/helper';
 
-const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
-
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
 const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
+const SuggestedVideo = loadable(() => import('./components/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
 const StatusPieChart = loadable(() => import('./components/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-chart-status-pie-chart-component`) });
 const StatusOverview = loadable(() => import('./components/StatusOverview/StatusOverview'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-component`) });
 const Footer = loadable(() => import('./components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
@@ -17,7 +15,7 @@ const Footer = loadable(() => import('./components/Footer/Footer'), { fallback: 
 import '../../common/global.scss';
 import './index.scss';
 
-const Covid19Tracker = (): JSX.Element => {
+const PHCovid19Tracker = (): JSX.Element => {
 
   const pageTitle = 'COVID-19 Cases in the Philippines';
   
@@ -34,7 +32,7 @@ const Covid19Tracker = (): JSX.Element => {
     "name": pageTitle,
     "author": "Joshua Clifford Reyes",
     "image": "/resources/img/covid19-min.jpg",
-    "description": "A tracking page for philippines COVID-19 cases."
+    "description": "A tracking page for COVID-19 cases in the Philippines."
   };
   
   return (
@@ -51,13 +49,13 @@ const Covid19Tracker = (): JSX.Element => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
         <meta name="author" content="Joshua Clifford Reyes" />
-        <meta name="description" content="A tracking page for philippines COVID-19 cases." />
+        <meta name="description" content="A tracking page for COVID-19 cases in the Philippines." />
         <link rel="canonical" href={currentLocationURL} />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@lorddashme" />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content="A tracking page for philippines COVID-19 cases." />
+        <meta name="twitter:description" content="A tracking page for COVID-19 cases in the Philippines." />
         <meta name="twitter:creator" content="@lorddashme" />
         <meta name="twitter:image" content="/resources/img/covid19-min.jpg" />
         <meta name="twitter:image:alt" content="COVID19" />
@@ -66,7 +64,7 @@ const Covid19Tracker = (): JSX.Element => {
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
         <meta name="og:image" content="/resources/img/covid19-min.jpg" />
-        <meta name="og:description" content="A tracking page for philippines COVID-19 cases." />
+        <meta name="og:description" content="A tracking page for COVID-19 cases in the Philippines." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
@@ -76,11 +74,7 @@ const Covid19Tracker = (): JSX.Element => {
         <StatusPieChart />
         <StatusOverview />
         <About />
-        {/* Line Item: LordDashMe_Horizontal_Home */}
-        <Ads appearance="horizontal">
-          <GoogleAdsense adClient="ca-pub-3427694918014398"
-                         adSlot="4220072227"/>
-        </Ads>
+        <SuggestedVideo />
         <Footer />
       </PageWrapper>
 
@@ -88,4 +82,4 @@ const Covid19Tracker = (): JSX.Element => {
   );
 }
 
-export default Covid19Tracker;
+export default PHCovid19Tracker;

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import style from './Loader.module.scss';
 
-interface ILoaderProperty {
+interface IProperty {
   visibility: boolean;
 }
 
-interface ILoaderState {}
+interface IState {}
 
-export default class Loader extends Component<ILoaderProperty, ILoaderState> {
+export default class Loader extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 
