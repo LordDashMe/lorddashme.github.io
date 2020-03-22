@@ -75,13 +75,13 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             '#a13838'
           ],
           borderColor: '#fff',
-          borderWidth: 1,
+          borderWidth: 0,
           hoverBorderColor: [
-            '#ccc',
-            '#ccc',
-            '#ccc'
+            '#fff',
+            '#fff',
+            '#fff'
           ],
-          hoverBorderWidth: 4,
+          hoverBorderWidth: 0,
           mouseout: () => {
             alert();
           }
@@ -217,7 +217,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
     return (
       <div id="ph-covid19-tracker-chart-status-pie-chart-component" className={style['container']}>
         {this.getPercentage()}
-        <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={350} height={350} />
+        <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={300} height={300} />
       </div>
     );
   }

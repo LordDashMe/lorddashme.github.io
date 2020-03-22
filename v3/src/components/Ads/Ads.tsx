@@ -20,6 +20,7 @@ export default class Ads extends Component<IProperty, IState> {
 
     return (
       <div id="ads-component" className={adsClassName}>
+        <small className={style['advertisement']}>ADVERTISEMENT</small>
         {this.props.children}
       </div>
     );

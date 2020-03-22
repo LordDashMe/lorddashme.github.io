@@ -2,18 +2,18 @@
 
 .container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto 30px auto;
 
   @include screen-mobile {
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
   }
 
   @include screen-mobile-small {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
   }
 }
 
@@ -27,8 +27,8 @@
 .percentage {
   position: absolute;
   pointer-events: none;
-  left: 90px;
-  top: 150px;
+  left: 60px;
+  top: 120px;
   width: 200px;
   color: #fff;
   font-size: 3em;
@@ -36,12 +36,12 @@
   text-align: center;
 
   @include screen-mobile {
-    left: 75px;
-    top: 135px;
+    left: 50px;
+    top: 110px;
   }
 
   @include screen-mobile-small {
-    left: 50px;
-    top: 115px;
+    left: 40px;
+    top: 100px;
   }
 }

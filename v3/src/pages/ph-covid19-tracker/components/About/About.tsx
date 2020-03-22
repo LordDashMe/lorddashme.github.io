@@ -21,7 +21,7 @@ export default class About extends Component<IProperty, IState> {
             The disease causes respiratory illness (like the flu) with symptoms such as a cough, fever, and in more severe cases, difficulty breathing.&nbsp;
             You can protect yourself by washing your hands frequently, avoiding touching your face, and avoiding close contact (1 meter or 3 feet) with people who are unwell.&nbsp;
             <br/>
-            <small>*References: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" rel="noopener noreferrer" target="_blank">WHO COVID-19</a> and <a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019" rel="noopener noreferrer" target="_blank">Wiki</a></small></p>
+            <small>*Reference: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" rel="noopener noreferrer" target="_blank">WHO COVID-19</a> and <a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019" rel="noopener noreferrer" target="_blank">Wiki</a></small></p>
         </div>
       </div>
     );

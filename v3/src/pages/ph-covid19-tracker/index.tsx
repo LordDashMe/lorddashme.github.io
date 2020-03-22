@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
 const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
@@ -69,6 +70,7 @@ const PHCovid19Tracker = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
 
+      <PageBorder position={'top'} />
       <PageWrapper>
         <MainTitle />
         <StatusPieChart />
@@ -77,6 +79,7 @@ const PHCovid19Tracker = (): JSX.Element => {
         <SuggestedVideo />
         <Footer />
       </PageWrapper>
+      <PageBorder position={'bottom'} />
 
     </React.Fragment>
   );
