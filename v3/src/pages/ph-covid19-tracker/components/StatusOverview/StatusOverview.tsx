@@ -19,7 +19,7 @@ interface IState {
 
 interface IStatusOverview {
   id: string;
-  sys_id: string;
+  sysId: string;
   label: string;
   count: number;
   color: string;
@@ -35,28 +35,28 @@ export default class StatusOverview extends Component<IProperty, IState> {
       statusOverview: [
         {
           id: 'id_confirmed_cases',
-          sys_id: 'confirmed_cases',
+          sysId: 'confirmed_cases',
           label: 'CONFIRMED CASES',
           count: 0,
           color: '#6f6f6f'
         },
         {
-          id: 'id_infected',
-          sys_id: 'infected',
-          label: 'INFECTED',
+          id: 'id_active_cases',
+          sysId: 'active_cases',
+          label: 'ACTIVE CASES',
           count: 0,
           color: '#e29e01'
         },
         {
           id: 'id_recovered',
-          sys_id: 'recovered',
+          sysId: 'recovered',
           label: 'RECOVERED',
           count: 0,
           color: '#60a138'
         },
         {
           id: 'id_deaths',
-          sys_id: 'deaths',
+          sysId: 'deaths',
           label: 'DEATHS',
           count: 0,
           color: '#a13838'
@@ -85,7 +85,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           const document = doc.data();
           return {
             id: doc.id,
-            sys_id: document.sys_id,
+            sysId: document.sys_id,
             label: document.label,
             count: document.count,
             color: document.color
@@ -100,19 +100,37 @@ export default class StatusOverview extends Component<IProperty, IState> {
   }
 
   private getStatusOverview(): JSX.Element[] {
-    return this.state.statusOverview.map((statusOverview: IStatusOverview): JSX.Element => {
-      const countStyle = {
-        'color': statusOverview.color
-      };
-      return (
-        <div key={statusOverview.id} className={style['status-overivew-items'] + ' ' + statusOverview.sys_id}>
-          <h2>{statusOverview.label}</h2>
-          <p style={countStyle}>
-            <AnimateNumber value={statusOverview.count} />
-          </p>
-        </div>
-      );
-    });
+    return (this.state.statusOverview)
+      .filter((statusOverview: IStatusOverview): IStatusOverview | boolean => {
+        if (statusOverview.sysId === 'confirmed_cases') {
+          return false;
+        } 
+        return statusOverview;
+      })
+      .map((statusOverview: IStatusOverview): JSX.Element => {
+        const countStyle = {
+          'color': statusOverview.color
+        };
+        return (
+          <div key={statusOverview.id} className={style['status-overivew-items'] + ' ' + statusOverview.sysId}>
+            <h2>{statusOverview.label}</h2>
+            <p style={countStyle}>
+              <AnimateNumber value={statusOverview.count} />
+            </p>
+          </div>
+        );
+      });
+  }
+
+  private getConfirmCases(): JSX.Element {
+    return (
+      <div key={this.state.statusOverview[0].id} className={style['status-overivew-item-confirmed-cases']}>
+        <h2>{this.state.statusOverview[0].label}</h2>
+        <p style={{'color': this.state.statusOverview[0].color}}>
+          <AnimateNumber value={this.state.statusOverview[0].count} />
+        </p>
+      </div>
+    );
   }
 
   public render(): JSX.Element {
@@ -121,6 +139,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
         <Loader visibility={this.state.loader}/>
         <div className={style['status-overview']}>
           {this.getStatusOverview()}
+          {this.getConfirmCases()}
         </div>
       </div>
     );

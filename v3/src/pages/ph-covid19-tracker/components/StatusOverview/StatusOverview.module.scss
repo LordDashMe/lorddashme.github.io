@@ -50,3 +50,33 @@
     }
   }
 }
+
+.status-overivew-item-confirmed-cases {
+  width: 100%;
+
+  h2 {
+    font-size: 2.4em;
+    font-weight: 600;
+
+    @include screen-mobile {
+      font-size: 2.2em;
+    }
+
+    @include screen-mobile-small {
+      font-size: 2em;
+    }
+  }
+  
+  p {
+    font-size: 4.8em;
+    font-weight: 600;
+
+    @include screen-mobile {
+      font-size: 4.2em;
+    }
+  
+    @include screen-mobile-small {
+      font-size: 3.8em;
+    }
+  }
+}

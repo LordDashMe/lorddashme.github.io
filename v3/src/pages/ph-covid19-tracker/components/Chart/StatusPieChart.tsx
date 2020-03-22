@@ -25,7 +25,7 @@ interface IStatusPieChart {
 
 interface IStatusOverview {
   id: string;
-  sys_id: string;
+  sysId: string;
   label: string;
   count: number;
   color: string;
@@ -57,7 +57,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
   private getStatusPieChartData(): object {
     return {
       labels: [
-        'INFECTED',
+        'ACTIVE CASES',
         'RECOVERED',
         'DEATHS'
       ],
@@ -173,7 +173,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
           const document = doc.data();
             return {
               id: doc.id,
-              sys_id: document.sys_id,
+              sysId: document.sys_id,
               label: document.label,
               count: document.count,
               color: document.color
