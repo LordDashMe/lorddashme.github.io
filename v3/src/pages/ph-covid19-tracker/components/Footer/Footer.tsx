@@ -52,10 +52,15 @@ export default class Footer extends Component<IProperty, IState> {
             </small>
             {/* Line Item: LordDashMe_Horizontal_Home */}
             <Ads appearance="horizontal">
-              <GoogleAdsense adClient="ca-pub-3427694918014398"
-                            adSlot="4220072227"/>
+              <GoogleAdsense 
+                adClient="ca-pub-3427694918014398"
+                adSlot="4220072227"/>
             </Ads>
-            <small>This page is a personal project and inspired by the people who are need for information about the latest updates related to the COVID-19. The only aim of this project is to share a simplified information related to the confirmed cases of COVID-19 in the Philippines. This is a 100% open source project and available in the Github. If you find any information above is inaccurate, please send a message by using the following <a href="/contact/"  rel="noopener noreferrer" target="_blank">form</a>.</small>
+            <small>
+              This page is a personal project and inspired by the people who are in need for information on the latest updates about the COVID-19 cases in the Philippines.&nbsp;
+              The only aim of this project is to share a simplified information from the official sources.&nbsp;
+              This is a 100% open source project and available in the Github.&nbsp;
+              If you find any inaccurate information above, please send a message by using the following <a href="/contact/"  rel="noopener noreferrer" target="_blank">form</a>.</small>
           </div>
         </div>
       </div>
