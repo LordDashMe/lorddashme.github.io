@@ -63,7 +63,9 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
   private getSuggestedVideo(): JSX.Element[] {
     return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
       return(
-        <Youtube key={suggestedVideo.id} elementId={'suggested-video'} videoId={suggestedVideo.videoId} height={'100%'} width={'100%'} />
+        <div className={style['content']}>
+          <Youtube key={suggestedVideo.id} elementId={'suggested-video-' + suggestedVideo.videoId} videoId={suggestedVideo.videoId} height={'100%'} width={'100%'} />
+        </div>
       );
     });
   }
@@ -72,9 +74,7 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
     return (
       <div id="ph-covid19-tracker-suggested-video-component" className={style['container']}>
         <h2 className={style['title']}>SUGGESTED VIDEO</h2>
-        <div className={style['content']}>
-          {this.getSuggestedVideo()}
-        </div>
+        {this.getSuggestedVideo()}
       </div>
     );
   } 
