@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import style from './Ads.module.scss';
 
 interface IProperty {
-  appearance: string;
+  appearance?: string;
 }
 
 interface IState {}
@@ -12,10 +12,14 @@ export default class Ads extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
     
-    let adsClassName = style['container'];
+    let adsClassName: string = style['container'];
     
-    if (this.props.appearance === 'horizontal') {
-      adsClassName += ' ' + style['style-horizontal'];
+    if (typeof this.props.appearance !== 'undefined') {
+      if (this.props.appearance === 'horizontal') {
+        adsClassName += ' ' + style['style-horizontal'];
+      } else if (this.props.appearance === 'vertical') {
+        adsClassName += ' ' + style['style-vertical'];
+      } 
     }
 
     return (

@@ -3,22 +3,29 @@ import raf from 'raf';
 
 interface IProperty {
   value: number;
+  isCommaSeparated: boolean;
+  fps: number;
 }
 
 interface IState {
   number: number;
+  commaSeparated: string;
 }
 
 export default class AnimateNumber extends Component<IProperty, IState> {
 
+  private static readonly DEFAULT_FPS: number = 60;
+
   private animated: any = null;
 
   public constructor(properties: any) {
+    
     super(properties);
-
+    
     this.state = {
-      number: 0
-    };
+      number: 0,
+      commaSeparated: '0'
+    }
   }
 
   public componentDidMount(): void {
@@ -31,28 +38,43 @@ export default class AnimateNumber extends Component<IProperty, IState> {
       return;
     }
 
-    let number = this.state.number;
-
+    let number: number = this.state.number;
     if (number >= this.props.value) {
       raf.cancel(this.animated);
-      this.setState({
-        number: this.props.value
-      });
+      this.setNumber(this.props.value);
       return;
     }
 
-    number += Math.ceil(this.props.value / 60);
+    let fps: number = AnimateNumber.DEFAULT_FPS;
+    if (this.props.fps) {
+      fps = this.props.fps;
+    }
 
-    this.setState({
-      number: number
-    });
+    number += Math.ceil(this.props.value / fps);
 
+    this.setNumber(number);
     this.animated = raf(this.getAnimated.bind(this));
+  }
+
+  private setNumber(number: number): void {
+    this.setState({
+      number: number,
+      commaSeparated: number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    });
+  }
+
+  private getNumber(): number | string {
+
+    if (this.props.isCommaSeparated) {
+      return this.state.commaSeparated;
+    }
+    
+    return this.state.number;
   }
 
   public render(): JSX.Element {
     return (
-      <span id="animate-number-component">{this.state.number}</span>
+      <span id="animate-number-component">{this.getNumber()}</span>
     );
   }
 }

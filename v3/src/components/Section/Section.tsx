@@ -15,13 +15,13 @@ export default class Section extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 
-    let thematicBreak = null;
+    let thematicBreak: JSX.Element | null = null;
 
     if (this.props.showThematicBreak) {
       thematicBreak = (<hr className={style['breaker']}></hr>);
     }
 
-    let borderTop = null;
+    let borderTop: string | null = null;
     
     if (! this.props.showBorderTop) {
       borderTop = style['hide'];

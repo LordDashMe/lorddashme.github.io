@@ -480,7 +480,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
   private getTools(tools: ITool[]): JSX.Element[] {
     return tools.map((tool: ITool): JSX.Element => {
 
-      let toolClassName = style['tool'];
+      let toolClassName: string = style['tool'];
       
       if (! tool.is_active) {
         toolClassName += ' ' + style['inactive'];
@@ -501,7 +501,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
   private getLibraries(libraries: ILibrary[]): JSX.Element[] {
     return libraries.map((library: ILibrary): JSX.Element => {
       
-      let libraryClassName = style['library'];
+      let libraryClassName: string = style['library'];
       
       if (! library.is_active) {
         libraryClassName += ' ' + style['inactive'];

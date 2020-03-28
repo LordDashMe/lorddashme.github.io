@@ -81,10 +81,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             '#fff',
             '#fff'
           ],
-          hoverBorderWidth: 0,
-          mouseout: () => {
-            alert();
-          }
+          hoverBorderWidth: 0
         }
       ]
     };
@@ -131,7 +128,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
 
   private unsetPercentageValue(): void {
 
-    const currentState = {...this.state};
+    const currentState: IState = {...this.state};
 
     currentState.percentageVisibility = false;
     currentState.percentageValue = 0;
@@ -141,8 +138,8 @@ export default class StatusPieChart extends Component<IProperty, IState> {
 
   private setPercentageValue(specificIndex: number): void {
 
-    const currentState = {...this.state};
-    const specificCaseCount = currentState.statusPieChart.data['datasets'][0].data[specificIndex];
+    const currentState: IState = {...this.state};
+    const specificCaseCount: any = currentState.statusPieChart.data['datasets'][0].data[specificIndex];
 
     currentState.percentageVisibility = true;
     currentState.percentageValue = parseFloat(((specificCaseCount / currentState.totalConfirmedCases) * 100).toFixed(2));
@@ -160,17 +157,23 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       .get()
       .then((querySnapshot: any): void => { 
 
-        const totalConfirmedCases = querySnapshot.docs[0].data().count;
+        const totalConfirmedCases: any = querySnapshot.docs[0].data().count;
         
-        const statusOverview = (querySnapshot.docs)
+        const statusOverview: any = (querySnapshot.docs)
           .filter((doc: any): IStatusOverview | boolean => {
-            const document = doc.data();
+            
+            const document: any = doc.data();
+            
             if (document.sys_id === 'confirmed_cases') {
               return false;
             } 
+
             return doc;
+            
           }).map((doc: any): IStatusOverview => {
-          const document = doc.data();
+            
+            const document: any = doc.data();
+            
             return {
               id: doc.id,
               sysId: document.sys_id,
@@ -180,7 +183,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             };
           });
 
-        const currentState = {...this.state};
+        const currentState: IState = {...this.state};
 
         currentState.statusPieChart.data['labels'] = statusOverview.map((details: IStatusOverview): string => {
           return details.label;

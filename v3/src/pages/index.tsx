@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import loadable from '@loadable/component';
 
+import IApplicationLdJSON from '../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../common/helper';
 
+const Page = loadable(() => import('../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
 const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const PageWrapper = loadable(() => import('../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
@@ -11,26 +13,23 @@ const Author = loadable(() => import('../components/Author/Author'), { fallback:
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
 const Ads = loadable(() => import('../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
+const ResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#google-adsense-responsive-ads-component`) });
 const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
 const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
 const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
 const Footer = loadable(() => import('../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
-import '../common/global.scss';
-import './index.scss';
-
 const Home = (): JSX.Element => {
 
-  const pageTitle = 'Joshua Clifford Reyes | LordDashMe';
+  const pageTitle: string = 'Joshua Clifford Reyes | LordDashMe';
   
-  let currentLocationURL = '/';
+  let currentLocationURL: string = '/';
 
   useEffect(() => {
     currentLocationURL = document.location.href;
   }, []);
 
-  const applicationLdJson = {
+  const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
@@ -72,48 +71,60 @@ const Home = (): JSX.Element => {
         <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
+        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
+        <link rel="stylesheet"  href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
       </Helmet>
       
-      <NavigationBar />
-      <PageWrapper>
-        <Section id="author" 
-                 title="HELLO, WORLD!" 
-                 showThematicBreak={true} 
-                 showBorderTop={true}>
-          <Author />
-        </Section>
-        <Section id="skills-technologies" 
-                 title="SKILLS | TECHNOLOGIES" 
-                 showThematicBreak={true} 
-                 showBorderTop={true}>
-          <StatusPieChart />
-          <SkillTechnology />
-        </Section>
-        {/* Line Item: LordDashMe_Horizontal_Home */}
-        <Ads appearance="horizontal">
-          <GoogleAdsense adClient="ca-pub-3427694918014398"
-                         adSlot="4220072227"/>
-        </Ads>
-        <Section id="about" 
-                 title="ABOUT" 
-                 showThematicBreak={true} 
-                 showBorderTop={true}>
-          <About />
-        </Section>
-        <Section id="career-history" 
-                 title="CAREER HISTORY" 
-                 showThematicBreak={true} 
-                 showBorderTop={true}>
-          <CareerHistory />
-        </Section>
-        <Statement />
-        {/* Line Item: LordDashMe_Horizontal_Home_2 */}
-        <Ads appearance="horizontal">
-          <GoogleAdsense adClient="ca-pub-3427694918014398"
-                         adSlot="2369194966"/>
-        </Ads>
-      </PageWrapper>
-      <Footer isFixedPosition={false}/>
+      <Page>
+        <NavigationBar />
+        <PageWrapper>
+          <Section 
+            id="author" 
+            title="HELLO, WORLD!" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <Author />
+          </Section>
+          <Section 
+            id="skills-technologies" 
+            title="SKILLS | TECHNOLOGIES" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <StatusPieChart />
+            <SkillTechnology />
+          </Section>
+          {/* Line Item: LordDashMe_Horizontal_Home */}
+          <Ads appearance="horizontal">
+            <ResponsiveAds 
+              adClient="ca-pub-3427694918014398"
+              adSlot="4220072227" />
+          </Ads>
+          <Section 
+            id="about" 
+            title="ABOUT" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <About />
+          </Section>
+          <Section 
+            id="career-history" 
+            title="CAREER HISTORY" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <CareerHistory />
+          </Section>
+          <Statement />
+          {/* Line Item: LordDashMe_Horizontal_Home_2 */}
+          <Ads appearance="horizontal">
+            <ResponsiveAds 
+              adClient="ca-pub-3427694918014398"
+              adSlot="2369194966" />
+          </Ads>
+        </PageWrapper>
+        <Footer isFixedPosition={false}/>
+      </Page>
     </React.Fragment>
   );
 }

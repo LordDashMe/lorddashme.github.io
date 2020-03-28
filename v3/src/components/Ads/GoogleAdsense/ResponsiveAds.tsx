@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
-import style from './GoogleAdsense.module.scss';
+import style from './ResponsiveAds.module.scss';
+
+declare global {
+  interface Window {
+    adsbygoogle?: any;
+  }
+}
 
 interface IProperty {
   adClient: string;
@@ -9,29 +15,17 @@ interface IProperty {
 
 interface IState {}
 
-declare global {
-  
-  interface Window {
-    adsbygoogle: any;
-  }
-}
-
-export default class GoogleAdsense extends Component<IProperty, IState> {
+export default class ResponsiveAds extends Component<IProperty, IState> {
 
   public componentDidMount(): void {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
 
   public render(): JSX.Element {
-    
-    const googleAdsStyle = {
-      'display': 'block'
-    };
-
     return (
-      <div id="ads-google-adsense-component" className={style['container']}>
+      <div id="google-adsense-responsive-ads-component" className={style['container']}>
         <ins className="adsbygoogle"
-             style={googleAdsStyle}
+             style={{'display': 'block'}}
              data-ad-client={this.props.adClient}
              data-ad-slot={this.props.adSlot}
              data-ad-format="auto"

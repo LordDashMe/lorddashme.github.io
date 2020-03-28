@@ -72,9 +72,9 @@ export default class Statement extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 
-    const statements = this.state.statements;
-    const pickedNumber = this.pickNumber(0, (statements.length - 1));
-    const pickedStatement = statements[pickedNumber];
+    const statements: IStatement[] = this.state.statements;
+    const pickedNumber: number = this.pickNumber(0, (statements.length - 1));
+    const pickedStatement: IStatement = statements[pickedNumber];
 
     return (
       <div id="statement-component" className={style['container']}>

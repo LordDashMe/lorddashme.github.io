@@ -2,24 +2,23 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import loadable from '@loadable/component';
 
+import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const Page = loadable(() => import('../../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
 const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
-
-import '../../common/global.scss';
-import './index.scss';
 
 const NotFound = (): JSX.Element => {
 
-  const pageTitle = 'Page Not Found';
+  const pageTitle: string = 'Page Not Found';
   
-  let currentLocationURL = '/notfound';
+  let currentLocationURL: string = '/notfound';
 
   useEffect(() => {
     currentLocationURL = document.location.href;
   }, []);
 
-  const applicationLdJson = {
+  const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
@@ -61,12 +60,19 @@ const NotFound = (): JSX.Element => {
         <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
+        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
+        <link rel="stylesheet"  href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
       </Helmet>
 
-      <PageInformation id="not-found" 
-                       title="PAGE NOT FOUND"
-                       primaryIcon="fas fa-map-marked-alt" 
-                       description="Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again."/>
+      <Page>
+        <PageInformation 
+          id="not-found" 
+          title="PAGE NOT FOUND"
+          primaryIcon="fas fa-map-marked-alt" 
+          description="Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again." />
+      </Page>
     </React.Fragment>
   );
 }

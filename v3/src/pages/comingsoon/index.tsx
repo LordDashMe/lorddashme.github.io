@@ -2,24 +2,23 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import loadable from '@loadable/component';
 
+import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const Page = loadable(() => import('../../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
 const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
-
-import '../../common/global.scss';
-import './index.scss';
 
 const ComingSoon = (): JSX.Element => {
 
-  const pageTitle = 'Coming Soon';
+  const pageTitle: string = 'Coming Soon';
   
-  let currentLocationURL = '/comingsoon';
+  let currentLocationURL: string = '/comingsoon';
 
   useEffect(() => {
     currentLocationURL = document.location.href;
   }, []);
 
-  const applicationLdJson = {
+  const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
@@ -61,12 +60,19 @@ const ComingSoon = (): JSX.Element => {
         <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
+        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
+        <link rel="stylesheet"  href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
       </Helmet>
 
-      <PageInformation id="coming-soon" 
-                       title="PAGE COMING SOON" 
-                       primaryIcon="fas fa-hard-hat" 
-                       description="This page is currently under construction."/>
+      <Page>
+        <PageInformation 
+          id="coming-soon" 
+          title="PAGE COMING SOON" 
+          primaryIcon="fas fa-hard-hat" 
+          description="This page is currently under construction." />
+      </Page>
     </React.Fragment>
   );
 }

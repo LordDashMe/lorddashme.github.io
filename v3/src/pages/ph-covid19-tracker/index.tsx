@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import loadable from '@loadable/component';
 
+import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const Page = loadable(() => import('./components/Page/Page'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-component`) });
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
@@ -13,20 +15,17 @@ const StatusPieChart = loadable(() => import('./components/Chart/StatusPieChart'
 const StatusOverview = loadable(() => import('./components/StatusOverview/StatusOverview'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-component`) });
 const Footer = loadable(() => import('./components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
 
-import '../../common/global.scss';
-import './index.scss';
-
 const PHCovid19Tracker = (): JSX.Element => {
 
-  const pageTitle = 'COVID-19 Cases in the Philippines';
+  const pageTitle: string = 'COVID-19 Cases in the Philippines';
   
-  let currentLocationURL = '/ph-covid19-tracker';
+  let currentLocationURL: string = '/ph-covid19-tracker';
 
   useEffect(() => {
     currentLocationURL = document.location.href;
   }, []);
 
-  const applicationLdJson = {
+  const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
@@ -68,18 +67,22 @@ const PHCovid19Tracker = (): JSX.Element => {
         <meta name="og:description" content="A tracking page for COVID-19 cases in the Philippines." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
       </Helmet>
 
-      <PageBorder position={'top'} />
-      <PageWrapper>
-        <MainTitle />
-        <StatusPieChart />
-        <StatusOverview />
-        <About />
-        <SuggestedVideo />
-        <Footer />
-      </PageWrapper>
-      <PageBorder position={'bottom'} />
+      <Page>
+        <PageBorder position={'top'} />
+        <PageWrapper>
+          <MainTitle />
+          <StatusPieChart />
+          <StatusOverview />
+          <About />
+          <SuggestedVideo />
+          <Footer />
+        </PageWrapper>
+        <PageBorder position={'bottom'} />
+      </Page>
 
     </React.Fragment>
   );

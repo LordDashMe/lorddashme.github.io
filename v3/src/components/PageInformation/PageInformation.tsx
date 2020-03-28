@@ -28,10 +28,11 @@ export default class PageInformation extends Component<IProperty, IState> {
       <div id="page-information-component" className={style['container']}>
         <NavigationBar />
         <PageWrapper>
-          <Section id={this.props.id} 
-                   title={this.props.title} 
-                   showThematicBreak={false} 
-                   showBorderTop={false}>
+          <Section 
+            id={this.props.id} 
+            title={this.props.title} 
+            showThematicBreak={false} 
+            showBorderTop={false}>
             <div className={style['content']}>
               <i className={style['icon'] + ' ' + this.props.primaryIcon}></i>
               <p className={style['description']}>{this.props.description}</p>

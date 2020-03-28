@@ -50,21 +50,26 @@ export default class ContactForm extends Component<IProperty, IState> {
 
     this.triggerLoader(true);
 
-    fetch(ContactForm.API_CONTACT, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type':'application/json', 
-        'X-LORDDASHME-HEADER': '1'
-      },
-      body: JSON.stringify(this.state.contact)
-    }).then((response) => {
+    fetch(
+      ContactForm.API_CONTACT, 
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type':'application/json', 
+          'X-LORDDASHME-HEADER': '1'
+        },
+        body: JSON.stringify(this.state.contact)
+      }
+    ).then((response) => {
+
       if (response.status === 200) {
         this.triggerLoader(false);
         alert('Message sent!');
         window.location.reload();
         return;
       }
+
       response.json().then((data) => {
         this.triggerLoader(false);
         alert(data.message);
@@ -74,14 +79,17 @@ export default class ContactForm extends Component<IProperty, IState> {
   }
 
   private triggerLoader(visiblity: boolean): void {
-    const state = {...this.state};
+
+    const state: IState = {...this.state};
+    
     state['loader'] = visiblity;
+    
     this.setState(state);
   }
 
   private handleFieldChange(key: string, event: any): void {
     
-    let contact = this.state.contact;
+    let contact: IContact = this.state.contact;
     
     if (key === 'name') {
       contact['name'] = event.target.value;
@@ -93,7 +101,7 @@ export default class ContactForm extends Component<IProperty, IState> {
       contact['message'] = event.target.value;
     }
 
-    const state = {...this.state};
+    const state: IState = {...this.state};
     
     state['contact'] = contact;
 
@@ -101,12 +109,9 @@ export default class ContactForm extends Component<IProperty, IState> {
   }
 
   public render(): JSX.Element {
-    
     return (
       <div id="contact-form-component" className={style['container']}>
-
         <Loader visibility={this.state.loader}/>
-        
         <form className={style['form']}>
           <div className={style['field'] + ' form-group'}>
             <label className={style['label']}>NAME*</label>

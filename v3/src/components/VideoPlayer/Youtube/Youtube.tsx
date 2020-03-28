@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { isSSR } from '../../../common/helper';
 
+declare const YT: any;
+
 interface IProperty {
   elementId: string;
   videoId: string;
@@ -11,13 +13,12 @@ interface IProperty {
 
 interface IState {}
 
-declare const YT: any;
-
 export default class Youtube extends Component<IProperty, IState> {
 
-  private player: any = null;
+  private static readonly WAITING_TIME = 1000;
 
   public constructor(properties: any) {
+    
     super(properties);
 
     this.state = {};
@@ -33,7 +34,7 @@ export default class Youtube extends Component<IProperty, IState> {
 
     if ((typeof YT !== "undefined") && YT && YT.Player) {
 
-      this.player = new YT.Player(this.props.elementId, {
+      new YT.Player(this.props.elementId, {
         height: this.props.height,
         width: this.props.width,
         videoId: this.props.videoId,
@@ -44,8 +45,8 @@ export default class Youtube extends Component<IProperty, IState> {
       });
       
     } else {
-      console.info('Waiting for YT to load properly.');
-      setTimeout(this.onYouTubeIframeAPIReady.bind(this), 500);
+      console.info(`Waiting for YT to load properly. ${Youtube.WAITING_TIME}ms`);
+      setTimeout(this.onYouTubeIframeAPIReady.bind(this), Youtube.WAITING_TIME);
     }
   }
 

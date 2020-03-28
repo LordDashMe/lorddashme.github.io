@@ -4,20 +4,19 @@ import loadable from '@loadable/component';
 import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
 
 const Ads = loadable(() => import('../../../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const GoogleAdsense = loadable(() => import('../../../../components/Ads/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
+const ResponsiveAds = loadable(() => import('../../../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#google-adsense-responsive-ads-component`) });
 
 import style from './Footer.module.scss';
+
+declare const ga: Function;
 
 interface IProperty {}
 
 interface IState {}
 
-declare const ga: Function;
-
 export default class Footer extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
-
     super(properties);
   }
 
@@ -52,13 +51,13 @@ export default class Footer extends Component<IProperty, IState> {
             </small>
             {/* Line Item: LordDashMe_Horizontal_Home */}
             <Ads appearance="horizontal">
-              <GoogleAdsense 
+              <ResponsiveAds 
                 adClient="ca-pub-3427694918014398"
                 adSlot="4220072227"/>
             </Ads>
             <small>
-              This page is a personal project and inspired by the people who are in need for information on the latest updates about the COVID-19 cases in the Philippines.&nbsp;
-              The only aim of this project is to share a simplified information from the official sources.&nbsp;
+              This page is a personal project and inspired by the people who are in need of information on the latest updates about the COVID-19 cases in the Philippines.&nbsp;
+              The only aim of this project is to share a simplified information from the stated official sources.&nbsp;
               This is a 100% open source project and available in the Github.&nbsp;
               If you find any inaccurate information above, please send a message by using the following <a href="/contact/"  rel="noopener noreferrer" target="_blank">form</a>.</small>
           </div>

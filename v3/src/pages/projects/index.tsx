@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import loadable from '@loadable/component';
 
+import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const Page = loadable(() => import('../../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
@@ -11,20 +13,17 @@ const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'),
 const Project = loadable(() => import('../../components/Project/Project'), { fallback: loadableFallbackTemplate(`#project-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
-import '../../common/global.scss';
-import './index.scss';
-
 const Projects = (): JSX.Element => {
 
-  const pageTitle = 'Projects';
+  const pageTitle: string = 'Projects';
   
-  let currentLocationURL = '/projects';
+  let currentLocationURL: string = '/projects';
 
   useEffect(() => {
     currentLocationURL = document.location.href;
   }, []);
 
-  const applicationLdJson = {
+  const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
@@ -66,22 +65,29 @@ const Projects = (): JSX.Element => {
         <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
+        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
+        <link rel="stylesheet"  href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
       </Helmet>
 
-      <NavigationBar />
-      <PageWrapper>
-        <Section id="projects" 
-                 title="PROJECTS" 
-                 showThematicBreak={true} 
-                 showBorderTop={true}>
-          <PoweredBy>
-            <p>
-              <small>Backend is powered by <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a></small>
-            </p>
-          </PoweredBy>
-          <Project />
-        </Section>
-      </PageWrapper>
+      <Page>
+        <NavigationBar />
+        <PageWrapper>
+          <Section 
+            id="projects" 
+            title="PROJECTS"
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <PoweredBy>
+              <p>
+                <small>Backend is powered by <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a></small>
+              </p>
+            </PoweredBy>
+            <Project />
+          </Section>
+        </PageWrapper>
+      </Page>
       <Footer isFixedPosition={false}/>
     </React.Fragment>
   );

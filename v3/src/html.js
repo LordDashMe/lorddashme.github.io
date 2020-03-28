@@ -11,19 +11,14 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        
         {/* DEV CONTROLLED - CRITICAL ASSETS START */}
           <meta name="theme-color" content="#000000" />
-        {/* 
-          <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2`} as="font" type="font/woff2" />
-          <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2`} as="font" type="font/woff2" />
-          <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2`} as="font" type="font/woff2" /> 
-        */}
-
-          <link rel="stylesheet" href={`/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css`} type="text/css"></link>
-          <link rel="stylesheet"  href={`/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css`} type="text/css"></link>
+          {/* 
+            <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2`} as="font" type="font/woff2" />
+            <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2`} as="font" type="font/woff2" />
+            <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2`} as="font" type="font/woff2" /> 
+          */}
         {/* DEV CONTROLLED - CRITICAL ASSETS END */}
-
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -33,13 +28,10 @@ export default function HTML(props) {
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
-        {props.postBodyComponents}
-        
         {/* DEV CONTROLLED - LAZY LOAD ASEETS START */}
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
           <script defer src={`/resources/vendor/vendor.js`}></script>
         {/* DEV CONTROLLED - LAZY LOAD ASEETS END */}
-        
+        {props.postBodyComponents}  
       </body>
     </html>
   )

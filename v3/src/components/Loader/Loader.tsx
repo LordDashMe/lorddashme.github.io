@@ -12,7 +12,7 @@ export default class Loader extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 
-    let loaderClasses = style['signal-wrapper'];
+    let loaderClasses: string = style['signal-wrapper'];
     
     if (! this.props.visibility) {
       loaderClasses += ' ' + style['off'];

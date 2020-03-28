@@ -71,8 +71,8 @@ export default class NavigationBar extends Component<IProperty, IState> {
 
   private toggleCollapse(): void {
     
-    let toggled = false;
-    let collapseStyle = {
+    let toggled: boolean = false;
+    let collapseStyle: object = {
       'display': 'none'
     };
     
@@ -84,7 +84,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
       };
     }
 
-    const state = {...this.state};
+    const state: IState = {...this.state};
 
     state['collapseStyle'] = collapseStyle;
     state['toggleCollapse'] = toggled;
@@ -107,7 +107,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
   private getRoutes(): JSX.Element[] {
     return this.state.routes.map((route: IRoute) => {
 
-      const href = route.href;
+      const href: string = route.href;
 
       if (route.id === 'home') {
         return (

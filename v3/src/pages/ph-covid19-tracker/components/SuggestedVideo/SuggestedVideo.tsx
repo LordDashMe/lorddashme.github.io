@@ -46,8 +46,8 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
       .get()
       .then((querySnapshot: any): void => { 
         
-        const suggestedVideo = querySnapshot.docs.map((doc: any): ISuggestedVideo => {
-          const document = doc.data();
+        const suggestedVideo: any = querySnapshot.docs.map((doc: any): ISuggestedVideo => {
+          const document: any = doc.data();
           return {
             id: doc.id,
             videoId: document.video_id
@@ -63,8 +63,8 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
   private getSuggestedVideo(): JSX.Element[] {
     return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
       return(
-        <div className={style['content']}>
-          <Youtube key={suggestedVideo.id} elementId={'suggested-video-' + suggestedVideo.videoId} videoId={suggestedVideo.videoId} height={'100%'} width={'100%'} />
+        <div key={suggestedVideo.id} className={style['content']}>
+          <Youtube elementId={'suggested-video-' + suggestedVideo.videoId} videoId={suggestedVideo.videoId} height={'100%'} width={'100%'} />
         </div>
       );
     });

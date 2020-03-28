@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import loadable from '@loadable/component';
 
+import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const Page = loadable(() => import('../../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
@@ -12,20 +14,17 @@ const ContactForm = loadable(() => import('../../components/ContactForm/ContactF
 const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
-import '../../common/global.scss';
-import './index.scss';
-
 const Contact = (): JSX.Element => {
 
-  const pageTitle = 'Contact';
+  const pageTitle: string = 'Contact';
   
-  let currentLocationURL = '/contact';
+  let currentLocationURL: string = '/contact';
 
   useEffect(() => {
     currentLocationURL = document.location.href;
   }, []);
 
-  const applicationLdJson = {
+  const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
@@ -67,26 +66,33 @@ const Contact = (): JSX.Element => {
         <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
+        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
+        <link rel="stylesheet"  href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
       </Helmet>
 
-      <NavigationBar />
-      <div className="Contact-wrapper">
-      <PageWrapper>
-        <Section id="contact"
-                 title="CONTACT"
-                 showThematicBreak={true}
-                 showBorderTop={false}>
-          <PoweredBy>
-            <p>
-              <small>Backend is powered by <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku: Cloud Application Platform</a></small>
-            </p>
-          </PoweredBy>
-          <ContactForm />
-        </Section>
-        <Statement />
-      </PageWrapper>
-      </div>
-      <Footer isFixedPosition={false}/>
+      <Page>
+        <NavigationBar />
+        <div className="Contact-wrapper">
+        <PageWrapper>
+          <Section 
+            id="contact"
+            title="CONTACT"
+            showThematicBreak={true}
+            showBorderTop={false}>
+            <PoweredBy>
+              <p>
+                <small>Backend is powered by <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku: Cloud Application Platform</a></small>
+              </p>
+            </PoweredBy>
+            <ContactForm />
+          </Section>
+          <Statement />
+        </PageWrapper>
+        </div>
+        <Footer isFixedPosition={false}/>
+      </Page>
     </React.Fragment>
   );
 }

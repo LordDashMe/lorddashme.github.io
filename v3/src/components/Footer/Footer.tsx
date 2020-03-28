@@ -5,6 +5,8 @@ import { isSSR } from '../../common/helper';
 
 import style from './Footer.module.scss';
 
+declare const ga: Function;
+
 interface IProperty {
   isFixedPosition: boolean;
 }
@@ -19,8 +21,6 @@ interface ISocialButton {
   href: string;
   icon: string;
 }
-
-declare const ga: Function;
 
 export default class Footer extends Component<IProperty, IState> {
 
@@ -94,8 +94,8 @@ export default class Footer extends Component<IProperty, IState> {
   private getSocialButtons(): JSX.Element[] {
     return this.state.socialButtons.map(socialButton => {
       
-      const href = socialButton.href;
-      const icon = 'fab ' + socialButton.icon;
+      const href: string = socialButton.href;
+      const icon: string = 'fab ' + socialButton.icon;
       
       return (
         <li key={socialButton.id}>
@@ -151,7 +151,7 @@ export default class Footer extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 
-    let container = style['container'];
+    let container: string = style['container'];
 
     if (this.props.isFixedPosition) {
       container += ' ' + style['fixed-position'];
