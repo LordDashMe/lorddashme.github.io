@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { __WEBSITE_INFO } from '../../common/config';
+import { __WEBSITE_CONFIGURATION } from '../../common/config';
 import { isSSR } from '../../common/helper';
 
 import style from './Footer.module.scss';
@@ -115,7 +115,7 @@ export default class Footer extends Component<IProperty, IState> {
     return (
       <div className="col-lg-12">
         <p>
-          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>{__WEBSITE_INFO.buildVersion}</small>
+          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>{__WEBSITE_CONFIGURATION.buildVersion}</small>
         </p>
         <p>
         <small className={style['copyright']}>

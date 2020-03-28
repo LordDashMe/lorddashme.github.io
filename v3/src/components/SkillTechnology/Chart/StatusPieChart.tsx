@@ -36,11 +36,11 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             {
               label: '2018',
               data: [
-                10, 
-                3, 
+                9, 
+                4, 
                 3, 
                 6, 
-                4
+                5
               ],
               backgroundColor: [
                 '#000',
