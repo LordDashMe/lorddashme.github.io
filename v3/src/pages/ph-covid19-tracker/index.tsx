@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
-const Page = loadable(() => import('./components/Page/Page'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-component`) });
+import Page from './components/Page/Page';
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });

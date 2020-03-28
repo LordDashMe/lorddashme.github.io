@@ -5,5 +5,5 @@
  */
 
 export const __WEBSITE_INFO = {
-  buildVersion: 'v3.0.0'
+  buildVersion: 'v3.0.14'
 };

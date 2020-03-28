@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
-const Page = loadable(() => import('../../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
+import Page from '../../components/Page/Page';
 const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 
 const ComingSoon = (): JSX.Element => {

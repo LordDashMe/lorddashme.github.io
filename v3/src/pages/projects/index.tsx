@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
-const Page = loadable(() => import('../../components/Page/Page'), { fallback: loadableFallbackTemplate(`#page-component`) });
+import Page from '../../components/Page/Page';
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
