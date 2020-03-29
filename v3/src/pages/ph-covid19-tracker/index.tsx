@@ -80,9 +80,9 @@ const PHCovid19Tracker = (): JSX.Element => {
 
       <GoogleAdsense />
       <Youtube />
-      <GoogleAnalytics>
+      {/* <GoogleAnalytics>
         <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics>
+      </GoogleAnalytics> */}
 
       <Page>
         <PageBorder position={'top'} />
