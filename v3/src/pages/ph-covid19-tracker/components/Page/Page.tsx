@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import style from './PHCOVID19TrackerPage.module.scss';
+import style from './Page.module.scss';
 
 interface IProperty {}
 
 interface IState {}
 
-export default class PHCOVID19TrackerPage extends Component<IProperty, IState> {
+export default class Page extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
     super(properties);

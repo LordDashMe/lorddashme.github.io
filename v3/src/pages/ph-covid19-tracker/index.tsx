@@ -10,7 +10,7 @@ const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Yout
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
-const PHCOVID19TrackerPage = loadable(() => import('./components/PHCOVID19TrackerPage/PHCOVID19TrackerPage'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-component`) });
+const Page = loadable(() => import('./components/Page/Page'), { fallback: null });
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
@@ -83,7 +83,7 @@ const PHCovid19Tracker = (): JSX.Element => {
         <PageView trackingId={'UA-128894279-1'} />
       </GoogleAnalytics>
 
-      <PHCOVID19TrackerPage>
+      <Page>
         <PageBorder position={'top'} />
         <PageWrapper>
           <MainTitle />
@@ -94,7 +94,7 @@ const PHCovid19Tracker = (): JSX.Element => {
           <Footer />
         </PageWrapper>
         <PageBorder position={'bottom'} />
-      </PHCOVID19TrackerPage>
+      </Page>
 
     </React.Fragment>
   );
