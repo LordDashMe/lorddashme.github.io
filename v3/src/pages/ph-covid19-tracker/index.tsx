@@ -10,7 +10,7 @@ const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Yout
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
-import Page from '../ph-covid19-tracker/components/Page/Page';
+import PHCOVID19TrackerPage from './components/PHCOVID19TrackerPage/PHCOVID19TrackerPage';
 
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
@@ -84,7 +84,7 @@ const PHCovid19Tracker = (): JSX.Element => {
         <PageView trackingId={'UA-128894279-1'} />
       </GoogleAnalytics>
 
-      <Page>
+      <PHCOVID19TrackerPage>
         <PageBorder position={'top'} />
         <PageWrapper>
           <MainTitle />
@@ -95,7 +95,7 @@ const PHCovid19Tracker = (): JSX.Element => {
           <Footer />
         </PageWrapper>
         <PageBorder position={'bottom'} />
-      </Page>
+      </PHCOVID19TrackerPage>
 
     </React.Fragment>
   );
