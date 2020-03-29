@@ -10,7 +10,7 @@ const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Yout
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
-import Page from './components/Page/Page';
+import Page from '../ph-covid19-tracker/components/Page/Page';
 
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
