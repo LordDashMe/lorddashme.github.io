@@ -10,8 +10,7 @@ const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Yout
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
-import PHCOVID19TrackerPage from './components/PHCOVID19TrackerPage/PHCOVID19TrackerPage';
-
+const PHCOVID19TrackerPage = loadable(() => import('./components/PHCOVID19TrackerPage/PHCOVID19TrackerPage'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-component`) });
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
