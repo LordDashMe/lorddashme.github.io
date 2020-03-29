@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
 import { __WEBSITE_CONFIGURATION } from '../../common/config';
-import { isSSR } from '../../common/helper';
 
 import style from './Footer.module.scss';
-
-declare const ga: Function;
 
 interface IProperty {
   isFixedPosition: boolean;
@@ -58,17 +55,6 @@ export default class Footer extends Component<IProperty, IState> {
         }
       ]
     };
-  }
-
-  public componentDidMount() {
-    if (! isSSR()) {
-      this.loadGoogleAnalyticsPageView(); 
-    }
-  }
-
-  private loadGoogleAnalyticsPageView(): void {
-    ga('create', 'UA-128894279-1', 'auto');
-    ga('send', 'pageview', window.location.pathname);
   }
 
   private authorLocation(): JSX.Element {

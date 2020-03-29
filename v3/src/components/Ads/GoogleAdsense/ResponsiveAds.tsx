@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { isSSR } from '../../../common/helper';
+
 import style from './ResponsiveAds.module.scss';
 
 declare global {
@@ -18,12 +20,14 @@ interface IState {}
 export default class ResponsiveAds extends Component<IProperty, IState> {
 
   public componentDidMount(): void {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    if (! isSSR()) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
   }
 
   public render(): JSX.Element {
     return (
-      <div id="google-adsense-responsive-ads-component" className={style['container']}>
+      <div id="ads-google-adsense-responsive-ads-component" className={style['container']}>
         <ins className="adsbygoogle"
              style={{'display': 'block'}}
              data-ad-client={this.props.adClient}

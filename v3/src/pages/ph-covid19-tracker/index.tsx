@@ -1,11 +1,17 @@
 import React, { useEffect } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
 import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
+const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: loadableFallbackTemplate(`#video-player-youtube-component`) });
+const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
+const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
+
 import Page from './components/Page/Page';
+
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
@@ -38,7 +44,7 @@ const PHCovid19Tracker = (): JSX.Element => {
   return (
     <React.Fragment>
 
-      <Helmet>
+      <Helmet defer={false}>
         <html lang="en" />
 
         <title>{pageTitle}</title>
@@ -70,6 +76,12 @@ const PHCovid19Tracker = (): JSX.Element => {
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
       </Helmet>
+
+      <GoogleAdsense />
+      <Youtube />
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
 
       <Page>
         <PageBorder position={'top'} />

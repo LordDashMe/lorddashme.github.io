@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import loadable from '@loadable/component';
 
-import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
+import { loadableFallbackTemplate } from '../../../../common/helper';
 
 const Ads = loadable(() => import('../../../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const ResponsiveAds = loadable(() => import('../../../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#google-adsense-responsive-ads-component`) });
+const ResponsiveAds = loadable(() => import('../../../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 
 import style from './Footer.module.scss';
-
-declare const ga: Function;
 
 interface IProperty {}
 
@@ -18,17 +16,6 @@ export default class Footer extends Component<IProperty, IState> {
 
   public constructor(properties: any) {
     super(properties);
-  }
-
-  public componentDidMount() {
-    if (! isSSR()) {
-      this.loadGoogleAnalyticsPageView(); 
-    }
-  }
-
-  private loadGoogleAnalyticsPageView(): void {
-    ga('create', 'UA-128894279-1', 'auto');
-    ga('send', 'pageview', window.location.pathname);
   }
 
   public render(): JSX.Element {
@@ -52,8 +39,8 @@ export default class Footer extends Component<IProperty, IState> {
             {/* Line Item: LordDashMe_Horizontal_Home */}
             <Ads appearance="horizontal">
               <ResponsiveAds 
-                adClient="ca-pub-3427694918014398"
-                adSlot="4220072227"/>
+                adClient={'ca-pub-3427694918014398'}
+                adSlot={'4220072227'}/>
             </Ads>
             <small>
               This page is a personal project and inspired by the people who are in need of information on the latest updates about the COVID-19 cases in the Philippines.&nbsp;

@@ -57,11 +57,12 @@ export default class NavigationBar extends Component<IProperty, IState> {
   private defaultDetails(): JSX.Element {
     return (
       <div className="navbar-header page-scroll">
-        <button onClick={this.toggleCollapse.bind(this, '')} 
-                type="button" 
-                className={'navbar-toggle ' + style['navigation-bar-toggle']} 
-                data-toggle="collapse" 
-                data-target="#navigation-bar-collapsable">
+        <button 
+          onClick={this.toggleCollapse.bind(this, '')} 
+          type="button" 
+          className={'navbar-toggle ' + style['navigation-bar-toggle']} 
+          data-toggle="collapse" 
+          data-target="#navigation-bar-collapsable">
           <span className="sr-only">Toggle navigation</span><i className="fa fa-bars"></i> MENU
         </button>
         <h1 className={'navbar-brand ' + style['navigation-bar-title']}>{this.state.brandName}</h1>
@@ -94,9 +95,10 @@ export default class NavigationBar extends Component<IProperty, IState> {
 
   private getMenuLinks(): JSX.Element {
     return (
-      <div className={'collapse navbar-collapse ' + style['navigation-bar-collapse']} 
-           id="navigation-bar-collapsable" 
-           style={this.state.collapseStyle}>
+      <div 
+        className={'collapse navbar-collapse ' + style['navigation-bar-collapse']} 
+        id="navigation-bar-collapsable" 
+        style={this.state.collapseStyle}>
         <ul className="nav navbar-nav navbar-right">
           {this.getRoutes()}
         </ul>

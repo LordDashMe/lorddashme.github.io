@@ -12,12 +12,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {/* DEV CONTROLLED - CRITICAL ASSETS START */}
-          <meta name="theme-color" content="#000000" />
-          {/* 
-            <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2`} as="font" type="font/woff2" />
-            <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2`} as="font" type="font/woff2" />
-            <link rel="preload" href={`/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2`} as="font" type="font/woff2" /> 
-          */}
+          <meta name="theme-color" content="#000" />
         {/* DEV CONTROLLED - CRITICAL ASSETS END */}
         {props.headComponents}
       </head>
@@ -29,7 +24,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {/* DEV CONTROLLED - LAZY LOAD ASEETS START */}
-          <script defer src={`/resources/vendor/vendor.js`}></script>
         {/* DEV CONTROLLED - LAZY LOAD ASEETS END */}
         {props.postBodyComponents}  
       </body>

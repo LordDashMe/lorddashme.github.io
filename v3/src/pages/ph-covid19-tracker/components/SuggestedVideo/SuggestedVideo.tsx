@@ -5,7 +5,7 @@ import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
 
 import Firestore from '../../../../components/Database/Firebase/Firestore';
 
-const Youtube = loadable(() => import('../../../../components/VideoPlayer/Youtube/Youtube'), { fallback: loadableFallbackTemplate(`#animate-number-component`) });
+const YoutubeIframe = loadable(() => import('../../../../components/VideoPlayer/Youtube/YoutubeIframe'), { fallback: null });
 
 import style from './SuggestedVideo.module.scss';
 
@@ -64,7 +64,11 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
     return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
       return(
         <div key={suggestedVideo.id} className={style['content']}>
-          <Youtube elementId={'suggested-video-' + suggestedVideo.videoId} videoId={suggestedVideo.videoId} height={'100%'} width={'100%'} />
+          <YoutubeIframe 
+            elementId={'ph-covid19-tracker-suggested-video-' + suggestedVideo.videoId} 
+            videoId={suggestedVideo.videoId} 
+            height={'100%'} 
+            width={'100%'} />
         </div>
       );
     });

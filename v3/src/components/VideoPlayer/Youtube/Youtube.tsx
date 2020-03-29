@@ -2,55 +2,34 @@ import React, { Component } from 'react';
 
 import { isSSR } from '../../../common/helper';
 
-declare const YT: any;
-
-interface IProperty {
-  elementId: string;
-  videoId: string;
-  height: string;
-  width: string;
+declare global {
+  interface Window {
+    YT: any;
+  }
 }
+
+interface IProperty {}
 
 interface IState {}
 
 export default class Youtube extends Component<IProperty, IState> {
 
-  private static readonly WAITING_TIME = 1000;
-
-  public constructor(properties: any) {
-    
-    super(properties);
-
-    this.state = {};
-  }
-
   public componentDidMount(): void {
     if (! isSSR()) {
-      this.onYouTubeIframeAPIReady();
+      this.initializeVendor();
     }
   }
 
-  private onYouTubeIframeAPIReady(): void {
-
-    if ((typeof YT !== "undefined") && YT && YT.Player) {
-
-      new YT.Player(this.props.elementId, {
-        height: this.props.height,
-        width: this.props.width,
-        videoId: this.props.videoId,
-        playerVars: {
-          rel: 0,
-          playsinline: 1
-        }
-      });
-      
-    } else {
-      console.info(`Waiting for YT to load properly. ${Youtube.WAITING_TIME}ms`);
-      setTimeout(this.onYouTubeIframeAPIReady.bind(this), Youtube.WAITING_TIME);
-    }
+  private initializeVendor(): void {
+    if (!window.YT) {
+      var script = document.createElement('script');
+      script.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(script);
+      console.log('YoutubeAPI_Component: YT loaded!');
+    } 
   }
 
   public render(): JSX.Element {
-    return (<div id={this.props.elementId}></div>);
+    return (<div id="video-player-youtube-api-component"></div>);
   }
 }

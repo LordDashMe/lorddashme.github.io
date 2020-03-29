@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
 import IApplicationLdJSON from '../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../common/helper';
 
+const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
+const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
+const PageView = loadable(() => import('../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
+
 import Page from '../components/Page/Page';
+
 const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const PageWrapper = loadable(() => import('../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
@@ -13,7 +18,7 @@ const Author = loadable(() => import('../components/Author/Author'), { fallback:
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
 const Ads = loadable(() => import('../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const ResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#google-adsense-responsive-ads-component`) });
+const ResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
 const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
 const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
@@ -42,7 +47,7 @@ const Home = (): JSX.Element => {
   return (
     <React.Fragment>
       
-      <Helmet >
+      <Helmet defer={false}>
         <html lang="en" />
         
         <title>{pageTitle}</title>
@@ -77,6 +82,11 @@ const Home = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
+
+      <GoogleAdsense />
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
       
       <Page>
         <NavigationBar />
@@ -99,8 +109,8 @@ const Home = (): JSX.Element => {
           {/* Line Item: LordDashMe_Horizontal_Home */}
           <Ads appearance="horizontal">
             <ResponsiveAds 
-              adClient="ca-pub-3427694918014398"
-              adSlot="4220072227" />
+              adClient={'ca-pub-3427694918014398'}
+              adSlot={'4220072227'} />
           </Ads>
           <Section 
             id="about" 
@@ -120,12 +130,13 @@ const Home = (): JSX.Element => {
           {/* Line Item: LordDashMe_Horizontal_Home_2 */}
           <Ads appearance="horizontal">
             <ResponsiveAds 
-              adClient="ca-pub-3427694918014398"
-              adSlot="2369194966" />
+              adClient={'ca-pub-3427694918014398'}
+              adSlot={'2369194966'} />
           </Ads>
         </PageWrapper>
         <Footer isFixedPosition={false}/>
       </Page>
+
     </React.Fragment>
   );
 }

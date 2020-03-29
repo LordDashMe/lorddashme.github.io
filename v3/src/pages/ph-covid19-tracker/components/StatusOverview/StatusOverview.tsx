@@ -41,7 +41,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           label: 'CONFIRMED CASES',
           count: 0,
           color: '#6f6f6f',
-          asOfDateTime: 'March 14, 2020 7PM PST'
+          asOfDateTime: '' // March 14, 2020 7PM PST
         },
         {
           id: 'id_active_cases',
@@ -145,7 +145,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
 
   private getAsOfDateTime(): JSX.Element {
     
-    if (typeof this.state.statusOverview[0].asOfDateTime === 'undefined') {
+    if (typeof this.state.statusOverview[0].asOfDateTime === 'undefined' || !this.state.statusOverview[0].asOfDateTime) {
       return (<div></div>);
     }
     

@@ -1,5 +1,5 @@
 /*
- * This file is part of the Image Squeezer.
+ * This file is part of the lorddashme.github.io v3.
  *
  * (c) Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  *
@@ -15,5 +15,5 @@
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
 export const __WEBSITE_CONFIGURATION = {
-  buildVersion: 'v3.0.15'
+  buildVersion: 'v3.0.16'
 };
