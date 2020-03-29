@@ -5,11 +5,11 @@ import loadable from '@loadable/component';
 import IApplicationLdJSON from '../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../common/helper';
 
+import Page from '../components/Page/Page';
+
 const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
 const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
-
-import Page from '../components/Page/Page';
 
 const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
@@ -83,13 +83,13 @@ const Home = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
-
-      <GoogleAdsense />
-      <GoogleAnalytics>
-        <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics>
-      
+    
       <Page>
+        <GoogleAdsense />
+        <GoogleAnalytics>
+          <PageView trackingId={'UA-128894279-1'} />
+        </GoogleAnalytics>
+
         <NavigationBar />
         <Headline />
         <PageWrapper>

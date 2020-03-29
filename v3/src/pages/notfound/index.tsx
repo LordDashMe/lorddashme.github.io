@@ -5,10 +5,10 @@ import loadable from '@loadable/component';
 import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
 
+import Page from '../../components/Page/Page';
+
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
-
-import Page from '../../components/Page/Page';
 
 const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 
@@ -71,11 +71,11 @@ const NotFound = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
 
-      <GoogleAnalytics>
-        <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics>
-
       <Page>
+        <GoogleAnalytics>
+          <PageView trackingId={'UA-128894279-1'} />
+        </GoogleAnalytics>
+
         <PageInformation 
           id="not-found" 
           title="PAGE NOT FOUND"

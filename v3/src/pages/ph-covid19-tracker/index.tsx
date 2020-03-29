@@ -78,13 +78,13 @@ const PHCovid19Tracker = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
 
-      <GoogleAdsense />
-      <Youtube />
-      {/* <GoogleAnalytics>
-        <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics> */}
-
       <Page>
+        <GoogleAdsense />
+        <Youtube />
+        <GoogleAnalytics>
+          <PageView trackingId={'UA-128894279-1'} />
+        </GoogleAnalytics>
+
         <PageBorder position={'top'} />
         <PageWrapper>
           <MainTitle />
