@@ -1,23 +1,4 @@
-body,
-code,
-p, 
-small,
-label {
+body {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-}
-
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6 {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-}
-
-.row {
-  margin-left: unset;
-  margin-right: unset;
 }

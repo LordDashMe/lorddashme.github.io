@@ -2,33 +2,36 @@
 
 .container {
   display: block;
-  padding-top: 150px;
+  
+  .wrapper {
+    padding-top: 150px;
 
-  @include screen-mobile {
-    padding-top: 70px;
-  }
-}
-
-.content {
-  text-align: center;
-  width: 80%;
-  margin: 25px auto 25px auto;
-}
-
-.icon {
-  font-size: 6em;
-  color: #000;
-  margin: 0 0 20px 0;
-}
-
-.description {
-  font-size: 1.8em;
-
-  @include screen-mobile {
-    font-size: 1.4em;
+    @include screen-mobile {
+      padding-top: 70px;
+    }
   }
 
-  @include screen-mobile-small {
-    font-size: 1.2em;
-  } 
+  .content {
+    text-align: center;
+    width: 80%;
+    margin: 25px auto 25px auto;
+  }
+  
+  .icon {
+    font-size: 6em;
+    color: #000;
+    margin: 0 0 20px 0;
+  }
+  
+  .description {
+    font-size: 1.8em;
+  
+    @include screen-mobile {
+      font-size: 1.4em;
+    }
+  
+    @include screen-mobile-small {
+      font-size: 1.2em;
+    } 
+  }
 }

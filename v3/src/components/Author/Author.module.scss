@@ -2,36 +2,36 @@
 
 .container {
   text-align: center; 
-}
 
-.display-photo {
-  border: 1px solid #e6e6e6;
-  padding: 3px;
-  margin: 0 auto 20px auto;
-  width: 450px;
-
-  @include screen-mobile {
-    width: 270px;
+  .display-photo {
+    border: 1px solid #e6e6e6;
+    padding: 3px;
+    margin: 0 auto 20px auto;
+    width: 450px;
+  
+    @include screen-mobile {
+      width: 270px;
+    }
+  
+    img {
+      width: 100%;
+    }
   }
-
-  img {
-    width: 100%;
-  }
-}
-
-.description {
-  font-size: 1.1em;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  line-height: 1.5;
-
-  @include screen-mobile {
-    font-size: 1em;  
-  }
-
-  @include screen-mobile-small {
-    font-size: 0.9em;  
+  
+  .description {
+    font-size: 1.1em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 1.5;
+  
+    @include screen-mobile {
+      font-size: 1em;  
+    }
+  
+    @include screen-mobile-small {
+      font-size: 0.9em;  
+    }
   }
 }

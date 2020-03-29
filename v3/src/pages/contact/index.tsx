@@ -11,6 +11,7 @@ const PageView = loadable(() => import('../../components/Analytics/GoogleAnalyti
 import Page from '../../components/Page/Page';
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
 const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
@@ -74,6 +75,7 @@ const Contact = (): JSX.Element => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
         <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
         <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
+        <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
 
       <GoogleAnalytics>
@@ -82,7 +84,7 @@ const Contact = (): JSX.Element => {
 
       <Page>
         <NavigationBar />
-        <div className="Contact-wrapper">
+        <Headline />
         <PageWrapper>
           <Section 
             id="contact"
@@ -98,7 +100,6 @@ const Contact = (): JSX.Element => {
           </Section>
           <Statement />
         </PageWrapper>
-        </div>
         <Footer isFixedPosition={false}/>
       </Page>
 

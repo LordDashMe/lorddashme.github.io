@@ -70,11 +70,11 @@ export default class StatusOverview extends Component<IProperty, IState> {
 
   public componentDidMount(): void {
     if (! isSSR()) {
-      this.fetchProjectsOnFireStore(); 
+      this.fetchPHCOVID19TrackerStatusOverviewOnFireStore(); 
     }
   }
 
-  private fetchProjectsOnFireStore(): void {
+  private fetchPHCOVID19TrackerStatusOverviewOnFireStore(): void {
     
     Firestore.clearInstance();
     Firestore.initialize();

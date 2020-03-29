@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate } from '../../common/helper';
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
 const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
@@ -27,18 +28,21 @@ export default class PageInformation extends Component<IProperty, IState> {
     return (
       <div id="page-information-component" className={style['container']}>
         <NavigationBar />
+        <Headline />
         <PageWrapper>
-          <Section 
-            id={this.props.id} 
-            title={this.props.title} 
-            showThematicBreak={false} 
-            showBorderTop={false}>
-            <div className={style['content']}>
-              <i className={style['icon'] + ' ' + this.props.primaryIcon}></i>
-              <p className={style['description']}>{this.props.description}</p>
-            </div>
-          </Section>
-          <Statement />
+          <div className={style['wrapper']}>
+            <Section 
+              id={this.props.id} 
+              title={this.props.title} 
+              showThematicBreak={false} 
+              showBorderTop={false}>
+              <div className={style['content']}>
+                <i className={style['icon'] + ' ' + this.props.primaryIcon}></i>
+                <p className={style['description']}>{this.props.description}</p>
+              </div>
+            </Section>
+            <Statement />
+          </div>
         </PageWrapper>
         <Footer isFixedPosition={false}/>
       </div>

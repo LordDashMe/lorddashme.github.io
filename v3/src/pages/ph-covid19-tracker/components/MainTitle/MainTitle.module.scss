@@ -10,17 +10,17 @@
     width: 100%;
     height: 100%;
   }
-}
 
-.title {
-  text-align: center;
-  font-size: 3.2em;
-
-  @include screen-mobile {
-    font-size: 2.4em;
-  }
-
-  @include screen-mobile-small {
-    font-size: 2em;
+  .title {
+    text-align: center;
+    font-size: 3.2em;
+  
+    @include screen-mobile {
+      font-size: 2.4em;
+    }
+  
+    @include screen-mobile-small {
+      font-size: 2em;
+    }
   }
 }

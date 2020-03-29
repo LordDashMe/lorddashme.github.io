@@ -102,13 +102,14 @@ export default class Footer extends Component<IProperty, IState> {
       <div className="col-lg-12">
         <p>
           <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>{__WEBSITE_CONFIGURATION.buildVersion}</small>
-        </p>
-        <p>
-        <small className={style['copyright']}>
-          Made with <i className="fas fa-heart" aria-hidden="true"></i> Powered by 
-          <br/> 
-          <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>, <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a>
-        </small>
+          <br/>
+          <small className={style['copyright']}>
+            Made with <i className="fas fa-heart" aria-hidden="true"></i>
+          </small>
+          <br/>
+          <small className={style['copyright']}>
+            Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>, <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a>.
+          </small>
         </p>
       </div>
     );

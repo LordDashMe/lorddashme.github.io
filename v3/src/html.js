@@ -13,6 +13,7 @@ export default function HTML(props) {
         />
         {/* DEV CONTROLLED - CRITICAL ASSETS START */}
           <meta name="theme-color" content="#000" />
+          {/* INSERT CUSTOM META TAG HERE. */}
         {/* DEV CONTROLLED - CRITICAL ASSETS END */}
         {props.headComponents}
       </head>
@@ -24,6 +25,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {/* DEV CONTROLLED - LAZY LOAD ASEETS START */}
+          {/* INSERT CUSTOM SCRIPT TAG HERE. */}
         {/* DEV CONTROLLED - LAZY LOAD ASEETS END */}
         {props.postBodyComponents}  
       </body>

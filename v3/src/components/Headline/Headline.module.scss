@@ -1,0 +1,16 @@
+@import '../../common/mixins';
+
+.container {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background: #f0f0f0;
+  z-index: 1029;
+  vertical-align: middle;
+  padding: 10px 10px 10px 10px;
+
+  .content {
+    display: inline-block;
+    font-weight: 500;
+  }
+}

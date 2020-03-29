@@ -32,11 +32,11 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
 
   public componentDidMount(): void {
     if (! isSSR()) {
-      this.fetchProjectsOnFireStore(); 
+      this.fetchPHCOVID19TrackerSuggestedVideoOnFireStore(); 
     }
   }
 
-  private fetchProjectsOnFireStore(): void {
+  private fetchPHCOVID19TrackerSuggestedVideoOnFireStore(): void {
     
     Firestore.clearInstance();
     Firestore.initialize();

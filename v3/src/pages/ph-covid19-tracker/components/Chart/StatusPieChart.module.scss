@@ -15,33 +15,33 @@
     width: 260px;
     height: 260px;
   }
-}
 
-.percentage-wrapper {
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-}
-
-.percentage {
-  position: absolute;
-  pointer-events: none;
-  left: 60px;
-  top: 120px;
-  width: 200px;
-  color: #fff;
-  font-size: 3em;
-  font-weight: bold;
-  text-align: center;
-
-  @include screen-mobile {
-    left: 50px;
-    top: 110px;
+  .percentage-wrapper {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
   }
-
-  @include screen-mobile-small {
-    left: 40px;
-    top: 100px;
+  
+  .percentage {
+    position: absolute;
+    pointer-events: none;
+    left: 60px;
+    top: 120px;
+    width: 200px;
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+  
+    @include screen-mobile {
+      left: 50px;
+      top: 110px;
+    }
+  
+    @include screen-mobile-small {
+      left: 40px;
+      top: 100px;
+    }
   }
 }
