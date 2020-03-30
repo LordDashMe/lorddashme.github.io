@@ -11,6 +11,7 @@ const GoogleAnalytics = loadable(() => import('../../components/Analytics/Google
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
 const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
 const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
@@ -82,6 +83,7 @@ const Projects = (): JSX.Element => {
         </GoogleAnalytics>
 
         <NavigationBar />
+        <Headline />
         <PageWrapper>
           <Section 
             id="projects" 
