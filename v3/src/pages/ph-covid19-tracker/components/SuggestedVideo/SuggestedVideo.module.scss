@@ -14,6 +14,7 @@
   .title {
     text-align: center;
     margin: 50px 0 20px 0;
+    font-size: 2.2em;
   
     @include screen-mobile {
       font-size: 2em;

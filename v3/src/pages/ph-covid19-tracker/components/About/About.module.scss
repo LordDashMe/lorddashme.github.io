@@ -13,5 +13,9 @@
 
   .content {
     text-align: justify;
+
+    p, a, small {
+      font-family: 'Open Sans', sans-serif;
+    }
   }
 }

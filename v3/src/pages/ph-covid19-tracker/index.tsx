@@ -74,7 +74,8 @@ const PHCovid19Tracker = (): JSX.Element => {
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" />
         <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
 

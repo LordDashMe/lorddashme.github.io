@@ -8,7 +8,11 @@
     width: 90%;
   }
 
-  .wrapper {
+  .content {
     text-align: center;
+
+    .details, .details a {
+      font-family: 'Open Sans', sans-serif;
+    }
   }
 }
