@@ -15,5 +15,5 @@
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
 export const WEBSITE_CONFIGURATION = {
-  buildVersion: 'v3.0.20'
+  buildVersion: 'v3.0.21'
 };

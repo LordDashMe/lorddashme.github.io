@@ -173,7 +173,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
       return (
         <div className={style['social-media-buttons']}>
           <TweetButton href={this.state.pageUrl} />
-          <ShareButton href={this.state.pageUrl} layout={'button_count'} />
+          <ShareButton href={this.state.pageUrl} />
         </div>
       );
     }
