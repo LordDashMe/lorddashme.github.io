@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
+import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
 
+const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
-
-const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 
 const NotFound = (): JSX.Element => {
 
@@ -72,16 +71,16 @@ const NotFound = (): JSX.Element => {
       </Helmet>
 
       <Page>
-        <GoogleAnalytics>
-          <PageView trackingId={'UA-128894279-1'} />
-        </GoogleAnalytics>
-
         <PageInformation 
           id="not-found" 
           title="PAGE NOT FOUND"
           primaryIcon="fas fa-map-marked-alt" 
           description="Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again." />
       </Page>
+
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
       
     </React.Fragment>
   );

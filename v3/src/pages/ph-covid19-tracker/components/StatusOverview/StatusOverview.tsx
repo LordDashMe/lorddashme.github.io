@@ -3,10 +3,13 @@ import loadable from '@loadable/component';
 
 import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
 
-import Firestore from '../../../../components/Database/Firebase/Firestore';
 import Loader from '../../../../components/Loader/Loader';
+import Firestore from '../../../../components/Database/Firebase/Firestore';
 
-const AnimateNumber = loadable(() => import('../../../../components/AnimateNumber/AnimateNumber'), { fallback: loadableFallbackTemplate(`#animate-number-component`) });
+import AnimateNumber from '../../../../components/Animation/AnimateNumber/AnimateNumber';
+
+const ShareButton = loadable(() => import('../../../../components/SocialMedia/Facebook/ShareButton'), { fallback: loadableFallbackTemplate(`#social-media-facebook-share-button-component`) });
+const TweetButton = loadable(() => import('../../../../components/SocialMedia/Twitter/TweetButton'), { fallback: loadableFallbackTemplate(`#social-media-twitter-tweet-button-component`) });
 
 import style from './StatusOverview.module.scss';
 
@@ -14,6 +17,7 @@ interface IProperty {}
 
 interface IState {
   loader: boolean;
+  pageUrl: string;
   statusOverview: IStatusOverview[];
 }
 
@@ -34,6 +38,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
     
     this.state = {
       loader: true,
+      pageUrl: '/ph-covid19-tracker/',
       statusOverview: [
         {
           id: 'id_confirmed_cases',
@@ -41,7 +46,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           label: 'CONFIRMED CASES',
           count: 0,
           color: '#6f6f6f',
-          asOfDateTime: '' // March 14, 2020 7PM PST
+          asOfDateTime: '' // March 20, 2020 7PM PST
         },
         {
           id: 'id_active_cases',
@@ -70,8 +75,15 @@ export default class StatusOverview extends Component<IProperty, IState> {
 
   public componentDidMount(): void {
     if (! isSSR()) {
+      this.setPageUrl();
       this.fetchPHCOVID19TrackerStatusOverviewOnFireStore(); 
     }
+  }
+
+  private setPageUrl(): void {
+    const state = {...this.state};
+    state.pageUrl = document.location.href;
+    this.setState(state);
   }
 
   private fetchPHCOVID19TrackerStatusOverviewOnFireStore(): void {
@@ -121,8 +133,9 @@ export default class StatusOverview extends Component<IProperty, IState> {
         return statusOverview;
       })
       .map((statusOverview: IStatusOverview): JSX.Element => {
+        
         return (
-          <div key={statusOverview.id} className={style['status-overivew-items'] + ' ' + statusOverview.sysId}>
+          <div key={statusOverview.id} className={style['item-case'] + ' ' + statusOverview.sysId}>
             <h2>{statusOverview.label}</h2>
             <p style={{'color': statusOverview.color}}>
               <AnimateNumber value={statusOverview.count} isCommaSeparated={true} />
@@ -134,7 +147,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
 
   private getConfirmCases(): JSX.Element {
     return (
-      <div key={this.state.statusOverview[0].id} className={style['status-overivew-item-confirmed-cases']}>
+      <div key={this.state.statusOverview[0].id} className={style['confirmed-case']}>
         <h2>{this.state.statusOverview[0].label}</h2>
         <p style={{'color': this.state.statusOverview[0].color}}>
           <AnimateNumber value={this.state.statusOverview[0].count} isCommaSeparated={true} />
@@ -150,21 +163,32 @@ export default class StatusOverview extends Component<IProperty, IState> {
     }
     
     return (
-      <div className={style['status-overview-as-of-date-time']}>
-        <p>As of {this.state.statusOverview[0].asOfDateTime}</p>
-      </div>
+      <p className={style['as-of-date-time']}>As of {this.state.statusOverview[0].asOfDateTime}</p>
     );
+  }
+
+  private getSocialMediaButtons(): JSX.Element {
+    
+    if (! isSSR()) {
+      return (
+        <div className={style['social-media-buttons']}>
+          <TweetButton href={this.state.pageUrl} />
+          <ShareButton href={this.state.pageUrl} layout={'button_count'} />
+        </div>
+      );
+    }
+    
+    return (<div></div>);
   }
 
   public render(): JSX.Element {
     return (
       <div id="ph-covid19-tracker-status-overview-component" className={style['container']}>
         <Loader visibility={this.state.loader}/>
-        <div className={style['status-overview']}>
-          {this.getStatusOverview()}
-          {this.getConfirmCases()}
-          {this.getAsOfDateTime()}
-        </div>
+        {this.getStatusOverview()}
+        {this.getConfirmCases()}
+        {this.getAsOfDateTime()}
+        {this.getSocialMediaButtons()}
       </div>
     );
   }

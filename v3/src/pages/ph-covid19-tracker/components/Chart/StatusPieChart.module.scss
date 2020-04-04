@@ -4,7 +4,7 @@
   position: relative;
   width: 300px;
   height: 300px;
-  margin: 0 auto 30px auto;
+  margin: 20px auto 10px auto;
 
   @include screen-mobile {
     width: 280px;
@@ -16,13 +16,6 @@
     height: 260px;
   }
 
-  .percentage-wrapper {
-    position: absolute;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-  }
-  
   .percentage {
     position: absolute;
     pointer-events: none;

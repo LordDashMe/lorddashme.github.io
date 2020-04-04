@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import loadable from '@loadable/component';
 
-import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
+import { isSSR } from '../../../../common/helper';
 
 import Firestore from '../../../../components/Database/Firebase/Firestore';
 
@@ -60,18 +60,23 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
       });
   }
 
-  private getSuggestedVideo(): JSX.Element[] {
-    return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
-      return(
-        <div key={suggestedVideo.id} className={style['content']}>
-          <YoutubeIframe 
-            elementId={'ph-covid19-tracker-suggested-video-' + suggestedVideo.videoId} 
-            videoId={suggestedVideo.videoId} 
-            height={'100%'} 
-            width={'100%'} />
-        </div>
-      );
-    });
+  private getSuggestedVideo(): JSX.Element | JSX.Element[] {
+
+    if (! isSSR()) {
+      return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
+        return(
+          <div key={suggestedVideo.id} className={style['content']}>
+            <YoutubeIframe 
+              elementId={'ph-covid19-tracker-suggested-video-' + suggestedVideo.videoId} 
+              videoId={suggestedVideo.videoId} 
+              height={'100%'} 
+              width={'100%'} />
+          </div>
+        );
+      });
+    }
+    
+    return (<div></div>);
   }
 
   public render(): JSX.Element {

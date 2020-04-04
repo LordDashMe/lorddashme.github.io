@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
+import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
 
+const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
-
-const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 
 const ComingSoon = (): JSX.Element => {
 
@@ -72,16 +71,16 @@ const ComingSoon = (): JSX.Element => {
       </Helmet>
 
       <Page>
-        <GoogleAnalytics>
-          <PageView trackingId={'UA-128894279-1'} />
-        </GoogleAnalytics>
-
         <PageInformation 
           id="coming-soon" 
           title="PAGE COMING SOON" 
           primaryIcon="fas fa-hard-hat" 
           description="This page is currently under construction." />
       </Page>
+
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
 
     </React.Fragment>
   );

@@ -19,14 +19,20 @@
     padding: 15px 15px;
     font-size: 1.5em;
     color: #fff;
-    margin: 0; 
+    margin: 0;
+
     &:hover, 
     &:focus, 
     &:active {
       color: #fff;
     }
+    
     @include screen-mobile {
       font-size: 1em;
+    }
+
+    @include screen-mobile-small {
+      font-size: 0.9em;
     }
   }
   
@@ -44,11 +50,14 @@
   
   .navigation-bar-collapse {
     border-color: #e7e7e7;
+
     li {
+
       a {
         font-family: $default-font-family;
         color: #fff;
         font-weight: bold;
+
         &:hover, 
         &:focus, 
         &:active {

@@ -1,6 +1,13 @@
 @import '../../../../common/mixins';
 
 .container {
+  min-height: calc(120vh - 60px);
+  margin-top: 30px;
+  padding: 5px 0 5px 0;
+  
+  @include screen-mobile {
+    margin-top: 20px; 
+  }
 
   h1,
   h2,
@@ -28,11 +35,6 @@
     font-weight: 500;
     line-height: 1.1;
     color: inherit;
-  }
-
-  h1 {
-    margin: .67em 0;
-    font-size: 2em;
   }
 
   small {

@@ -4,7 +4,7 @@ import { isSSR } from '../../../common/helper';
 
 declare global {
   interface Window {
-    adsbygoogle?: any;
+    adsbygoogle: any;
   }
 }
 
@@ -21,12 +21,12 @@ export default class GoogleAdsense extends Component<IProperty, IState> {
   }
 
   private initializeVendor(): void {
-    if (!window.adsbygoogle) {
+    if (! window.adsbygoogle) {
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
       document.body.appendChild(script);
-      console.log('GoogleAdsense_Component: Google Adsense loaded!'); 
+      console.log('[LDM] Ads_GoogleAdsense_Component: has been initialized.'); 
     }
   }
 

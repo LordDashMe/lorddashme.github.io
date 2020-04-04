@@ -21,12 +21,12 @@ export default class GoogleAnalytics extends Component<IProperty, IState> {
   }
 
   private initializeVendor(): void {
-    if (!window.ga) {
+    if (! window.ga) {
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = '/resources/vendor/google-analytics/ga.min.js';
       document.body.appendChild(script);
-      console.log('GoogleAnalytics_Component: GA loaded!');
+      console.log('[LDM] Analytics_GoogleAnalytics_GoogleAnalytics_Component: has beed initialized.');
     } 
   }
 

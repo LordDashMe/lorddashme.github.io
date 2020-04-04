@@ -2,13 +2,10 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
+import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
-
-const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
-const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
@@ -17,6 +14,8 @@ const Section = loadable(() => import('../../components/Section/Section'), { fal
 const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
 const Project = loadable(() => import('../../components/Project/Project'), { fallback: loadableFallbackTemplate(`#project-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
+const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
+const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
 const Projects = (): JSX.Element => {
 
@@ -78,10 +77,6 @@ const Projects = (): JSX.Element => {
       </Helmet>
 
       <Page>
-        <GoogleAnalytics>
-          <PageView trackingId={'UA-128894279-1'} />
-        </GoogleAnalytics>
-
         <NavigationBar />
         <Headline />
         <PageWrapper>
@@ -100,6 +95,10 @@ const Projects = (): JSX.Element => {
         </PageWrapper>
         <Footer isFixedPosition={false}/>
       </Page>
+
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
 
     </React.Fragment>
   );

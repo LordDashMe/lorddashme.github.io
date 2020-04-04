@@ -33,7 +33,7 @@ export default class YoutubeIframe extends Component<IProperty, IState> {
   private onYouTubeIframeAPIReady(): void {
 
     if (typeof YT !== 'undefined' && YT && YT.Player) {
-      console.log('Youtube_Component: YT detected!');
+      console.log('[LDM] VideoPlayer_Youtube_YoutubeIframe_Component: YT detected!');
       new YT.Player(
         this.setElementId(this.props.elementId), 
         {
@@ -46,9 +46,8 @@ export default class YoutubeIframe extends Component<IProperty, IState> {
           }
         }
       );
-      
     } else {
-      console.info(`Youtube_Component: Waiting for YT to load properly. ${YoutubeIframe.WAITING_TIME}ms`);
+      console.info(`[LDM] VideoPlayer_Youtube_YoutubeIframe_Component: Waiting for YT to load properly. ${YoutubeIframe.WAITING_TIME}ms`);
       setTimeout(this.onYouTubeIframeAPIReady.bind(this), YoutubeIframe.WAITING_TIME);
     }
   }

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import loadable from '@loadable/component';
+import ReactChartJS2 from 'react-chartjs-2';
 
 import { isSSR } from '../../../../common/helper';
 
 import Firestore from '../../../../components/Database/Firebase/Firestore';
-
-const ReactChartJS2 = loadable(() => import('react-chartjs-2'), { fallback: null });
 
 import style from './StatusPieChart.module.scss';
 
@@ -207,9 +205,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
     
     if (this.state.percentageVisibility) {
       return (
-        <div className={style['percentage-wrapper']}>
-          <div className={style['percentage']}><span id="percentage-value">{this.state.percentageValue}</span>%</div>
-        </div>
+        <div className={style['percentage']}><span id="percentage-value">{this.state.percentageValue}</span>%</div>
       );
     }
 

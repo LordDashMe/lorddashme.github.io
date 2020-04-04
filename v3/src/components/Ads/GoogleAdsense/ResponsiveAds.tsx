@@ -6,7 +6,7 @@ import style from './ResponsiveAds.module.scss';
 
 declare global {
   interface Window {
-    adsbygoogle?: any;
+    adsbygoogle: any;
   }
 }
 
@@ -28,12 +28,13 @@ export default class ResponsiveAds extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="ads-google-adsense-responsive-ads-component" className={style['container']}>
-        <ins className="adsbygoogle"
-             style={{'display': 'block'}}
-             data-ad-client={this.props.adClient}
-             data-ad-slot={this.props.adSlot}
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <ins 
+          className="adsbygoogle"
+          style={{'display': 'block'}}
+          data-ad-client={this.props.adClient}
+          data-ad-slot={this.props.adSlot}
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
       </div>
     );
   }

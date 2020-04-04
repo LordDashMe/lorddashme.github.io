@@ -21,15 +21,15 @@ export default class Youtube extends Component<IProperty, IState> {
   }
 
   private initializeVendor(): void {
-    if (!window.YT) {
+    if (! window.YT) {
       var script = document.createElement('script');
       script.src = "https://www.youtube.com/iframe_api";
       document.body.appendChild(script);
-      console.log('YoutubeAPI_Component: YT loaded!');
+      console.log('[LDM] VideoPlayer_Youtube_Component: has been initialized.');
     } 
   }
 
   public render(): JSX.Element {
-    return (<div id="video-player-youtube-api-component"></div>);
+    return (<div id="video-player-youtube-component"></div>);
   }
 }

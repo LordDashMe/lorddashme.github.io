@@ -2,13 +2,10 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
+import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
-
-const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
-const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
@@ -18,6 +15,8 @@ const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'),
 const ContactForm = loadable(() => import('../../components/ContactForm/ContactForm'), { fallback: loadableFallbackTemplate(`#contact-form-component`) });
 const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
+const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
+const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 
 const Contact = (): JSX.Element => {
 
@@ -79,10 +78,6 @@ const Contact = (): JSX.Element => {
       </Helmet>
 
       <Page>
-        <GoogleAnalytics>
-          <PageView trackingId={'UA-128894279-1'} />
-        </GoogleAnalytics>
-
         <NavigationBar />
         <Headline />
         <PageWrapper>
@@ -102,6 +97,10 @@ const Contact = (): JSX.Element => {
         </PageWrapper>
         <Footer isFixedPosition={false}/>
       </Page>
+
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
 
     </React.Fragment>
   );

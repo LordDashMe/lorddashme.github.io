@@ -2,18 +2,21 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import IApplicationLdJSON from '../../common/Interface/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../../common/helper';
+import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
 
 import Page from './components/Page/Page';
 
 const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
 const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: loadableFallbackTemplate(`#video-player-youtube-component`) });
+const TwitterWidget = loadable(() => import('../../components/SocialMedia/Twitter/TwitterWidget'), { fallback: loadableFallbackTemplate(`#social-media-twitter-twitter-widget-component`) });
+const FacebookSDK = loadable(() => import('../../components/SocialMedia/Facebook/FacebookSDK'), { fallback: loadableFallbackTemplate(`#social-media-facebook-facebook-sdk-component`) });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
+const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
+const ResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 
 const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
-const PageWrapper = loadable(() => import('./components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-wrapper-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
 const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
 const SuggestedVideo = loadable(() => import('./components/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
@@ -75,28 +78,33 @@ const PHCovid19Tracker = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" />
         <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
 
+      <PageBorder position={'top'} />
       <Page>
-        <GoogleAdsense />
-        <Youtube />
-        <GoogleAnalytics>
-          <PageView trackingId={'UA-128894279-1'} />
-        </GoogleAnalytics>
-
-        <PageBorder position={'top'} />
-        <PageWrapper>
-          <MainTitle />
-          <StatusPieChart />
-          <StatusOverview />
-          <About />
-          <SuggestedVideo />
-          <Footer />
-        </PageWrapper>
-        <PageBorder position={'bottom'} />
+        <MainTitle />
+        <StatusPieChart />
+        <StatusOverview />
+        <About />
+        <SuggestedVideo />
+        {/* Line Item: LordDashMe_Horizontal_Home */}
+        <Ads appearance="horizontal">
+          <ResponsiveAds 
+            adClient={'ca-pub-3427694918014398'}
+            adSlot={'4220072227'}/>
+        </Ads>
+        <Footer />
       </Page>
+      <PageBorder position={'bottom'} />
+
+      <GoogleAdsense />
+      <Youtube />
+      <TwitterWidget />
+      <FacebookSDK />
+      <GoogleAnalytics>
+        <PageView trackingId={'UA-128894279-1'} />
+      </GoogleAnalytics>
 
     </React.Fragment>
   );

@@ -23,11 +23,11 @@ export default class PageView extends Component<IProperty, IState> {
   private initializeCall(): void {
 
     if (typeof ga !== 'undefined' && ga) {
-      console.log('PageView_Component: GA detected!');
+      console.log('[LDM] Analytics_GoogleAnalytics_PageView_Component: GA detected!');
       ga('create', this.props.trackingId, 'auto');
       ga('send', 'pageview', window.location.pathname);
     } else {
-      console.info(`PageView_Component: Waiting for GA to load properly. ${PageView.WAITING_TIME}ms`);
+      console.info(`[LDM] Analytics_GoogleAnalytics_PageView_Component: Waiting for GA to load properly. ${PageView.WAITING_TIME}ms`);
       setTimeout(this.initializeCall.bind(this), PageView.WAITING_TIME);
     } 
   }
