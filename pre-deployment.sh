@@ -12,7 +12,8 @@ find $(pwd)/* ! \( \
   -type f -name 'LICENSE' -prune -o \
   -type f -name 'pre-deployment.sh' -prune -o \
   -type f -name 'README.md' -prune -o \
-  -type f -name 'robots.txt' -prune \) -prune -exec rm -rf {} +
+  -type f -name 'robots.txt' -prune -o \
+  -type f -name 'sitemap.xml' -prune \) -prune -exec rm -rf {} +
 
 cat <<EOF 
 

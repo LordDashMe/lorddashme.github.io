@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://lorddashme.github.io/</loc>
+    <changefreq>always</changefreq>
+  </url>
+  <url>
+    <loc>https://lorddashme.github.io/contact/</loc>
+    <changefreq>always</changefreq>
+  </url>
+  <url>
+    <loc>https://lorddashme.github.io/projects/</loc>
+    <changefreq>always</changefreq>
+  </url>
+  <url>
+    <loc>https://lorddashme.github.io/tools/</loc>
+    <changefreq>always</changefreq>
+  </url>
+  <url>
+    <loc>https://lorddashme.github.io/ph-covid19-tracker/</loc>
+    <changefreq>always</changefreq>
+  </url>
+</urlset>
