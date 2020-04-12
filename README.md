@@ -41,4 +41,4 @@ sitemap.xml
 
 - [v2](v2/) is powered by [Create React App](https://create-react-app.dev/) (CRA) a toolchain for React Single-Page App (SPA).
 
-- [v3](v3/) utilized the [Gatsby](https://www.gatsbyjs.org/) static site generator for React.
+- [v3](v3/) utilized [Gatsby](https://www.gatsbyjs.org/) static site generator for React.
