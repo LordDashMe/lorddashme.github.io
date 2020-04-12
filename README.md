@@ -18,6 +18,7 @@ LICENSE
 pre-deployment.sh
 README.md
 robots.txt
+sitemap.xml
 ```
 
 ### Archived Files
