@@ -23,7 +23,7 @@ sitemap.xml
 
 ### Archived Files
 
-- [archives](archives/): The location where I put or stored some of my notable documentation and workflow about software engineering.
+- [archives](archives/): The location where I put or stored some of my notable documentation about software engineering.
 
 ### Restore
 
