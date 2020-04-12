@@ -22,7 +22,7 @@ export default class About extends Component<IProperty, IState> {
           Coronavirus disease spreads primarily through contact with an infected person when they cough or sneeze.&nbsp;
           It also spreads when a person touches a surface or object that has the virus on it, then touches their eyes, nose, or mouth.&nbsp;
           You can protect yourself by washing your hands frequently, avoiding touching your face, and avoiding close contact (1 meter or 3 feet) with people who are unwell.&nbsp;
-          <small>*<i>Reference: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" rel="noopener noreferrer" target="_blank">WHO</a> and <a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019" rel="noopener noreferrer" target="_blank">Wikipedia</a>.</i></small>
+          <small>*Reference: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" rel="noopener noreferrer" target="_blank">WHO</a> and <a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019" rel="noopener noreferrer" target="_blank">Wikipedia</a>.</small>
         </p>
       </div>
     );

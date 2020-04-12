@@ -21,6 +21,10 @@
     color: #fff;
     margin: 0;
 
+    @include screen-tablet-and-mobile {
+      font-size: 1.3em;
+    }
+
     &:hover, 
     &:focus, 
     &:active {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { WEBSITE_CONFIGURATION } from '../../common/configuration';
+import WEBSITE_CONFIGURATION from '../../common/Website/configuration';
 
 import style from './Footer.module.scss';
 

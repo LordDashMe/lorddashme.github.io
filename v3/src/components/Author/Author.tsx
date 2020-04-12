@@ -30,7 +30,7 @@ export default class Author extends Component<IProperty, IState> {
           path: '/resources/img/profile-tianzifang-min-super.jpg',
           alt: 'Joshua Clifford Reyes'
         },
-        description: 'INFORMATION TECHNOLOGY | WEB DEVELOPER | MOBILE DEVELOPER | DEVOPS | COMPUTER NETWORK | DATA STRUCTURE | MULTIMEDIA'
+        description: 'CLEAN CODE | DOMAIN DRIVEN | TEST DRIVEN | DESIGN PATTERNS AND BEST PRACTICES'
       }
     };
   }

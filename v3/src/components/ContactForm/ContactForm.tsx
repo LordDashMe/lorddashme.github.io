@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import WEBSITE_CONFIGURATION from '../../common/Website/configuration';
+
 import Loader from '../Loader/Loader';
 
 import style from './ContactForm.module.scss';
@@ -31,7 +33,7 @@ export default class ContactForm extends Component<IProperty, IState> {
         name: '',
         email: '',
         message: '',
-        webVersion: 'v2'
+        webVersion: WEBSITE_CONFIGURATION.buildId
       },
       loader: false
     };

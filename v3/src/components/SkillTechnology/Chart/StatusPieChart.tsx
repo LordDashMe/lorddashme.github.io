@@ -26,9 +26,9 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       statusPieChart: {
         data: {
           labels: [
-            'WEB', 
-            'MOBILE APP', 
-            'DESKTOP APP', 
+            'WEB DEV', 
+            'MOBILE APP DEV', 
+            'DESKTOP APP DEV', 
             'DEVOPS', 
             'COMPUTER NETWORKING'
           ],
@@ -36,10 +36,10 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             {
               label: '2018',
               data: [
-                9, 
-                4, 
+                10, 
                 3, 
-                6, 
+                3, 
+                7, 
                 5
               ],
               backgroundColor: [

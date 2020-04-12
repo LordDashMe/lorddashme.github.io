@@ -45,7 +45,13 @@ export default class NavigationBar extends Component<IProperty, IState> {
           href: '/projects/',
           label: 'PROJECTS',
           icon: 'fas fa-magic'
-        }
+        },
+        {
+          id: 'tools',
+          href: '/tools/',
+          label: 'TOOLS',
+          icon: 'fas fa-heart'
+        },
       ],
       collapseStyle: {
         'display': 'none'

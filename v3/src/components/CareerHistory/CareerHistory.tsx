@@ -85,8 +85,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   descriptions: []
                 },
                 {
-                  id: 'code-page-library',
-                  name: 'Code Package | Library',
+                  id: 'contributed-open-source-project-library',
+                  name: 'Contributed Open Source Project | Library',
                   logo: 'far fa-lightbulb',
                   descriptions: [
                     'NodeJS Image Squeezer',
@@ -98,8 +98,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Amazon Web Services',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Simple Storage Service (S3)',
-                    'DynamoDB'
+                    'Simple Storage Service (S3)'
                   ]
                 },
                 {
@@ -231,8 +230,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   descriptions: []
                 },
                 {
-                  id: 'code-page-library',
-                  name: 'Code Package | Library',
+                  id: 'contributed-open-source-project-library',
+                  name: 'Contributed Open Source Project | Library',
                   logo: 'far fa-lightbulb',
                   descriptions: [
                     'Wordpress Scaffolding',

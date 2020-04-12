@@ -6,10 +6,30 @@
   text-align: center;
   background: #f0f0f0;
   z-index: 1029;
-  vertical-align: middle;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 0 10px 0;
 
   .content {
     display: inline-block;
+    width: 95%;
+    vertical-align: middle;
+    padding: 0 10px 0 20px;
+
+    @include screen-tablet-and-mobile {
+      width: 90%;
+    }
+  }
+
+  .close {
+    display: inline-block;
+    width: 5%;
+    vertical-align: middle;
+    right: 15px;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0 5px 0 5px;
+
+    @include screen-tablet-and-mobile {
+      width: 10%;
+    }
   }
 }

@@ -20,7 +20,7 @@ interface IContact {
 
 export default class ContactForm extends Component<IProperty, IState> {
 
-  private static readonly API_CONTACT: string = 'https://lorddashme-github-io-backend.herokuapp.com/contact';
+  private static readonly API_CONTACT: string = 'https://lorddashme-backend.herokuapp.com/contact';
 
   public constructor(properties: any) {
     

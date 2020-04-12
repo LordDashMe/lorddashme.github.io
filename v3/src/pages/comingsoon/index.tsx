@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
 import { loadableFallbackTemplate } from '../../common/helper';
-import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
+import WEBSITE_PAGE_META from '../../common/Website/page_meta';
+import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
 
@@ -26,41 +27,41 @@ const ComingSoon = (): JSX.Element => {
     "@type": "website",
     "url": currentLocationURL,
     "name": pageTitle,
-    "author": "Joshua Clifford Reyes",
-    "image": "/resources/img/profile-tianzifang-min-super.jpg",
-    "description": "Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia"
+    "author": WEBSITE_PAGE_META.author,
+    "image": WEBSITE_PAGE_META.image.src,
+    "description": WEBSITE_PAGE_META.description
   };
   
   return (
     <React.Fragment>
-
+      
       <Helmet defer={false}>
         <html lang="en" />
-
+        
         <title>{pageTitle}</title>
 
-        <link rel="shortcut icon" href="/resources/img/favicon.png" />  
-        <link rel="apple-touch-icon" href="/resources/img/favicon.png" />
+        <link rel="shortcut icon" href={WEBSITE_PAGE_META.favicon} />  
+        <link rel="apple-touch-icon" href={WEBSITE_PAGE_META.favicon} />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
-        <meta name="author" content="Joshua Clifford Reyes" />
-        <meta name="description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
+        <meta name="author" content={WEBSITE_PAGE_META.author} />
+        <meta name="description" content={WEBSITE_PAGE_META.description} />
         <link rel="canonical" href={currentLocationURL} />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@lorddashme" />
+        <meta name="twitter:site" content={WEBSITE_PAGE_META.twitter.site} />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
-        <meta name="twitter:creator" content="@lorddashme" />
-        <meta name="twitter:image" content="/resources/img/profile-tianzifang-min-super.jpg" />
-        <meta name="twitter:image:alt" content="Profile Tianzifang" />
+        <meta name="twitter:description" content={WEBSITE_PAGE_META.description} />
+        <meta name="twitter:creator" content={WEBSITE_PAGE_META.twitter.creator} />
+        <meta name="twitter:image" content={WEBSITE_PAGE_META.image.src} />
+        <meta name="twitter:image:alt" content={WEBSITE_PAGE_META.image.alt} />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
-        <meta name="og:image" content="/resources/img/profile-tianzifang-min-super.jpg" />
-        <meta name="og:description" content="Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia" />
+        <meta name="og:image" content={WEBSITE_PAGE_META.image.src} />
+        <meta name="og:description" content={WEBSITE_PAGE_META.description} />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 

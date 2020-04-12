@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
 import { loadableFallbackTemplate } from '../../common/helper';
-import IApplicationLdJSON from '../../common/Contracts/IApplicationLdJSON';
+import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
 import Page from './components/Page/Page';
 
@@ -52,8 +52,8 @@ const PHCovid19Tracker = (): JSX.Element => {
 
         <title>{pageTitle}</title>
 
-        <link rel="shortcut icon" href="/resources/img/virus.png" />
-        <link rel="apple-touch-icon" href="/resources/img/virus.png" />
+        <link rel="shortcut icon" href="/resources/img/favicon-ph-covid19-tracker-2.png" />
+        <link rel="apple-touch-icon" href="/resources/img/favicon-ph-covid19-tracker-2.png" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />

@@ -102,7 +102,7 @@
                 return;
               }
             $.post({
-                url: 'https://lorddashme-github-io-backend.herokuapp.com/contact',
+                url: 'https://lorddashme-backend.herokuapp.com/contact',
                 data: JSON.stringify({
                     name: $('input[name="name"]').val(),
                     email: $('input[name="email"]').val(),

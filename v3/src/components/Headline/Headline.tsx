@@ -21,6 +21,7 @@ interface IState {
 interface IHeadline {
   id: string;
   content: string;
+  visibility: boolean;
 }
 
 export default class Headline extends Component<IProperty, IState> {
@@ -31,7 +32,8 @@ export default class Headline extends Component<IProperty, IState> {
     this.state = {
       headline: {
         id: '',
-        content: ''
+        content: '',
+        visibility: true
       }
     };
   }
@@ -59,16 +61,15 @@ export default class Headline extends Component<IProperty, IState> {
             
             const document: any = querySnapshot.docs[0].data();
 
-            window.lorddashme_headline = {
-              id: querySnapshot.docs[0].id,
-              content: document.content
-            };
+            const headline = {...this.state.headline};
+
+            headline['id'] = querySnapshot.docs[0].id;
+            headline['content'] = document.content;
+
+            window.lorddashme_headline = headline;
 
             this.setState({
-              headline: {
-                id: querySnapshot.docs[0].id,
-                content: document.content
-              }  
+              headline: headline  
             });
 
             console.log('Headline_Component: Fresh headline!');
@@ -80,7 +81,8 @@ export default class Headline extends Component<IProperty, IState> {
       this.setState({
         headline: {
           id: window.lorddashme_headline.id,
-          content: window.lorddashme_headline.content
+          content: window.lorddashme_headline.content,
+          visibility: window.lorddashme_headline.visibility
         }  
       });
     }
@@ -94,15 +96,37 @@ export default class Headline extends Component<IProperty, IState> {
     );
   }
 
+  private getHeadlineCloseButton(): JSX.Element {
+    return (
+      <div className={style['close']} onClick={this.onClickHeadlineCloseButton.bind(this)}>
+        <i className="fas fa-times" aria-hidden="true"></i>
+      </div>
+    );
+  }
+
+  private onClickHeadlineCloseButton(): void {
+
+    const headline = {...this.state.headline};
+
+    headline['visibility'] = false;
+
+    window.lorddashme_headline = headline;
+
+    this.setState({
+      headline: headline
+    });
+  }
+
   public render(): JSX.Element {
     
-    if (!this.state.headline.content) {
+    if (!this.state.headline.content || !this.state.headline.visibility) {
       return (<div></div>);  
     }
 
     return (
       <div id="headline-component" className={style['container']}>
         {this.getHeadlineContent()}
+        {this.getHeadlineCloseButton()}
       </div>
     );
   }

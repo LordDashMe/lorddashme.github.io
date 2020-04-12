@@ -61,7 +61,8 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Python',
               icon: 'fab fa-python',
               libraries: [
-                { id: 'falcon',  name: 'Falcon', is_active: true }
+                { id: 'falcon',  name: 'Falcon', is_active: true },
+                { id: 'pytest',  name: 'PyTest', is_active: true }
               ],
               is_active: true
             },
@@ -70,15 +71,14 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'JavaScript',
               icon: 'fab fa-js',
               libraries: [
-                { id: 'jquery', name: 'JQuery', is_active: true },
                 { id: 'nodejs', name: 'NodeJS', is_active: true },
+                { id: 'jquery', name: 'JQuery', is_active: true },
                 { id: 'angularjs', name: 'AngularJS', is_active: false },
                 { id: 'jest', name: 'Jest', is_active: true },
                 { id: 'typescript', name: 'TypeScript', is_active: true },
                 { id: 'react', name: 'React', is_active: true },
                 { id: 'angular', name: 'Angular', is_active: false },
-                { id: 'rxjs', name: 'RxJS', is_active: false },
-                { id: 'web-worker', name: 'Web Worker', is_active: false }
+                { id: 'rxjs', name: 'RxJS', is_active: false }
               ],
               is_active: true
             },
@@ -320,6 +320,34 @@ export default class SkillTechnology extends Component<IProperty, IState> {
           ]
         },
         {
+          id: 'cloud_services',
+          role: 'CLOUD SERVICES',
+          icon: 'fas fa-cloud-upload-alt',
+          tools: [
+            {
+              id: 'heroku', 
+              name: 'Heroku',
+              icon: 'far fa-circle',
+              libraries: [],
+              is_active: true
+            },
+            {
+              id: 'firebase_cloud_firestore', 
+              name: 'Firebase: Cloud Firestore',
+              icon: 'far fa-circle',
+              libraries: [],
+              is_active: true
+            },
+            {
+              id: 'github_pages', 
+              name: 'Github Pages',
+              icon: 'far fa-circle',
+              libraries: [],
+              is_active: true
+            }
+          ]
+        },
+        {
           id: 'technologies',
           role: 'TECHNOLOGIES',
           icon: 'fas fa-code-branch',
@@ -341,7 +369,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
             {
               id: 'npm', 
               name: 'npm',
-              icon: 'fab fa-npm',
+              icon: 'far fa-circle',
               libraries: [],
               is_active: true
             },
@@ -519,7 +547,7 @@ export default class SkillTechnology extends Component<IProperty, IState> {
         {this.getSkillTechnologyDetails()}
         <div className={style['note']}>
           <p>
-            *The dark and bold fonts are the skills | technologies that are currently in use. Last updated February 3, 2020.
+            *The dark and bold fonts are the skills | technologies that are currently in use. Last updated April 12, 2020.
           </p>
         </div>
       </div>
