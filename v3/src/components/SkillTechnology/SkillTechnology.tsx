@@ -320,34 +320,6 @@ export default class SkillTechnology extends Component<IProperty, IState> {
           ]
         },
         {
-          id: 'cloud_services',
-          role: 'CLOUD SERVICES',
-          icon: 'fas fa-cloud-upload-alt',
-          tools: [
-            {
-              id: 'heroku', 
-              name: 'Heroku',
-              icon: 'far fa-circle',
-              libraries: [],
-              is_active: true
-            },
-            {
-              id: 'firebase_cloud_firestore', 
-              name: 'Firebase: Cloud Firestore',
-              icon: 'far fa-circle',
-              libraries: [],
-              is_active: true
-            },
-            {
-              id: 'github_pages', 
-              name: 'Github Pages',
-              icon: 'far fa-circle',
-              libraries: [],
-              is_active: true
-            }
-          ]
-        },
-        {
           id: 'technologies',
           role: 'TECHNOLOGIES',
           icon: 'fas fa-code-branch',
@@ -481,6 +453,34 @@ export default class SkillTechnology extends Component<IProperty, IState> {
             {
               id: 'aws_cli', 
               name: 'aws cli',
+              icon: 'far fa-circle',
+              libraries: [],
+              is_active: true
+            }
+          ]
+        },
+        {
+          id: 'cloud_services',
+          role: 'CLOUD SERVICES',
+          icon: 'fas fa-cloud-upload-alt',
+          tools: [
+            {
+              id: 'heroku', 
+              name: 'Heroku',
+              icon: 'far fa-circle',
+              libraries: [],
+              is_active: true
+            },
+            {
+              id: 'firebase_cloud_firestore', 
+              name: 'Firebase: Cloud Firestore',
+              icon: 'far fa-circle',
+              libraries: [],
+              is_active: true
+            },
+            {
+              id: 'github_pages', 
+              name: 'Github Pages',
               icon: 'far fa-circle',
               libraries: [],
               is_active: true
