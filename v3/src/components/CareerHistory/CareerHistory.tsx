@@ -55,12 +55,6 @@ export default class CareerHistory extends Component<IProperty, IState> {
               term: 'January 2019 - Present',
               highlights: [
                 {
-                  id: 'web-development',
-                  name: 'Web Development',
-                  logo: 'fas fa-certificate',
-                  descriptions: []
-                },
-                {
                   id: 'gma-news-online-seagames-2019-microsite',
                   name: 'GMA News Online - SEA Games 2019 Microsite',
                   logo: 'fas fa-certificate',
@@ -79,48 +73,23 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   descriptions: []
                 },
                 {
+                  id: 'gma-news-online-eleksyon-2019-microsite',
+                  name: 'GMA News Online - Coverstories',
+                  logo: 'fas fa-certificate',
+                  descriptions: []
+                },
+                {
                   id: 'rookie-of-the-year-2019',
                   name: 'Rookie of the Year 2019',
                   logo: 'fas fa-medal',
                   descriptions: []
                 },
                 {
-                  id: 'contributed-open-source-project-library',
-                  name: 'Contributed Open Source Project | Library',
+                  id: 'python',
+                  name: 'Python',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'NodeJS Image Squeezer',
-                    'Craftman'
-                  ]
-                },
-                {
-                  id: 'amazon-web-services',
-                  name: 'Amazon Web Services',
-                  logo: 'far fa-lightbulb',
-                  descriptions: [
-                    'Simple Storage Service (S3)'
-                  ]
-                },
-                {
-                  id: 'google-firebase',
-                  name: 'Google Firebase',
-                  logo: 'far fa-lightbulb',
-                  descriptions: [
-                    'Cloud Firestore'
-                  ]
-                },
-                {
-                  id: 'heroku',
-                  name: 'Heroku',
-                  logo: 'far fa-lightbulb',
-                  descriptions: []
-                },
-                {
-                  id: 'no-sql',
-                  name: 'NoSQL',
-                  logo: 'far fa-lightbulb',
-                  descriptions: [
-                    'MongoDB'
+                    'Falcon'
                   ]
                 },
                 {
@@ -140,24 +109,24 @@ export default class CareerHistory extends Component<IProperty, IState> {
                     'Angular',
                     'RxJS',
                     'TypeScript',
-                    'React',
                     'Web Worker'
                   ]
                 },
                 {
-                  id: 'css',
-                  name: 'CSS',
+                  id: 'no-sql',
+                  name: 'NoSQL',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Sass'
+                    'MongoDB'
                   ]
                 },
                 {
-                  id: 'python',
-                  name: 'Python',
+                  id: 'amazon-web-services',
+                  name: 'Amazon Web Services',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Falcon'
+                    'Simple Storage Service (S3)',
+                    'Simple Queue Service (SQS)'
                   ]
                 },
                 {
@@ -166,15 +135,8 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   logo: 'fas fa-users',
                   descriptions: [
                     'Women Techmakers Manila 2019 (March 30, 2019)',
+                    'AWS Technical Essentials Day - AWS Philippines (October 29, 2019)',
                     'Shopify Meetup Manila (February 8, 2020)'
-                  ]
-                },
-                {
-                  id: 'training',
-                  name: 'Training',
-                  logo: 'fas fa-book',
-                  descriptions: [
-                    'AWS Technical Essentials Day - AWS Philippines (October 29, 2019)'
                   ]
                 }
               ]
@@ -197,48 +159,67 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   id: 'neuland-ph-website',
                   name: 'Neuland PH Website',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Design and developed feature for Rewards System, User Management and Quiz Management.',
+                    'Developed a backend scripts to handle Image Coloring feature of the site.',
+                    'Implemented web security standards.',
+                    'Developed using Wordpress.',
+                    'Handled deployment in test and production linux server.',
+                    'Setup Nginx server.',
+                    'Handled server security standards setup.'
+                  ]
                 },
                 {
                   id: 'decidium-ph-website',
                   name: 'Decidium PH Website',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Backend and frontend integration.',
+                    'Developed using Wordpress.',
+                    'Handled deployment in test and production linux server.',
+                    'Implemented web security standards.',
+                    'Setup Nginx server.',
+                    'Handled server security standards setup.'
+                  ]
                 },
                 {
                   id: 'monde-nissin-website',
                   name: 'Monde Nissin Website (Maintenance)',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Handled some backend bug fixing and feature change request.'
+                  ]
                 },
                 {
                   id: 'marlboro-website',
                   name: 'Marlboro Website (Maintenance)',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Handled some backend bug fixing and feature change request.'
+                  ]
                 },
                 {
                   id: 'nuworks-website',
                   name: 'NuWorks Website (Maintenance)',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Designed and developed new page to handle email subscription.',
+                  ]
+                },
+                {
+                  id: 'belo-baby-website',
+                  name: 'Belo Baby Website (Maintenance)',
+                  logo: 'fas fa-certificate',
+                  descriptions: [
+                    'Handled some backend bug fixing and feature change request.'
+                  ]
                 },
                 {
                   id: 'belo-men-website',
                   name: 'Belo Men Website (Maintenance)',
                   logo: 'fas fa-certificate',
-                  descriptions: []
-                },
-                {
-                  id: 'contributed-open-source-project-library',
-                  name: 'Contributed Open Source Project | Library',
-                  logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Wordpress Scaffolding',
-                    'PHP Simple Captcha',
-                    'Wordpress DB Schema Extender',
-                    'PHP Static Class Interface',
-                    'PHP MailChimp'
+                    'Handled some backend bug fixing and feature change request.'
                   ]
                 },
                 {
@@ -247,18 +228,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   logo: 'far fa-lightbulb',
                   descriptions: [
                     'Jenkins',
-                    'TravisCI',
                     'Bitbucket Pipelines'
-                  ]
-                },
-                {
-                  id: 'test-coverage',
-                  name: 'Test Coverage',
-                  logo: 'far fa-lightbulb',
-                  descriptions: [
-                    'Coveralls',
-                    'Code Climate',
-                    'CodeCov'
                   ]
                 },
                 {
@@ -270,28 +240,11 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   ]
                 },
                 {
-                  id: 'server',
-                  name: 'Server',
+                  id: 'php',
+                  name: 'PHP',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Linux'
-                  ]
-                },
-                {
-                  id: 'web-server',
-                  name: 'Web Server',
-                  logo: 'far fa-lightbulb',
-                  descriptions: [
-                    'Apache',
-                    'Nginx'
-                  ]
-                },
-                {
-                  id: 'server-security',
-                  name: 'Server Security',
-                  logo: 'far fa-lightbulb',
-                  descriptions: [
-                    'Web Server and Application Security Standards'
+                    'CodeIgniter'
                   ]
                 },
                 {
@@ -323,25 +276,38 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   id: 'creamsilk-ph-website',
                   name: 'Creamsilk PH Website',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Designed and develop backend scripts to support hair profiler feature for creamsilk 2017 campaign.',
+                    'Implemented web security standards.',
+                    'Communicated with other international ops team about the test and production server setup.',
+                    'Developed using Wordpress.'
+                  ]
                 },
                 {
                   id: 'imagenation-canon-ph-website',
                   name: 'Imagenation Canon PH Website (Maintenance)',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Integrated payment gateway to support the 2017 image nation campaign.'
+                  ]
                 },
                 {
                   id: 'chevrolet-ph-website',
                   name: 'Chevrolet PH Website',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Designed and developed the CMS of the whole website using Laravel.',
+                    'Backend and frontend integration for dyanmic content.',
+                  ]
                 },
                 {
                   id: 'nestle-nestea-beach-2017-ph-microsite',
                   name: 'Nestle Nestea Beach 2017 PH Microsite',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Integrated twitter and instagram API for hash tag management to support the Nestea Beach social media campaign 2017.',
+                    'Developed using Drupal 7 to handle all the CMS part.'
+                  ]
                 },
                 {
                   id: 'php',
@@ -350,7 +316,6 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   descriptions: [
                     'Laravel',
                     'Drupal',
-                    'CodeIgniter',
                     'Wordpress'
                   ]
                 },
@@ -389,53 +354,47 @@ export default class CareerHistory extends Component<IProperty, IState> {
               term: 'June 2016 - January 2017',
               highlights: [
                 {
-                  id: 'forma-eforms-mobile-application',
+                  id: 'formalistics-mobile-application',
                   name: 'Formalistics Mobile Application',
                   logo: 'fas fa-certificate',
-                  descriptions: []
+                  descriptions: [
+                    'Mobile version of the Formalistics Web Application.',
+                    'Developed using Ionic v2 - Mobile Hybrid Framework to support multiple devices in a single source code.',
+                    'Integrated Google Map API specific for client requirements to implement custom tracking system.'
+                  ]
                 },
                 {
-                  id: 'forma-eforms-web-application',
+                  id: 'formalistics-web-application',
                   name: 'Formalistics Web Application',
                   logo: 'fas fa-certificate',
                   descriptions: [
-                    'Contribute to the source code of the Custom Framework used by the company'
+                    'Contributed to the main source code of the custom framework used to make the web application.',
+                    'Designed and developed RESTful API to port the mobile version.',
+                    'Designed and developed custom compiler used by the form builder feature to support formula syntax.'
                   ]
                 },
                 {
-                  id: 'mobile-hybrid-framework',
-                  name: 'Mobile Hybrid Framework',
+                  id: 'php',
+                  name: 'PHP',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Ionic'
+                    'Laravel'
                   ]
                 },
                 {
-                  id: 'custom-compiler',
-                  name: 'Custom Compiler',
+                  id: 'javascript',
+                  name: 'JavaScript',
                   logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Built on top of PHP and used by the Formalistics form builder for formula syntax.'
+                    'AngularJS'
                   ]
-                },
-                {
-                  id: 'rest-api-implementation',
-                  name: 'REST API Implementation',
-                  logo: 'far fa-lightbulb',
-                  descriptions: []
-                },
-                {
-                  id: 'google-map-api-integration',
-                  name: 'Google Map API Integration',
-                  logo: 'far fa-lightbulb',
-                  descriptions: []
                 },
                 {
                   id: 'meetup-conference-attended',
                   name: 'Meetup | Conference Attended',
                   logo: 'fas fa-users',
                   descriptions: [
-                    'PHP Conference 2016 Philippines (October 13 - 14, 2016)'
+                    'PHP Conference 2016 Philippines - Key Speaker: Rasmus Lerdorf (October 13 - 14, 2016)'
                   ]
                 }
               ]
@@ -449,14 +408,11 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   id: 'forma-eforms-web-application',
                   name: 'Formalistics Web Application',
                   logo: 'fas fa-certificate',
-                  descriptions: []
-                },
-                {
-                  id: 'server',
-                  name: 'Server',
-                  logo: 'far fa-lightbulb',
                   descriptions: [
-                    'Windows'
+                    'Designed and developed a custom scripts to support customization.',
+                    'Implemented business requirements.',
+                    'Handled deployment in windows server.',
+                    'Technical support.'
                   ]
                 },
                 {
@@ -469,13 +425,9 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   id: 'javascript',
                   name: 'JavaScript',
                   logo: 'far fa-lightbulb',
-                  descriptions: []
-                },
-                {
-                  id: 'technical-support',
-                  name: 'Technical Support',
-                  logo: 'fas fa-wrench',
-                  descriptions: []
+                  descriptions: [
+                    'JQuery'
+                  ]
                 }
               ]
             }
@@ -515,14 +467,15 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   logo: 'fas fa-medal',
                   descriptions: [
                     'Team Leader and Main Programmer',
-                    'Map Locator (Android Application)'
+                    'Requirements gathering, Design, Implementation and Testing of proposed project "Map Locator" (Android Application) for the selected beneficiary.'
                   ]
                 },
                 {
                   id: '1st_runnerup_in_app_and_running_mobile_development',
-                  name: '1st Runner-up in App and Running (Mobile Development)',
+                  name: '1st Runner-up in App and Running',
                   logo: 'fas fa-star',
                   descriptions: [
+                    'Competition for Mobile Application Development.',
                     'STI Tagisan ng Talino - Dagupan Cluster Level (February 2015)'
                   ]
                 }

@@ -3,32 +3,47 @@
 .container {
   position: fixed;
   width: 100%;
-  text-align: center;
   background: #f0f0f0;
   z-index: 1029;
   padding: 10px 0 10px 0;
 
   .content {
     display: inline-block;
-    width: 95%;
+    width: 96%;
     vertical-align: middle;
     padding: 0 10px 0 20px;
+    text-align: center;
 
-    @include screen-tablet-and-mobile {
+    @include screen-tablet {
+      width: 93%;
+    }
+
+    @include screen-mobile {
+      width: 90%;
+    }
+
+    @include screen-mobile-small {
       width: 90%;
     }
   }
 
   .close {
     display: inline-block;
-    width: 5%;
-    vertical-align: middle;
-    right: 15px;
+    width: 4%;
     cursor: pointer;
     vertical-align: middle;
+    text-align: center;
     padding: 0 5px 0 5px;
 
-    @include screen-tablet-and-mobile {
+    @include screen-tablet {
+      width: 7%;
+    }
+
+    @include screen-mobile {
+      width: 10%;
+    }
+
+    @include screen-mobile-small {
       width: 10%;
     }
   }
