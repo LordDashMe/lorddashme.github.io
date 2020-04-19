@@ -34,7 +34,7 @@ export default class AnimateNumber extends Component<IProperty, IState> {
 
   private getAnimated(): void {
 
-    if (!this.props.value) {
+    if (! this.props.value) {
       return;
     }
 
@@ -60,8 +60,12 @@ export default class AnimateNumber extends Component<IProperty, IState> {
   private setNumber(number: number): void {
     this.setState({
       number: number,
-      commaSeparated: number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+      commaSeparated: this.convertCommaSeparatedNumber(number)
     });
+  }
+
+  private convertCommaSeparatedNumber(number: number): string {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   private getNumber(): number | string {

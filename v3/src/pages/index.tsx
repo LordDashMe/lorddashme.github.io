@@ -15,7 +15,7 @@ const Section = loadable(() => import('../components/Section/Section'), { fallba
 const Author = loadable(() => import('../components/Author/Author'), { fallback: loadableFallbackTemplate(`#author-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
-const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
+// const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
 const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
 const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
 const Footer = loadable(() => import('../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
@@ -102,13 +102,13 @@ const Home = (): JSX.Element => {
             showBorderTop={true}>
             <StatusPieChart />
             <SkillTechnology />
+            {/* Line Item: LordDashMe_Horizontal_Home */}
+            <Ads appearance="horizontal">
+              <ResponsiveAds 
+                adClient={'ca-pub-3427694918014398'}
+                adSlot={'4220072227'} />
+            </Ads>
           </Section>
-          {/* Line Item: LordDashMe_Horizontal_Home */}
-          <Ads appearance="horizontal">
-            <ResponsiveAds 
-              adClient={'ca-pub-3427694918014398'}
-              adSlot={'4220072227'} />
-          </Ads>
           {/*
 
             Deprecated since April 12, 2020.
@@ -128,14 +128,14 @@ const Home = (): JSX.Element => {
             showThematicBreak={true} 
             showBorderTop={true}>
             <CareerHistory />
+            {/* Line Item: LordDashMe_Horizontal_Home_2 */}
+            <Ads appearance="horizontal">
+              <ResponsiveAds 
+                adClient={'ca-pub-3427694918014398'}
+                adSlot={'2369194966'} />
+            </Ads>
+            <Statement />
           </Section>
-          <Statement />
-          {/* Line Item: LordDashMe_Horizontal_Home_2 */}
-          <Ads appearance="horizontal">
-            <ResponsiveAds 
-              adClient={'ca-pub-3427694918014398'}
-              adSlot={'2369194966'} />
-          </Ads>
         </PageWrapper>
         <Footer isFixedPosition={false}/>
       </Page>

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import loadable from '@loadable/component';
 
-import { loadableFallbackTemplate } from '../../common/helper';
-
-const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
-const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
-const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
-const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
-const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
-const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import Headline from '../../components/Headline/Headline';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
+import Section from '../../components/Section/Section';
+import Statement from '../../components/Statement/Statement';
+import Footer from '../../components/Footer/Footer';
 
 import style from './PageInformation.module.scss';
 
@@ -40,8 +37,8 @@ export default class PageInformation extends Component<IProperty, IState> {
                 <i className={style['icon'] + ' ' + this.props.primaryIcon}></i>
                 <p className={style['description']}>{this.props.description}</p>
               </div>
+              <Statement />
             </Section>
-            <Statement />
           </div>
         </PageWrapper>
         <Footer isFixedPosition={false}/>

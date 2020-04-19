@@ -16,7 +16,7 @@
  */
 const WEBSITE_PAGE_META = {
   title: {
-    main: 'Joshua Clifford Reyes | LordDashMe'
+    main: 'Joshua Clifford Reyes'
   },
   author: 'Joshua Clifford Reyes',
   description: 'Clean Code, Domain Driven, Test Driven, Design Patterns and Best Practices. Technology, Web Dev, Mobile Dev, Desktop Dev, DevOps, Computer Networking and Science.',

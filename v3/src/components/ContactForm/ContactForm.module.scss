@@ -3,7 +3,7 @@
 .container {
   display: block;
   width: 430px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 50px auto;
 
   @include screen-mobile {
     width: 85%;
@@ -35,10 +35,14 @@
     }
   }
   
+  p {
+    text-align: right;
+  }
+  
   button.button {
     display: block;
     width: 110px;
-    margin: 0 auto 0 auto;
+    margin: 20px auto 0 auto;
     border-radius: 0;
     color: #fff;
     background: #000;

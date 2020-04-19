@@ -55,26 +55,26 @@ export default class CareerHistory extends Component<IProperty, IState> {
               term: 'January 2019 - Present',
               highlights: [
                 {
-                  id: 'gma-news-online-seagames-2019-microsite',
-                  name: 'GMA News Online - SEA Games 2019 Microsite',
+                  id: 'gno-seagames-2019-microsite',
+                  name: 'GNO - SEA Games 2019 Microsite',
                   logo: 'fas fa-certificate',
                   descriptions: []
                 },
                 {
-                  id: 'gma-news-online-sona-2019-microsite',
-                  name: 'GMA News Online - Sona 2019 Microsite',
+                  id: 'gno-sona-2019-microsite',
+                  name: 'GNO - Sona 2019 Microsite',
                   logo: 'fas fa-certificate',
                   descriptions: []
                 },
                 {
-                  id: 'gma-news-online-eleksyon-2019-microsite',
-                  name: 'GMA News Online - Eleksyon 2019 Microsite',
+                  id: 'gno-eleksyon-2019-microsite',
+                  name: 'GNO - Eleksyon 2019 Microsite',
                   logo: 'fas fa-certificate',
                   descriptions: []
                 },
                 {
-                  id: 'gma-news-online-eleksyon-2019-microsite',
-                  name: 'GMA News Online - Coverstories',
+                  id: 'gno-eleksyon-2019-microsite',
+                  name: 'GNO - Coverstories',
                   logo: 'fas fa-certificate',
                   descriptions: []
                 },
@@ -160,13 +160,13 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   name: 'Neuland PH Website',
                   logo: 'fas fa-certificate',
                   descriptions: [
-                    'Design and developed feature for Rewards System, User Management and Quiz Management.',
+                    'Design and developed backend scripts for Rewards System, User Management System and Quiz Management System.',
                     'Developed a backend scripts to handle Image Coloring feature of the site.',
                     'Implemented web security standards.',
                     'Developed using Wordpress.',
                     'Handled deployment in test and production linux server.',
                     'Setup Nginx server.',
-                    'Handled server security standards setup.'
+                    'Handled server setup for security standards.'
                   ]
                 },
                 {
@@ -179,7 +179,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                     'Handled deployment in test and production linux server.',
                     'Implemented web security standards.',
                     'Setup Nginx server.',
-                    'Handled server security standards setup.'
+                    'Handled server setup for security standards.'
                   ]
                 },
                 {
@@ -467,7 +467,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   logo: 'fas fa-medal',
                   descriptions: [
                     'Team Leader and Main Programmer',
-                    'Requirements gathering, Design, Implementation and Testing of proposed project "Map Locator" (Android Application) for the selected beneficiary.'
+                    'Requirements gathering, Design, Implementation and Testing of proposed project - Map Locator (Android Application) for the selected beneficiary.'
                   ]
                 },
                 {

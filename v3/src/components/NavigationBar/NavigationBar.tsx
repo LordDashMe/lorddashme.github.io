@@ -51,7 +51,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
           href: '/comingsoon/',
           label: 'TOOLS',
           icon: 'fas fa-heart'
-        },
+        }
       ],
       collapseStyle: {
         'display': 'none'

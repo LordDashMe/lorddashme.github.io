@@ -93,8 +93,8 @@ const Contact = (): JSX.Element => {
               </p>
             </PoweredBy>
             <ContactForm />
+            <Statement />
           </Section>
-          <Statement />
         </PageWrapper>
         <Footer isFixedPosition={false}/>
       </Page>

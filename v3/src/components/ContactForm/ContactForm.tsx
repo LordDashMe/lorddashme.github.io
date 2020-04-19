@@ -46,7 +46,7 @@ export default class ContactForm extends Component<IProperty, IState> {
       (typeof this.state.contact.email === 'undefined' || this.state.contact.email === '') ||
       (typeof this.state.contact.message === 'undefined' || this.state.contact.message === '')
     ) {
-      alert('Please fill-up first all the required fields.');
+      alert('Please provide an input for the required fields.');
       return;
     }
 
@@ -127,6 +127,7 @@ export default class ContactForm extends Component<IProperty, IState> {
             <label className={style['label']}>MESSAGE*</label>
             <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['textarea'] + ' ' + style['control'] + ' form-control'} placeholder="Say something..."></textarea>
           </div>
+          <p>* is required field.</p>
           <button className={style['button'] + ' btn'} type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
         </form>
       </div>
