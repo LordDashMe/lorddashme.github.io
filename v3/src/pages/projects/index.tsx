@@ -7,11 +7,11 @@ import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
+import Section from '../../components/Section/Section';
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
-const Section = loadable(() => import('../../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
 const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
 const Project = loadable(() => import('../../components/Project/Project'), { fallback: loadableFallbackTemplate(`#project-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { isSSR } from '../../common/helper';
 
 import Firestore from '../Database/Firebase/Firestore';
-import Loader from '../Loader/Loader';
 
 import style from './Project.module.scss';
 
@@ -32,7 +31,98 @@ export default class Project extends Component<IProperty, IState> {
     super(properties);
     
     this.state = {
-      projects: [],
+      projects: [
+        {
+          id: '1',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '2',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '3',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '4',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '5',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '6',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '7',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '8',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        },
+        {
+          id: '9',
+          title: '',
+          description: '',
+          image: '',
+          imageAlt: '',
+          link: '',
+          order: 0,
+          active: false
+        }
+      ],
       loader: true 
     };
   }
@@ -79,6 +169,18 @@ export default class Project extends Component<IProperty, IState> {
 
   private getProjects(): JSX.Element[] {
     return this.state.projects.map((project): JSX.Element => {
+
+      if (project.title === '') {
+        return (
+          <div key={project.id} className={style['placeholder']}>
+            <div className={style['ph-title']}></div>
+            <div className={style['ph-description']}></div>
+            <div className={style['ph-img']}></div>
+            <div className={style['ph-link']}></div>
+          </div>   
+        );
+      }
+
       return (
         <div key={project.id} className={style['wrapper']}>
           <h3 className={style['title']}>{project.title}</h3>
@@ -95,7 +197,6 @@ export default class Project extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="project-component" className={style['container']}>
-        <Loader visibility={this.state.loader}/>
         {this.getProjects()}
       </div>
     );

@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import loadable from '@loadable/component';
 
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Headline from '../../components/Headline/Headline';
-import PageWrapper from '../../components/PageWrapper/PageWrapper';
+import { loadableFallbackTemplate } from '../../common/helper';
+
 import Section from '../../components/Section/Section';
-import Statement from '../../components/Statement/Statement';
-import Footer from '../../components/Footer/Footer';
+
+const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
+const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
+const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
 import style from './PageInformation.module.scss';
 
@@ -18,6 +22,10 @@ interface IProperty {
 
 interface IState {}
 
+/**
+ * THIS COMPONENT IS REQUIRE TO LOAD IMMEDIATELY
+ * IMPLEMENTING LAZY LOADING MAY CAUSE UNUSUAL EFFECT.
+ */
 export default class PageInformation extends Component<IProperty, IState> {
 
   public render(): JSX.Element {

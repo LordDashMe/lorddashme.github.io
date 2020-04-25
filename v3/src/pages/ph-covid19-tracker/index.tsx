@@ -85,12 +85,18 @@ const PHCovid19Tracker = (): JSX.Element => {
         <StatusPieChart />
         <StatusOverview />
         <About />
-        <SuggestedVideo />
         {/* Line Item: LordDashMe_Horizontal_Home */}
         <Ads appearance="horizontal">
           <ResponsiveAds 
             adClient={'ca-pub-3427694918014398'}
             adSlot={'4220072227'}/>
+        </Ads>
+        <SuggestedVideo />
+        {/* Line Item: LordDashMe_Horizontal_Home_2 */}
+        <Ads appearance="horizontal">
+          <ResponsiveAds 
+            adClient={'ca-pub-3427694918014398'}
+            adSlot={'2369194966'} />
         </Ads>
         <Footer />
       </Page>

@@ -7,8 +7,8 @@ import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
 import Page from '../../components/Page/Page';
+import PageInformation from '../../components/PageInformation/PageInformation';
 
-const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate(`#page-information-component`) });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
 const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
 

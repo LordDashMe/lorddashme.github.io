@@ -133,8 +133,10 @@ export default class StatusPieChart extends Component<IProperty, IState> {
     const currentState: IState = {...this.state};
     const specificCaseCount: any = currentState.statusPieChart.data['datasets'][0].data[specificIndex];
 
-    currentState.percentageVisibility = true;
-    currentState.percentageValue = parseFloat(((specificCaseCount / currentState.totalConfirmedCases) * 100).toFixed(2));
+    if (specificCaseCount > 0 && currentState.totalConfirmedCases > 0) {
+      currentState.percentageVisibility = true;
+      currentState.percentageValue = parseFloat(((specificCaseCount / currentState.totalConfirmedCases) * 100).toFixed(2));
+    }
 
     this.setState(currentState);
   }

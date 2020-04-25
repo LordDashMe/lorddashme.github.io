@@ -3,7 +3,6 @@ import loadable from '@loadable/component';
 
 import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
 
-import Loader from '../../../../components/Loader/Loader';
 import Firestore from '../../../../components/Database/Firebase/Firestore';
 import AnimateNumber from '../../../../components/Animation/AnimateNumber/AnimateNumber';
 
@@ -192,7 +191,6 @@ export default class StatusOverview extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="ph-covid19-tracker-status-overview-component" className={style['container']}>
-        <Loader visibility={this.state.loader}/>
         {this.getStatusOverview()}
         {this.getConfirmCases()}
         {this.getAsOfDateTime()}
