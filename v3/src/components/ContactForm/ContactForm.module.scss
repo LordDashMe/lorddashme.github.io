@@ -1,9 +1,8 @@
 @import '../../common/mixins';
 
 .container {
-  display: block;
   width: 430px;
-  margin: 0 auto 50px auto;
+  margin: 10px auto 10px auto;
 
   @include screen-mobile {
     width: 85%;

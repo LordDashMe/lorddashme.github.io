@@ -26,9 +26,9 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       statusPieChart: {
         data: {
           labels: [
-            'WEB DEV', 
-            'MOBILE APP DEV', 
-            'DESKTOP APP DEV', 
+            'WEB DEVELOPMENT', 
+            'MOBILE APP DEVELOPMENT', 
+            'DESKTOP APP DEVELOPMENT', 
             'DEVOPS', 
             'COMPUTER NETWORKING'
           ],

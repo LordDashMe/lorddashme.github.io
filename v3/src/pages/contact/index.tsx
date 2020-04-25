@@ -88,9 +88,7 @@ const Contact = (): JSX.Element => {
             showThematicBreak={true}
             showBorderTop={false}>
             <PoweredBy>
-              <p>
-                <small>Backend is powered by <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku: Cloud Application Platform</a></small>
-              </p>
+              Backend is powered by <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku: Cloud Application Platform</a>
             </PoweredBy>
             <ContactForm />
             <Statement />

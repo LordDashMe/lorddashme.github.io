@@ -61,6 +61,11 @@ export default class Statement extends Component<IProperty, IState> {
           id: 'statement_8',
           statement: 'Walking on water and developing software from a specification are easy if both are frozen.',
           author: 'Edward V. Berard'
+        },
+        {
+          id: 'statement_9',
+          statement: 'Legends say, there are 10 types of people in this world those who understand binary and those who don\'t.',
+          author: 'Unknown'
         }
       ]
     };

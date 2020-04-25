@@ -17,7 +17,7 @@
   .wrapper {
     display: inline-block;
     width: 33%;
-    padding: 0 20px 0 20px;
+    padding: 10px 20px 10px 20px;
   
     @include screen-tablet {
       width: 50%;
@@ -46,9 +46,12 @@
     border: 1px solid #eeee;
     min-height: 150px;
     height: auto;
+    box-shadow: -3px 3px 7px -2px rgba(0, 0, 0, 0.126);
   }
   
   .link {
+    margin: 10px 0 0 0;
     font-size: 0.9em;
+    text-align: right;
   }
 }

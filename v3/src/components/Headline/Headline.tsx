@@ -117,10 +117,10 @@ export default class Headline extends Component<IProperty, IState> {
     });
   }
 
-  public render(): JSX.Element {
+  public render(): JSX.Element | null {
     
     if (!this.state.headline.content || !this.state.headline.visibility) {
-      return (<div></div>);  
+      return null;  
     }
 
     return (

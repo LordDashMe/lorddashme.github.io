@@ -6,6 +6,10 @@ interface IProperty {}
 
 interface IState {}
 
+/**
+ * THIS COMPONENT IS REQUIRE TO LOAD IMMEDIATELY
+ * IMPLEMENTING LAZY LOADING MAY CAUSE UNUSUAL EFFECT.
+ */
 export default class Page extends Component<IProperty, IState> {
 
   public constructor(properties: any) {

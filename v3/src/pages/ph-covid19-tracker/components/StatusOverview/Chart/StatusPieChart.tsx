@@ -5,6 +5,8 @@ import { isSSR } from '../../../../../common/helper';
 
 import Firestore from '../../../../../components/Database/Firebase/Firestore';
 
+import { IStatusOverview } from '../StatusOverview';
+
 import style from './StatusPieChart.module.scss';
 
 interface IProperty {}
@@ -19,14 +21,6 @@ interface IState {
 interface IStatusPieChart {
   data: object;
   options: object;
-}
-
-interface IStatusOverview {
-  id: string;
-  sysId: string;
-  label: string;
-  count: number;
-  color: string;
 }
 
 export default class StatusPieChart extends Component<IProperty, IState> {
@@ -177,7 +171,8 @@ export default class StatusPieChart extends Component<IProperty, IState> {
               sysId: document.sys_id,
               label: document.label,
               count: document.count,
-              color: document.color
+              color: document.color,
+              order: document.order
             };
           });
 
@@ -201,7 +196,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       });
   }
 
-  private getPercentage(): JSX.Element {
+  private getPercentage(): JSX.Element | null {
     
     if (this.state.percentageVisibility) {
       return (
@@ -209,7 +204,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
       );
     }
 
-    return (<div></div>);
+    return null;
   }
 
   public render(): JSX.Element {

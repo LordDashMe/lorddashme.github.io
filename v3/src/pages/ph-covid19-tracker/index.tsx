@@ -16,7 +16,6 @@ const PageView = loadable(() => import('../../components/Analytics/GoogleAnalyti
 const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
 const ResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 
-const PageBorder = loadable(() => import('./components/PageBorder/PageBorder'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-page-border-component`) });
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
 const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
 const SuggestedVideo = loadable(() => import('./components/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
@@ -40,7 +39,7 @@ const PHCovid19Tracker = (): JSX.Element => {
     "url": currentLocationURL,
     "name": pageTitle,
     "author": "Joshua Clifford Reyes",
-    "image": "/resources/img/covid19-min.jpg",
+    "image": "/resources/img/thumbnails/covid19-min.jpg",
     "description": "A tracking page for COVID-19 cases in the Philippines."
   };
   
@@ -52,8 +51,8 @@ const PHCovid19Tracker = (): JSX.Element => {
 
         <title>{pageTitle}</title>
 
-        <link rel="shortcut icon" href="/resources/img/favicon-ph-covid19-tracker-2.png" />
-        <link rel="apple-touch-icon" href="/resources/img/favicon-ph-covid19-tracker-2.png" />
+        <link rel="shortcut icon" href="/resources/img/icons/favicon-ph-covid19-tracker-2.png" />
+        <link rel="apple-touch-icon" href="/resources/img/icons/favicon-ph-covid19-tracker-2.png" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
@@ -66,13 +65,13 @@ const PHCovid19Tracker = (): JSX.Element => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content="A tracking page for COVID-19 cases in the Philippines." />
         <meta name="twitter:creator" content="@lorddashme" />
-        <meta name="twitter:image" content="/resources/img/covid19-min.jpg" />
+        <meta name="twitter:image" content="/resources/img/thumbnails/covid19-min.jpg" />
         <meta name="twitter:image:alt" content="COVID19" />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
-        <meta name="og:image" content="/resources/img/covid19-min.jpg" />
+        <meta name="og:image" content="/resources/img/thumbnails/covid19-min.jpg" />
         <meta name="og:description" content="A tracking page for COVID-19 cases in the Philippines." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
@@ -81,7 +80,6 @@ const PHCovid19Tracker = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
 
-      <PageBorder position={'top'} />
       <Page>
         <MainTitle />
         <StatusPieChart />
@@ -96,7 +94,6 @@ const PHCovid19Tracker = (): JSX.Element => {
         </Ads>
         <Footer />
       </Page>
-      <PageBorder position={'bottom'} />
 
       <GoogleAdsense />
       <Youtube />

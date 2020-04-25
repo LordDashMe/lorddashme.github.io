@@ -486,44 +486,6 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               is_active: true
             }
           ]
-        },
-        {
-          id: 'open_source_projects',
-          role: 'OPEN SOURCE PROJECTS',
-          icon: 'fab fa-github',
-          tools: [
-            {
-              id: 'php', 
-              name: 'PHP',
-              icon: 'fab fa-php',
-              libraries: [
-                { id: 'wordpress_scaffolding', name: 'Wordpress Scaffolding', is_active: true },
-                { id: 'php_simple_captcha', name: 'PHP Simple Captcha', is_active: true },
-                { id: 'wordpress_db_schema_extender', name: 'Wordpress DB Schema Extender', is_active: true },
-                { id: 'php_static_class_interface', name: 'PHP Static Class Interface', is_active: true },
-                { id: 'php_mailchimp', name: 'PHP MailChimp', is_active: true }
-              ],
-              is_active: true
-            },
-            {
-              id: 'python', 
-              name: 'Python',
-              icon: 'fab fa-python',
-              libraries: [
-                { id: 'craftman', name: 'Craftman', is_active: true }
-              ],
-              is_active: true
-            },
-            {
-              id: 'javascript', 
-              name: 'Javascript',
-              icon: 'fab fa-js',
-              libraries: [
-                { id: 'nodejs_image_squeezer', name: 'NodeJS Image Squeezer', is_active: true }
-              ],
-              is_active: true
-            },
-          ]
         }
       ],
     };

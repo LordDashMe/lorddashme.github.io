@@ -87,9 +87,7 @@ const Projects = (): JSX.Element => {
             showThematicBreak={true} 
             showBorderTop={true}>
             <PoweredBy>
-              <p>
-                <small>Backend is powered by <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a></small>
-              </p>
+              Backend is powered by <a href="https://firebase.google.com/products/firestore/" target="_blank" rel="noopener noreferrer">Google Firebase: Cloud Firestore</a>
             </PoweredBy>
             <Project />
           </Section>

@@ -18,6 +18,8 @@ interface IState {
 interface ISuggestedVideo {
   id: string;
   videoId: string;
+  order: number;
+  active: boolean;
 }
 
 export default class SuggestedVideo extends Component<IProperty, IState> {
@@ -43,6 +45,7 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
     Firestore.getInstance()
       .collection('ph-covid19-tracker-suggested-video')
       .where('active', '==', true)
+      .orderBy('order', 'desc')
       .get()
       .then((querySnapshot: any): void => { 
         
@@ -50,7 +53,9 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
           const document: any = doc.data();
           return {
             id: doc.id,
-            videoId: document.video_id
+            videoId: document.video_id,
+            order: document.order,
+            active: document.active
           };
         });
 
@@ -60,7 +65,7 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
       });
   }
 
-  private getSuggestedVideo(): JSX.Element | JSX.Element[] {
+  private getSuggestedVideo(): JSX.Element[] | null {
 
     if (! isSSR()) {
       return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
@@ -76,7 +81,7 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
       });
     }
     
-    return (<div></div>);
+    return null;
   }
 
   public render(): JSX.Element {

@@ -127,7 +127,7 @@ export default class ContactForm extends Component<IProperty, IState> {
             <label className={style['label']}>MESSAGE*</label>
             <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['textarea'] + ' ' + style['control'] + ' form-control'} placeholder="Say something..."></textarea>
           </div>
-          <p>* is required field.</p>
+          <p><b>*</b> is required field.</p>
           <button className={style['button'] + ' btn'} type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
         </form>
       </div>

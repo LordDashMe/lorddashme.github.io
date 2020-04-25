@@ -7,11 +7,11 @@ import { loadableFallbackTemplate } from '../common/helper';
 import WEBSITE_PAGE_META from '../common/Website/page_meta';
 
 import Page from '../components/Page/Page';
+import Section from '../components/Section/Section';
 
 const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const PageWrapper = loadable(() => import('../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
-const Section = loadable(() => import('../components/Section/Section'), { fallback: loadableFallbackTemplate(`#section-component`) });
 const Author = loadable(() => import('../components/Author/Author'), { fallback: loadableFallbackTemplate(`#author-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
@@ -102,6 +102,12 @@ const Home = (): JSX.Element => {
             showBorderTop={true}>
             <StatusPieChart />
             <SkillTechnology />
+          </Section>
+          <Section 
+            id="section-skip-1" 
+            title="" 
+            showThematicBreak={false} 
+            showBorderTop={true}>
             {/* Line Item: LordDashMe_Horizontal_Home */}
             <Ads appearance="horizontal">
               <ResponsiveAds 
@@ -128,6 +134,12 @@ const Home = (): JSX.Element => {
             showThematicBreak={true} 
             showBorderTop={true}>
             <CareerHistory />
+          </Section>
+          <Section 
+            id="section-skip-2" 
+            title="" 
+            showThematicBreak={false} 
+            showBorderTop={true}>
             {/* Line Item: LordDashMe_Horizontal_Home_2 */}
             <Ads appearance="horizontal">
               <ResponsiveAds 

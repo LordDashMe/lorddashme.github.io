@@ -21,6 +21,8 @@ interface IProject {
   image: string;
   imageAlt: string;
   link: string;
+  order: number;
+  active: boolean;
 }
 
 export default class Project extends Component<IProperty, IState> {
@@ -47,6 +49,7 @@ export default class Project extends Component<IProperty, IState> {
     Firestore.initialize();
     Firestore.getInstance()
       .collection('projects')
+      .where('active', '==', true)
       .orderBy('order', 'desc')
       .get()
       .then((querySnapshot: any): void => { 
@@ -61,7 +64,9 @@ export default class Project extends Component<IProperty, IState> {
             description: document.description,
             image: document.image,
             imageAlt: document.imageAlt,
-            link: document.link
+            link: document.link,
+            order: document.order,
+            active: document.active
           };
         });
 
@@ -79,7 +84,9 @@ export default class Project extends Component<IProperty, IState> {
           <h3 className={style['title']}>{project.title}</h3>
           <p className={style['description']}>{project.description}</p>
           <img alt={project.imageAlt} className={style['image']} src={project.image} />
-          <a className={style['link']} href={project.link} target="_blank" rel="noopener noreferrer">View More</a>
+          <div className={style['link']}>
+            <a href={project.link} target="_blank" rel="noopener noreferrer">Learn More</a>
+          </div>
         </div>
       );
     });

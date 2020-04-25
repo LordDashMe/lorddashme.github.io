@@ -37,8 +37,12 @@ sitemap.xml
 
 ## Archived Versions
 
-- [v1](v1/) used traditional way of creating a website, just a pure HTML, CSS, and JS.
+- [v1](v1/) used traditional way of creating a website, just a pure HTML, CSS, and JS. 
+
+  - Decommissioned on October 2018.
 
 - [v2](v2/) is powered by [Create React App](https://create-react-app.dev/) (CRA) a toolchain for React Single-Page App (SPA).
+
+  - Decomissioned on February 2020.
 
 - [v3](v3/) utilized [Gatsby](https://www.gatsbyjs.org/) static site generator for React.

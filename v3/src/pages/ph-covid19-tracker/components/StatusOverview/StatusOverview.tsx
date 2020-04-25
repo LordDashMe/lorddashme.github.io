@@ -5,7 +5,6 @@ import { isSSR, loadableFallbackTemplate } from '../../../../common/helper';
 
 import Loader from '../../../../components/Loader/Loader';
 import Firestore from '../../../../components/Database/Firebase/Firestore';
-
 import AnimateNumber from '../../../../components/Animation/AnimateNumber/AnimateNumber';
 
 const ShareButton = loadable(() => import('../../../../components/SocialMedia/Facebook/ShareButton'), { fallback: loadableFallbackTemplate(`#social-media-facebook-share-button-component`) });
@@ -21,12 +20,13 @@ interface IState {
   statusOverview: IStatusOverview[];
 }
 
-interface IStatusOverview {
+export interface IStatusOverview {
   id: string;
   sysId: string;
   label: string;
   count: number;
   color: string;
+  order: number;
   asOfDateTime?: string;
 }
 
@@ -46,6 +46,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           label: 'CONFIRMED CASES',
           count: 0,
           color: '#6f6f6f',
+          order: 4,
           asOfDateTime: '' // March 20, 2020 7PM PST
         },
         {
@@ -53,6 +54,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           sysId: 'active_cases',
           label: 'ACTIVE CASES',
           count: 0,
+          order: 3,
           color: '#e29e01'
         },
         {
@@ -60,6 +62,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           sysId: 'recovered',
           label: 'RECOVERED',
           count: 0,
+          order: 2,
           color: '#60a138'
         },
         {
@@ -67,6 +70,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
           sysId: 'deaths',
           label: 'DEATHS',
           count: 0,
+          order: 1,
           color: '#a13838'
         }
       ]
@@ -81,8 +85,11 @@ export default class StatusOverview extends Component<IProperty, IState> {
   }
 
   private setPageUrl(): void {
+    
     const state = {...this.state};
+    
     state.pageUrl = document.location.href;
+    
     this.setState(state);
   }
 
@@ -105,7 +112,8 @@ export default class StatusOverview extends Component<IProperty, IState> {
             sysId: document.sys_id,
             label: document.label,
             count: document.count,
-            color: document.color
+            color: document.color,
+            order: document.order
           };
           
           if (typeof document.asOfDateTime !== 'undefined') {
@@ -156,10 +164,10 @@ export default class StatusOverview extends Component<IProperty, IState> {
     );
   }
 
-  private getAsOfDateTime(): JSX.Element {
+  private getAsOfDateTime(): JSX.Element | null {
     
     if (typeof this.state.statusOverview[0].asOfDateTime === 'undefined' || !this.state.statusOverview[0].asOfDateTime) {
-      return (<div></div>);
+      return null;
     }
     
     return (
@@ -167,7 +175,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
     );
   }
 
-  private getSocialMediaButtons(): JSX.Element {
+  private getSocialMediaButtons(): JSX.Element | null {
     
     if (! isSSR()) {
       return (
@@ -178,7 +186,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
       );
     }
     
-    return (<div></div>);
+    return null;
   }
 
   public render(): JSX.Element {
