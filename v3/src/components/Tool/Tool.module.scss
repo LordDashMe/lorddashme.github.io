@@ -1,0 +1,34 @@
+@import '../../common/mixins';
+
+.container {
+  display: block;
+  width: 550px;
+  margin: 0 auto 0 auto;
+
+  @include screen-mobile {
+    width: 90%;
+  }
+
+  .item {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+
+    .title {
+      font-size: 1.5em;
+
+      @include screen-mobile-small {
+        font-size: 1.2em;
+      }
+    }
+
+    .description {
+      font-size: 0.9em;
+    }
+
+    .link {
+      margin: 10px 0 0 0;
+      font-size: 0.9em;
+    }
+  }
+}

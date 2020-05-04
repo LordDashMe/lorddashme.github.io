@@ -22,7 +22,7 @@
     .ph-title {
       background: #efefef;
       width: 80%;
-      height: 40px;
+      height: 30px;
       margin: 0 0 10px 0;
     }
 
@@ -42,8 +42,9 @@
 
     .ph-link {
       background: #efefef;
-      width: 100%;
+      width: 45%;
       height: 20px;
+      margin: 0 0 0 auto;
     }
   
     @include screen-tablet {
@@ -68,6 +69,13 @@
       width: 100%;
     }
   }
+
+  .wrapper:hover .image,
+  .wrapper:focus .image,
+  .wrapper:active .image {
+    transition: all 0.5s ease;
+    box-shadow: -3px 3px 16px -2px rgba(0, 0, 0, 0.126);
+  }
   
   .title {
     font-size: 1.5em;
@@ -87,7 +95,7 @@
     border: 1px solid #eeee;
     min-height: 150px;
     height: auto;
-    box-shadow: -3px 3px 7px -2px rgba(0, 0, 0, 0.126);
+    // box-shadow: -3px 3px 5px -1px rgba(0, 0, 0, 0.126);
   }
   
   .link {

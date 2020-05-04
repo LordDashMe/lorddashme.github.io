@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Page from './components/Page/Page';
+import PageWrapper from './components/PageWrapper/PageWrapper';
 
 const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
 const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: loadableFallbackTemplate(`#video-player-youtube-component`) });
@@ -80,7 +80,7 @@ const PHCovid19Tracker = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
 
-      <Page>
+      <PageWrapper>
         <MainTitle />
         <StatusPieChart />
         <StatusOverview />
@@ -99,7 +99,7 @@ const PHCovid19Tracker = (): JSX.Element => {
             adSlot={'2369194966'} />
         </Ads>
         <Footer />
-      </Page>
+      </PageWrapper>
 
       <GoogleAdsense />
       <Youtube />

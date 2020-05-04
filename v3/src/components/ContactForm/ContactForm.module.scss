@@ -7,26 +7,9 @@
   @include screen-mobile {
     width: 85%;
   }
-
-  .form {
-    display: block;
-  }
   
-  .field {
-    display: block;
-  }
-  
-  .label {
-    display: block;
-    font-size: 1em;
-  }
-  
-  .control {
-    border-radius: 0;
-    color: #000;
-  }
-  
-  textarea.textarea {
+  .message {
+    resize: none;
     height: 150px;
   
     @include screen-mobile {
@@ -34,22 +17,11 @@
     }
   }
   
-  p {
+  .form-tips {
     text-align: right;
   }
-  
-  button.button {
-    display: block;
-    width: 110px;
-    margin: 20px auto 0 auto;
-    border-radius: 0;
-    color: #fff;
-    background: #000;
-  
-    &:hover,
-    &:focus,
-    &:active {
-      color: #fff; 
-    }
+
+  .form-action {
+    text-align: center;
   }
 }

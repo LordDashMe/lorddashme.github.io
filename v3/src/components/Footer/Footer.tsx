@@ -60,7 +60,7 @@ export default class Footer extends Component<IProperty, IState> {
   private authorLocation(): JSX.Element {
     return (
       <div className={style['upper-section-wrapper'] + ' col-md-6'}>
-        <h3 className={style['upper-section-title']}><i className="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp; LOCATION</h3>
+        <h3 className={style['upper-section-title']}><i className="fas fa-map-marker-alt" aria-hidden="true"></i> LOCATION</h3>
         <p className={style['location']}>{this.state.location}</p>
       </div>
     );
@@ -69,7 +69,7 @@ export default class Footer extends Component<IProperty, IState> {
   private socialButtonsList(): JSX.Element {
     return (
       <div className={style['upper-section-wrapper'] + ' col-md-6'}>
-        <h3 className={style['upper-section-title']}><i className="fas fa-share-square" aria-hidden="true"></i>&nbsp; LOOK FOR ME IN THE WEB</h3>
+        <h3 className={style['upper-section-title']}><i className="fas fa-share-square" aria-hidden="true"></i> LOOK FOR ME IN THE WEB</h3>
         <ul className="list-inline">
           {this.getSocialButtons()}
         </ul>

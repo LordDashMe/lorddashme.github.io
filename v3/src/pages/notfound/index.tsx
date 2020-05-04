@@ -6,7 +6,6 @@ import { loadableFallbackTemplate } from '../../common/helper';
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Page from '../../components/Page/Page';
 import PageInformation from '../../components/PageInformation/PageInformation';
 
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
@@ -71,13 +70,11 @@ const NotFound = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
 
-      <Page>
-        <PageInformation 
-          id="not-found" 
-          title="PAGE NOT FOUND"
-          primaryIcon="fas fa-map-marked-alt" 
-          description="Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again." />
-      </Page>
+      <PageInformation 
+        id="not-found" 
+        title="PAGE NOT FOUND"
+        primaryIcon="fas fa-map-marked-alt" 
+        description="Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again." />
 
       <GoogleAnalytics>
         <PageView trackingId={'UA-128894279-1'} />

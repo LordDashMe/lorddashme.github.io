@@ -6,7 +6,6 @@ import { loadableFallbackTemplate } from '../../common/helper';
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Page from '../../components/Page/Page';
 import PageInformation from '../../components/PageInformation/PageInformation';
 
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
@@ -71,13 +70,11 @@ const ComingSoon = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
 
-      <Page>
-        <PageInformation 
-          id="coming-soon" 
-          title="PAGE COMING SOON" 
-          primaryIcon="fas fa-hard-hat" 
-          description="This page is currently under construction." />
-      </Page>
+      <PageInformation 
+        id="coming-soon" 
+        title="PAGE COMING SOON" 
+        primaryIcon="fas fa-hard-hat" 
+        description="This page is currently under construction." />
 
       <GoogleAnalytics>
         <PageView trackingId={'UA-128894279-1'} />

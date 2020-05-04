@@ -115,20 +115,24 @@ export default class ContactForm extends Component<IProperty, IState> {
       <div id="contact-form-component" className={style['container']}>
         <Loader visibility={this.state.loader}/>
         <form className={style['form']}>
-          <div className={style['field'] + ' form-group'}>
-            <label className={style['label']}>NAME*</label>
-            <input value={this.state.contact.name} onChange={this.handleFieldChange.bind(this, 'name')} className={style['control'] + ' form-control'} type="text" placeholder="John Doe" />
+          <div className="form-group">
+            <label>NAME*</label>
+            <input value={this.state.contact.name} onChange={this.handleFieldChange.bind(this, 'name')} className="form-control" type="text" placeholder="John Doe" />
           </div>
-          <div className={style['field'] + ' form-group'}>
-            <label className={style['label']}>EMAIL*</label>
-            <input value={this.state.contact.email} onChange={this.handleFieldChange.bind(this, 'email')} className={style['control'] + ' form-control'} type="text" placeholder="john.doe@example.com" />
+          <div className="form-group">
+            <label>EMAIL*</label>
+            <input value={this.state.contact.email} onChange={this.handleFieldChange.bind(this, 'email')} className="form-control" type="text" placeholder="john.doe@example.com" />
           </div>
-          <div className={style['field'] + ' form-group'}>
-            <label className={style['label']}>MESSAGE*</label>
-            <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['textarea'] + ' ' + style['control'] + ' form-control'} placeholder="Say something..."></textarea>
+          <div className="form-group">
+            <label>MESSAGE*</label>
+            <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['message'] + ' form-control'} placeholder="Say something..."></textarea>
           </div>
-          <p><b>*</b> is required field.</p>
-          <button className={style['button'] + ' btn'} type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
+          <p className={style['form-tips']}>
+            <b>*</b> is required field.
+          </p>
+          <div className={style['form-action']}>
+            <button className="btn -black" type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
+          </div>
         </form>
       </div>
     );

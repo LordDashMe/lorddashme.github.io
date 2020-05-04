@@ -28,7 +28,7 @@ export default class Section extends Component<IProperty, IState> {
 
   public render(): JSX.Element {
 
-    let thematicBreak: JSX.Element | null = null;
+    let thematicBreak: JSX.Element = (<br/>);
     let borderTop: string = '';
 
     if (this.props.showThematicBreak) {

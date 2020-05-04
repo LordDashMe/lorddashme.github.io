@@ -6,7 +6,6 @@ import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../common/helper';
 import WEBSITE_PAGE_META from '../common/Website/page_meta';
 
-import Page from '../components/Page/Page';
 import Section from '../components/Section/Section';
 
 const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
@@ -84,73 +83,71 @@ const Home = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
     
-      <Page>
-        <NavigationBar />
-        <Headline />
-        <PageWrapper>
+      <NavigationBar />
+      <Headline />
+      <PageWrapper>
+        <Section 
+          id="author" 
+          title="HELLO, WORLD!" 
+          showThematicBreak={true} 
+          showBorderTop={true}>
+          <Author />
+        </Section>
+        <Section 
+          id="skills-technologies" 
+          title="SKILLS | TECHNOLOGIES" 
+          showThematicBreak={true} 
+          showBorderTop={true}>
+          <StatusPieChart />
+          <SkillTechnology />
+        </Section>
+        <Section 
+          id="section-skip-1" 
+          title="" 
+          showThematicBreak={false} 
+          showBorderTop={true}>
+          {/* Line Item: LordDashMe_Horizontal_Home */}
+          <Ads appearance="horizontal">
+            <ResponsiveAds 
+              adClient={'ca-pub-3427694918014398'}
+              adSlot={'4220072227'} />
+          </Ads>
+        </Section>
+        {/*
+
+          Deprecated since April 12, 2020.
+
           <Section 
-            id="author" 
-            title="HELLO, WORLD!" 
+            id="about" 
+            title="ABOUT" 
             showThematicBreak={true} 
             showBorderTop={true}>
-            <Author />
+            <About />
           </Section>
-          <Section 
-            id="skills-technologies" 
-            title="SKILLS | TECHNOLOGIES" 
-            showThematicBreak={true} 
-            showBorderTop={true}>
-            <StatusPieChart />
-            <SkillTechnology />
-          </Section>
-          <Section 
-            id="section-skip-1" 
-            title="" 
-            showThematicBreak={false} 
-            showBorderTop={true}>
-            {/* Line Item: LordDashMe_Horizontal_Home */}
-            <Ads appearance="horizontal">
-              <ResponsiveAds 
-                adClient={'ca-pub-3427694918014398'}
-                adSlot={'4220072227'} />
-            </Ads>
-          </Section>
-          {/*
 
-            Deprecated since April 12, 2020.
-
-            <Section 
-              id="about" 
-              title="ABOUT" 
-              showThematicBreak={true} 
-              showBorderTop={true}>
-              <About />
-            </Section>
-
-          */}
-          <Section 
-            id="career-history" 
-            title="CAREER HISTORY" 
-            showThematicBreak={true} 
-            showBorderTop={true}>
-            <CareerHistory />
-          </Section>
-          <Section 
-            id="section-skip-2" 
-            title="" 
-            showThematicBreak={false} 
-            showBorderTop={true}>
-            {/* Line Item: LordDashMe_Horizontal_Home_2 */}
-            <Ads appearance="horizontal">
-              <ResponsiveAds 
-                adClient={'ca-pub-3427694918014398'}
-                adSlot={'2369194966'} />
-            </Ads>
-            <Statement />
-          </Section>
-        </PageWrapper>
-        <Footer isFixedPosition={false}/>
-      </Page>
+        */}
+        <Section 
+          id="career-history" 
+          title="CAREER HISTORY" 
+          showThematicBreak={true} 
+          showBorderTop={true}>
+          <CareerHistory />
+        </Section>
+        <Section 
+          id="section-skip-2" 
+          title="" 
+          showThematicBreak={false} 
+          showBorderTop={true}>
+          {/* Line Item: LordDashMe_Horizontal_Home_2 */}
+          <Ads appearance="horizontal">
+            <ResponsiveAds 
+              adClient={'ca-pub-3427694918014398'}
+              adSlot={'2369194966'} />
+          </Ads>
+          <Statement />
+        </Section>
+      </PageWrapper>
+      <Footer isFixedPosition={false}/>
 
       <GoogleAdsense />
       <GoogleAnalytics>

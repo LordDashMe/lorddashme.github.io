@@ -6,7 +6,6 @@ import { loadableFallbackTemplate } from '../../common/helper';
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Page from '../../components/Page/Page';
 import Section from '../../components/Section/Section';
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
@@ -78,24 +77,22 @@ const Contact = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
       </Helmet>
 
-      <Page>
-        <NavigationBar />
-        <Headline />
-        <PageWrapper>
-          <Section 
-            id="contact"
-            title="CONTACT"
-            showThematicBreak={true}
-            showBorderTop={false}>
-            <PoweredBy>
-              Backend is powered by <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku: Cloud Application Platform</a>
-            </PoweredBy>
-            <ContactForm />
-            <Statement />
-          </Section>
-        </PageWrapper>
-        <Footer isFixedPosition={false}/>
-      </Page>
+      <NavigationBar />
+      <Headline />
+      <PageWrapper>
+        <Section 
+          id="contact"
+          title="CONTACT"
+          showThematicBreak={true}
+          showBorderTop={false}>
+          <PoweredBy>
+            Backend is powered by <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku: Cloud Application Platform</a>
+          </PoweredBy>
+          <ContactForm />
+          <Statement />
+        </Section>
+      </PageWrapper>
+      <Footer isFixedPosition={false}/>
 
       <GoogleAnalytics>
         <PageView trackingId={'UA-128894279-1'} />

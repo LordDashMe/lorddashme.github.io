@@ -26,10 +26,12 @@ interface IProject {
 
 export default class Project extends Component<IProperty, IState> {
 
+  private isFullyMounted: boolean = false;
+
   public constructor(properties: any) {
 
     super(properties);
-    
+
     this.state = {
       projects: [
         {
@@ -127,14 +129,29 @@ export default class Project extends Component<IProperty, IState> {
     };
   }
 
+  public set isMounted(status: boolean) {
+    this.isFullyMounted = status;
+  }
+
+  public get isMounted(): boolean {
+    return this.isFullyMounted;
+  }
+
+  public componentWillUnmount(): void {
+    if (! isSSR()) {
+      this.isMounted = false;
+    }
+  }
+
   public componentDidMount(): void {
     if (! isSSR()) {
+      this.isMounted = true;
       this.fetchProjectsOnFireStore(); 
     }
   }
 
   private fetchProjectsOnFireStore(): void {
-    
+
     Firestore.clearInstance();
     Firestore.initialize();
     Firestore.getInstance()
@@ -160,10 +177,12 @@ export default class Project extends Component<IProperty, IState> {
           };
         });
 
-        this.setState({
-          projects: projects,
-          loader: false
-        });
+        if (this.isMounted) {
+          this.setState({
+            projects: projects,
+            loader: false
+          });
+        }
       });
   }
 

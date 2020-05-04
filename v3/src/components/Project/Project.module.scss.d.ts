@@ -5,7 +5,7 @@ export const phDescription: string;
 export const phImg: string;
 export const phLink: string;
 export const wrapper: string;
+export const image: string;
 export const title: string;
 export const description: string;
-export const image: string;
 export const link: string;

@@ -28,7 +28,14 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
     super(properties);
 
     this.state = {
-      suggestedVideo: []
+      suggestedVideo: [
+        {
+          id: '1',
+          videoId: '',
+          order: 0,
+          active: true
+        }
+      ]
     };
   }
 
@@ -69,6 +76,11 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
 
     if (! isSSR()) {
       return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
+
+        if (suggestedVideo.videoId === '') {
+          return (<div key={suggestedVideo.id} className={style['content']}></div>);
+        }
+
         return(
           <div key={suggestedVideo.id} className={style['content']}>
             <YoutubeIframe 

@@ -48,7 +48,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
         },
         {
           id: 'tools',
-          href: '/comingsoon/',
+          href: '/tools/',
           label: 'TOOLS',
           icon: 'fas fa-heart'
         }

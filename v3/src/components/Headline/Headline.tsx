@@ -26,6 +26,8 @@ interface IHeadline {
 
 export default class Headline extends Component<IProperty, IState> {
 
+  private isFullyMounted: boolean = false;
+
   public constructor(properties: any) {
     super(properties);
 
@@ -38,8 +40,23 @@ export default class Headline extends Component<IProperty, IState> {
     };
   }
 
+  public set isMounted(status: boolean) {
+    this.isFullyMounted = status;
+  }
+
+  public get isMounted(): boolean {
+    return this.isFullyMounted;
+  }
+
+  public componentWillUnmount(): void {
+    if (! isSSR()) {
+      this.isMounted = false;
+    }
+  }
+
   public componentDidMount(): void {
     if (! isSSR()) {
+      this.isMounted = true;
       this.fetchHeadlineOnFireStore(); 
     }
   }
@@ -68,10 +85,12 @@ export default class Headline extends Component<IProperty, IState> {
 
             window.lorddashme_headline = headline;
 
-            this.setState({
-              headline: headline  
-            });
-
+            if (this.isMounted) {
+              this.setState({
+                headline: headline  
+              });
+            }
+            
             console.log('Headline_Component: Fresh headline!');
           }        
         });
