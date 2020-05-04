@@ -19,7 +19,7 @@ const PageView = loadable(() => import('../../../components/Analytics/GoogleAnal
 
 const Tools = (): JSX.Element => {
 
-  const pageTitle: string = 'Requestify | Tools';
+  const pageTitle: string = 'Requestify';
   
   let currentLocationURL: string = '/tools/requestify';
 

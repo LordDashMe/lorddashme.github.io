@@ -16,7 +16,13 @@
  */
 const WEBSITE_CONFIGURATION = {
   buildId: 'v3',
-  buildVersion: '3.3.2'
+  buildVersion: '3.3.3',
+  api: {
+    contact: 'https://lorddashme-backend.herokuapp.com/contact/',
+    strongPassword: 'https://lorddashme-php-backend.herokuapp.com/api/v1/strong_password/',
+    contentHiding: '',
+    contentHashing: ''
+  }
 };
 
 export default WEBSITE_CONFIGURATION;

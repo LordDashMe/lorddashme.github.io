@@ -21,8 +21,6 @@ interface IRequestify {
 
 export default class RequestifyForm extends Component<IProperty, IState> {
 
-  private static readonly API_CONTACT: string = 'https://lorddashme-backend.herokuapp.com/contact';
-
   public constructor(properties: any) {
     
     super(properties);
@@ -72,6 +70,10 @@ export default class RequestifyForm extends Component<IProperty, IState> {
         body: responseJson
       };
       this.setRequestifyResponse(JSON.stringify(output));
+    }).catch((error) => {
+      this.triggerLoader(false);
+      alert('Ohh, Something\'s wrong. Please check the browser console log.');
+      console.error('Error:', error);
     });
   }
 
@@ -149,9 +151,8 @@ export default class RequestifyForm extends Component<IProperty, IState> {
           A simple simulation tool for HTTP request content type json.
         </p>
         <p className={style['note']}>
-          Note: this tool only supports "Content-Type: application/json" request header and it will not going to support any content type in the future, 
-          if you want an extensive tool for HTTP request simulation I recommended you to use Postman that's really a great app!
-          By default the field for headers is already set with the required request headers.
+          This tool only supports "Content-Type: application/json" request header and it will not going to support any content type in the future, 
+          if you want an extensive tool for HTTP request simulation I recommended you to use <a href="https://www.postman.com/" rel="noopener noreferrer">Postman</a>, that's really a great app!
         </p>
         <form className={style['form']}>
           <div className="form-group">
@@ -174,8 +175,8 @@ export default class RequestifyForm extends Component<IProperty, IState> {
             <b>*</b> is required field.
           </p>
           <div className="form-group">
-            <label>RESPONSE OUTPUT</label>
-            <textarea value={this.state.requestifyResponse} className={style['textarea'] + ' form-control'} placeholder="N/A" readOnly={true}></textarea>
+            <label>RESPONSE</label>
+            <textarea value={this.state.requestifyResponse} className={style['textarea'] + ' form-control'} readOnly={true}></textarea>
           </div>
           <div className={style['form-action']}>
             <button className="btn -black" type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SUBMIT</b></button>

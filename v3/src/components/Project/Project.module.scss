@@ -17,7 +17,7 @@
   .placeholder {
     display: inline-block;
     width: 33%;
-    padding: 10px 20px 10px 20px;
+    padding: 20px 20px 20px 20px;
 
     .ph-title {
       background: #efefef;
@@ -36,15 +36,14 @@
     .ph-img {
       background: #efefef;
       width: 100%;
-      height: 190px;
+      height: 250px;
       margin: 0 0 10px 0;
     }
 
     .ph-link {
       background: #efefef;
-      width: 45%;
+      width: 30%;
       height: 20px;
-      margin: 0 0 0 auto;
     }
   
     @include screen-tablet {
@@ -101,6 +100,6 @@
   .link {
     margin: 10px 0 0 0;
     font-size: 0.9em;
-    text-align: right;
+    // text-align: right;
   }
 }

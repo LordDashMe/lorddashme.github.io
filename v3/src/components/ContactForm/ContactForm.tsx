@@ -22,8 +22,6 @@ interface IContact {
 
 export default class ContactForm extends Component<IProperty, IState> {
 
-  private static readonly API_CONTACT: string = 'https://lorddashme-backend.herokuapp.com/contact';
-
   public constructor(properties: any) {
     
     super(properties);
@@ -53,7 +51,7 @@ export default class ContactForm extends Component<IProperty, IState> {
     this.triggerLoader(true);
 
     fetch(
-      ContactForm.API_CONTACT, 
+      WEBSITE_CONFIGURATION.api.contact, 
       {
         method: 'POST',
         headers: {
@@ -63,20 +61,20 @@ export default class ContactForm extends Component<IProperty, IState> {
         },
         body: JSON.stringify(this.state.contact)
       }
-    ).then((response) => {
+    ).then(async (response) => {
+
+      this.triggerLoader(false);
+
+      const responseJson = await response.json();
 
       if (response.status === 200) {
-        this.triggerLoader(false);
         alert('Message sent!');
         window.location.reload();
         return;
       }
 
-      response.json().then((data) => {
-        this.triggerLoader(false);
-        alert(data.message);
-        console.error(data.message);
-      });
+      alert(responseJson.message);
+      console.error(responseJson.message);
     });
   }
 

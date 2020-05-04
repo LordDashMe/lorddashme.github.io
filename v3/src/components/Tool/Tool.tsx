@@ -34,7 +34,7 @@ export default class Tool extends Component<IProperty, IState> {
           id: 'strong-password-generator',
           title: 'STRONG PASSWORD GENERATOR',
           description: 'A tool use for generating random sequence of characters based on the given length.',
-          link: ''
+          link: '/tools/strong-password/'
         },
         {
           id: 'content-hiding',
@@ -46,6 +46,12 @@ export default class Tool extends Component<IProperty, IState> {
           id: 'content-hashing',
           title: 'CONTENT HASHING',
           description: 'Use to convert plain-text into hashed content and a feature to verify if the plain-text is match with the given hashed content.',
+          link: ''
+        },
+        {
+          id: 'css-minifier',
+          title: 'CSS MINIFIER',
+          description: 'A simple tool use for generating a minified version of provided CSS codes.',
           link: ''
         }
       ]
