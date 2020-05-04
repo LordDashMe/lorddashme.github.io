@@ -49,6 +49,8 @@ export default class RequestifyForm extends Component<IProperty, IState> {
     this.triggerLoader(true);
 
     const options: object = {
+      redirect: 'follow',
+      referrerPolicy: 'unsafe-url',
       method: this.state.requestify.method
     };
 
