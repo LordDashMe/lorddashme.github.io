@@ -73,7 +73,7 @@ export default class CareerHistory extends Component<IProperty, IState> {
                   descriptions: []
                 },
                 {
-                  id: 'gno-eleksyon-2019-microsite',
+                  id: 'gno-coverstories',
                   name: 'GNO - Coverstories',
                   logo: 'fas fa-certificate',
                   descriptions: []
