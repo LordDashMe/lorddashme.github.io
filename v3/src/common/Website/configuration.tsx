@@ -16,7 +16,7 @@
  */
 const WEBSITE_CONFIGURATION = {
   buildId: 'v3',
-  buildVersion: '3.3.0'
+  buildVersion: '3.3.1'
 };
 
 export default WEBSITE_CONFIGURATION;

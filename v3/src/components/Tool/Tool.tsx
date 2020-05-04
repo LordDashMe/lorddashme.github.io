@@ -28,7 +28,7 @@ export default class Tool extends Component<IProperty, IState> {
           id: 'requestify',
           title: 'REQUESTIFY',
           description: 'A simple simulation tool for HTTP request content type json.',
-          link: '/tools/requestify'
+          link: '/tools/requestify/'
         },
         {
           id: 'strong-password-generator',
