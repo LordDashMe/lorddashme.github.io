@@ -72,7 +72,7 @@ export default class RequestifyForm extends Component<IProperty, IState> {
       this.setRequestifyResponse(JSON.stringify(output));
     }).catch((error) => {
       this.triggerLoader(false);
-      alert('Ohh, Something\'s wrong. Please check the browser console log.');
+      alert('Oh ohh, something\'s wrong. Please check the browser console log.');
       console.error('Error:', error);
     });
   }
@@ -151,8 +151,8 @@ export default class RequestifyForm extends Component<IProperty, IState> {
           A simple simulation tool for HTTP request content type json.
         </p>
         <p className={style['note']}>
-          This tool only supports "Content-Type: application/json" request header and it will not going to support any content type in the future, 
-          if you want an extensive tool for HTTP request simulation I recommended you to use <a href="https://www.postman.com/" rel="noopener noreferrer">Postman</a>, that's really a great app!
+          This tool only supports "Content-Type: application/json" request header and it will not going to support other content type in the future. 
+          If you want an extensive tool for HTTP request simulation I recommend you to check <a href="https://www.postman.com/" rel="noopener noreferrer">Postman</a>, that's really a great app!
         </p>
         <form className={style['form']}>
           <div className="form-group">
