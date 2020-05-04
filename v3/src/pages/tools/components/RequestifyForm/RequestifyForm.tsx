@@ -129,6 +129,18 @@ export default class RequestifyForm extends Component<IProperty, IState> {
     this.setState(state);
   }
 
+  public getBodyField(): JSX.Element | null {
+    if (this.state.requestify.method === 'POST') {
+      return (
+        <div className="form-group">
+          <label>BODY*</label>
+          <textarea value={this.state.requestify.body} onChange={this.handleFieldChange.bind(this, 'body')} className={style['textarea'] + ' form-control'} placeholder="{...}"></textarea>
+        </div>
+      );
+    }
+    return null;
+  }
+
   public render(): JSX.Element {
     return (
       <div id="requestify-form-component" className={style['container']}>
@@ -157,10 +169,7 @@ export default class RequestifyForm extends Component<IProperty, IState> {
             <label>HEADERS*</label>
             <textarea value={this.state.requestify.headers} onChange={this.handleFieldChange.bind(this, 'headers')} className={style['textarea'] + ' form-control'} placeholder="{...}"></textarea>
           </div>
-          <div className="form-group">
-            <label>BODY*</label>
-            <textarea value={this.state.requestify.body} onChange={this.handleFieldChange.bind(this, 'body')} className={style['textarea'] + ' form-control'} placeholder="{...}"></textarea>
-          </div>
+          {this.getBodyField()}
           <p className={style['form-tips']}>
             <b>*</b> is required field.
           </p>
