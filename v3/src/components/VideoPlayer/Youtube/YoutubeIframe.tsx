@@ -42,7 +42,10 @@ export default class YoutubeIframe extends Component<IProperty, IState> {
           videoId: this.props.videoId,
           playerVars: {
             rel: 0,
-            playsinline: 1
+            enablejsapi: 1,
+            playsinline: 0,
+            origin: window.location.origin,
+            widget_referrer: window.location.origin
           }
         }
       );
