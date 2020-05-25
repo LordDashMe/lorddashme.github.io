@@ -6,6 +6,11 @@ import { loadableFallbackTemplate } from '../../../common/helper';
 import WEBSITE_PAGE_META from '../../../common/Website/page_meta';
 import IApplicationLdJSON from '../../../common/Contract/IApplicationLdJSON';
 
+import Bootstrap from '../../../components/Global/Bootstrap';
+import Global from '../../../components/Global/Global';
+import FontAwesomeGlobal from '../../../components/Global/FontAwesomeGlobal';
+import FontAwesomeNavigationBar from '../../../components/Global/FontAwesomeNavigationBar';
+import FontAwesomeFooter from '../../../components/Global/FontAwesomeFooter';
 import Section from '../../../components/Section/Section';
 
 import WortyAppForm from '../components/WorthyAppForm/WorthyAppForm';
@@ -82,6 +87,12 @@ const Tools = (): JSX.Element => {
         <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css" />
       </Helmet>
+
+      <Bootstrap />
+      <Global />
+      <FontAwesomeGlobal />
+      <FontAwesomeNavigationBar />
+      <FontAwesomeFooter />
 
       <NavigationBar />
       <Headline />

@@ -6,6 +6,11 @@ import { loadableFallbackTemplate } from '../../common/helper';
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
+import Bootstrap from '../../components/Global/Bootstrap';
+import Global from '../../components/Global/Global';
+import FontAwesomeGlobal from '../../components/Global/FontAwesomeGlobal';
+import FontAwesomeNavigationBar from '../../components/Global/FontAwesomeNavigationBar';
+import FontAwesomeFooter from '../../components/Global/FontAwesomeFooter';
 import Section from '../../components/Section/Section';
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
@@ -71,17 +76,15 @@ const Projects = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
-        
-        {/* <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css" /> */}
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-global.min.css" type="text/css" />
-        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-navigation-bar.min.css" type="text/css" />
-        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-footer.min.css" type="text/css" />
-
-        <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css" />
-        <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css" />
       </Helmet>
+
+      <Bootstrap />
+      <Global />
+      <FontAwesomeGlobal />
+      <FontAwesomeNavigationBar />
+      <FontAwesomeFooter />
 
       <NavigationBar />
       <Headline />
