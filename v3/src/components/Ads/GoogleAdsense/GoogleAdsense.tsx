@@ -30,11 +30,7 @@ export default class GoogleAdsense extends Component<IProperty, IState> {
     }
   }
 
-  public render(): JSX.Element {
-    return (
-      <div id="ads-google-adsense-component">
-        {this.props.children}
-      </div>
-    );
+  public render(): null {
+    return null;
   }
 }

@@ -15,14 +15,14 @@ const Author = loadable(() => import('../components/Author/Author'), { fallback:
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
 // const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
-const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
+// const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
 const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
 const Footer = loadable(() => import('../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
-const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
+
 const Ads = loadable(() => import('../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
 const ResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
-const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
-const PageView = loadable(() => import('../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
+const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
+const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
 const Home = (): JSX.Element => {
 
@@ -78,9 +78,18 @@ const Home = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
-        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
-        <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
-        <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
+
+        {/* <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css" /> */}
+        <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-global.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-navigation-bar.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-footer.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-skill-technology.min.css" type="text/css" />
+
+        <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css" />
       </Helmet>
     
       <NavigationBar />
@@ -112,6 +121,7 @@ const Home = (): JSX.Element => {
               adClient={'ca-pub-3427694918014398'}
               adSlot={'4220072227'} />
           </Ads>
+          <Statement />
         </Section>
         {/*
 
@@ -126,33 +136,43 @@ const Home = (): JSX.Element => {
           </Section>
 
         */}
-        <Section 
-          id="career-history" 
-          title="CAREER HISTORY" 
-          showThematicBreak={true} 
-          showBorderTop={true}>
-          <CareerHistory />
-        </Section>
-        <Section 
-          id="section-skip-2" 
-          title="" 
-          showThematicBreak={false} 
-          showBorderTop={true}>
-          {/* Line Item: LordDashMe_Horizontal_Home_2 */}
-          <Ads appearance="horizontal">
-            <ResponsiveAds 
-              adClient={'ca-pub-3427694918014398'}
-              adSlot={'2369194966'} />
-          </Ads>
-          <Statement />
-        </Section>
+        {/* 
+
+          Deprecated since May 25, 2020.
+
+          <Section 
+            id="career-history" 
+            title="CAREER HISTORY" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <CareerHistory />
+          </Section> 
+
+        */}
+        {/* 
+
+          Deprecated since May 25, 2020.
+
+          <Section 
+            id="section-skip-2" 
+            title="" 
+            showThematicBreak={false} 
+            showBorderTop={true}>
+            
+            Line Item: LordDashMe_Horizontal_Home_2
+
+            <Ads appearance="horizontal">
+              <ResponsiveAds 
+                adClient={'ca-pub-3427694918014398'}
+                adSlot={'2369194966'} />
+            </Ads>
+          </Section> 
+        */}
       </PageWrapper>
       <Footer isFixedPosition={false}/>
 
       <GoogleAdsense />
-      <GoogleAnalytics>
-        <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics>
+      <GoogleAnalytics trackingId={'UA-128894279-1'} />
 
     </React.Fragment>
   );

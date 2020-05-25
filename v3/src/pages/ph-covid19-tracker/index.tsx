@@ -7,14 +7,13 @@ import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
-const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-component`) });
-const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: loadableFallbackTemplate(`#video-player-youtube-component`) });
-const TwitterWidget = loadable(() => import('../../components/SocialMedia/Twitter/TwitterWidget'), { fallback: loadableFallbackTemplate(`#social-media-twitter-twitter-widget-component`) });
-const FacebookSDK = loadable(() => import('../../components/SocialMedia/Facebook/FacebookSDK'), { fallback: loadableFallbackTemplate(`#social-media-facebook-facebook-sdk-component`) });
-const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
-const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
+const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: null });
+const TwitterWidget = loadable(() => import('../../components/SocialMedia/Twitter/TwitterWidget'), { fallback: null });
+const FacebookSDK = loadable(() => import('../../components/SocialMedia/Facebook/FacebookSDK'), { fallback: null });
 const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
 const ResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
+const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
+const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
 const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
 const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
@@ -97,17 +96,15 @@ const PHCovid19Tracker = (): JSX.Element => {
           <ResponsiveAds 
             adClient={'ca-pub-3427694918014398'}
             adSlot={'2369194966'} />
-        </Ads>
+        </Ads> 
         <Footer />
       </PageWrapper>
 
-      <GoogleAdsense />
-      <Youtube />
       <TwitterWidget />
       <FacebookSDK />
-      <GoogleAnalytics>
-        <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics>
+      <Youtube />
+      <GoogleAdsense />
+      <GoogleAnalytics trackingId={'UA-128894279-1'} />
 
     </React.Fragment>
   );

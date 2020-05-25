@@ -30,11 +30,7 @@ export default class TwitterWidget extends Component<IProperty, IState> {
     } 
   }
 
-  public render(): JSX.Element {
-    return (
-      <div id="social-media-twitter-twitter-widget-component">
-        {this.props.children}
-      </div>
-    );
+  public render(): null {
+    return null;
   }
 }

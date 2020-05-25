@@ -29,7 +29,7 @@ export default class Youtube extends Component<IProperty, IState> {
     } 
   }
 
-  public render(): JSX.Element {
-    return (<div id="video-player-youtube-component"></div>);
+  public render(): null {
+    return null;
   }
 }

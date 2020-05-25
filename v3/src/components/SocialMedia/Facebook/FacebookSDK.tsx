@@ -32,11 +32,6 @@ export default class FacebookSDK extends Component<IProperty, IState> {
   }
 
   public render(): JSX.Element {
-    return (
-      <div id="social-media-facebook-facebook-sdk-component">
-        <div id="fb-root"></div>
-        {this.props.children}
-      </div>
-    );
+    return (<div id="fb-root"></div>);
   }
 }

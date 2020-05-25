@@ -14,8 +14,8 @@ const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrap
 const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
 const Project = loadable(() => import('../../components/Project/Project'), { fallback: loadableFallbackTemplate(`#project-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
-const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-component`) });
-const PageView = loadable(() => import('../../components/Analytics/GoogleAnalytics/PageView'), { fallback: loadableFallbackTemplate(`#analytics-google-analytics-page-view-component`) });
+
+const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
 const Projects = (): JSX.Element => {
 
@@ -71,9 +71,16 @@ const Projects = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
-        <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css"></link>
-        <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css"></link>
-        <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css"></link>
+        
+        {/* <link rel="stylesheet" href="/resources/vendor/fontawesome-free-5.10.2-web/css/all.min.css" type="text/css" /> */}
+        <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-global.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-navigation-bar.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/fontawesome-5.10.2/fa-footer.min.css" type="text/css" />
+
+        <link rel="stylesheet" href="/resources/vendor/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/resources/css/global.min.css" type="text/css" />
       </Helmet>
 
       <NavigationBar />
@@ -92,9 +99,7 @@ const Projects = (): JSX.Element => {
       </PageWrapper>
       <Footer isFixedPosition={false}/>
 
-      <GoogleAnalytics>
-        <PageView trackingId={'UA-128894279-1'} />
-      </GoogleAnalytics>
+      <GoogleAnalytics trackingId={'UA-128894279-1'} />
 
     </React.Fragment>
   );

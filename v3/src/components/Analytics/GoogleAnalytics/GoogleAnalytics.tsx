@@ -8,15 +8,22 @@ declare global {
   }
 }
 
-interface IProperty {}
+declare const ga: Function;
+
+interface IProperty {
+  trackingId: string;
+}
 
 interface IState {}
 
 export default class GoogleAnalytics extends Component<IProperty, IState> {
 
+  private static readonly WAITING_TIME: number = 1000;
+
   public componentDidMount(): void {
     if (! isSSR()) {
       this.initializeVendor();
+      this.initializePageView();
     }
   }
 
@@ -30,11 +37,21 @@ export default class GoogleAnalytics extends Component<IProperty, IState> {
     } 
   }
 
-  public render(): JSX.Element {
-    return (
-      <div id="analytics-google-analytics-component">
-        {this.props.children}
-      </div>
-    );
+  private initializePageView(): void {
+    
+    if (typeof ga !== 'undefined' && ga) {
+      console.log('[LDM] Analytics_GoogleAnalytics_GoogleAnalytics_Component: GA detected!');
+      ga('create', this.props.trackingId, 'auto');
+      ga('send', 'pageview', window.location.pathname);
+    } else {
+      console.info(`[LDM] Analytics_GoogleAnalytics_GoogleAnalytics_Component: Waiting for GA to load properly.`);
+      // We used setTimeout in order to have a pause time 
+      // before calling again the initializePageView.
+      setTimeout(this.initializePageView.bind(this), GoogleAnalytics.WAITING_TIME);
+    } 
+  }
+
+  public render(): null {
+    return null;
   }
 }
