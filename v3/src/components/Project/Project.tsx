@@ -161,6 +161,10 @@ export default class Project extends Component<IProperty, IState> {
       .get()
       .then((querySnapshot: any): void => { 
 
+        if (typeof querySnapshot.docs[0] === 'undefined') {
+          return;
+        }
+
         const projects: any = querySnapshot.docs.map((doc: any): IProject => {
           
           const document: any = doc.data();

@@ -21,7 +21,7 @@
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: normal;
-  font-display: auto;
+  font-display: swap;
   src: url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.eot");
   src: url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), 
        url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2") format("woff2"), 
@@ -38,7 +38,7 @@
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: swap;
   src: url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.eot");
   src: url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), 
        url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2") format("woff2"), 
@@ -56,7 +56,7 @@
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
-  font-display: auto;
+  font-display: swap;
   src: url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.eot");
   src: url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), 
        url("../../vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2") format("woff2"), 

@@ -11,8 +11,8 @@ export default class Firestore {
 
   public static initialize(): void {
 
-    if (! Firestore.firestoreInstance) {
-      if (! firebase.apps.length) {
+    if (!Firestore.firestoreInstance) {
+      if (!firebase.apps.length) {
         firebase.initializeApp(Firestore.FIRESTORE_CONFIG);
       }
       Firestore.firestoreInstance = firebase.firestore();

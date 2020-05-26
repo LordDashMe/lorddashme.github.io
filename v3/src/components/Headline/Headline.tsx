@@ -8,7 +8,7 @@ import style from './Headline.module.scss';
 
 declare global {
   interface Window {
-    lorddashme_headline: IHeadline;
+    lorddashme_headline: IHeadline | null;
   }
 }
 
@@ -57,7 +57,7 @@ export default class Headline extends Component<IProperty, IState> {
   public componentDidMount(): void {
     if (! isSSR()) {
       this.isMounted = true;
-      this.fetchHeadlineOnFireStore(); 
+      this.fetchHeadlineOnFireStore();
     }
   }
 
@@ -74,36 +74,39 @@ export default class Headline extends Component<IProperty, IState> {
         .get()
         .then((querySnapshot: any): void => {
 
-          if (typeof querySnapshot.docs[0] !== 'undefined') {
-            
-            const document: any = querySnapshot.docs[0].data();
+          if (typeof querySnapshot.docs[0] === 'undefined') {
+            window.lorddashme_headline = null;
+            console.log('[LDM] Headline_Component: No headline at the moment.');
+            return;
+          }
 
-            const headline = {...this.state.headline};
+          const document: any = querySnapshot.docs[0].data();
 
-            headline['id'] = querySnapshot.docs[0].id;
-            headline['content'] = document.content;
+          const headline = {...this.state.headline};
 
-            window.lorddashme_headline = headline;
+          headline['id'] = querySnapshot.docs[0].id;
+          headline['content'] = document.content;
 
-            if (this.isMounted) {
-              this.setState({
-                headline: headline  
-              });
-            }
-            
-            console.log('Headline_Component: Fresh headline!');
-          }        
+          window.lorddashme_headline = headline;
+
+          if (this.isMounted) {
+            this.setState({ headline: headline });
+          }
+          
+          console.log('[LDM] Headline_Component: Fresh headline!');
         });
 
-    } else {
+    } else if (window.lorddashme_headline !== null && typeof window.lorddashme_headline.id !== 'undefined') {
 
-      this.setState({
-        headline: {
-          id: window.lorddashme_headline.id,
-          content: window.lorddashme_headline.content,
-          visibility: window.lorddashme_headline.visibility
-        }  
-      });
+      if (this.isMounted) {
+        this.setState({
+          headline: {
+            id: window.lorddashme_headline.id,
+            content: window.lorddashme_headline.content,
+            visibility: window.lorddashme_headline.visibility
+          }  
+        });
+      }
     }
   }
 
@@ -131,14 +134,12 @@ export default class Headline extends Component<IProperty, IState> {
 
     window.lorddashme_headline = headline;
 
-    this.setState({
-      headline: headline
-    });
+    this.setState({ headline: headline });
   }
 
   public render(): JSX.Element | null {
     
-    if (!this.state.headline.content || !this.state.headline.visibility) {
+    if (this.state.headline.content === '' || !this.state.headline.visibility) {
       return null;  
     }
 
