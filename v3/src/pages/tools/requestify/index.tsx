@@ -14,7 +14,7 @@ import FontAwesomeNavigationBar from '../../../components/Global/FontAwesomeNavi
 import FontAwesomeFooter from '../../../components/Global/FontAwesomeFooter';
 import Section from '../../../components/Section/Section';
 
-import RequestifyForm from '../../../components/Microsite/Tools/RequestifyForm/RequestifyForm';
+import RequestifyForm from '../../../microsite-components/Tools/RequestifyForm/RequestifyForm';
 
 const NavigationBar = loadable(() => import('../../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });

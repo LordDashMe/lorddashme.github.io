@@ -14,7 +14,7 @@ import FontAwesomeNavigationBar from '../../../components/Global/FontAwesomeNavi
 import FontAwesomeFooter from '../../../components/Global/FontAwesomeFooter';
 import Section from '../../../components/Section/Section';
 
-import StrongPasswordForm from '../../../components/Microsite/Tools/StrongPasswordForm/StrongPasswordForm';
+import StrongPasswordForm from '../../../microsite-components/Tools/StrongPasswordForm/StrongPasswordForm';
 
 const NavigationBar = loadable(() => import('../../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
