@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import loadable from '@loadable/component';
 
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
+
+const Statement = loadable(() => import('../../components/Statement/Statement'), { fallback: null });
 
 const POC = (): JSX.Element => {
 
   const pageTitle: string = 'POC';
   
   let currentLocationURL: string = '/poc';
+
+  const [click, setClick] = useState(false);
 
   useEffect(() => {
     currentLocationURL = document.location.href;
@@ -60,7 +65,18 @@ const POC = (): JSX.Element => {
       <div>
         <h1>Hello, World!</h1>
         <p>Welcome to the world of warcraft.</p>
+        <button onClick={() => setClick(!click)}>
+          Click me
+        </button>
       </div>
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
     </React.Fragment>
   );
 }
