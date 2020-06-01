@@ -8,12 +8,13 @@ import IApplicationLdJSON from '../../../common/Contract/IApplicationLdJSON';
 
 import Bootstrap from '../../../components/Global/Bootstrap';
 import Global from '../../../components/Global/Global';
+import GoogleFonts from '../../../components/Global/GoogleFonts';
 import FontAwesomeGlobal from '../../../components/Global/FontAwesomeGlobal';
 import FontAwesomeNavigationBar from '../../../components/Global/FontAwesomeNavigationBar';
 import FontAwesomeFooter from '../../../components/Global/FontAwesomeFooter';
 import Section from '../../../components/Section/Section';
 
-import RequestifyForm from '../components/RequestifyForm/RequestifyForm';
+import RequestifyForm from '../../../components/Microsite/Tools/RequestifyForm/RequestifyForm';
 
 const NavigationBar = loadable(() => import('../../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
@@ -82,6 +83,7 @@ const Tools = (): JSX.Element => {
 
       <Bootstrap />
       <Global />
+      <GoogleFonts />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
       <FontAwesomeFooter />

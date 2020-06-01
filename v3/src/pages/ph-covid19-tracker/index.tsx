@@ -5,7 +5,10 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import PageWrapper from './components/PageWrapper/PageWrapper';
+import GoogleFonts from '../../components/Global/GoogleFonts';
+
+import Global from '../../components/Microsite/COVID19/Global/Global';
+import PageWrapper from '../../components/Microsite/COVID19/PageWrapper/PageWrapper';
 
 const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: null });
 const TwitterWidget = loadable(() => import('../../components/SocialMedia/Twitter/TwitterWidget'), { fallback: null });
@@ -15,12 +18,12 @@ const ResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/
 const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
-const MainTitle = loadable(() => import('./components/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
-const About = loadable(() => import('./components/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
-const SuggestedVideo = loadable(() => import('./components/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
-const StatusPieChart = loadable(() => import('./components/StatusOverview/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-chart-status-pie-chart-component`) });
-const StatusOverview = loadable(() => import('./components/StatusOverview/StatusOverview'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-component`) });
-const Footer = loadable(() => import('./components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
+const MainTitle = loadable(() => import('../../components/Microsite/COVID19/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
+const About = loadable(() => import('../../components/Microsite/COVID19/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
+const SuggestedVideo = loadable(() => import('../../components/Microsite/COVID19/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
+const StatusPieChart = loadable(() => import('../../components/Microsite/COVID19/StatusOverview/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-chart-status-pie-chart-component`) });
+const StatusOverview = loadable(() => import('../../components/Microsite/COVID19/StatusOverview/StatusOverview'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-component`) });
+const Footer = loadable(() => import('../../components/Microsite/COVID19/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
 
 const PHCovid19Tracker = (): JSX.Element => {
 
@@ -75,9 +78,11 @@ const PHCovid19Tracker = (): JSX.Element => {
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" />
         <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
+
+      <Global />
+      <GoogleFonts />
 
       <PageWrapper>
         <MainTitle />
