@@ -57,7 +57,10 @@ const POC = (): JSX.Element => {
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
-
+      <div>
+        <h1>Hello, World!</h1>
+        <p>Welcome to the world of warcraft.</p>
+      </div>
     </React.Fragment>
   );
 }
