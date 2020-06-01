@@ -14,9 +14,9 @@ const POC = (): JSX.Element => {
   let currentLocationURL: string = '/poc';
 
   const [click, setClick] = useState(false);
-
   useEffect(() => {
     currentLocationURL = document.location.href;
+    setClick(true);
   }, []);
 
   const applicationLdJson: IApplicationLdJSON = {
