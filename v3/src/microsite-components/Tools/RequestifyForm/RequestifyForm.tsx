@@ -39,7 +39,7 @@ export default class RequestifyForm extends Component<IProperty, IState> {
 
   private onSubmitFormHandler(event): void {
 
-    if (! this.validateRequiredFields()) {
+    if (!this.validateRequiredFields()) {
       alert('Please provide an input for the required fields.');
       return
     }

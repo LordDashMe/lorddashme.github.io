@@ -61,7 +61,7 @@ export default class Tool extends Component<IProperty, IState> {
   private getTools(): JSX.Element[] {
     return this.state.tools.map((tool: ITool): JSX.Element => {
 
-      let link = (
+      let link: JSX.Element = (
         <div className={style['link']}>Under Development</div>
       );
 

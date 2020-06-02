@@ -77,6 +77,8 @@ const POC = (): JSX.Element => {
       {click ? <Statement /> : null}
       {click ? <Statement /> : null}
       {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
+      {click ? <Statement /> : null}
     </React.Fragment>
   );
 }

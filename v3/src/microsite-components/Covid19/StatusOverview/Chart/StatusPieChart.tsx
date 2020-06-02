@@ -41,7 +41,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
   }
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.fetchProjectsOnFireStore(); 
     }
   }

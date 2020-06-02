@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 
 import { isSSR } from '../../common/helper';
 
-import Firestore from '../Database/Firebase/Firestore';
-
 import style from './Project.module.scss';
 
 interface IProperty {}
 
 interface IState {
   projects: IProject[];
-  loader: boolean;
 }
 
 interface IProject {
@@ -124,8 +121,7 @@ export default class Project extends Component<IProperty, IState> {
           order: 0,
           active: false
         }
-      ],
-      loader: true 
+      ]
     };
   }
 
@@ -138,13 +134,13 @@ export default class Project extends Component<IProperty, IState> {
   }
 
   public componentWillUnmount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.isMounted = false;
     }
   }
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.isMounted = true;
       this.fetchProjectsOnFireStore(); 
     }
@@ -152,42 +148,42 @@ export default class Project extends Component<IProperty, IState> {
 
   private fetchProjectsOnFireStore(): void {
 
-    Firestore.clearInstance();
-    Firestore.initialize();
-    Firestore.getInstance()
-      .collection('projects')
-      .where('active', '==', true)
-      .orderBy('order', 'desc')
-      .get()
-      .then((querySnapshot: any): void => { 
+    import(/* webpackChunkName: "Firestore" */ '../Database/Firebase/Firestore').then((Firestore) => {
 
-        if (typeof querySnapshot.docs[0] === 'undefined') {
-          return;
-        }
+      Firestore.default.clearInstance();
+      Firestore.default.initialize();
+      Firestore.default.getInstance()
+        .collection('projects')
+        .where('active', '==', true)
+        .orderBy('order', 'desc')
+        .get()
+        .then((querySnapshot: any): void => { 
 
-        const projects: any = querySnapshot.docs.map((doc: any): IProject => {
-          
-          const document: any = doc.data();
-          
-          return {
-            id: doc.id,
-            title: document.title,
-            description: document.description,
-            image: document.image,
-            imageAlt: document.imageAlt,
-            link: document.link,
-            order: document.order,
-            active: document.active
-          };
-        });
+          if (typeof querySnapshot.docs[0] === 'undefined') {
+            return;
+          }
 
-        if (this.isMounted) {
-          this.setState({
-            projects: projects,
-            loader: false
+          const projects: any = querySnapshot.docs.map((doc: any): IProject => {
+            
+            const document: any = doc.data();
+            
+            return {
+              id: doc.id,
+              title: document.title,
+              description: document.description,
+              image: document.image,
+              imageAlt: document.imageAlt,
+              link: document.link,
+              order: document.order,
+              active: document.active
+            };
           });
-        }
-      });
+
+          if (this.isMounted) {
+            this.setState({ projects: projects });
+          }
+        }); 
+    });
   }
 
   private getProjects(): JSX.Element[] {

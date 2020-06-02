@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
+import { loadableFallbackTemplate } from '../../common/helper';
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Bootstrap from '../../components/Global/Bootstrap';
-import Global from '../../components/Global/Global';
-import GoogleFonts from '../../components/Global/GoogleFonts';
-import FontAwesomeGlobal from '../../components/Global/FontAwesomeGlobal';
-import FontAwesomeNavigationBar from '../../components/Global/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../../components/Global/FontAwesomeFooter';
-import FontAwesomePageInformation from '../../components/Global/FontAwesomePageInformation';
-import PageInformation from '../../components/PageInformation/PageInformation';
+const Bootstrap = loadable(() => import('../../components/Global/Bootstrap'), { fallback: null });
+const GoogleFonts = loadable(() => import('../../components/Global/GoogleFonts'), { fallback: null });
+const FontAwesomeGlobal = loadable(() => import('../../components/Global/FontAwesomeGlobal'), { fallback: null });
+const FontAwesomeNavigationBar = loadable(() => import('../../components/Global/FontAwesomeNavigationBar'), { fallback: null });
+const FontAwesomeFooter = loadable(() => import('../../components/Global/FontAwesomeFooter'), { fallback: null });
+
+const PageInformation = loadable(() => import('../../components/PageInformation/PageInformation'), { fallback: loadableFallbackTemplate('#page-information-component') });
 
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
@@ -74,12 +74,10 @@ const ComingSoon = (): JSX.Element => {
       </Helmet>
 
       <Bootstrap />
-      <Global />
       <GoogleFonts />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
       <FontAwesomeFooter />
-      <FontAwesomePageInformation />
 
       <PageInformation 
         id="coming-soon" 

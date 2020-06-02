@@ -6,17 +6,16 @@ import { loadableFallbackTemplate } from '../../common/helper';
 import WEBSITE_PAGE_META from '../../common/Website/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Bootstrap from '../../components/Global/Bootstrap';
-import Global from '../../components/Global/Global';
-import GoogleFonts from '../../components/Global/GoogleFonts';
-import FontAwesomeGlobal from '../../components/Global/FontAwesomeGlobal';
-import FontAwesomeNavigationBar from '../../components/Global/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../../components/Global/FontAwesomeFooter';
-import Section from '../../components/Section/Section';
+const Bootstrap = loadable(() => import('../../components/Global/Bootstrap'), { fallback: null });
+const GoogleFonts = loadable(() => import('../../components/Global/GoogleFonts'), { fallback: null });
+const FontAwesomeGlobal = loadable(() => import('../../components/Global/FontAwesomeGlobal'), { fallback: null });
+const FontAwesomeNavigationBar = loadable(() => import('../../components/Global/FontAwesomeNavigationBar'), { fallback: null });
+const FontAwesomeFooter = loadable(() => import('../../components/Global/FontAwesomeFooter'), { fallback: null });
+const Section = loadable(() => import('../../components/Section/Section'), { fallback: null });
 
 const NavigationBar = loadable(() => import('../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
-const PageWrapper = loadable(() => import('../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const PageLayout = loadable(() => import('../../components/PageLayout/PageLayout'), { fallback: loadableFallbackTemplate(`#page-layout-component`) });
 const PoweredBy = loadable(() => import('../../components/PoweredBy/PoweredBy'), { fallback: loadableFallbackTemplate(`#powered-by-component`) });
 const Project = loadable(() => import('../../components/Project/Project'), { fallback: loadableFallbackTemplate(`#project-component`) });
 const Footer = loadable(() => import('../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
@@ -81,7 +80,6 @@ const Projects = (): JSX.Element => {
       </Helmet>
 
       <Bootstrap />
-      <Global />
       <GoogleFonts />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
@@ -89,7 +87,7 @@ const Projects = (): JSX.Element => {
 
       <NavigationBar />
       <Headline />
-      <PageWrapper>
+      <PageLayout>
         <Section 
           id="projects" 
           title="PROJECTS"
@@ -100,7 +98,7 @@ const Projects = (): JSX.Element => {
           </PoweredBy>
           <Project />
         </Section>
-      </PageWrapper>
+      </PageLayout>
       <Footer isFixedPosition={false}/>
 
       <GoogleAnalytics trackingId={'UA-128894279-1'} />

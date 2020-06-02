@@ -15,7 +15,7 @@ interface IState {}
 
 export default class YoutubeIframe extends Component<IProperty, IState> {
 
-  private static readonly WAITING_TIME = 1000;
+  private static readonly PAUSE_TIME = 1000;
 
   public constructor(properties: any) {
     
@@ -25,7 +25,7 @@ export default class YoutubeIframe extends Component<IProperty, IState> {
   }
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.onYouTubeIframeAPIReady();
     }
   }
@@ -33,8 +33,10 @@ export default class YoutubeIframe extends Component<IProperty, IState> {
   private onYouTubeIframeAPIReady(): void {
 
     if (typeof YT !== 'undefined' && YT && YT.Player) {
-      console.log('[LDM] VideoPlayer_Youtube_YoutubeIframe_Component: YT detected!');
-      new YT.Player(
+      
+      console.log('[LDM] VideoPlayer_Youtube_YoutubeIframeComponent: YT detected!');
+      
+      (new YT.Player(
         this.setElementId(this.props.elementId), 
         {
           height: this.props.height,
@@ -48,10 +50,11 @@ export default class YoutubeIframe extends Component<IProperty, IState> {
             widget_referrer: window.location.origin
           }
         }
-      );
+      ));
+
     } else {
-      console.info(`[LDM] VideoPlayer_Youtube_YoutubeIframe_Component: Waiting for YT to load properly. ${YoutubeIframe.WAITING_TIME}ms`);
-      setTimeout(this.onYouTubeIframeAPIReady.bind(this), YoutubeIframe.WAITING_TIME);
+      console.info(`[LDM] VideoPlayer_Youtube_YoutubeIframeComponent: Waiting for YT to load properly.`);
+      setTimeout(this.onYouTubeIframeAPIReady.bind(this), YoutubeIframe.PAUSE_TIME);
     }
   }
 

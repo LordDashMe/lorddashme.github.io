@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[28],{TrBH:function(t,r,n){"use strict";n.r(r),n.d(r,"default",(function(){return e}));var o=n("q1tI");n("EbGp");var e=function(t){var r,n;function o(r){return t.call(this,r)||this}return n=t,(r=o).prototype=Object.create(n.prototype),r.prototype.constructor=r,r.__proto__=n,o.prototype.render=function(){return null},o}(o.Component)}}]);
+//# sourceMappingURL=components-Global-FontAwesomeSkillTechnology-9563cf328b9a7c67d64b.js.map

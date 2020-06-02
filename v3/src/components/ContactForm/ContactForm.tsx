@@ -79,11 +79,8 @@ export default class ContactForm extends Component<IProperty, IState> {
   }
 
   private triggerLoader(visiblity: boolean): void {
-
     const state: IState = {...this.state};
-    
     state['loader'] = visiblity;
-    
     this.setState(state);
   }
 
@@ -108,30 +105,36 @@ export default class ContactForm extends Component<IProperty, IState> {
     this.setState(state);
   }
 
+  private getForm(): JSX.Element {
+    return (
+      <form className={style['form']}>
+        <div className="form-group">
+          <label>NAME*</label>
+          <input value={this.state.contact.name} onChange={this.handleFieldChange.bind(this, 'name')} className="form-control" type="text" placeholder="John Doe" />
+        </div>
+        <div className="form-group">
+          <label>EMAIL*</label>
+          <input value={this.state.contact.email} onChange={this.handleFieldChange.bind(this, 'email')} className="form-control" type="text" placeholder="john.doe@example.com" />
+        </div>
+        <div className="form-group">
+          <label>MESSAGE*</label>
+          <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['message'] + ' form-control'} placeholder="Say something..."></textarea>
+        </div>
+        <p className={style['form-tips']}>
+          <b>*</b> is required field.
+        </p>
+        <div className={style['form-action']}>
+          <button className="btn -black" type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
+        </div>
+      </form>
+    );
+  }
+
   public render(): JSX.Element {
     return (
       <div id="contact-form-component" className={style['container']}>
         <Loader visibility={this.state.loader}/>
-        <form className={style['form']}>
-          <div className="form-group">
-            <label>NAME*</label>
-            <input value={this.state.contact.name} onChange={this.handleFieldChange.bind(this, 'name')} className="form-control" type="text" placeholder="John Doe" />
-          </div>
-          <div className="form-group">
-            <label>EMAIL*</label>
-            <input value={this.state.contact.email} onChange={this.handleFieldChange.bind(this, 'email')} className="form-control" type="text" placeholder="john.doe@example.com" />
-          </div>
-          <div className="form-group">
-            <label>MESSAGE*</label>
-            <textarea value={this.state.contact.message} onChange={this.handleFieldChange.bind(this, 'message')} className={style['message'] + ' form-control'} placeholder="Say something..."></textarea>
-          </div>
-          <p className={style['form-tips']}>
-            <b>*</b> is required field.
-          </p>
-          <div className={style['form-action']}>
-            <button className="btn -black" type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
-          </div>
-        </form>
+        {this.getForm()}
       </div>
     );
   }

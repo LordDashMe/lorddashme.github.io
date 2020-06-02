@@ -8,26 +8,22 @@ declare global {
   }
 }
 
-interface IProperty {}
-
-interface IState {}
-
-export default class FacebookSDK extends Component<IProperty, IState> {
+export default class FacebookSDK extends Component {
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.initializeVendor();
     }
   }
 
   private initializeVendor(): void {
-    if (! window._fb_sdk) {
-      var script = document.createElement('script');
+    if (!window._fb_sdk) {
+      const script: any = document.createElement('script');
       script.type = 'text/javascript';
       script.src = '/resources/vendor/facebook/facebook-sdk.min.js';
       document.body.appendChild(script);
-      console.log('SocialMedia_Facebook_FacebookSDK_Component: has been initialized.');
       window._fb_sdk = true;
+      console.log('SocialMedia_Facebook_FacebookSDKComponent: has been initialized.');
     } 
   }
 

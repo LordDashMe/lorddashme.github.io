@@ -9,7 +9,6 @@ interface IProperty {
 
 interface IState {
   number: number;
-  commaSeparated: string;
 }
 
 export default class AnimateNumber extends Component<IProperty, IState> {
@@ -23,8 +22,7 @@ export default class AnimateNumber extends Component<IProperty, IState> {
     super(properties);
     
     this.state = {
-      number: 0,
-      commaSeparated: '0'
+      number: 0
     }
   }
 
@@ -34,11 +32,14 @@ export default class AnimateNumber extends Component<IProperty, IState> {
 
   private getAnimated(): void {
 
-    if (! this.props.value) {
+    if (!this.props.value) {
       return;
     }
 
     let number: number = this.state.number;
+
+    // Stop the animation if the value of the original number
+    // is lower than the counting number.
     if (number >= this.props.value) {
       raf.cancel(this.animated);
       this.setNumber(this.props.value);
@@ -58,10 +59,7 @@ export default class AnimateNumber extends Component<IProperty, IState> {
   }
 
   private setNumber(number: number): void {
-    this.setState({
-      number: number,
-      commaSeparated: this.convertCommaSeparatedNumber(number)
-    });
+    this.setState({ number: number });
   }
 
   private convertCommaSeparatedNumber(number: number): string {
@@ -69,17 +67,15 @@ export default class AnimateNumber extends Component<IProperty, IState> {
   }
 
   private getNumber(): number | string {
-
-    if (typeof this.props.isCommaSeparated !== 'undefined' && this.props.isCommaSeparated) {
-      return this.state.commaSeparated;
-    }
     
+    if (typeof this.props.isCommaSeparated !== 'undefined' && this.props.isCommaSeparated) {
+      return this.convertCommaSeparatedNumber(this.state.number);
+    }
+
     return this.state.number;
   }
 
   public render(): JSX.Element {
-    return (
-      <span id="animation-animate-number-component">{this.getNumber()}</span>
-    );
+    return (<span id="animation-animate-number-component">{this.getNumber()}</span>);
   }
 }

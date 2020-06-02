@@ -20,13 +20,13 @@ interface ITool {
   name: string;
   icon: string;
   libraries: ILibrary[];
-  is_active: boolean;
+  isActive: boolean;
 }
 
 interface ILibrary {
   id: string;
   name: string;
-  is_active: boolean;
+  isActive: boolean;
 }
 
 export default class SkillTechnology extends Component<IProperty, IState> {
@@ -47,79 +47,79 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'PHP',
               icon: 'fab fa-php',
               libraries: [
-                { id: 'symfony', name: 'Symfony', is_active: true },
-                { id: 'wordpress', name: 'Wordpress', is_active: true },
-                { id: 'laravel', name: 'Laravel', is_active: true },
-                { id: 'drupal', name: 'Drupal', is_active: false },
-                { id: 'codeigniter', name: 'CodeIgniter', is_active: true },
-                { id: 'phpunit', name: 'PHPUnit', is_active: true }
+                { id: 'symfony', name: 'Symfony', isActive: true },
+                { id: 'wordpress', name: 'Wordpress', isActive: true },
+                { id: 'laravel', name: 'Laravel', isActive: true },
+                { id: 'drupal', name: 'Drupal', isActive: false },
+                { id: 'codeigniter', name: 'CodeIgniter', isActive: true },
+                { id: 'phpunit', name: 'PHPUnit', isActive: true }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'python', 
               name: 'Python',
               icon: 'fab fa-python',
               libraries: [
-                { id: 'falcon',  name: 'Falcon', is_active: true },
-                { id: 'pytest',  name: 'PyTest', is_active: true }
+                { id: 'falcon',  name: 'Falcon', isActive: true },
+                { id: 'pytest',  name: 'PyTest', isActive: true }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'javascript', 
               name: 'JavaScript',
               icon: 'fab fa-js',
               libraries: [
-                { id: 'nodejs', name: 'NodeJS', is_active: true },
-                { id: 'jquery', name: 'JQuery', is_active: true },
-                { id: 'angularjs', name: 'AngularJS', is_active: false },
-                { id: 'jest', name: 'Jest', is_active: true },
-                { id: 'typescript', name: 'TypeScript', is_active: true },
-                { id: 'react', name: 'React', is_active: true },
-                { id: 'angular', name: 'Angular', is_active: false },
-                { id: 'rxjs', name: 'RxJS', is_active: false }
+                { id: 'nodejs', name: 'NodeJS', isActive: true },
+                { id: 'jquery', name: 'JQuery', isActive: true },
+                { id: 'angularjs', name: 'AngularJS', isActive: false },
+                { id: 'jest', name: 'Jest', isActive: true },
+                { id: 'typescript', name: 'TypeScript', isActive: true },
+                { id: 'react', name: 'React', isActive: true },
+                { id: 'angular', name: 'Angular', isActive: false },
+                { id: 'rxjs', name: 'RxJS', isActive: false }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'sql', 
               name: 'SQL',
               icon: 'fas fa-database',
               libraries: [
-                { id: 'mysql', name: 'MySQL', is_active: true },
-                { id: 'sqlite', name: 'SQLite', is_active: false },
-                { id: 'mssql', name: 'MsSQL', is_active: false },
-                { id: 'postgresql', name: 'PostgreSQL', is_active: false }
+                { id: 'mysql', name: 'MySQL', isActive: true },
+                { id: 'sqlite', name: 'SQLite', isActive: false },
+                { id: 'mssql', name: 'MsSQL', isActive: false },
+                { id: 'postgresql', name: 'PostgreSQL', isActive: false }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'nosql', 
               name: 'NoSQL',
               icon: 'fas fa-database',
               libraries: [
-                { id: 'mongodb', name: 'MongoDB', is_active: true }
+                { id: 'mongodb', name: 'MongoDB', isActive: true }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'html', 
               name: 'HTML',
               icon: 'fab fa-html5',
               libraries: [
-                { id: 'markdown', name: 'Markdown', is_active: true }
+                { id: 'markdown', name: 'Markdown', isActive: true }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'css', 
               name: 'CSS',
               icon: 'fab fa-css3',
               libraries: [
-                { id: 'sass', name: 'Sass', is_active: true }
+                { id: 'sass', name: 'Sass', isActive: true }
               ],
-              is_active: true
+              isActive: true
             }
           ]
         },
@@ -133,16 +133,16 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Ionic',
               icon: 'fas fa-cloud',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'android', 
               name: 'Android',
               icon: 'fab fa-android',
               libraries: [
-                { id: 'java', name: 'Java', is_active: false }
+                { id: 'java', name: 'Java', isActive: false }
               ],
-              is_active: false
+              isActive: false
             }
           ]
         },
@@ -156,9 +156,9 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Java SE',
               icon: 'fab fa-java',
               libraries: [
-                { id: 'swing', name: 'Swing', is_active: false },
+                { id: 'swing', name: 'Swing', isActive: false },
               ],
-              is_active: false
+              isActive: false
             }
           ]
         },
@@ -172,55 +172,55 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Docker',
               icon: 'fab fa-docker',
               libraries: [
-                { id: 'docker_compose', name: 'Docker Compose', is_active: true },
+                { id: 'docker_compose', name: 'Docker Compose', isActive: true },
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'linux_server', 
               name: 'Linux Server',
               icon: 'fab fa-linux',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'windows_server', 
               name: 'Windows Server',
               icon: 'fab fa-windows',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'web_servers', 
               name: 'Web Servers',
               icon: 'fas fa-cubes',
               libraries: [
-                { id: 'apache', name: 'Apache', is_active: true },
-                { id: 'nginx', name: 'Nginx', is_active: false }
+                { id: 'apache', name: 'Apache', isActive: true },
+                { id: 'nginx', name: 'Nginx', isActive: false }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'continuous_integration', 
               name: 'Continuous Integration',
               icon: 'fas fa-bolt',
               libraries: [
-                { id: 'jenkins', name: 'Jenkins', is_active: false },
-                { id: 'travisci', name: 'TravisCI', is_active: true },
-                { id: 'bitbucket_pipelines', name: 'Bitbucket Pipelines', is_active: false }
+                { id: 'jenkins', name: 'Jenkins', isActive: false },
+                { id: 'travisci', name: 'TravisCI', isActive: true },
+                { id: 'bitbucket_pipelines', name: 'Bitbucket Pipelines', isActive: false }
               ],
-              is_active: true
+              isActive: true
             },
             {
               id: 'test_coverage', 
               name: 'Test Coverage',
               icon: 'fas fa-bug',
               libraries: [
-                { id: 'coveralls', name: 'Coveralls', is_active: true },
-                { id: 'code_climate', name: 'Code Climate', is_active: false },
-                { id: 'codecov', name: 'CodeCov', is_active: false }
+                { id: 'coveralls', name: 'Coveralls', isActive: true },
+                { id: 'code_climate', name: 'Code Climate', isActive: false },
+                { id: 'codecov', name: 'CodeCov', isActive: false }
               ],
-              is_active: true
+              isActive: true
             }
           ]
         },
@@ -234,39 +234,39 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Networks Nodes Setup',
               icon: 'fas fa-network-wired',
               libraries: [
-                { id: 'repeaters', name: 'Repeaters', is_active: false },
-                { id: 'bridges', name: 'Bridges', is_active: false },
-                { id: 'switches', name: 'Switches', is_active: false }
+                { id: 'repeaters', name: 'Repeaters', isActive: false },
+                { id: 'bridges', name: 'Bridges', isActive: false },
+                { id: 'switches', name: 'Switches', isActive: false }
               ],
-              is_active: false
+              isActive: false
             },
             {
               id: 'network_performance', 
               name: 'Network Performance',
               icon: 'fas fa-tachometer-alt',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'network_security', 
               name: 'Network Security',
               icon: 'fas fa-lock',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'port_forwarding', 
               name: 'Port Forwarding',
               icon: 'fas fa-share',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'network_load_balancing', 
               name: 'Network Load Balancing',
               icon: 'fas fa-retweet',
               libraries: [],
-              is_active: false
+              isActive: false
             }
           ]
         },
@@ -280,42 +280,42 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Git',
               icon: 'fab fa-git-alt',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'github', 
               name: 'GitHub',
               icon: 'fab fa-github',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'slack', 
               name: 'Slack',
               icon: 'fab fa-slack',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'bitbucket', 
               name: 'Bitbucket',
               icon: 'fab fa-bitbucket',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'jira', 
               name: 'Jira',
               icon: 'fab fa-jira',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'trello', 
               name: 'Trello',
               icon: 'fab fa-trello',
               libraries: [],
-              is_active: false
+              isActive: false
             }
           ]
         },
@@ -329,133 +329,133 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Composer',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'packagist', 
               name: 'Packagist',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'npm', 
               name: 'npm',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'boostnote', 
               name: 'Boostnote',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'vscode', 
               name: 'VSCode',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'sublimetext', 
               name: 'SublimeText',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'filezilla', 
               name: 'FileZilla',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'xampp', 
               name: 'XAMPP',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'wamp', 
               name: 'WAMP',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'netbeans', 
               name: 'NetBeans',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'git_bash', 
               name: 'Git Bash',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'github_desktop', 
               name: 'GitHub Desktop',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'sourcetree', 
               name: 'Source Tree',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'tortoisesvn', 
               name: 'TortoiseSVN',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'brackets_editor', 
               name: 'Brackets Editor',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'android_studio', 
               name: 'Android Studio',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'laragon', 
               name: 'Laragon',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: false
+              isActive: false
             },
             {
               id: 'pip', 
               name: 'pip',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'aws_cli', 
               name: 'aws cli',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             }
           ]
         },
@@ -469,21 +469,21 @@ export default class SkillTechnology extends Component<IProperty, IState> {
               name: 'Heroku',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'firebase_cloud_firestore', 
               name: 'Firebase: Cloud Firestore',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             },
             {
               id: 'github_pages', 
               name: 'Github Pages',
               icon: 'far fa-circle',
               libraries: [],
-              is_active: true
+              isActive: true
             }
           ]
         }
@@ -506,11 +506,12 @@ export default class SkillTechnology extends Component<IProperty, IState> {
   }
 
   private getTools(tools: ITool[]): JSX.Element[] {
+    
     return tools.map((tool: ITool): JSX.Element => {
 
       let toolClassName: string = style['tool'];
       
-      if (! tool.is_active) {
+      if (!tool.isActive) {
         toolClassName += ' ' + style['inactive'];
       }
 
@@ -527,11 +528,12 @@ export default class SkillTechnology extends Component<IProperty, IState> {
   }
 
   private getLibraries(libraries: ILibrary[]): JSX.Element[] {
+    
     return libraries.map((library: ILibrary): JSX.Element => {
       
       let libraryClassName: string = style['library'];
       
-      if (! library.is_active) {
+      if (!library.isActive) {
         libraryClassName += ' ' + style['inactive'];
       }
 

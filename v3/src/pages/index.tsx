@@ -2,33 +2,30 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 import { loadableFallbackTemplate } from '../common/helper';
 import WEBSITE_PAGE_META from '../common/Website/page_meta';
+import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 
-import Bootstrap from '../components/Global/Bootstrap';
-import Global from '../components/Global/Global';
-import GoogleFonts from '../components/Global/GoogleFonts';
-import FontAwesomeGlobal from '../components/Global/FontAwesomeGlobal';
-import FontAwesomeNavigationBar from '../components/Global/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../components/Global/FontAwesomeFooter';
-import FontAwesomeSkillTechnology from '../components/Global/FontAwesomeSkillTechnology';
-import Section from '../components/Section/Section';
+const Bootstrap = loadable(() => import('../components/Global/Bootstrap'), { fallback: null });
+const GoogleFonts = loadable(() => import('../components/Global/GoogleFonts'), { fallback: null });
+const FontAwesomeGlobal = loadable(() => import('../components/Global/FontAwesomeGlobal'), { fallback: null });
+const FontAwesomeNavigationBar = loadable(() => import('../components/Global/FontAwesomeNavigationBar'), { fallback: null });
+const FontAwesomeFooter = loadable(() => import('../components/Global/FontAwesomeFooter'), { fallback: null });
+const FontAwesomeSkillTechnology = loadable(() => import('../components/Global/FontAwesomeSkillTechnology'), { fallback: null });
+const Section = loadable(() => import('../components/Section/Section'), { fallback: null });
 
 const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
-const PageWrapper = loadable(() => import('../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const PageLayout = loadable(() => import('../components/PageLayout/PageLayout'), { fallback: loadableFallbackTemplate(`#page-layout-component`) });
 const Author = loadable(() => import('../components/Author/Author'), { fallback: loadableFallbackTemplate(`#author-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
-// const About = loadable(() => import('../components/About/About'), { fallback: loadableFallbackTemplate(`#about-component`) });
-// const CareerHistory = loadable(() => import('../components/CareerHistory/CareerHistory'), { fallback: loadableFallbackTemplate(`#career-history-component`) });
 const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
 const Footer = loadable(() => import('../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
 const Ads = loadable(() => import('../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const ResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
+const GoogleAdsenseResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
 const Home = (): JSX.Element => {
@@ -90,7 +87,6 @@ const Home = (): JSX.Element => {
       </Helmet>
 
       <Bootstrap />
-      <Global />
       <GoogleFonts />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
@@ -99,7 +95,7 @@ const Home = (): JSX.Element => {
 
       <NavigationBar />
       <Headline />
-      <PageWrapper>
+      <PageLayout>
         <Section 
           id="author" 
           title="HELLO, WORLD!" 
@@ -122,58 +118,13 @@ const Home = (): JSX.Element => {
           showBorderTop={true}>
           {/* Line Item: LordDashMe_Horizontal_Home */}
           <Ads appearance="horizontal">
-            <ResponsiveAds 
+            <GoogleAdsenseResponsiveAds 
               adClient={'ca-pub-3427694918014398'}
               adSlot={'4220072227'} />
           </Ads>
           <Statement />
         </Section>
-        {/*
-
-          Deprecated since April 12, 2020.
-
-          <Section 
-            id="about" 
-            title="ABOUT" 
-            showThematicBreak={true} 
-            showBorderTop={true}>
-            <About />
-          </Section>
-
-        */}
-        {/* 
-
-          Deprecated since May 25, 2020.
-
-          <Section 
-            id="career-history" 
-            title="CAREER HISTORY" 
-            showThematicBreak={true} 
-            showBorderTop={true}>
-            <CareerHistory />
-          </Section> 
-
-        */}
-        {/* 
-
-          Deprecated since May 25, 2020.
-
-          <Section 
-            id="section-skip-2" 
-            title="" 
-            showThematicBreak={false} 
-            showBorderTop={true}>
-            
-            Line Item: LordDashMe_Horizontal_Home_2
-
-            <Ads appearance="horizontal">
-              <ResponsiveAds 
-                adClient={'ca-pub-3427694918014398'}
-                adSlot={'2369194966'} />
-            </Ads>
-          </Section> 
-        */}
-      </PageWrapper>
+      </PageLayout>
       <Footer isFixedPosition={false}/>
 
       <GoogleAdsense />

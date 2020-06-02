@@ -10,19 +10,25 @@ interface IState {}
 
 export default class Loader extends Component<IProperty, IState> {
 
-  public render(): JSX.Element {
+  private getLoader(): JSX.Element {
 
     let loaderClasses: string = style['signal-wrapper'];
     
-    if (! this.props.visibility) {
+    if (!this.props.visibility) {
       loaderClasses += ' ' + style['off'];
     }
 
     return (
+      <div className={loaderClasses}>
+        <div className={style['signal']}></div>
+      </div>
+    );
+  }
+
+  public render(): JSX.Element {
+    return (
       <div id="loader-component" className={style['container']}>
-        <div className={loaderClasses}>
-          <div className={style['signal']}></div>
-        </div>
+        {this.getLoader()}
       </div>
     );
   }

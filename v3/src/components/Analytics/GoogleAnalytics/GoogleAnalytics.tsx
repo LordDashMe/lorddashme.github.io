@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { isSSR } from '../../../common/helper';
 
@@ -8,8 +8,6 @@ declare global {
   }
 }
 
-declare const ga: Function;
-
 interface IProperty {
   trackingId: string;
 }
@@ -18,40 +16,37 @@ interface IState {}
 
 export default class GoogleAnalytics extends Component<IProperty, IState> {
 
-  private static readonly WAITING_TIME: number = 1000;
+  private static readonly PAUSE_TIME: number = 1000; // 1000ms 1s
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.initializeVendor();
       this.initializePageView();
     }
   }
 
   private initializeVendor(): void {
-    if (! window.ga) {
-      var script = document.createElement('script');
+    if (!window.ga) {
+      const script: any = document.createElement('script');
       script.type = 'text/javascript';
       script.src = '/resources/vendor/google-analytics/ga.min.js';
       document.body.appendChild(script);
-      console.log('[LDM] Analytics_GoogleAnalytics_GoogleAnalytics_Component: has been initialized.');
+      console.log('[LDM] Analytics_GoogleAnalytics_GoogleAnalyticsComponent: has been initialized.');
     } 
   }
 
   private initializePageView(): void {
-    
-    if (typeof ga !== 'undefined' && ga) {
-      console.log('[LDM] Analytics_GoogleAnalytics_GoogleAnalytics_Component: GA detected!');
-      ga('create', this.props.trackingId, 'auto');
-      ga('send', 'pageview', window.location.pathname);
+    if (typeof window.ga !== 'undefined' && window.ga) {
+      console.log('[LDM] Analytics_GoogleAnalytics_GoogleAnalyticsComponent: GA detected!');
+      window.ga('create', this.props.trackingId, 'auto');
+      window.ga('send', 'pageview', window.location.pathname);
     } else {
-      console.info(`[LDM] Analytics_GoogleAnalytics_GoogleAnalytics_Component: Waiting for GA to load properly.`);
+      console.info(`[LDM] Analytics_GoogleAnalytics_GoogleAnalyticsComponent: Waiting for GA to load properly.`);
       // We used setTimeout in order to have a pause time 
       // before calling again the initializePageView.
-      setTimeout(this.initializePageView.bind(this), GoogleAnalytics.WAITING_TIME);
+      setTimeout(this.initializePageView.bind(this), GoogleAnalytics.PAUSE_TIME);
     } 
   }
 
-  public render(): null {
-    return null;
-  }
+  public render(): null { return null; }
 }

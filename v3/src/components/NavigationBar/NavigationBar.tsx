@@ -83,8 +83,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
       'display': 'none'
     };
     
-    if (! this.state.toggleCollapse) {
-      
+    if (!this.state.toggleCollapse) {
       toggled = true;
       collapseStyle = {
         'display': 'block'
@@ -113,6 +112,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
   }
 
   private getRoutes(): JSX.Element[] {
+    
     return this.state.routes.map((route: IRoute) => {
 
       const href: string = route.href;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { isSSR } from '../../../common/helper';
 
@@ -8,29 +8,23 @@ declare global {
   }
 }
 
-interface IProperty {}
-
-interface IState {}
-
-export default class GoogleAdsense extends Component<IProperty, IState> {
+export default class GoogleAdsense extends Component {
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.initializeVendor();
     }
   }
 
   private initializeVendor(): void {
-    if (! window.adsbygoogle) {
-      var script = document.createElement('script');
+    if (!window.adsbygoogle) {
+      const script: any = document.createElement('script');
       script.type = 'text/javascript';
       script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
       document.body.appendChild(script);
-      console.log('[LDM] Ads_GoogleAdsense_Component: has been initialized.'); 
+      console.log('[LDM] Ads_GoogleAdsense_GoogleAdsenseComponent: has been initialized.'); 
     }
   }
 
-  public render(): null {
-    return null;
-  }
+  public render(): null { return null; }
 }

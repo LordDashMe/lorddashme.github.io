@@ -77,7 +77,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
   }
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.setPageUrl();
       this.fetchPHCOVID19TrackerStatusOverviewOnFireStore(); 
     }
@@ -176,7 +176,7 @@ export default class StatusOverview extends Component<IProperty, IState> {
 
   private getSocialMediaButtons(): JSX.Element | null {
     
-    if (! isSSR()) {
+    if (!isSSR()) {
       return (
         <div className={style['social-media-buttons']}>
           <TweetButton href={this.state.pageUrl} />

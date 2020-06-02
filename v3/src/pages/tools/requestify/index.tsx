@@ -6,22 +6,21 @@ import { loadableFallbackTemplate } from '../../../common/helper';
 import WEBSITE_PAGE_META from '../../../common/Website/page_meta';
 import IApplicationLdJSON from '../../../common/Contract/IApplicationLdJSON';
 
-import Bootstrap from '../../../components/Global/Bootstrap';
-import Global from '../../../components/Global/Global';
-import GoogleFonts from '../../../components/Global/GoogleFonts';
-import FontAwesomeGlobal from '../../../components/Global/FontAwesomeGlobal';
-import FontAwesomeNavigationBar from '../../../components/Global/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../../../components/Global/FontAwesomeFooter';
-import Section from '../../../components/Section/Section';
-
-import RequestifyForm from '../../../microsite-components/Tools/RequestifyForm/RequestifyForm';
+const Bootstrap = loadable(() => import('../../../components/Global/Bootstrap'), { fallback: null });
+const GoogleFonts = loadable(() => import('../../../components/Global/GoogleFonts'), { fallback: null });
+const FontAwesomeGlobal = loadable(() => import('../../../components/Global/FontAwesomeGlobal'), { fallback: null });
+const FontAwesomeNavigationBar = loadable(() => import('../../../components/Global/FontAwesomeNavigationBar'), { fallback: null });
+const FontAwesomeFooter = loadable(() => import('../../../components/Global/FontAwesomeFooter'), { fallback: null });
+const Section = loadable(() => import('../../../components/Section/Section'), { fallback: null });
 
 const NavigationBar = loadable(() => import('../../../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
 const Headline = loadable(() => import('../../../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
-const PageWrapper = loadable(() => import('../../../components/PageWrapper/PageWrapper'), { fallback: loadableFallbackTemplate(`#page-wrapper-component`) });
+const PageLayout = loadable(() => import('../../../components/PageLayout/PageLayout'), { fallback: loadableFallbackTemplate(`#page-layout-component`) });
 const Footer = loadable(() => import('../../../components/Footer/Footer'), { fallback: loadableFallbackTemplate(`#footer-component`) });
 
 const GoogleAnalytics = loadable(() => import('../../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
+
+const RequestifyForm = loadable(() => import('../../../microsite-components/Tools/RequestifyForm/RequestifyForm'), { fallback: loadableFallbackTemplate('#requestify-form-component') });
 
 const Tools = (): JSX.Element => {
 
@@ -76,13 +75,11 @@ const Tools = (): JSX.Element => {
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" type="text/css" />
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </Helmet>
 
       <Bootstrap />
-      <Global />
       <GoogleFonts />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
@@ -90,15 +87,17 @@ const Tools = (): JSX.Element => {
 
       <NavigationBar />
       <Headline />
-      <PageWrapper>
+      <PageLayout>
         <Section 
           id="requestify"
           title="REQUESTIFY"
           showThematicBreak={false}
           showBorderTop={false}>
+
           <RequestifyForm />
+
         </Section>
-      </PageWrapper>
+      </PageLayout>
       <Footer isFixedPosition={false}/>
 
       <GoogleAnalytics trackingId={'UA-128894279-1'} />

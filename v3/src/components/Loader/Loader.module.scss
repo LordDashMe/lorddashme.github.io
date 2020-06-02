@@ -1,5 +1,18 @@
+@keyframes loader_signal_pulsate {
+  0% {
+    transform: scale(.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
 .container {
-  display: block;
 
   .signal-wrapper {
     position: fixed;
@@ -28,21 +41,7 @@
     position: absolute;
     top: 50%;
     width: 30px;
-    animation: signal_pulsate 1s ease-out;
+    animation: loader_signal_pulsate 1s ease-out;
     animation-iteration-count: infinite;
-  }
-}
-
-@keyframes signal_pulsate {
-  0% {
-    transform: scale(.1);
-    opacity: 0.0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
   }
 }

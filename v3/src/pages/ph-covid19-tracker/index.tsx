@@ -5,17 +5,17 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import GoogleFonts from '../../components/Global/GoogleFonts';
+const GoogleFonts = loadable(() => import('../../components/Global/GoogleFonts'), { fallback: null });
 
-import Global from '../../microsite-components/Covid19/Global/Global';
-import PageWrapper from '../../microsite-components/Covid19/PageWrapper/PageWrapper';
+const Global = loadable(() => import('../../microsite-components/Covid19/Global/Global'), { fallback: null });
+const PageLayout = loadable(() => import('../../microsite-components/Covid19/PageLayout/PageLayout'), { fallback: null });
 
 const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: null });
 const TwitterWidget = loadable(() => import('../../components/SocialMedia/Twitter/TwitterWidget'), { fallback: null });
 const FacebookSDK = loadable(() => import('../../components/SocialMedia/Facebook/FacebookSDK'), { fallback: null });
 const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
-const ResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/ResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
+const GoogleAdsenseResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
 const MainTitle = loadable(() => import('../../microsite-components/Covid19/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
@@ -84,26 +84,26 @@ const PHCovid19Tracker = (): JSX.Element => {
       <Global />
       <GoogleFonts />
 
-      <PageWrapper>
+      <PageLayout>
         <MainTitle />
         <StatusPieChart />
         <StatusOverview />
         <About />
         {/* Line Item: LordDashMe_Horizontal_Home */}
         <Ads appearance="horizontal">
-          <ResponsiveAds 
+          <GoogleAdsenseResponsiveAds 
             adClient={'ca-pub-3427694918014398'}
             adSlot={'4220072227'}/>
         </Ads>
         <SuggestedVideo />
         {/* Line Item: LordDashMe_Horizontal_Home_2 */}
         <Ads appearance="horizontal">
-          <ResponsiveAds 
+          <GoogleAdsenseResponsiveAds 
             adClient={'ca-pub-3427694918014398'}
             adSlot={'2369194966'} />
         </Ads> 
         <Footer />
-      </PageWrapper>
+      </PageLayout>
 
       <TwitterWidget />
       <FacebookSDK />

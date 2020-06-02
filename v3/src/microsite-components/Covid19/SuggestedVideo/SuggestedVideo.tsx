@@ -40,7 +40,7 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
   }
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.fetchPHCOVID19TrackerSuggestedVideoOnFireStore(); 
     }
   }
@@ -74,7 +74,7 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
 
   private getSuggestedVideo(): JSX.Element[] | null {
 
-    if (! isSSR()) {
+    if (!isSSR()) {
       return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
 
         if (suggestedVideo.videoId === '') {

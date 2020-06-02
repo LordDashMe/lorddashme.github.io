@@ -10,20 +10,24 @@ interface IState {}
 
 export default class Ads extends Component<IProperty, IState> {
 
-  public render(): JSX.Element {
-    
-    let adsClassName: string = style['container'];
+  private getAppearanceClassName(): string {
+
+    let className: string = style['container'];
     
     if (typeof this.props.appearance !== 'undefined') {
       if (this.props.appearance === 'horizontal') {
-        adsClassName += ' ' + style['style-horizontal'];
+        className += ' ' + style['style-horizontal'];
       } else if (this.props.appearance === 'vertical') {
-        adsClassName += ' ' + style['style-vertical'];
+        className += ' ' + style['style-vertical'];
       } 
     }
 
+    return className;
+  }
+
+  public render(): JSX.Element {
     return (
-      <div id="ads-component" className={adsClassName}>
+      <div id="ads-component" className={this.getAppearanceClassName()}>
         <small className={style['advertisement']}>ADVERTISEMENT</small>
         {this.props.children}
       </div>

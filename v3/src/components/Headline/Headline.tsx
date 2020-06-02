@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import { isSSR } from '../../common/helper';
 
-import Firestore from '../Database/Firebase/Firestore';
-
 import style from './Headline.module.scss';
 
 declare global {
@@ -49,13 +47,13 @@ export default class Headline extends Component<IProperty, IState> {
   }
 
   public componentWillUnmount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.isMounted = false;
     }
   }
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.isMounted = true;
       this.fetchHeadlineOnFireStore();
     }
@@ -65,36 +63,40 @@ export default class Headline extends Component<IProperty, IState> {
 
     if (typeof window.lorddashme_headline === 'undefined') {
       
-      Firestore.clearInstance();
-      Firestore.initialize();
-      Firestore.getInstance()
-        .collection('headlines')
-        .where('active', '==', true)
-        .limit(1)
-        .get()
-        .then((querySnapshot: any): void => {
+      import(/* webpackChunkName: "Firestore" */ '../Database/Firebase/Firestore').then((Firestore) => {
 
-          if (typeof querySnapshot.docs[0] === 'undefined') {
-            window.lorddashme_headline = null;
-            console.log('[LDM] Headline_Component: No headline at the moment.');
-            return;
-          }
+        Firestore.default.clearInstance();
+        Firestore.default.initialize();
+        Firestore.default.getInstance()
+          .collection('headlines')
+          .where('active', '==', true)
+          .limit(1)
+          .get()
+          .then((querySnapshot: any): void => {
 
-          const document: any = querySnapshot.docs[0].data();
+            if (typeof querySnapshot.docs[0] === 'undefined') {
+              window.lorddashme_headline = null;
+              console.log('[LDM] Headline_Component: No headline at the moment.');
+              return;
+            }
 
-          const headline = {...this.state.headline};
+            const document: any = querySnapshot.docs[0].data();
 
-          headline['id'] = querySnapshot.docs[0].id;
-          headline['content'] = document.content;
+            const headline = {...this.state.headline};
 
-          window.lorddashme_headline = headline;
+            headline['id'] = querySnapshot.docs[0].id;
+            headline['content'] = document.content;
 
-          if (this.isMounted) {
-            this.setState({ headline: headline });
-          }
-          
-          console.log('[LDM] Headline_Component: Fresh headline!');
-        });
+            window.lorddashme_headline = headline;
+
+            if (this.isMounted) {
+              this.setState({ headline: headline });
+            }
+            
+            console.log('[LDM] Headline_Component: Fresh headline!');
+          });
+
+      });
 
     } else if (window.lorddashme_headline !== null && typeof window.lorddashme_headline.id !== 'undefined') {
 
@@ -128,7 +130,7 @@ export default class Headline extends Component<IProperty, IState> {
 
   private onClickHeadlineCloseButton(): void {
 
-    const headline = {...this.state.headline};
+    const headline: IHeadline = {...this.state.headline};
 
     headline['visibility'] = false;
 

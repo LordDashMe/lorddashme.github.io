@@ -11,12 +11,17 @@ interface IProperty {
 
 interface IState {}
 
-/**
- * THIS COMPONENT IS REQUIRE TO LOAD IMMEDIATELY
- * IMPLEMENTING LAZY LOADING MAY CAUSE UNUSUAL EFFECT.
- */
 export default class Section extends Component<IProperty, IState> {
 
+  private getBorderTopStyleClassName(): string {
+    
+    if (!this.props.showBorderTop) {
+      return style['hide'];
+    }
+
+    return '';
+  }
+  
   private getTitle(): JSX.Element | null {
     
     if (!this.props.title) {
@@ -26,23 +31,23 @@ export default class Section extends Component<IProperty, IState> {
     return (<h2 className={style['title']}>{this.props.title}</h2>);
   }
 
-  public render(): JSX.Element {
-
-    let thematicBreak: JSX.Element = (<br/>);
-    let borderTop: string = '';
+  private getThematicBreak(): JSX.Element {
 
     if (this.props.showThematicBreak) {
-      thematicBreak = (<hr className={style['breaker']}></hr>);
+      return (<hr className={style['breaker']}></hr>);
     }
+    
+    return (<br/>);
+  }
 
-    if (! this.props.showBorderTop) {
-      borderTop = style['hide'];
-    }
-
+  public render(): JSX.Element {
     return (
-      <section id="section-component" key={this.props.id} className={style['container'] + ' ' + borderTop}>
+      <section 
+        key={this.props.id} 
+        id="section-component" 
+        className={style['container'] + ' ' + this.getBorderTopStyleClassName()}>
         {this.getTitle()}
-        {thematicBreak}
+        {this.getThematicBreak()}
         {this.props.children}
       </section>
     );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { isSSR } from '../../../common/helper';
 
@@ -8,21 +8,17 @@ declare global {
   }
 }
 
-interface IProperty {}
-
-interface IState {}
-
-export default class TwitterWidget extends Component<IProperty, IState> {
+export default class TwitterWidget extends Component {
 
   public componentDidMount(): void {
-    if (! isSSR()) {
+    if (!isSSR()) {
       this.initializeVendor();
     }
   }
 
   private initializeVendor(): void {
-    if (! window.twttr) {
-      var script = document.createElement('script');
+    if (!window.twttr) {
+      const script: any = document.createElement('script');
       script.type = 'text/javascript';
       script.src = '/resources/vendor/twitter/twitter-widget.min.js';
       document.body.appendChild(script);
@@ -30,7 +26,5 @@ export default class TwitterWidget extends Component<IProperty, IState> {
     } 
   }
 
-  public render(): null {
-    return null;
-  }
+  public render(): null { return null; }
 }

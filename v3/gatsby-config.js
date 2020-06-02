@@ -1,9 +1,5 @@
 module.exports = {
-  siteMetadata: {
-    title: `Joshua Clifford Reyes | LordDashMe`,
-    description: `Information Technology, Web Developer, Mobile Developer, DevOps, Computer Networking, Data Structure, Multimedia`,
-    author: `Joshua Clifford Reyes`,
-  },
+  siteMetadata: {},
   plugins: [
     `gatsby-plugin-react-helmet`,
     // {
