@@ -43,8 +43,7 @@ export default class Section extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <section 
-        key={this.props.id} 
-        id="section-component" 
+        id={this.props.id} 
         className={style['container'] + ' ' + this.getBorderTopStyleClassName()}>
         {this.getTitle()}
         {this.getThematicBreak()}

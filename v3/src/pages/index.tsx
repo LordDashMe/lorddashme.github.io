@@ -1,23 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import { loadableFallbackTemplate } from '../common/helper';
+import { loadableFallbackTemplate, isElementInViewport, debounce } from '../common/helper';
 import WEBSITE_PAGE_META from '../common/Website/page_meta';
 import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 
-const Bootstrap = loadable(() => import('../components/Global/Bootstrap'), { fallback: null });
-const GoogleFonts = loadable(() => import('../components/Global/GoogleFonts'), { fallback: null });
-const FontAwesomeGlobal = loadable(() => import('../components/Global/FontAwesomeGlobal'), { fallback: null });
-const FontAwesomeNavigationBar = loadable(() => import('../components/Global/FontAwesomeNavigationBar'), { fallback: null });
-const FontAwesomeFooter = loadable(() => import('../components/Global/FontAwesomeFooter'), { fallback: null });
-const FontAwesomeSkillTechnology = loadable(() => import('../components/Global/FontAwesomeSkillTechnology'), { fallback: null });
-const Section = loadable(() => import('../components/Section/Section'), { fallback: null });
+import Bootstrap from '../components/Global/Bootstrap';
+import GoogleFonts from '../components/Global/GoogleFonts';
+import FontAwesomeGlobal from '../components/Global/FontAwesomeGlobal';
+import FontAwesomeNavigationBar from '../components/Global/FontAwesomeNavigationBar';
+import FontAwesomeFooter from '../components/Global/FontAwesomeFooter';
+import FontAwesomeSkillTechnology from '../components/Global/FontAwesomeSkillTechnology';
 
-const NavigationBar = loadable(() => import('../components/NavigationBar/NavigationBar'), { fallback: loadableFallbackTemplate(`#navigation-bar-component`) });
+import PageLayout from '../components/PageLayout/PageLayout';
+import Section from '../components/Section/Section';
+import NavigationBar from '../components/NavigationBar/NavigationBar';
+import Author from '../components/Author/Author';
+
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
-const PageLayout = loadable(() => import('../components/PageLayout/PageLayout'), { fallback: loadableFallbackTemplate(`#page-layout-component`) });
-const Author = loadable(() => import('../components/Author/Author'), { fallback: loadableFallbackTemplate(`#author-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
 const SkillTechnology = loadable(() => import('../components/SkillTechnology/SkillTechnology'), { fallback: loadableFallbackTemplate(`#skill-technology`) });
 const Statement = loadable(() => import('../components/Statement/Statement'), { fallback: loadableFallbackTemplate(`#statement-component`) });
@@ -34,9 +35,40 @@ const Home = (): JSX.Element => {
   
   let currentLocationURL: string = '/';
 
+  const [isSkillsTechnology, setSkillsTechnology] = useState(false);
+  const [isSkip1Section, setSkip1Section] = useState(false);
+
   useEffect(() => {
+
     currentLocationURL = document.location.href;
-  }, []);
+
+    const handleScroll = debounce(() => {
+
+      if (
+        isElementInViewport(document.getElementById('skills-technologies')) && 
+        !isSkillsTechnology
+      ) {
+        setSkillsTechnology(true);
+      }
+
+      if (
+        isElementInViewport(document.getElementById('section-skip-1')) && 
+        isSkillsTechnology && 
+        !isSkip1Section
+      ) {
+        setSkip1Section(true);
+      }
+    }, 500);
+
+    if (!isSkillsTechnology || !isSkip1Section) {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  }, [isSkillsTechnology, isSkip1Section]);
 
   const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
@@ -47,7 +79,7 @@ const Home = (): JSX.Element => {
     "image": WEBSITE_PAGE_META.image.src,
     "description": WEBSITE_PAGE_META.description
   };
-  
+
   return (
     <React.Fragment>
       
@@ -94,7 +126,7 @@ const Home = (): JSX.Element => {
       <FontAwesomeSkillTechnology />
 
       <NavigationBar />
-      <Headline />
+      { isSkillsTechnology ? <Headline /> : null }
       <PageLayout>
         <Section 
           id="author" 
@@ -108,8 +140,8 @@ const Home = (): JSX.Element => {
           title="SKILLS | TECHNOLOGIES" 
           showThematicBreak={true} 
           showBorderTop={true}>
-          <StatusPieChart />
-          <SkillTechnology />
+          { isSkillsTechnology ? <StatusPieChart /> : null }
+          { isSkillsTechnology ? <SkillTechnology /> : null }
         </Section>
         <Section 
           id="section-skip-1" 
@@ -117,17 +149,20 @@ const Home = (): JSX.Element => {
           showThematicBreak={false} 
           showBorderTop={true}>
           {/* Line Item: LordDashMe_Horizontal_Home */}
-          <Ads appearance="horizontal">
-            <GoogleAdsenseResponsiveAds 
-              adClient={'ca-pub-3427694918014398'}
-              adSlot={'4220072227'} />
-          </Ads>
-          <Statement />
+          {
+            isSkip1Section ? 
+            <Ads appearance="horizontal">
+              <GoogleAdsenseResponsiveAds 
+                adClient={'ca-pub-3427694918014398'}
+                adSlot={'4220072227'} />
+            </Ads> : null
+          }
+          { isSkip1Section ? <Statement /> : null }
         </Section>
       </PageLayout>
-      <Footer isFixedPosition={false}/>
+      { isSkip1Section ? <Footer isFixedPosition={false}/> : null }
 
-      <GoogleAdsense />
+      { isSkip1Section ? <GoogleAdsense /> : null }
       <GoogleAnalytics trackingId={'UA-128894279-1'} />
 
     </React.Fragment>

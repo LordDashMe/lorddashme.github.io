@@ -1,2 +1,0 @@
-(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[25],{"9CTw":function(t,r,n){"use strict";n.r(r),n.d(r,"default",(function(){return e}));var o=n("q1tI");n("v1vO");var e=function(t){var r,n;function o(r){return t.call(this,r)||this}return n=t,(r=o).prototype=Object.create(n.prototype),r.prototype.constructor=r,r.__proto__=n,o.prototype.render=function(){return null},o}(o.Component)}}]);
-//# sourceMappingURL=components-Global-FontAwesomeFooter-21987d93b5986c477dd9.js.map
