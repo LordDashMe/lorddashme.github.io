@@ -1,14 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import { loadableFallbackTemplate } from '../../common/helper';
+import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-const GoogleFonts = loadable(() => import('../../components/Global/GoogleFonts'), { fallback: null });
+import '../../styles/GoogleFonts.scss';
 
-const Global = loadable(() => import('../../microsite-components/Covid19/Global/Global'), { fallback: null });
-const PageLayout = loadable(() => import('../../microsite-components/Covid19/PageLayout/PageLayout'), { fallback: null });
+import '../../styles/Microsites/COVID19/Global.scss';
+
+import LazyLoadBlock from '../../components/LazyLoadBlock/LazyLoadBlock';
+
+import PageLayout from '../../components/Microsites/COVID19/PageLayout/PageLayout';
+import MainTitle from '../../components/Microsites/COVID19/MainTitle/MainTitle';
+import StatusPieChart from '../../components/Microsites/COVID19/StatusOverview/Chart/StatusPieChart';
+import StatusOverview from '../../components/Microsites/COVID19/StatusOverview/StatusOverview';
+
+const About = loadable(() => import('../../components/Microsites/COVID19/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
+const SuggestedVideo = loadable(() => import('../../components/Microsites/COVID19/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
+const Footer = loadable(() => import('../../components/Microsites/COVID19/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
 
 const Youtube = loadable(() => import('../../components/VideoPlayer/Youtube/Youtube'), { fallback: null });
 const TwitterWidget = loadable(() => import('../../components/SocialMedia/Twitter/TwitterWidget'), { fallback: null });
@@ -18,22 +28,28 @@ const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/
 const GoogleAdsenseResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
-const MainTitle = loadable(() => import('../../microsite-components/Covid19/MainTitle/MainTitle'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-main-title-component`) });
-const About = loadable(() => import('../../microsite-components/Covid19/About/About'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-about-component`) });
-const SuggestedVideo = loadable(() => import('../../microsite-components/Covid19/SuggestedVideo/SuggestedVideo'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-suggested-video-component`) });
-const StatusPieChart = loadable(() => import('../../microsite-components/Covid19/StatusOverview/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-chart-status-pie-chart-component`) });
-const StatusOverview = loadable(() => import('../../microsite-components/Covid19/StatusOverview/StatusOverview'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-status-overview-component`) });
-const Footer = loadable(() => import('../../microsite-components/Covid19/Footer/Footer'), { fallback: loadableFallbackTemplate(`#ph-covid19-tracker-footer-component`) });
-
 const PHCovid19Tracker = (): JSX.Element => {
 
   const pageTitle: string = 'COVID-19 Cases in the Philippines';
   
   let currentLocationURL: string = '/ph-covid19-tracker';
 
+  const [lazyLoadBlocks, setLazyLoadBlocks] = useState({
+    isDone: false,
+    items: [false, false, false]
+  });
+
   useEffect(() => {
+
     currentLocationURL = document.location.href;
-  }, []);
+
+    const lazyloadTrigger = lazyLoadBottomPageTrigger(lazyLoadBlocks, (state: any) => {
+      setLazyLoadBlocks(state);
+    });
+
+    return () => { lazyloadTrigger.unsubscribe(); };
+
+  }, [lazyLoadBlocks]);
 
   const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
@@ -77,39 +93,55 @@ const PHCovid19Tracker = (): JSX.Element => {
         <meta name="og:description" content="A tracking page for COVID-19 cases in the Philippines." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
-
-        <link rel="stylesheet" href="/resources/css/ph-covid19-tracker.min.css" type="text/css" />
       </Helmet>
 
-      <Global />
-      <GoogleFonts />
-
       <PageLayout>
-        <MainTitle />
-        <StatusPieChart />
-        <StatusOverview />
-        <About />
-        {/* Line Item: LordDashMe_Horizontal_Home */}
-        <Ads appearance="horizontal">
-          <GoogleAdsenseResponsiveAds 
-            adClient={'ca-pub-3427694918014398'}
-            adSlot={'4220072227'}/>
-        </Ads>
-        <SuggestedVideo />
-        {/* Line Item: LordDashMe_Horizontal_Home_2 */}
-        <Ads appearance="horizontal">
-          <GoogleAdsenseResponsiveAds 
-            adClient={'ca-pub-3427694918014398'}
-            adSlot={'2369194966'} />
-        </Ads> 
-        <Footer />
+        
+        <LazyLoadBlock id="critical1-0" visibilityFlag={true}>
+          <MainTitle />
+          <StatusPieChart />
+          <StatusOverview />
+        </LazyLoadBlock>
+        
+        <LazyLoadBlock id="item1-0" visibilityFlag={lazyLoadBlocks.items[0]}>
+          <About />
+          {/* Line Item: LordDashMe_Horizontal_Home */}
+          <Ads appearance="horizontal">
+            <GoogleAdsenseResponsiveAds 
+              adClient={'ca-pub-3427694918014398'}
+              adSlot={'4220072227'}/>
+          </Ads>
+        </LazyLoadBlock>
+
+        <LazyLoadBlock id="item2-0" visibilityFlag={lazyLoadBlocks.items[1]}>
+          <SuggestedVideo />
+          {/* Line Item: LordDashMe_Horizontal_Home_2 */}
+          <Ads appearance="horizontal">
+            <GoogleAdsenseResponsiveAds 
+              adClient={'ca-pub-3427694918014398'}
+              adSlot={'2369194966'} />
+          </Ads>
+        </LazyLoadBlock>
+
+        <LazyLoadBlock id="item3-0" visibilityFlag={lazyLoadBlocks.items[2]}>
+          <Footer />
+        </LazyLoadBlock>
+
       </PageLayout>
 
-      <TwitterWidget />
-      <FacebookSDK />
-      <Youtube />
-      <GoogleAdsense />
-      <GoogleAnalytics trackingId={'UA-128894279-1'} />
+      <LazyLoadBlock id="item1-1" visibilityFlag={lazyLoadBlocks.items[0]}>
+        <GoogleAdsense />
+        <TwitterWidget />
+        <FacebookSDK />
+      </LazyLoadBlock>
+      
+      <LazyLoadBlock id="item2-1" visibilityFlag={lazyLoadBlocks.items[1]}>
+        <Youtube />
+      </LazyLoadBlock>
+      
+      <LazyLoadBlock id="critical1-1" visibilityFlag={true}>
+        <GoogleAnalytics trackingId={'UA-128894279-1'} />
+      </LazyLoadBlock>
 
     </React.Fragment>
   );

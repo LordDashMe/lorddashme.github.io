@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import { loadableFallbackTemplate, isElementInViewport, debounce } from '../common/helper';
-import WEBSITE_PAGE_META from '../common/Website/page_meta';
+import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../common/helper';
+import COMMON_PAGE_META from '../common/page_meta';
 import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 
-import Bootstrap from '../components/Global/Bootstrap';
-import GoogleFonts from '../components/Global/GoogleFonts';
-import FontAwesomeGlobal from '../components/Global/FontAwesomeGlobal';
-import FontAwesomeNavigationBar from '../components/Global/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../components/Global/FontAwesomeFooter';
-import FontAwesomeSkillTechnology from '../components/Global/FontAwesomeSkillTechnology';
+import '../styles/Bootstrap.scss';
+import '../styles/GoogleFonts.scss';
+import '../styles/FontAwesomeGlobal.scss';
+import '../styles/FontAwesomeNavigationBar.scss';
+import '../styles/FontAwesomeFooter.scss';
+import '../styles/FontAwesomeSkillTechnology.scss';
 
+import NavigationBar from '../components/NavigationBar/NavigationBar';
 import PageLayout from '../components/PageLayout/PageLayout';
 import Section from '../components/Section/Section';
-import NavigationBar from '../components/NavigationBar/NavigationBar';
 import Author from '../components/Author/Author';
+import LazyLoadBlock from '../components/LazyLoadBlock/LazyLoadBlock';
 
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
@@ -31,53 +32,35 @@ const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAna
 
 const Home = (): JSX.Element => {
 
-  const pageTitle: string = WEBSITE_PAGE_META.title.main;
+  const pageTitle: string = COMMON_PAGE_META.title.main;
   
   let currentLocationURL: string = '/';
 
-  const [isSkillsTechnology, setSkillsTechnology] = useState(false);
-  const [isSkip1Section, setSkip1Section] = useState(false);
+  const [lazyLoadBlocks, setLazyLoadBlocks] = useState({
+    isDone: false,
+    items: [false, false]
+  });
 
   useEffect(() => {
 
     currentLocationURL = document.location.href;
 
-    const handleScroll = debounce(() => {
+    const lazyloadTrigger = lazyLoadBottomPageTrigger(lazyLoadBlocks, (state: any) => {
+      setLazyLoadBlocks(state);
+    });
 
-      if (
-        isElementInViewport(document.getElementById('skills-technologies')) && 
-        !isSkillsTechnology
-      ) {
-        setSkillsTechnology(true);
-      }
+    return () => { lazyloadTrigger.unsubscribe(); };
 
-      if (
-        isElementInViewport(document.getElementById('section-skip-1')) && 
-        isSkillsTechnology && 
-        !isSkip1Section
-      ) {
-        setSkip1Section(true);
-      }
-    }, 500);
-
-    if (!isSkillsTechnology || !isSkip1Section) {
-      window.addEventListener('scroll', handleScroll);
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-
-  }, [isSkillsTechnology, isSkip1Section]);
+  }, [lazyLoadBlocks]);
 
   const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
     "url": currentLocationURL,
     "name": pageTitle,
-    "author": WEBSITE_PAGE_META.author,
-    "image": WEBSITE_PAGE_META.image.src,
-    "description": WEBSITE_PAGE_META.description
+    "author": COMMON_PAGE_META.author,
+    "image": COMMON_PAGE_META.image.src,
+    "description": COMMON_PAGE_META.description
   };
 
   return (
@@ -88,28 +71,28 @@ const Home = (): JSX.Element => {
         
         <title>{pageTitle}</title>
 
-        <link rel="shortcut icon" href={WEBSITE_PAGE_META.favicon} />  
-        <link rel="apple-touch-icon" href={WEBSITE_PAGE_META.favicon} />
+        <link rel="shortcut icon" href={COMMON_PAGE_META.favicon} />  
+        <link rel="apple-touch-icon" href={COMMON_PAGE_META.favicon} />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
-        <meta name="author" content={WEBSITE_PAGE_META.author} />
-        <meta name="description" content={WEBSITE_PAGE_META.description} />
+        <meta name="author" content={COMMON_PAGE_META.author} />
+        <meta name="description" content={COMMON_PAGE_META.description} />
         <link rel="canonical" href={currentLocationURL} />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content={WEBSITE_PAGE_META.twitter.site} />
+        <meta name="twitter:site" content={COMMON_PAGE_META.twitter.site} />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={WEBSITE_PAGE_META.description} />
-        <meta name="twitter:creator" content={WEBSITE_PAGE_META.twitter.creator} />
-        <meta name="twitter:image" content={WEBSITE_PAGE_META.image.src} />
-        <meta name="twitter:image:alt" content={WEBSITE_PAGE_META.image.alt} />
+        <meta name="twitter:description" content={COMMON_PAGE_META.description} />
+        <meta name="twitter:creator" content={COMMON_PAGE_META.twitter.creator} />
+        <meta name="twitter:image" content={COMMON_PAGE_META.image.src} />
+        <meta name="twitter:image:alt" content={COMMON_PAGE_META.image.alt} />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
-        <meta name="og:image" content={WEBSITE_PAGE_META.image.src} />
-        <meta name="og:description" content={WEBSITE_PAGE_META.description} />
+        <meta name="og:image" content={COMMON_PAGE_META.image.src} />
+        <meta name="og:description" content={COMMON_PAGE_META.description} />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
@@ -118,52 +101,63 @@ const Home = (): JSX.Element => {
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </Helmet>
 
-      <Bootstrap />
-      <GoogleFonts />
-      <FontAwesomeGlobal />
-      <FontAwesomeNavigationBar />
-      <FontAwesomeFooter />
-      <FontAwesomeSkillTechnology />
+      <LazyLoadBlock id="critical1-0" visibilityFlag={true}>
+        <NavigationBar />
+      </LazyLoadBlock>
 
-      <NavigationBar />
-      { isSkillsTechnology ? <Headline /> : null }
+      <LazyLoadBlock id="item1-0" visibilityFlag={lazyLoadBlocks.items[0]}>
+        <Headline />
+      </LazyLoadBlock>
+
       <PageLayout>
-        <Section 
-          id="author" 
-          title="HELLO, WORLD!" 
-          showThematicBreak={true} 
-          showBorderTop={true}>
-          <Author />
-        </Section>
-        <Section 
-          id="skills-technologies" 
-          title="SKILLS | TECHNOLOGIES" 
-          showThematicBreak={true} 
-          showBorderTop={true}>
-          { isSkillsTechnology ? <StatusPieChart /> : null }
-          { isSkillsTechnology ? <SkillTechnology /> : null }
-        </Section>
-        <Section 
-          id="section-skip-1" 
-          title="" 
-          showThematicBreak={false} 
-          showBorderTop={true}>
-          {/* Line Item: LordDashMe_Horizontal_Home */}
-          {
-            isSkip1Section ? 
+      
+        <LazyLoadBlock id="critical1-1" visibilityFlag={true}>
+          <Section 
+            id="author" 
+            title="HELLO, WORLD!" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <Author />
+          </Section>
+        </LazyLoadBlock>
+        
+        <LazyLoadBlock id="item1-1" visibilityFlag={lazyLoadBlocks.items[0]}>
+          <Section 
+            id="skills-technologies" 
+            title="SKILLS | TECHNOLOGIES" 
+            showThematicBreak={true} 
+            showBorderTop={true}>
+            <StatusPieChart />
+            <SkillTechnology />
+          </Section>
+        </LazyLoadBlock>
+
+        <LazyLoadBlock id="item2-0" visibilityFlag={lazyLoadBlocks.items[1]}>
+          <Section 
+            id="section-skip-1" 
+            title="" 
+            showThematicBreak={false} 
+            showBorderTop={true}>
+            {/* Line Item: LordDashMe_Horizontal_Home */}
             <Ads appearance="horizontal">
               <GoogleAdsenseResponsiveAds 
                 adClient={'ca-pub-3427694918014398'}
                 adSlot={'4220072227'} />
-            </Ads> : null
-          }
-          { isSkip1Section ? <Statement /> : null }
-        </Section>
+            </Ads>
+            <Statement />
+          </Section>
+        </LazyLoadBlock>
+        
       </PageLayout>
-      { isSkip1Section ? <Footer isFixedPosition={false}/> : null }
 
-      { isSkip1Section ? <GoogleAdsense /> : null }
-      <GoogleAnalytics trackingId={'UA-128894279-1'} />
+      <LazyLoadBlock id="item2-1" visibilityFlag={lazyLoadBlocks.items[1]}>
+        <Footer isFixedPosition={false}/>
+        <GoogleAdsense />
+      </LazyLoadBlock>
+
+      <LazyLoadBlock id="critical1-2" visibilityFlag={true}>
+        <GoogleAnalytics trackingId={'UA-128894279-1'} />
+      </LazyLoadBlock>
 
     </React.Fragment>
   );

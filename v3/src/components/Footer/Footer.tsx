@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import WEBSITE_CONFIGURATION from '../../common/Website/configuration';
+import COMMON_CONFIGURATION from '../../common/configuration';
 
 import style from './Footer.module.scss';
 
@@ -101,7 +101,7 @@ export default class Footer extends Component<IProperty, IState> {
     return (
       <div className="col-lg-12">
         <p>
-          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>v{WEBSITE_CONFIGURATION.buildVersion}</small>
+          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>v{COMMON_CONFIGURATION.buildVersion}</small>
           <br/>
           <small className={style['copyright']}>
             Made with <i className="fas fa-heart" aria-hidden="true"></i>

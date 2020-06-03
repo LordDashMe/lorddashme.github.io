@@ -30,12 +30,12 @@ export const isSSR = (): boolean => typeof window === 'undefined';
 /**
  * Loadable Plugin Fallback Template for Lazy Loaded Component.
  * 
- * @param {String} targetComponentElementFallback  The target element definition to be pass on 
- *                                                 querySelector that will be use as the callback template.
+ * @param {String} targetComponentElementFallback The target element definition to be pass on 
+ *                                                querySelector that will be use as the callback template.
  * 
- * @return {JSX.Element | null}
+ * @return {JSX.Element|null}
  */
-export const loadableFallbackTemplate = (targetComponentElementFallback: string): JSX.Element | null => {
+export const loadableFallbackTemplate = (targetComponentElementFallback: string): JSX.Element|null => {
   
   if (!isSSR() && document.querySelector(targetComponentElementFallback)) {
     return (
@@ -52,9 +52,9 @@ export const loadableFallbackTemplate = (targetComponentElementFallback: string)
 /**
  * The code snippet for Debounce Strategy.
  *
- * @param {Function} callback     The callback function that will be debouce.
- * @param {Number}   waitingTime  The (N) milliseconds that the callback function  
- *                                will be call after no call action made.
+ * @param {Function} callback    The callback function that will be debouce.
+ * @param {Number}   waitingTime The (N) milliseconds that the callback function  
+ *                               will be call after no call action made.
  *
  * @return {*}
  */
@@ -86,7 +86,7 @@ export const debounce = (callback: Function, waitingTime: number = 0): any => {
 /**
  * The common function for checking the element if visible on the browser viewport.
  * 
- * @param {HTMLElement} element  The selected element instance.
+ * @param {HTMLElement} element The selected element instance.
  * 
  * @return {Boolean}
  */
@@ -100,4 +100,62 @@ export const isElementInViewport = (element: HTMLElement): boolean => {
     Math.floor(rect.bottom) <= (window.innerHeight || document.documentElement.clientHeight) &&
     Math.floor(rect.right) <= (window.innerWidth || document.documentElement.clientWidth)
   );
+};
+
+/**
+ * The common function for checking if the current view is at the bottom page.
+ * 
+ * @param {Function} callback The callback function that will be when the condition is true.
+ * 
+ * @return {VoidFunction}
+ */
+export const isAtTheBottomPage = (callback: Function): void => {
+  // An additional 500 pixels so that we 
+  // can execute the callback in advance.
+  if ((window.innerHeight + window.scrollY + 500) >= document.body.offsetHeight) { callback(); }
+};
+
+/**
+ * The common function for lazy loading component bottom page trigger.
+ * 
+ * @param {*}        state    The state of the current Page/Component. 
+ * @param {Function} callback The callback function that will be when the condition is true.
+ * 
+ * @return {*}
+ */
+export const lazyLoadBottomPageTrigger = (state: any, callback: Function): any => {
+
+  const newState = {...state};
+
+  const handleScroll = debounce(() => {
+
+    isAtTheBottomPage(() => {
+
+      const totalItems = newState.items.length - 1;
+      
+      for (let x = 0; x <= totalItems; x++) {
+        if (!newState.items[x]) {
+          newState.items[x] = true;
+          break;
+        }
+      }
+
+      if (newState.items[totalItems]) {
+        newState['isDone'] = true;
+      }
+
+      callback(newState);
+      
+    });
+
+  }, 300);
+
+  if (!newState.isDone) {
+    window.addEventListener('scroll', handleScroll);
+  }
+
+  return {
+    state: state,
+    unsubscribe: () => { window.removeEventListener('scroll', handleScroll); }
+  };
 };
