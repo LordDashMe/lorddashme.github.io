@@ -1,2 +1,0 @@
-(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[10],{ZEMz:function(n,_,t){"use strict";t.r(_);var u=t("q1tI"),c=t("Wbzz");_.default=function(){return Object(u.useEffect)((function(){Object(c.b)("/comingsoon")}),[]),null}}}]);
-//# sourceMappingURL=component---src-pages-status-index-tsx-71c49c50403b1a143847.js.map

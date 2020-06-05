@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 import style from './Footer.module.scss';
 
-interface IProperty {}
-
-interface IState {}
-
-export default class Footer extends Component<IProperty, IState> {
+export default class Footer extends Component {
 
   public constructor(properties: any) {
     super(properties);

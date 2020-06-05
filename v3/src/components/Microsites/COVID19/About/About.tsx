@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 import style from './About.module.scss';
 
-interface IProperty {}
-
-interface IState {}
-
-export default class About extends Component<IProperty, IState> {
+export default class About extends Component {
 
   public constructor(properties: any) {
     super(properties);

@@ -146,7 +146,7 @@ export default class RequestifyForm extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="requestify-form-component" className={style['container']}>
-        <Loader visibility={this.state.loader}/>
+        <Loader visibility={this.state.loader} />
         <p className={style['note']}>
           A simple simulation tool for HTTP request content type json.
         </p>

@@ -69,7 +69,7 @@ export default class NavigationBar extends Component<IProperty, IState> {
           className={'navbar-toggle ' + style['navigation-bar-toggle']} 
           data-toggle="collapse" 
           data-target="#navigation-bar-collapsable">
-          <span className="sr-only">Toggle navigation</span><i className="fa fa-bars"></i> MENU
+          <i className="fa fa-bars"></i> MENU
         </button>
         <h1 className={'navbar-brand ' + style['navigation-bar-title']}>{this.state.brandName}</h1>
       </div>

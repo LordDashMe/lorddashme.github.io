@@ -3,8 +3,6 @@ import loadable from '@loadable/component';
 
 import { isSSR } from '../../../../common/helper';
 
-import Firestore from '../../../../components/Database/Firebase/Firestore';
-
 const YoutubeIframe = loadable(() => import('../../../../components/VideoPlayer/Youtube/YoutubeIframe'), { fallback: null });
 
 import style from './SuggestedVideo.module.scss';
@@ -47,34 +45,38 @@ export default class SuggestedVideo extends Component<IProperty, IState> {
 
   private fetchPHCOVID19TrackerSuggestedVideoOnFireStore(): void {
     
-    Firestore.clearInstance();
-    Firestore.initialize();
-    Firestore.getInstance()
-      .collection('ph-covid19-tracker-suggested-video')
-      .where('active', '==', true)
-      .orderBy('order', 'desc')
-      .get()
-      .then((querySnapshot: any): void => { 
-        
-        const suggestedVideo: any = querySnapshot.docs.map((doc: any): ISuggestedVideo => {
-          const document: any = doc.data();
-          return {
-            id: doc.id,
-            videoId: document.video_id,
-            order: document.order,
-            active: document.active
-          };
-        });
+    import(/* webpackChunkName: "Firestore" */ '../../../../components/Database/Firebase/Firestore').then((Firestore) => {
 
-        this.setState({
-          suggestedVideo: suggestedVideo
+      Firestore.default.clearInstance();
+      Firestore.default.initialize();
+      Firestore.default.getInstance()
+        .collection('ph-covid19-tracker-suggested-video')
+        .where('active', '==', true)
+        .orderBy('order', 'desc')
+        .get()
+        .then((querySnapshot: any): void => { 
+          
+          const suggestedVideo: any = querySnapshot.docs.map((doc: any): ISuggestedVideo => {
+            const document: any = doc.data();
+            return {
+              id: doc.id,
+              videoId: document.video_id,
+              order: document.order,
+              active: document.active
+            };
+          });
+
+          this.setState({
+            suggestedVideo: suggestedVideo
+          });
         });
-      });
+    });
   }
 
   private getSuggestedVideo(): JSX.Element[] | null {
 
     if (!isSSR()) {
+      
       return this.state.suggestedVideo.map((suggestedVideo: ISuggestedVideo): JSX.Element => {
 
         if (suggestedVideo.videoId === '') {

@@ -5,14 +5,12 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import '../../styles/GoogleFonts.scss';
-
-import '../../styles/Microsites/COVID19/Global.scss';
+import GoogleFonts from '../../styles/GoogleFonts';
+import Global from '../../styles/Microsites/COVID19/Global';
 
 import LazyLoadBlock from '../../components/LazyLoadBlock/LazyLoadBlock';
-
-import PageLayout from '../../components/Microsites/COVID19/PageLayout/PageLayout';
-import MainTitle from '../../components/Microsites/COVID19/MainTitle/MainTitle';
+import PageLayout from '../../components/PageLayout/PageLayout';
+import PageTitle from '../../components/PageTitle/PageTitle';
 import StatusPieChart from '../../components/Microsites/COVID19/StatusOverview/Chart/StatusPieChart';
 import StatusOverview from '../../components/Microsites/COVID19/StatusOverview/StatusOverview';
 
@@ -95,10 +93,13 @@ const PHCovid19Tracker = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
 
+      <GoogleFonts />
+      <Global />
+
       <PageLayout>
         
         <LazyLoadBlock id="critical1-0" visibilityFlag={true}>
-          <MainTitle />
+          <PageTitle content={'COVID-19 CASES IN THE PHILIPPINES'} />
           <StatusPieChart />
           <StatusOverview />
         </LazyLoadBlock>

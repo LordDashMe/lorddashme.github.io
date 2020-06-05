@@ -6,11 +6,12 @@ import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../../commo
 import COMMON_PAGE_META from '../../common/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import '../../styles/Bootstrap.scss';
-import '../../styles/GoogleFonts.scss';
-import '../../styles/FontAwesomeGlobal.scss';
-import '../../styles/FontAwesomeNavigationBar.scss';
-import '../../styles/FontAwesomeFooter.scss';
+import Bootstrap from '../../styles/Boostrap';
+import Global from '../../styles/Global';
+import GoogleFonts from '../../styles/GoogleFonts';
+import FontAwesomeGlobal from '../../styles/FontAwesomeGlobal';
+import FontAwesomeNavigationBar from '../../styles/FontAwesomeNavigationBar';
+import FontAwesomeFooter from '../../styles/FontAwesomeFooter';
 
 import LazyLoadBlock from '../../components/LazyLoadBlock/LazyLoadBlock';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
@@ -93,6 +94,13 @@ const Projects = (): JSX.Element => {
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </Helmet>
+
+      <Bootstrap />
+      <Global />
+      <GoogleFonts />
+      <FontAwesomeGlobal />
+      <FontAwesomeNavigationBar />
+      <FontAwesomeFooter />
 
       <LazyLoadBlock id="critical1-0" visibilityFlag={true}>
         <NavigationBar />

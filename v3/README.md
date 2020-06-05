@@ -64,6 +64,8 @@ The version 3 of the [lorddashme.github.io](https://lorddashme.github.io/).
 
 - Use this registered custom npm script command ```npm run start:dev``` to start developing with exposed port stated in the CLI output.
 
+- Note: The Development mode right now is not stable as you may see, because in the Development mode all the assets are loaded across all pages. So better to test it with Pre Production Build files.
+
 ##### Testing Pre Production Build Files
 
 - To clean the gatsby build files: ```npm run build:clean```.

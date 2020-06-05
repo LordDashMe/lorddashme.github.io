@@ -1,2 +1,0 @@
-(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[3],{"i6+/":function(n,t,_){"use strict";_.r(t);var u=_("q1tI"),c=_("Wbzz");t.default=function(){return Object(u.useEffect)((function(){Object(c.b)("/notfound")}),[]),null}}}]);
-//# sourceMappingURL=component---src-pages-404-tsx-3bfb7a90e29f108b500c.js.map

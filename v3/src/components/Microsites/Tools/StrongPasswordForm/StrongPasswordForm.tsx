@@ -105,7 +105,7 @@ export default class StrongPasswordForm extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="strong-password-form-component" className={style['container']}>
-        <Loader visibility={this.state.loader}/>
+        <Loader visibility={this.state.loader} />
         <p className={style['note']}>
           A tool use for generating random sequence of characters based on the given length.
         </p>

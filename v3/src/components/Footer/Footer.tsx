@@ -110,6 +110,10 @@ export default class Footer extends Component<IProperty, IState> {
           <small className={style['copyright']}>
             Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>, <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a>.
           </small>
+          <br/>
+          <small className={style['copyright']}>
+            Something's happen? check <a href="/status/" rel="noopener noreferrer">Status</a>.
+          </small>
         </p>
       </div>
     );
