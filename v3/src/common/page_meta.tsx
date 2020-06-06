@@ -20,7 +20,7 @@ const COMMON_PAGE_META = {
   },
   author: 'Joshua Clifford Reyes',
   description: 'Clean Code, Domain Driven, Test Driven, Design Patterns and Best Practices. A Software Enginner, Computer Science, Computer Networking and Web Developer.',
-  favicon: '/resources/img/icons/favicon.png',
+  favicon: '/resources/img/icons/favicon-min.ico',
   image: {
     src: '/resources/img/author/profile-tianzifang-min-super.jpg',
     alt: 'Display Profile in Tianzifang Shanghai'

@@ -16,7 +16,7 @@
  */
 const COMMON_CONFIGURATION = {
   buildId: 'v3',
-  buildVersion: '3.6.3',
+  buildVersion: '3.6.4',
   api: {
     contact: 'https://lorddashme-backend.herokuapp.com/contact/',
     strongPassword: 'https://lorddashme-php-backend.herokuapp.com/api/v1/strong_password/',

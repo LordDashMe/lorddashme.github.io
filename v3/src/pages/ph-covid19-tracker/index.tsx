@@ -67,8 +67,8 @@ const PHCovid19Tracker = (): JSX.Element => {
 
         <title>{pageTitle}</title>
 
-        <link rel="shortcut icon" href="/resources/img/icons/favicon-ph-covid19-tracker.png" />
-        <link rel="apple-touch-icon" href="/resources/img/icons/favicon-ph-covid19-tracker.png" />
+        <link rel="shortcut icon" href="/resources/img/icons/favicon-ph-covid19-tracker-min.ico" />
+        <link rel="apple-touch-icon" href="/resources/img/icons/favicon-ph-covid19-tracker-min.ico" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
