@@ -5,7 +5,7 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import GoogleFonts from '../../styles/GoogleFontsMontserrat';
+import GoogleFontsMontserrat from '../../styles/GoogleFontsMontserrat';
 import Global from '../../styles/Microsites/COVID19/Global';
 
 import LazyLoadBlock from '../../components/LazyLoadBlock/LazyLoadBlock';
@@ -93,7 +93,7 @@ const PHCovid19Tracker = (): JSX.Element => {
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
       </Helmet>
 
-      <GoogleFonts />
+      <GoogleFontsMontserrat />
       <Global />
 
       <PageLayout>

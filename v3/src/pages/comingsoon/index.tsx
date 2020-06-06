@@ -7,7 +7,7 @@ import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
 import Bootstrap from '../../styles/Boostrap';
 import Global from '../../styles/Global';
-import GoogleFonts from '../../styles/GoogleFontsMontserrat';
+import GoogleFontsMontserrat from '../../styles/GoogleFontsMontserrat';
 import FontAwesomeGlobal from '../../styles/FontAwesomeGlobal';
 import FontAwesomeNavigationBar from '../../styles/FontAwesomeNavigationBar';
 import FontAwesomeFooter from '../../styles/FontAwesomeFooter';
@@ -76,7 +76,7 @@ const ComingSoon = (): JSX.Element => {
 
       <Bootstrap />
       <Global />
-      <GoogleFonts />
+      <GoogleFontsMontserrat />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
       <FontAwesomeFooter />
