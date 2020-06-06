@@ -78,6 +78,7 @@ export default class Footer extends Component<IProperty, IState> {
   }
 
   private getSocialButtons(): JSX.Element[] {
+    
     return this.state.socialButtons.map(socialButton => {
       
       const href: string = socialButton.href;
@@ -99,22 +100,11 @@ export default class Footer extends Component<IProperty, IState> {
 
   private copyright(): JSX.Element {
     return (
-      <div className="col-lg-12">
-        <p>
-          <small className={style['copyright']}>&copy; 2020</small> <a href="/" rel="noopener noreferrer">LordDashMe</a> <small className={style['copyright']}>v{COMMON_CONFIGURATION.buildVersion}</small>
-          <br/>
-          <small className={style['copyright']}>
-            Made with <i className="fas fa-heart" aria-hidden="true"></i>
-          </small>
-          <br/>
-          <small className={style['copyright']}>
-            Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>, <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a>.
-          </small>
-          <br/>
-          <small className={style['copyright']}>
-            Something's happen? check <a href="/status/" rel="noopener noreferrer">Status</a>.
-          </small>
-        </p>
+      <div className={style['copyright']}>
+        <p>&copy; 2020 <a href="/" rel="noopener noreferrer">LordDashMe</a> v{COMMON_CONFIGURATION.buildVersion}</p>
+        <p>Made with <i className="fas fa-heart" aria-hidden="true"></i></p>
+        <p>Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>, <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a>.</p>
+        <p>Something's happen? check <a href="/status/" rel="noopener noreferrer">Status</a>.</p>
       </div>
     );
   }

@@ -5,8 +5,12 @@ import loadable from '@loadable/component';
 import COMMON_PAGE_META from '../../common/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import GoogleFonts from '../../styles/GoogleFonts';
+import GoogleFontsNunito from '../../styles/GoogleFontsNunito';
+import FontAwesomeGlobal from '../../styles/FontAwesomeGlobal';
+
 import Global from '../../styles/Microsites/Status/Global';
+import FontAwesomeService from '../../styles/Microsites/Status/FontAwesomeService';
+import ImageBackgroundScene from '../../styles/Microsites/Status/ImageBackgroundScene';
 
 import PageLayout from '../../components/PageLayout/PageLayout';
 import PageTitle from '../../components/PageTitle/PageTitle';
@@ -69,17 +73,28 @@ const Status = (): JSX.Element => {
         <meta name="og:description" content="Welcome to the website monitoring page for the services that are currently in used." />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
+
+        <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </Helmet>
 
-      <GoogleFonts />
+      <GoogleFontsNunito />
+      <FontAwesomeGlobal />
       <Global />
+      <FontAwesomeService />
 
       <PageLayout>
-        <PageTitle content={'WEBSITE CURRENT STATUS'} />
-        <PageDescription content={'Attention! Check this page any time you notice a problem with the website.'} />
+
+        <PageTitle 
+          content={'WEBSITE CURRENT STATUS'}
+          color={'#183153'} />
+
+        <PageDescription 
+          content={'Vigilance! Check this page any time you notice a problem with the site.'} 
+          color={'#183153'} />
+
         <ServicesWrapper>
           <Service 
-            name={'NODE.JS SERVICE'} 
+            name={'Node.js Service'} 
             features={[
               {
                 name: 'Contact API',
@@ -92,7 +107,7 @@ const Status = (): JSX.Element => {
             ]}
           />
           <Service 
-            name={'PHP SERVICE'} 
+            name={'PHP Service'} 
             features={[
               {
                 name: 'Strong Password Generator API',
@@ -109,7 +124,7 @@ const Status = (): JSX.Element => {
             ]}
           />
           <Service 
-            name={'GOOGLE FIREBASE - CLOUD FIRESTORE SERVICE'} 
+            name={'Google Firebase - Cloud Firestore Service'} 
             features={[
               {
                 name: 'Projects API',
@@ -120,12 +135,23 @@ const Status = (): JSX.Element => {
                 status: 'Online'
               },
               {
-                name: 'Microsite - PH COVID19 Tracker APIs',
+                name: 'Microsites API',
                 status: 'Online'
               }
             ]}
           />
         </ServicesWrapper>
+
+        <ImageBackgroundScene 
+          src={'/resources/img/microsites/status/status-scene.svg'}
+          alt={'Status Scene Left'}
+          theme={{ left: '0', top: '0' }} />
+
+        <ImageBackgroundScene 
+          src={'/resources/img/microsites/status/status-scene.svg'}
+          alt={'Status Scene Right'}
+          theme={{ right: '0', bottom: '-150px' }} />
+
       </PageLayout>
 
       <GoogleAnalytics trackingId={'UA-128894279-1'} />

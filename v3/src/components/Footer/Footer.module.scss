@@ -72,8 +72,19 @@
       color: #fff;
     }
   }
-  
+
   .copyright {
-    color: #fff;  
+    width: 300px;
+    margin: auto;
+
+    @include screen-mobile {
+      width: 100%;
+    }
+
+    p {
+      margin: 0 0 5px 0;
+      font-size: 0.9em;
+      color: #fff;
+    }
   }
 }

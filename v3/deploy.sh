@@ -11,5 +11,4 @@ for github pages structure.
 | Done deployed! |
 ------------------
 
-
 EOF

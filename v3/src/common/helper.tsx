@@ -28,6 +28,16 @@ import React from 'react';
 export const isSSR = (): boolean => typeof window === 'undefined';
 
 /**
+ * Is Mobile Checker Function.
+ * 
+ * Use to change state when the width detected match the size of the mobile.
+ * Tablet and Mobile size is considered as mobile.
+ * 
+ * @return {Boolean}
+ */
+export const isMobile = (): boolean => (window.screen.width <= 1023);
+
+/**
  * Loadable Plugin Fallback Template for Lazy Loaded Component.
  * 
  * @param {String} targetComponentElementFallback The target element definition to be pass on 
@@ -72,14 +82,14 @@ export const debounce = (callback: Function, waitingTime: number = 0): any => {
 
   return (...args: any) => {
 
-      let context = this;
+    let context = this;
 
-      clearTimeout(timeout);
+    clearTimeout(timeout);
 
-      timeout = setTimeout(function() {
-          timeout = null;
-          callback.apply(context, args);
-      }, waitingTime);
+    timeout = setTimeout(function() {
+        timeout = null;
+        callback.apply(context, args);
+    }, waitingTime);
   };
 };
 
@@ -110,8 +120,7 @@ export const isElementInViewport = (element: HTMLElement): boolean => {
  * @return {VoidFunction}
  */
 export const isAtTheBottomPage = (callback: Function): void => {
-  // An additional 500 pixels so that we 
-  // can execute the callback in advance.
+  // An additional 500 pixels so that we can execute the callback in advance.
   if ((window.innerHeight + window.scrollY + 500) >= document.body.offsetHeight) { callback(); }
 };
 

@@ -17,10 +17,16 @@ const Global = createGlobalStyle`
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #ececec;
   margin: 0;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
   color: #000;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 `;

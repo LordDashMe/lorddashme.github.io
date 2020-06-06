@@ -20,6 +20,21 @@ export default class Service extends Component<IProperty, IState> {
     super(properties);
   }
 
+  private getStatusIcon(status: string): JSX.Element {
+    
+    let statusIcon = 'fas fa-times';
+    let statusStyle = style['offline'];
+
+    if (status === 'online') {
+      statusIcon = 'fas fa-check';
+      statusStyle = style['online'];
+    }
+
+    const className = statusIcon + ' ' + style['status-icon'] + ' ' +  statusStyle;
+    
+    return (<i className={className}></i>);
+  }
+
   public render(): JSX.Element {
     return (
       <div id="status-service-component" className={style['container']}>
@@ -29,7 +44,7 @@ export default class Service extends Component<IProperty, IState> {
             this.props.features.map((feature: IServiceFeature): JSX.Element => {
               return (
                 <p key={feature.name}>
-                  <span className={style[feature.status.toLowerCase()]}>{feature.status}</span> | {feature.name}
+                  {this.getStatusIcon(feature.status.toLowerCase())} {feature.name}
                 </p>
               );
             })

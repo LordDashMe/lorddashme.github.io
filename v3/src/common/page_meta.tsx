@@ -23,7 +23,7 @@ const COMMON_PAGE_META = {
   favicon: '/resources/img/icons/favicon.png',
   image: {
     src: '/resources/img/author/profile-tianzifang-min-super.jpg',
-    alt: 'Profile in Tianzifang Shanghai'
+    alt: 'Display Profile in Tianzifang Shanghai'
   },
   twitter: {
     site: '@lorddashme',

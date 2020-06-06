@@ -6,9 +6,9 @@ export default class PoweredBy extends Component {
 
   public render(): JSX.Element {
     return (
-      <div id="powerd-by-component" className={style['container']}>
-        <small>{this.props.children}</small>
-      </div>
+      <p id="powerd-by-component" className={style['container']}>
+        {this.props.children}
+      </p>
     );
   }
 }
