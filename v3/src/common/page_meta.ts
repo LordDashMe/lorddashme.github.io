@@ -14,7 +14,8 @@
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
-const COMMON_PAGE_META = {
+
+export default {
   title: {
     main: 'Joshua Clifford Reyes'
   },
@@ -30,5 +31,3 @@ const COMMON_PAGE_META = {
     creator: '@lorddashme'
   }
 };
-
-export default COMMON_PAGE_META;

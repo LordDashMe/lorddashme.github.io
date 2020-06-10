@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import COMMON_CONFIGURATION from '../../common/configuration';
+import configuration from '../../common/configuration';
 
 import Loader from '../Loader/Loader';
 
@@ -31,7 +31,7 @@ export default class ContactForm extends Component<IProperty, IState> {
         name: '',
         email: '',
         message: '',
-        webVersion: COMMON_CONFIGURATION.buildId
+        webVersion: configuration.buildId
       },
       loader: false
     };
@@ -51,7 +51,7 @@ export default class ContactForm extends Component<IProperty, IState> {
     this.triggerLoader(true);
 
     fetch(
-      COMMON_CONFIGURATION.api.contact, 
+      configuration.api.contact, 
       {
         method: 'POST',
         headers: {

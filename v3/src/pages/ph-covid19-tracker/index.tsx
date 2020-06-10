@@ -5,8 +5,8 @@ import loadable from '@loadable/component';
 import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../../common/helper';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import GoogleFontsMontserrat from '../../styles/GoogleFontsMontserrat';
-import Global from '../../styles/Microsites/COVID19/Global';
+import GoogleFontsMontserrat from '../../components/Styled/GoogleFontsMontserrat';
+import Global from '../../components/Styled/Microsites/COVID19/Global';
 
 import LazyLoadBlock from '../../components/LazyLoadBlock/LazyLoadBlock';
 import PageLayout from '../../components/PageLayout/PageLayout';
@@ -24,7 +24,7 @@ const FacebookSDK = loadable(() => import('../../components/SocialMedia/Facebook
 const Ads = loadable(() => import('../../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
 const GoogleAdsense = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
 const GoogleAdsenseResponsiveAds = loadable(() => import('../../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
-const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
+const GoogleGlobalSiteTag = loadable(() => import('../../components/Analytics/GoogleGlobalSiteTag/GoogleGlobalSiteTag'), { fallback: null });
 
 const PHCovid19Tracker = (): JSX.Element => {
 
@@ -141,7 +141,7 @@ const PHCovid19Tracker = (): JSX.Element => {
       </LazyLoadBlock>
       
       <LazyLoadBlock id="critical1-1" visibilityFlag={true}>
-        <GoogleAnalytics trackingId={'UA-128894279-1'} />
+        <GoogleGlobalSiteTag trackingId={'UA-128894279-1'} />
       </LazyLoadBlock>
 
     </React.Fragment>

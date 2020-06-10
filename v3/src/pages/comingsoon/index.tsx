@@ -2,20 +2,20 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import COMMON_PAGE_META from '../../common/page_meta';
+import page_meta from '../../common/page_meta';
 import IApplicationLdJSON from '../../common/Contract/IApplicationLdJSON';
 
-import Bootstrap from '../../styles/Boostrap';
-import Global from '../../styles/Global';
-import GoogleFontsMontserrat from '../../styles/GoogleFontsMontserrat';
-import FontAwesomeGlobal from '../../styles/FontAwesomeGlobal';
-import FontAwesomeNavigationBar from '../../styles/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../../styles/FontAwesomeFooter';
-import FontAwesomePageInformation from '../../styles/FontAwesomePageInformation';
+import Bootstrap from '../../components/Styled/Boostrap';
+import Global from '../../components/Styled/Global';
+import GoogleFontsMontserrat from '../../components/Styled/GoogleFontsMontserrat';
+import FontAwesomeGlobal from '../../components/Styled/FontAwesomeGlobal';
+import FontAwesomeNavigationBar from '../../components/Styled/FontAwesomeNavigationBar';
+import FontAwesomeFooter from '../../components/Styled/FontAwesomeFooter';
+import FontAwesomePageInformation from '../../components/Styled/FontAwesomePageInformation';
 
 import PageInformation from '../../components/PageInformation/PageInformation';
 
-const GoogleAnalytics = loadable(() => import('../../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
+const GoogleGlobalSiteTag = loadable(() => import('../../components/Analytics/GoogleGlobalSiteTag/GoogleGlobalSiteTag'), { fallback: null });
 
 const ComingSoon = (): JSX.Element => {
 
@@ -32,9 +32,9 @@ const ComingSoon = (): JSX.Element => {
     "@type": "website",
     "url": currentLocationURL,
     "name": pageTitle,
-    "author": COMMON_PAGE_META.author,
-    "image": COMMON_PAGE_META.image.src,
-    "description": COMMON_PAGE_META.description
+    "author": page_meta.author,
+    "image": page_meta.image.src,
+    "description": page_meta.description
   };
   
   return (
@@ -45,28 +45,28 @@ const ComingSoon = (): JSX.Element => {
         
         <title>{pageTitle}</title>
 
-        <link rel="shortcut icon" href={COMMON_PAGE_META.favicon} />  
-        <link rel="apple-touch-icon" href={COMMON_PAGE_META.favicon} />
+        <link rel="shortcut icon" href={page_meta.favicon} />  
+        <link rel="apple-touch-icon" href={page_meta.favicon} />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="index" />
-        <meta name="author" content={COMMON_PAGE_META.author} />
-        <meta name="description" content={COMMON_PAGE_META.description} />
+        <meta name="author" content={page_meta.author} />
+        <meta name="description" content={page_meta.description} />
         <link rel="canonical" href={currentLocationURL} />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content={COMMON_PAGE_META.twitter.site} />
+        <meta name="twitter:site" content={page_meta.twitter.site} />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={COMMON_PAGE_META.description} />
-        <meta name="twitter:creator" content={COMMON_PAGE_META.twitter.creator} />
-        <meta name="twitter:image" content={COMMON_PAGE_META.image.src} />
-        <meta name="twitter:image:alt" content={COMMON_PAGE_META.image.alt} />
+        <meta name="twitter:description" content={page_meta.description} />
+        <meta name="twitter:creator" content={page_meta.twitter.creator} />
+        <meta name="twitter:image" content={page_meta.image.src} />
+        <meta name="twitter:image:alt" content={page_meta.image.alt} />
 
         <meta name="og:url" content={currentLocationURL} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
-        <meta name="og:image" content={COMMON_PAGE_META.image.src} />
-        <meta name="og:description" content={COMMON_PAGE_META.description} />
+        <meta name="og:image" content={page_meta.image.src} />
+        <meta name="og:description" content={page_meta.description} />
 
         <script type="application/ld+json">{JSON.stringify(applicationLdJson)}</script>
 
@@ -88,7 +88,7 @@ const ComingSoon = (): JSX.Element => {
         primaryIcon="fas fa-hard-hat" 
         description="This page is currently under construction." />
 
-      <GoogleAnalytics trackingId={'UA-128894279-1'} />
+      <GoogleGlobalSiteTag trackingId={'UA-128894279-1'} />
 
     </React.Fragment>
   );

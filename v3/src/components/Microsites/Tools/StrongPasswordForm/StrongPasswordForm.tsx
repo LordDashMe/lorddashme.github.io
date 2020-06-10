@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import COMMON_CONFIGURATION from '../../../../common/configuration';
+import configuration from '../../../../common/configuration';
 
 import Loader from '../../../Loader/Loader';
 
@@ -49,7 +49,7 @@ export default class StrongPasswordForm extends Component<IProperty, IState> {
     };
 
     fetch(
-      COMMON_CONFIGURATION.api.strongPassword + '?length=' + this.state.strongPassword.length, 
+      configuration.api.strongPassword + '?length=' + this.state.strongPassword.length, 
       options
     ).then(async (response) => {
       

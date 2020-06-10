@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import COMMON_CONFIGURATION from '../../common/configuration';
+import configuration from '../../common/configuration';
 
 import style from './Footer.module.scss';
 
@@ -101,7 +101,7 @@ export default class Footer extends Component<IProperty, IState> {
   private copyright(): JSX.Element {
     return (
       <div className={style['copyright']}>
-        <p>&copy; 2020 <a href="/" rel="noopener noreferrer">LordDashMe</a> v{COMMON_CONFIGURATION.buildVersion}</p>
+        <p>&copy; 2020 <a href="/" rel="noopener noreferrer">LordDashMe</a> v{configuration.buildVersion}</p>
         <p>Made with <i className="fas fa-heart" aria-hidden="true"></i></p>
         <p>Powered by <a href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">React</a>, <a href="https://www.gatsbyjs.org/" rel="noopener noreferrer" target="_blank">Gatsby</a>, and <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">Github Pages</a>.</p>
         <p>Something's happen? check <a href="/status/" rel="noopener noreferrer">Status</a>.</p>

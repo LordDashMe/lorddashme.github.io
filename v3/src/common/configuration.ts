@@ -14,9 +14,10 @@
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com>
  */
-const COMMON_CONFIGURATION = {
+
+export default {
   buildId: 'v3',
-  buildVersion: '3.6.4',
+  buildVersion: '3.6.5',
   api: {
     contact: 'https://lorddashme-backend.herokuapp.com/contact/',
     strongPassword: 'https://lorddashme-php-backend.herokuapp.com/api/v1/strong_password/',
@@ -24,5 +25,3 @@ const COMMON_CONFIGURATION = {
     contentHashing: ''
   }
 };
-
-export default COMMON_CONFIGURATION;
