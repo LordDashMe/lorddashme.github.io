@@ -4,7 +4,18 @@ const Global = createGlobalStyle`
 
 body {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #000;
+  color: ${(props: any) => { 
+    if (typeof props.theme === 'undefined') {
+      return '#000';
+    }
+    return (typeof props.theme.isNightShiftMode !== 'undefined' && props.theme.isNightShiftMode ? '#fff' : '#000') 
+  } };
+  background: ${(props: any) => { 
+    if (typeof props.theme === 'undefined') {
+      return '#fff';
+    }
+    return (typeof props.theme.isNightShiftMode !== 'undefined' && props.theme.isNightShiftMode ? '#161616' : '#fff') 
+  } }
 }
 
 code,
@@ -12,7 +23,12 @@ p,
 small,
 label {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #000;
+  color: ${(props: any) => { 
+    if (typeof props.theme === 'undefined') {
+      return '#000';
+    }
+    return (typeof props.theme.isNightShiftMode !== 'undefined' && props.theme.isNightShiftMode ? '#fff' : '#000') 
+  }};
 }
 
 h1, 

@@ -7,6 +7,7 @@ interface IProperty {
   title: string;
   showThematicBreak: boolean;
   showBorderTop: boolean;
+  isNightShiftMode?: boolean;
 }
 
 interface IState {}
@@ -28,13 +29,13 @@ export default class Section extends Component<IProperty, IState> {
       return null;
     }
 
-    return (<h2 className={style['title']}>{this.props.title}</h2>);
+    return (<h2 className={style['title'] + (this.props.isNightShiftMode ? ' ' + style['--night'] : '')}>{this.props.title}</h2>);
   }
 
   private getThematicBreak(): JSX.Element {
 
     if (this.props.showThematicBreak) {
-      return (<hr className={style['breaker']}></hr>);
+      return (<hr className={style['breaker'] + (this.props.isNightShiftMode ? ' ' + style['--night'] : '')}></hr>);
     }
     
     return (<br/>);

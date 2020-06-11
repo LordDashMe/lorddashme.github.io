@@ -22,12 +22,24 @@ const FontAwesomeSkillTechnology = createGlobalStyle`
   content: "\\f1c0"; 
 }
 
+.fa-html5:before {
+  content: "\\f13b"; 
+}
+
+.fa-css3:before {
+  content: "\\f13c"; 
+}
+
 .fa-globe-americas:before {
   content: "\\f57d"; 
 }
 
 .fa-mobile-alt:before {
   content: "\\f3cd"; 
+}
+
+.fa-java:before {
+  content: "\\f4e4"; 
 }
 
 .fa-cloud:before {
@@ -52,6 +64,10 @@ const FontAwesomeSkillTechnology = createGlobalStyle`
 
 .fa-linux:before {
   content: "\\f17c"; 
+}
+
+.fa-windows:before {
+  content: "\\f17a"; 
 }
 
 .fa-cubes:before {
@@ -125,6 +141,7 @@ const FontAwesomeSkillTechnology = createGlobalStyle`
 .fa-cloud-upload-alt:before {
   content: "\\f382"; 
 }
+
 
 `;
 

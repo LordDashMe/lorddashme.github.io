@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import loadable from '@loadable/component';
 
-const ReactChartJS2 = loadable(() => import('react-chartjs-2'), { fallback: null });
+import ReactChartJS2 from 'react-chartjs-2';
 
 import style from './StatusPieChart.module.scss';
 
-interface IProperty {}
+interface IProperty {
+  isNightShiftMode?: boolean;
+}
 
 interface IState {
   statusPieChart: IStatusPieChart;
@@ -13,7 +14,6 @@ interface IState {
 
 interface IStatusPieChart {
   data: object;
-  options: object;
 }
 
 export default class StatusPieChart extends Component<IProperty, IState> {
@@ -51,20 +51,6 @@ export default class StatusPieChart extends Component<IProperty, IState> {
               ]
             }
           ]
-        },
-        options: {
-          maintainAspectRatio: false,
-          legend: {
-            labels: {
-              boxWidth: 16,
-              fontSize: 14,
-              fontColor: '#000',
-              fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
-            }
-          },
-          tooltips: {
-            bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
-          }
         }
       }
     };
@@ -73,7 +59,20 @@ export default class StatusPieChart extends Component<IProperty, IState> {
   public render(): JSX.Element {
     return (
       <div id="skill-technology-chart-status-pie-chart-component" className={style['container']}>
-        <ReactChartJS2 data={this.state.statusPieChart.data} options={this.state.statusPieChart.options} type={'pie'} width={300} height={300} />
+        <ReactChartJS2 data={this.state.statusPieChart.data} options={{
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              boxWidth: 16,
+              fontSize: 14,
+              fontColor: (this.props.isNightShiftMode ? '#fff' : '#000'),
+              fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }
+          },
+          tooltips: {
+            bodyFontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
+          }
+        }} type={'pie'} width={300} height={300} />
       </div>
     );
   }

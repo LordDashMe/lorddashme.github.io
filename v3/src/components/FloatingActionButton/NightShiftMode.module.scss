@@ -1,0 +1,24 @@
+.container {
+  position: fixed;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  bottom: 15px;
+  right: 15px;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+.night {
+  color: #000;
+  background: #fff;
+}
+
+.sun {
+  border: 2px solid #fff;
+  color: #fff;
+  background: #000;
+}

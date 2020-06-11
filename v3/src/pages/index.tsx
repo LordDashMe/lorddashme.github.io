@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import { loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../common/helper';
+import { loadableFallbackTemplate, lazyLoadBottomPageTrigger, isSSR } from '../common/helper';
 import page_meta from '../common/page_meta';
 import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
+
+import Cookie from '../components/Database/Cookies';
 
 import Bootstrap from '../components/Styled/Boostrap';
 import Global from '../components/Styled/Global';
@@ -12,6 +14,7 @@ import GoogleFontsMontserrat from '../components/Styled/GoogleFontsMontserrat';
 import FontAwesomeGlobal from '../components/Styled/FontAwesomeGlobal';
 import FontAwesomeNavigationBar from '../components/Styled/FontAwesomeNavigationBar';
 import FontAwesomeFooter from '../components/Styled/FontAwesomeFooter';
+import FontAwesomeNightShiftMode from '../components/Styled/FontAwesomeNightShiftMode';
 import FontAwesomeSkillTechnology from '../components/Styled/FontAwesomeSkillTechnology';
 
 import NavigationBar from '../components/NavigationBar/NavigationBar';
@@ -19,6 +22,7 @@ import PageLayout from '../components/PageLayout/PageLayout';
 import Section from '../components/Section/Section';
 import Author from '../components/Author/Author';
 import LazyLoadBlock from '../components/LazyLoadBlock/LazyLoadBlock';
+import NightShiftMode from '../components/FloatingActionButton/NightShiftMode';
 
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
@@ -31,20 +35,39 @@ const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/Goo
 const GoogleAdsenseResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleGlobalSiteTag = loadable(() => import('../components/Analytics/GoogleGlobalSiteTag/GoogleGlobalSiteTag'), { fallback: null });
 
-const Home = (): JSX.Element => {
+export default (): JSX.Element => {
 
   const pageTitle: string = page_meta.title.main;
   
-  let currentLocationURL: string = '/';
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/');
+  const cookie: React.MutableRefObject<any> = useRef(null);
 
   const [lazyLoadBlocks, setLazyLoadBlocks] = useState({
     isDone: false,
     items: [false, false]
   });
 
+  const [nightShiftMode, setNightShiftMode] = useState(false);
+
   useEffect(() => {
 
-    currentLocationURL = document.location.href;
+    if (!isSSR()) {
+      if (!cookie.current) {
+        currentLocationURL.current = document.location.href;
+        cookie.current = new Cookie();
+        if (cookie.current.get(NightShiftMode.COOKIE_NAME) === 'yes') {
+          setNightShiftMode(true);
+        }
+      }
+    }
+
+    return () => {};
+
+  }, []);
+
+  useEffect(() => {
+
+    console.log('HAHE11?');
 
     const lazyloadTrigger = lazyLoadBottomPageTrigger(lazyLoadBlocks, (state: any) => {
       setLazyLoadBlocks(state);
@@ -57,7 +80,7 @@ const Home = (): JSX.Element => {
   const applicationLdJson: IApplicationLdJSON = {
     "@context": "https://schema.org",
     "@type": "website",
-    "url": currentLocationURL,
+    "url": currentLocationURL.current,
     "name": pageTitle,
     "author": page_meta.author,
     "image": page_meta.image.src,
@@ -79,7 +102,7 @@ const Home = (): JSX.Element => {
         <meta name="robots" content="index" />
         <meta name="author" content={page_meta.author} />
         <meta name="description" content={page_meta.description} />
-        <link rel="canonical" href={currentLocationURL} />
+        <link rel="canonical" href={currentLocationURL.current} />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content={page_meta.twitter.site} />
@@ -89,7 +112,7 @@ const Home = (): JSX.Element => {
         <meta name="twitter:image" content={page_meta.image.src} />
         <meta name="twitter:image:alt" content={page_meta.image.alt} />
 
-        <meta name="og:url" content={currentLocationURL} />
+        <meta name="og:url" content={currentLocationURL.current} />
         <meta name="og:type" content="website" />
         <meta name="og:title" content={pageTitle} />
         <meta name="og:image" content={page_meta.image.src} />
@@ -104,15 +127,17 @@ const Home = (): JSX.Element => {
       </Helmet>
 
       <Bootstrap />
-      <Global />
+      <Global theme={{isNightShiftMode: nightShiftMode}} />
       <GoogleFontsMontserrat />
       <FontAwesomeGlobal />
       <FontAwesomeNavigationBar />
       <FontAwesomeFooter />
+      <FontAwesomeNightShiftMode />
       <FontAwesomeSkillTechnology />
 
       <LazyLoadBlock id="critical1-0" visibilityFlag={true}>
         <NavigationBar />
+        <NightShiftMode onToggle={(isToggled: boolean) => { setNightShiftMode(isToggled); }} />
       </LazyLoadBlock>
 
       <LazyLoadBlock id="item1-0" visibilityFlag={lazyLoadBlocks.items[0]}>
@@ -121,8 +146,9 @@ const Home = (): JSX.Element => {
 
       <PageLayout>
       
-        <LazyLoadBlock id="critical1-1" visibilityFlag={true}>
+        <LazyLoadBlock id="critical1-1" visibilityFlag={true} reRender={nightShiftMode}>
           <Section 
+            isNightShiftMode={nightShiftMode}
             id="author" 
             title="HELLO, WORLD!" 
             showThematicBreak={true} 
@@ -131,14 +157,19 @@ const Home = (): JSX.Element => {
           </Section>
         </LazyLoadBlock>
         
-        <LazyLoadBlock id="item1-1" visibilityFlag={lazyLoadBlocks.items[0]}>
+        <LazyLoadBlock id="item1-1" visibilityFlag={lazyLoadBlocks.items[0]} reRender={nightShiftMode}>
           <Section 
+            isNightShiftMode={nightShiftMode}
             id="skills-technologies" 
             title="SKILLS | TECHNOLOGIES" 
             showThematicBreak={true} 
             showBorderTop={true}>
-            <StatusPieChart />
-            <SkillTechnology />
+            <StatusPieChart isNightShiftMode={nightShiftMode} />
+
+            <LazyLoadBlock id="item1-2" visibilityFlag={lazyLoadBlocks.items[0]} reRender={false}>
+              <SkillTechnology />
+            </LazyLoadBlock>
+
           </Section>
         </LazyLoadBlock>
 
@@ -171,6 +202,5 @@ const Home = (): JSX.Element => {
 
     </React.Fragment>
   );
-}
 
-export default Home;
+};

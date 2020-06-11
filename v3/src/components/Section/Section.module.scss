@@ -15,6 +15,10 @@
   color: #000;
   margin: 0 20px 0 20px;
 
+  &.--night {
+    color: #fff;
+  }
+
   @include screen-mobile {
     font-size: 2.3em;
   }
@@ -32,6 +36,10 @@
   max-width: 250px;
   margin: 25px auto 45px;
   border-color: #000;
+
+  &.--night {
+    border-color: #fff;
+  }
 
   @include screen-mobile-small {
     border-top: solid 5px;
@@ -57,5 +65,10 @@
       margin-top: -18px;
       margin-left: -16px;
     }
+  }
+
+  &.--night:after {
+    background-color: #161616;
+    color: #fff;
   }
 }
