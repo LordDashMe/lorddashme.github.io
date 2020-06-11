@@ -67,8 +67,6 @@ export default (): JSX.Element => {
 
   useEffect(() => {
 
-    console.log('HAHE11?');
-
     const lazyloadTrigger = lazyLoadBottomPageTrigger(lazyLoadBlocks, (state: any) => {
       setLazyLoadBlocks(state);
     });

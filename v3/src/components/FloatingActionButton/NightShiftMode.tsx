@@ -88,7 +88,6 @@ export default class NightShiftMode extends Component<IProperty, IState> {
   }
 
   public render(): JSX.Element {
-    console.log('faab', this.state);
     return (
       <div 
         id="night-shift-mode-component" 
