@@ -34,7 +34,7 @@ const Footer = loadable(() => import('../components/Footer/Footer'), { fallback:
 const Ads = loadable(() => import('../components/Ads/Ads'), { fallback: loadableFallbackTemplate(`#ads-component`) });
 const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsense'), { fallback: null });
 const GoogleAdsenseResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
-const GoogleGlobalSiteTag = loadable(() => import('../components/Analytics/GoogleGlobalSiteTag/GoogleGlobalSiteTag'), { fallback: null });
+const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
 export default (): JSX.Element => {
 
@@ -123,7 +123,7 @@ export default (): JSX.Element => {
           <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
           <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
           <link rel="preload" href="/resources/vendor/fontawesome-free-5.10.2-web/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-          <link rel="preload" href="/resources/img/author/profile-tianzifang-min-super.jpg" as="image" crossOrigin="anonymous" />
+          <link rel="preload" href="/resources/img/author/profile-tianzifang-min-super.jpg" as="image" type="image/jpeg" />
         </Helmet>
 
         <Bootstrap />
@@ -206,7 +206,7 @@ export default (): JSX.Element => {
       </LazyLoadBlock>
 
       <LazyLoadBlock id="c5" visibilityFlag={true}>
-        <GoogleGlobalSiteTag trackingId={'UA-128894279-1'} />
+        <GoogleAnalytics trackingId={'UA-128894279-1'} />
       </LazyLoadBlock>
 
     </React.Fragment>
