@@ -17,6 +17,10 @@
     <changefreq>always</changefreq>
   </url>
   <url>
+    <loc>https://lorddashme.github.io/status/</loc>
+    <changefreq>always</changefreq>
+  </url>
+  <url>
     <loc>https://lorddashme.github.io/ph-covid19-tracker/</loc>
     <changefreq>always</changefreq>
   </url>

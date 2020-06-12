@@ -1,21 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
-const Global = createGlobalStyle`
+export default createGlobalStyle`
 
 body {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: ${(props: any) => { 
-    if (typeof props.theme === 'undefined') {
-      return '#000';
-    }
-    return (typeof props.theme.isNightShiftMode !== 'undefined' && props.theme.isNightShiftMode ? '#fff' : '#000') 
-  } };
-  background: ${(props: any) => { 
-    if (typeof props.theme === 'undefined') {
-      return '#fff';
-    }
-    return (typeof props.theme.isNightShiftMode !== 'undefined' && props.theme.isNightShiftMode ? '#161616' : '#fff') 
-  } }
+  color: #000;
+  background: #fff;
 }
 
 code,
@@ -23,12 +13,7 @@ p,
 small,
 label {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: ${(props: any) => { 
-    if (typeof props.theme === 'undefined') {
-      return '#000';
-    }
-    return (typeof props.theme.isNightShiftMode !== 'undefined' && props.theme.isNightShiftMode ? '#fff' : '#000') 
-  }};
+  color: #000;
 }
 
 h1, 
@@ -71,5 +56,3 @@ fieldset[disabled] .form-control {
 }
 
 `;
-
-export default Global;
