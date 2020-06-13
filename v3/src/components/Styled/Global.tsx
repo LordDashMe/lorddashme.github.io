@@ -5,6 +5,13 @@ export default createGlobalStyle`
 body {
   --bg: #fff;
   --textColor: #000;
+  --inputBg: #fff;
+  --inputBgReadOnly: #f4f4f4;
+  --inputTextColor: #000;
+  --placeHolderBgFirst: #d5d5d5;
+  --placeHolderBgSecond: #efefef;
+  --btnMainBg: #000;
+  --imgOpacity: 1;
 
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--bg);
@@ -14,6 +21,13 @@ body {
 body.dark {
   --bg: #161616;
   --textColor: #fff;
+  --inputBg: #000;
+  --inputBgReadOnly: #161616;
+  --inputTextColor: #fff;
+  --placeHolderBgFirst: #444444;
+  --placeHolderBgSecond: #797979;
+  --btnMainBg: #5a5a5a;
+  --imgOpacity: 0.9;
 }
 
 code,
@@ -41,14 +55,15 @@ h6 {
 
 .form-control {
   border-radius: 0;
-  color: #000;
+  background: var(--inputBg);
+  color: var(--inputTextColor);
 }
 
 button.btn.-black {
   padding: 7px 30px 7px 30px;
   border-radius: 0;
   color: #fff;
-  background: #000;
+  background: var(--btnMainBg);
 }
 
 button.btn.-black:hover,
@@ -60,7 +75,7 @@ button.btn.-black:active {
 .form-control[disabled], 
 .form-control[readonly], 
 fieldset[disabled] .form-control {
-  background-color: #f4f4f4;
+  background-color: var(--inputBgReadOnly);
 }
 
 `;

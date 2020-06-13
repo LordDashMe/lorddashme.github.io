@@ -20,7 +20,7 @@
     padding: 20px 20px 20px 20px;
 
     .ph-title {
-      background: #d5d5d5;
+      background: var(--placeHolderBgFirst);
       width: 70%;
       height: 30px;
       margin: 0 0 10px 0;
@@ -28,7 +28,7 @@
     }
 
     .ph-description {
-      background: #efefef;
+      background: var(--placeHolderBgSecond);
       width: 100%;
       height: 30px;
       margin: 0 0 10px 0;
@@ -36,7 +36,7 @@
     }
 
     .ph-img {
-      background: #e1e1e1;
+      background: var(--placeHolderBgFirst);
       width: 100%;
       height: 250px;
       margin: 0 0 10px 0;
@@ -44,7 +44,7 @@
     }
 
     .ph-link {
-      background: #efefef;
+      background: var(--placeHolderBgSecond);
       width: 30%;
       height: 20px;
       border-radius: 10px;
@@ -100,6 +100,7 @@
     height: auto;
     border-radius: 10px;
     // box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.125);
+    opacity: var(--imgOpacity);
   }
   
   .link {

@@ -18,14 +18,14 @@ exports.onRenderBody = function({ setPreBodyComponents }) {
       dangerouslySetInnerHTML: {
         __html: `
 (function () {
-  function setMode(theme) {
-    document.body.className = theme;
-    window.__theme = theme;
-  }
   window.__themeConstant = {
     LIGHT: 'light',
     DARK: 'dark'
   };
+  function setMode(theme) {
+    document.body.className = theme;
+    window.__theme = theme;
+  }
   window.__theme = window.__themeConstant.LIGHT;
   window.__setTheme = function (theme) {
     if (typeof window.localStorage !== 'undefined') {

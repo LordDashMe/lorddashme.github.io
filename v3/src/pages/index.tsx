@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 
-import { isSSR, loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../common/helper';
+import { loadableFallbackTemplate, lazyLoadBottomPageTrigger, isSSR } from '../common/helper';
 import page_meta from '../common/page_meta';
 import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 
@@ -10,8 +10,8 @@ import Bootstrap from '../components/Styled/Boostrap';
 import GoogleFontsMontserrat from '../components/Styled/GoogleFontsMontserrat';
 import FontAwesomeGlobal from '../components/Styled/FontAwesomeGlobal';
 import FontAwesomeNavigationBar from '../components/Styled/FontAwesomeNavigationBar';
-import FontAwesomeFooter from '../components/Styled/FontAwesomeFooter';
 import FontAwesomeNightShiftMode from '../components/Styled/FontAwesomeNightShiftMode';
+import FontAwesomeFooter from '../components/Styled/FontAwesomeFooter';
 import FontAwesomeSkillTechnology from '../components/Styled/FontAwesomeSkillTechnology';
 import Global from '../components/Styled/Global';
 
@@ -46,12 +46,8 @@ export default (): JSX.Element | null => {
   });
 
   useEffect(() => {
-
     currentLocationURL.current = document.location.href;
-
-    return () => {};
-
-  }, []);
+  });
 
   useEffect(() => {
 
