@@ -19,7 +19,7 @@ export default class TweetButton extends Component<IProperty, IState> {
     
     return (
       <div id="social-media-twitter-tweet-button-component">
-        <a className="twitter-share-button" href={'https://twitter.com/intent/tweet/' + uri}></a>
+        <a className="twitter-share-button" href={'https://twitter.com/intent/tweet/' + uri} style={{'display': 'none'}}>Twitter</a>
       </div>
     );
   }
