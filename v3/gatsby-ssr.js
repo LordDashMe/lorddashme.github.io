@@ -10,6 +10,8 @@ const React = require('react');
 
 exports.onRenderBody = function({ setPreBodyComponents }) {
 
+  // This code was reference on the: https://github.com/insin/gatsby-plugin-dark-mode/blob/master/gatsby-ssr.js
+  // and we optimized it based on the needs only of the website.
   setPreBodyComponents([
     React.createElement('script', {
       key: 'theme-process-script',
@@ -32,7 +34,8 @@ exports.onRenderBody = function({ setPreBodyComponents }) {
     setMode(theme);
   };
   if (typeof window.localStorage !== 'undefined') {
-    window.__theme = window.localStorage.getItem('theme');
+    var fromLocalStorageTheme = window.localStorage.getItem('theme');
+    window.__theme = fromLocalStorageTheme ? fromLocalStorageTheme : window.__theme;
   }
   setMode(window.__theme);
 })();

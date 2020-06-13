@@ -394,7 +394,8 @@ data-styled.g7[id="sc-global-bbSqrk1"]{content:"sc-global-bbSqrk1,"}/*!sc*/
     setMode(theme);
   };
   if (typeof window.localStorage !== 'undefined') {
-    window.__theme = window.localStorage.getItem('theme');
+    var fromLocalStorageTheme = window.localStorage.getItem('theme');
+    window.__theme = fromLocalStorageTheme ? fromLocalStorageTheme : window.__theme;
   }
   setMode(window.__theme);
 })();
