@@ -6,8 +6,6 @@ import { isSSR, loadableFallbackTemplate, lazyLoadBottomPageTrigger } from '../c
 import page_meta from '../common/page_meta';
 import IApplicationLdJSON from '../common/Contract/IApplicationLdJSON';
 
-import Cookie from '../components/Database/Cookies';
-
 import Bootstrap from '../components/Styled/Boostrap';
 import GoogleFontsMontserrat from '../components/Styled/GoogleFontsMontserrat';
 import FontAwesomeGlobal from '../components/Styled/FontAwesomeGlobal';
@@ -16,14 +14,13 @@ import FontAwesomeFooter from '../components/Styled/FontAwesomeFooter';
 import FontAwesomeNightShiftMode from '../components/Styled/FontAwesomeNightShiftMode';
 import FontAwesomeSkillTechnology from '../components/Styled/FontAwesomeSkillTechnology';
 import Global from '../components/Styled/Global';
-import GlobalNight from '../components/Styled/GlobalNight';
 
 import NavigationBar from '../components/NavigationBar/NavigationBar';
 import PageLayout from '../components/PageLayout/PageLayout';
 import Section from '../components/Section/Section';
 import Author from '../components/Author/Author';
 import LazyLoadBlock from '../components/LazyLoadBlock/LazyLoadBlock';
-import NightShiftMode from '../components/FloatingActionButton/NightShiftMode';
+import FloatingActionButtomThemeMode from '../components/FloatingActionButton/ThemeMode';
 
 const Headline = loadable(() => import('../components/Headline/Headline'), { fallback: loadableFallbackTemplate(`#headline-component`) });
 const StatusPieChart = loadable(() => import('../components/SkillTechnology/Chart/StatusPieChart'), { fallback: loadableFallbackTemplate(`#skill-technology-chart-status-pie-chart-component`) });
@@ -36,30 +33,21 @@ const GoogleAdsense = loadable(() => import('../components/Ads/GoogleAdsense/Goo
 const GoogleAdsenseResponsiveAds = loadable(() => import('../components/Ads/GoogleAdsense/GoogleAdsenseResponsiveAds'), { fallback: loadableFallbackTemplate(`#ads-google-adsense-responsive-ads-component`) });
 const GoogleAnalytics = loadable(() => import('../components/Analytics/GoogleAnalytics/GoogleAnalytics'), { fallback: null });
 
-export default (): JSX.Element => {
+export default (): JSX.Element | null => {
 
   const pageTitle: string = page_meta.title.main;
   const currentLocationURL: React.MutableRefObject<any> = useRef('/');
-  const cookie: React.MutableRefObject<any> = useRef(null);
+
+  const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 
   const [lazyLoadBlocks, setLazyLoadBlocks] = useState({
     isDone: false,
     items: [false]
   });
 
-  const [nightShiftMode, setNightShiftMode] = useState(false);
-
   useEffect(() => {
 
-    if (!isSSR()) {
-      if (!cookie.current) {
-        currentLocationURL.current = document.location.href;
-        cookie.current = new Cookie();
-        if (cookie.current.get(NightShiftMode.COOKIE_NAME) === 'yes') {
-          setNightShiftMode(true);
-        }
-      }
-    }
+    currentLocationURL.current = document.location.href;
 
     return () => {};
 
@@ -135,13 +123,16 @@ export default (): JSX.Element => {
 
       </LazyLoadBlock>
 
-      <LazyLoadBlock id="c2" visibilityFlag={nightShiftMode}>
-        <GlobalNight />
+      <LazyLoadBlock id="c2" visibilityFlag={!theme ? false : true} reRender={theme}>
+        <FloatingActionButtomThemeMode theme={theme} onToggle={() => {
+          const newTheme = (window.__theme === 'dark' ? 'light' : 'dark');
+          window.__setTheme(newTheme);
+          setTheme(newTheme);
+        }} />
       </LazyLoadBlock>
 
       <LazyLoadBlock id="c3" visibilityFlag={true}>
         <NavigationBar />
-        <NightShiftMode onToggle={(isToggled: boolean) => { setNightShiftMode(isToggled); }} />
       </LazyLoadBlock>
 
       <LazyLoadBlock id="l1" visibilityFlag={lazyLoadBlocks.items[0]}>
@@ -150,9 +141,8 @@ export default (): JSX.Element => {
 
       <PageLayout>
       
-        <LazyLoadBlock id="c4" visibilityFlag={true} reRender={nightShiftMode}>
+        <LazyLoadBlock id="c4" visibilityFlag={true}>
           <Section 
-            isNightShiftMode={nightShiftMode}
             id="author" 
             title="HELLO, WORLD!" 
             showThematicBreak={true} 
@@ -161,24 +151,21 @@ export default (): JSX.Element => {
           </Section>
         </LazyLoadBlock>
 
-        <LazyLoadBlock id="l2" visibilityFlag={lazyLoadBlocks.items[0]} reRender={nightShiftMode}>
+        <LazyLoadBlock id="l2" visibilityFlag={lazyLoadBlocks.items[0]}>
           <FontAwesomeSkillTechnology />
           <FontAwesomeFooter />
         </LazyLoadBlock>
         
-        <LazyLoadBlock id="l3" visibilityFlag={lazyLoadBlocks.items[0]} reRender={nightShiftMode}>
+        <LazyLoadBlock id="l3" visibilityFlag={lazyLoadBlocks.items[0]} reRender={theme}>
           <Section 
-            isNightShiftMode={nightShiftMode}
             id="skills-technologies" 
             title="SKILLS | TECHNOLOGIES" 
             showThematicBreak={true} 
             showBorderTop={true}>
-            <StatusPieChart isNightShiftMode={nightShiftMode} />
-            
-            <LazyLoadBlock id="l4" visibilityFlag={lazyLoadBlocks.items[0]} reRender={false}>
+            <StatusPieChart theme={theme} />
+            <LazyLoadBlock id="l4" visibilityFlag={true}>
               <SkillTechnology />
             </LazyLoadBlock>
-
           </Section>
         </LazyLoadBlock>
 
@@ -200,7 +187,7 @@ export default (): JSX.Element => {
         
       </PageLayout>
 
-      <LazyLoadBlock id="l6" visibilityFlag={lazyLoadBlocks.items[0]}>
+      <LazyLoadBlock id="l5" visibilityFlag={lazyLoadBlocks.items[0]}>
         <Footer isFixedPosition={false}/>
         <GoogleAdsense />
       </LazyLoadBlock>

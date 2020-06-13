@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 import ReactChartJS2 from 'react-chartjs-2';
 
+import { themeConstant } from '../../../common/helper';
+
 import style from './StatusPieChart.module.scss';
 
 interface IProperty {
-  isNightShiftMode?: boolean;
+  theme?: string;
 }
 
 interface IState {
@@ -65,7 +67,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             labels: {
               boxWidth: 16,
               fontSize: 14,
-              fontColor: (this.props.isNightShiftMode ? '#fff' : '#000'),
+              fontColor: (this.props.theme === themeConstant.DARK ? '#fff' : '#000'),
               fontFamily: 'Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif'
             }
           },

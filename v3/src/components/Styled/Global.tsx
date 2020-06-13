@@ -3,9 +3,17 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
 body {
+  --bg: #fff;
+  --textColor: #000;
+
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #000;
-  background: #fff;
+  background: var(--bg);
+  color: var(--textColor);
+}
+
+body.dark {
+  --bg: #161616;
+  --textColor: #fff;
 }
 
 code,
@@ -13,7 +21,7 @@ p,
 small,
 label {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #000;
+  color: var(--textColor);
 }
 
 h1, 

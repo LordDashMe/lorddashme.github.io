@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 interface IProperty {
   id: string;
   visibilityFlag: boolean;
-  reRender?: boolean;
+  reRender?: any;
 }
 
 interface IState {}

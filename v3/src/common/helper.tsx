@@ -38,6 +38,32 @@ export const isSSR = (): boolean => typeof window === 'undefined';
 export const isMobile = (): boolean => (window.screen.width <= 1023);
 
 /**
+ * Theme Constant
+ * 
+ * Basically this is used to unified some of the property to be use.
+ * 
+ * The same implementation of this will be see on the "gatsby-ssr.js"
+ * to avoid any inconsistent condition for theme.
+ */
+export const themeConstant = {
+  LIGHT: 'light',
+  DARK: 'dark'
+};
+
+/**
+ * Theme Global Properties.
+ * 
+ * Access one of this property to interact with the theme process.
+ */
+declare global {
+  interface Window {
+    __themeConstant: any;
+    __theme: any;
+    __setTheme: Function;
+  }
+};
+
+/**
  * Loadable Plugin Fallback Template for Lazy Loaded Component.
  * 
  * @param {String} targetComponentElementFallback The target element definition to be pass on 

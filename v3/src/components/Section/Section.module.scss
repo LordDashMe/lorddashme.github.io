@@ -12,12 +12,8 @@
 .title {
   font-size: 3em;
   text-align: center;
-  color: #000;
+  color: var(--textColor);
   margin: 0 20px 0 20px;
-
-  &.--night {
-    color: #fff;
-  }
 
   @include screen-mobile {
     font-size: 2.3em;
@@ -35,11 +31,7 @@
   text-align: center;
   max-width: 250px;
   margin: 25px auto 45px;
-  border-color: #000;
-
-  &.--night {
-    border-color: #fff;
-  }
+  border-color: var(--textColor);
 
   @include screen-mobile-small {
     border-top: solid 5px;
@@ -57,18 +49,13 @@
     position: absolute;
     margin-top: -22px;
     margin-left: -17px;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--bg);
+    color: var(--textColor);
 
     @include screen-mobile-small {
       font-size: 1.5em;
       margin-top: -18px;
       margin-left: -16px;
     }
-  }
-
-  &.--night:after {
-    background-color: #161616;
-    color: #fff;
   }
 }

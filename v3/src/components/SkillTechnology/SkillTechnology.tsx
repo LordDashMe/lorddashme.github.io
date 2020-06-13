@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
+import { themeConstant } from '../../common/helper';
+
 import style from './SkillTechnology.module.scss';
 
-interface IProperty {}
+interface IProperty {
+  theme?: string;
+}
 
 interface IState {
   skillTechnologyDetails: IRole[];
@@ -547,9 +551,9 @@ export default class SkillTechnology extends Component<IProperty, IState> {
     return (
       <div id="skill-technology-component" className={style['container']}>
         {this.getSkillTechnologyDetails()}
-        <div className={style['note']}>
+        <div className={style['note'] + (this.props.theme === themeConstant.DARK ? ' ' + style['--dark'] : '')}>
           <p>
-            *The dark and bold fonts are the skills | technologies that are currently in use. Last updated April 12, 2020.
+            *Fonts that are not dimmed are the skills | technologies that are currently in used. Last updated April 12, 2020.
           </p>
         </div>
       </div>
