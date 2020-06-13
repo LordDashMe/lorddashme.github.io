@@ -1,10 +1,12 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+import configuration from '../../../common/configuration';
+
 export default class Firestore {
   
   public static readonly FIRESTORE_CONFIG = {
-    projectId: "lorddashme-website"
+    projectId: configuration.googleFirebaseCloudFirestore.projectId
   };
 
   private static firestoreInstance: any = null;
