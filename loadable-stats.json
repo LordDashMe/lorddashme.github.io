@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.5",
-  "hash": "b21ed2c5a43c02caf257",
+  "hash": "83a1bbe421511fc655cd",
   "publicPath": "/",
   "outputPath": "/var/www/site/v3/public",
   "assetsByChunkName": {
@@ -14,7 +14,7 @@
   "assets": [
     {
       "name": "render-page.js",
-      "size": 2293974,
+      "size": 2293972,
       "chunks": [
         "main"
       ],

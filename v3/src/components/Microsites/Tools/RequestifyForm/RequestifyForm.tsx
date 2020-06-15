@@ -52,8 +52,9 @@ export default class RequestifyForm extends Component<IProperty, IState> {
       method: this.state.requestify.method
     };
 
+    options['headers'] = JSON.parse(this.state.requestify.headers);
+
     if (this.state.requestify.method === 'POST') {
-      options['headers'] = JSON.parse(this.state.requestify.headers);
       options['body'] = this.state.requestify.body;
     }
 
