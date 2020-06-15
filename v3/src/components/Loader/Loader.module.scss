@@ -21,7 +21,7 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: #fff;
+    background: var(--bg);
     display: block;
     transition: opacity 0.9s ease-in-out;
     opacity: 0.8;
@@ -32,7 +32,7 @@
   }
   
   .signal {
-    border: 5px solid #333;
+    border: 5px solid var(--textColor);
     border-radius: 30px;
     height: 30px;
     left: 50%;
