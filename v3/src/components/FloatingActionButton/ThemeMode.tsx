@@ -23,7 +23,7 @@ export default class ThemeMode extends Component<IProperty, IState> {
         id="night-shift-mode-component" 
         className={style['container'] + ' ' + (this.props.theme === themeConstant.DARK ? style['night'] : style['sun'])}
         onClick={this.props.onToggle}>
-        <i className={this.props.theme === themeConstant.DARK ? 'fas fa-cloud-sun' : 'fa fa-moon'} aria-hidden="true"></i>
+        <i className={this.props.theme === themeConstant.DARK ? 'fa fa-sun' : 'fa fa-moon'} aria-hidden="true"></i>
       </div>
     );
   }

@@ -6,8 +6,8 @@ const FontAwesomeNightShiftMode = createGlobalStyle`
   content: "\\f186"; 
 }
 
-.fa-cloud-sun:before {
-  content: "\\f6c4"; 
+.fa-sun:before {
+  content: "\\f185"; 
 }
 
 `;
