@@ -8,9 +8,8 @@
   border-radius: 50px;
   bottom: 30px;
   right: 30px;
-  padding: 2px;
   text-align: center;
-  font-size: 1.9em;
+  font-size: 32px;
   cursor: pointer;
 
   @include screen-mobile {
@@ -23,7 +22,7 @@
     color: #000;
     background: #fff;
     transition: all 1s ease;
-    font-size: 2.25em;
+    font-size: 34px;
   }
   
   &.sun {
@@ -31,6 +30,5 @@
     color: #fff;
     background: #000;
     transition: all 0.5s ease;
-    font-size: 2em;
   }
 }
