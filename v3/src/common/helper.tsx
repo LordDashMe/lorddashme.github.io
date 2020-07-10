@@ -146,8 +146,8 @@ export const isElementInViewport = (element: HTMLElement): boolean => {
  * @return {VoidFunction}
  */
 export const isAtTheBottomPage = (callback: Function): void => {
-  // An additional 500 pixels so that we can execute the callback in advance.
-  if ((window.innerHeight + window.scrollY + 500) >= document.body.offsetHeight) { callback(); }
+  // An additional 1000 pixels so that we can execute the callback in advance.
+  if ((window.innerHeight + window.scrollY + 1000) >= document.body.offsetHeight) { callback(); }
 };
 
 /**
