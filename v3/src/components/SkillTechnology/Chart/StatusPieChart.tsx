@@ -38,7 +38,7 @@ export default class StatusPieChart extends Component<IProperty, IState> {
             {
               label: '2018',
               data: [
-                10, 
+                9, 
                 3, 
                 3, 
                 7, 

@@ -10,7 +10,7 @@
   right: 30px;
   text-align: center;
   font-size: 30px;
-  padding: 3px;
+  padding: 2px;
   cursor: pointer;
 
   @include screen-mobile {
@@ -22,6 +22,8 @@
     border: 2px solid #fff;
     color: #000;
     background: #fff;
+    font-size: 34px;
+    padding: 0;
   }
   
   &.sun {
