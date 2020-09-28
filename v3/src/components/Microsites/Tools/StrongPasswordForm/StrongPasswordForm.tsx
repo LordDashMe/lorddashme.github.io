@@ -35,9 +35,11 @@ export default class StrongPasswordForm extends Component<IProperty, IState> {
 
   private onSubmitFormHandler(event): void {
 
+    event.preventDefault();
+
     if (!this.validateRequiredFields()) {
       alert('Please provide an input for the required fields.');
-      return
+      return;
     }
 
     this.triggerLoader(true);
@@ -125,7 +127,7 @@ export default class StrongPasswordForm extends Component<IProperty, IState> {
             <textarea value={this.state.strongPasswordResponse} className={style['textarea'] + ' form-control'} readOnly={true}></textarea>
           </div>
           <div className={style['form-action']}>
-            <button className="btn -black" type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SUBMIT</b></button>
+            <button className="btn -black" onClick={this.onSubmitFormHandler.bind(this)}><b>SUBMIT</b></button>
           </div>
         </form>
       </div>

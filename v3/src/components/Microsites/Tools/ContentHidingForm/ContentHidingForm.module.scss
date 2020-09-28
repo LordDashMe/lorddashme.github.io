@@ -1,0 +1,53 @@
+@import '../../../../styles/mixins';
+
+.container {
+  width: 550px;
+  margin: 10px auto 10px auto;
+
+  @include screen-mobile {
+    width: 85%;
+  }
+
+  .note {
+    text-align: left;
+  }
+
+  .textarea {
+    height: 200px;
+    resize: none;
+  
+    @include screen-mobile {
+      height: 100px;
+    }
+  }
+  
+  .form-tips {
+    text-align: right;
+  }
+
+  .form-action {
+    text-align: center;
+  }
+
+  .password-wrapper {
+    position: relative;
+
+    .password-show-hide {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 6px 12px 6px 12px;
+    }
+  }
+
+  .output-wrapper {
+    position: relative;
+
+    .output-copy-clipboard {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 6px 12px 6px 12px;
+    }
+  }
+}

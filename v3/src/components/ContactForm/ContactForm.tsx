@@ -37,7 +37,9 @@ export default class ContactForm extends Component<IProperty, IState> {
     };
   }
 
-  private onSubmitFormHandler(): void {
+  private onSubmitFormHandler(event): void {
+
+    event.preventDefault();
     
     if (
       (typeof this.state.contact.name === 'undefined' || this.state.contact.name === '') ||
@@ -124,7 +126,7 @@ export default class ContactForm extends Component<IProperty, IState> {
           <b>*</b> is required field.
         </p>
         <div className={style['form-action']}>
-          <button className="btn -black" type="button" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
+          <button className="btn -black" onClick={this.onSubmitFormHandler.bind(this)}><b>SEND</b></button>
         </div>
       </form>
     );

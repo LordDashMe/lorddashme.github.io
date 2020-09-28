@@ -40,7 +40,7 @@ export default class Tool extends Component<IProperty, IState> {
           id: 'content-hiding',
           title: 'CONTENT HIDING',
           description: 'A simple tool for encrypting or decrypting data based on the selected option for the encryption algorithm.',
-          link: ''
+          link: '/tools/content-hiding/'
         },
         {
           id: 'content-hashing',

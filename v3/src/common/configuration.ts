@@ -17,11 +17,11 @@
 
 export default {
   buildId: 'v3',
-  buildVersion: '3.6.19',
+  buildVersion: '3.6.20',
   api: {
     contact: 'https://lorddashme-backend.herokuapp.com/contact/',
     strongPassword: 'https://lorddashme-php-backend.herokuapp.com/api/v1/strong_password/',
-    contentHiding: '',
+    contentHiding: 'https://lorddashme-php-backend.herokuapp.com/api/v1/encryption/',
     contentHashing: ''
   },
   googleFirebaseCloudFirestore: {
