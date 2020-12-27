@@ -116,7 +116,7 @@ const Status = (): JSX.Element => {
               },
               {
                 name: 'Content Hiding API',
-                status: 'Offline'
+                status: 'Online'
               },
               {
                 name: 'Content Hashing API',
