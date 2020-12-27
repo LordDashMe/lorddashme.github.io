@@ -10,6 +10,7 @@ import Bootstrap from '../components/Styled/Boostrap';
 import GoogleFontsMontserrat from '../components/Styled/GoogleFontsMontserrat';
 import FontAwesomeGlobal from '../components/Styled/FontAwesomeGlobal';
 import FontAwesomeNavigationBar from '../components/Styled/FontAwesomeNavigationBar';
+import FontAwesomeHeadline from '../components/Styled/FontAwesomeHeadline';
 import FontAwesomeNightShiftMode from '../components/Styled/FontAwesomeNightShiftMode';
 import FontAwesomeFooter from '../components/Styled/FontAwesomeFooter';
 import FontAwesomeSkillTechnology from '../components/Styled/FontAwesomeSkillTechnology';
@@ -114,6 +115,7 @@ export default (): JSX.Element | null => {
         <GoogleFontsMontserrat />
         <FontAwesomeGlobal />
         <FontAwesomeNavigationBar />
+        <FontAwesomeHeadline />
         <FontAwesomeNightShiftMode />
         <Global />
 

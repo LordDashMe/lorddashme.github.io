@@ -11,6 +11,7 @@ import Global from '../../components/Styled/Global';
 import GoogleFontsMontserrat from '../../components/Styled/GoogleFontsMontserrat';
 import FontAwesomeGlobal from '../../components/Styled/FontAwesomeGlobal';
 import FontAwesomeNavigationBar from '../../components/Styled/FontAwesomeNavigationBar';
+import FontAwesomeHeadline from '../../components/Styled/FontAwesomeHeadline';
 import FontAwesomeNightShiftMode from '../../components/Styled/FontAwesomeNightShiftMode';
 import FontAwesomeFooter from '../../components/Styled/FontAwesomeFooter';
 import FontAwesomePageInformation from '../../components/Styled/FontAwesomePageInformation';
@@ -86,6 +87,7 @@ const ComingSoon = (): JSX.Element => {
         <GoogleFontsMontserrat />
         <FontAwesomeGlobal />
         <FontAwesomeNavigationBar />
+        <FontAwesomeHeadline />
         <FontAwesomeNightShiftMode />
         <FontAwesomeFooter />
         <FontAwesomePageInformation />
