@@ -34,7 +34,7 @@
     "@types/styled-components": "^5.1.1",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "gatsby-plugin-typescript": "^2.4.16",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
