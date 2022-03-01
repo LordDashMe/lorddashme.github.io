@@ -30,7 +30,7 @@ const PHCovid19Tracker = (): JSX.Element => {
 
   const pageTitle: string = 'COVID-19 Cases in the Philippines';
   
-  let currentLocationURL: string = '/ph-covid19-tracker';
+  let currentLocationURL: string = '/ph-covid19-tracker/';
 
   const [lazyLoadBlocks, setLazyLoadBlocks] = useState({
     isDone: false,

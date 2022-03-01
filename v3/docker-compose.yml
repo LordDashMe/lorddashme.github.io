@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  site:
+    container_name: 'lorddashme.github.io_v3'
+    tty: true
+    stdin_open: true
+    image: 'node:12-alpine'
+    volumes:
+      - '.:/var/www/site/'

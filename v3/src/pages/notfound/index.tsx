@@ -25,7 +25,7 @@ const GoogleGlobalSiteTag = loadable(() => import('../../components/Analytics/Go
 const NotFound = (): JSX.Element => {
 
   const pageTitle: string = 'Page Not Found';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/notfound');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/notfound/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 

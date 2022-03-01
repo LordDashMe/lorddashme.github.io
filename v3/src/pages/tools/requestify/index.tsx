@@ -31,7 +31,7 @@ const RequestifyForm = loadable(() => import('../../../components/Microsites/Too
 const Tools = (): JSX.Element => {
 
   const pageTitle: string = 'Requestify';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/tools/requestify');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/tools/requestify/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 

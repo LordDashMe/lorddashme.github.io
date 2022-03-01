@@ -31,7 +31,7 @@ const StrongPasswordForm = loadable(() => import('../../../components/Microsites
 const Tools = (): JSX.Element => {
 
   const pageTitle: string = 'Strong Password';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/tools/strong-password');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/tools/strong-password/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 

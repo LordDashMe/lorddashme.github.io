@@ -25,7 +25,7 @@ const GoogleGlobalSiteTag = loadable(() => import('../../components/Analytics/Go
 const ComingSoon = (): JSX.Element => {
 
   const pageTitle: string = 'Coming Soon';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/comingsoon');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/comingsoon/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 

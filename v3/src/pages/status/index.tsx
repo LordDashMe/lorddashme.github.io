@@ -25,7 +25,7 @@ const Status = (): JSX.Element => {
 
   const pageTitle: string = 'Status';
   
-  let currentLocationURL: string = '/status';
+  let currentLocationURL: string = '/status/';
 
   useEffect(() => {
     currentLocationURL = document.location.href;

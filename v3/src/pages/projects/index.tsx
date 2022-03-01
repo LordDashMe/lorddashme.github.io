@@ -31,7 +31,7 @@ const GoogleGlobalSiteTag = loadable(() => import('../../components/Analytics/Go
 const Projects = (): JSX.Element => {
 
   const pageTitle: string = 'Projects';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/projects');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/projects/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 

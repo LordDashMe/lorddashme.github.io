@@ -17,7 +17,7 @@
 
 export default {
   buildId: 'v3',
-  buildVersion: '3.6.21',
+  buildVersion: '3.6.22',
   api: {
     contact: 'https://lorddashme-backend.herokuapp.com/contact/',
     strongPassword: 'https://lorddashme-php-backend.herokuapp.com/api/v1/strong_password/',

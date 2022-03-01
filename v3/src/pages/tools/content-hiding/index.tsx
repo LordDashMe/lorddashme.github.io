@@ -31,7 +31,7 @@ const ContentHidingForm = loadable(() => import('../../../components/Microsites/
 const Tools = (): JSX.Element => {
 
   const pageTitle: string = 'Content Hiding';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/tools/content-hiding');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/tools/content-hiding/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 

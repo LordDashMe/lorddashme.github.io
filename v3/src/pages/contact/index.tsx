@@ -32,7 +32,7 @@ const GoogleGlobalSiteTag = loadable(() => import('../../components/Analytics/Go
 const Contact = (): JSX.Element => {
 
   const pageTitle: string = 'Contact';
-  const currentLocationURL: React.MutableRefObject<any> = useRef('/contact');
+  const currentLocationURL: React.MutableRefObject<any> = useRef('/contact/');
 
   const [theme, setTheme] = useState((!isSSR() ? window.__theme : null));
 
