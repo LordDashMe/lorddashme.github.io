@@ -40,4 +40,8 @@
     <loc>https://lorddashme.github.io/axie-stats-dashboard/</loc>
     <changefreq>always</changefreq>
   </url>
+  <url>
+    <loc>https://lorddashme.github.io/wordlejs/</loc>
+    <changefreq>always</changefreq>
+  </url>
 </urlset>
