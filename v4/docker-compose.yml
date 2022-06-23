@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  site:
+    container_name: 'lorddashme.github.io_v4'
+    tty: true
+    stdin_open: true
+    image: 'node:16-alpine'
+    volumes:
+      - '.:/var/www/site/'
+    networks:
+      - default
+
+networks:
+  default: 
+    name: 'lorddashme.github.io_v4_network'

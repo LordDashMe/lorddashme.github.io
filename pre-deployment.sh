@@ -6,6 +6,7 @@ find $(pwd)/* ! \( \
   -type d -name 'v1' -prune -o \
   -type d -name 'v2' -prune -o \
   -type d -name 'v3' -prune -o \
+  -type d -name 'v4' -prune -o \
   -type f -name '.gitignore' -prune -o \
   -type f -name 'ads.txt' -prune -o \
   -type f -name 'google764e0d137ba9e2a9.html' -prune -o \
