@@ -1,6 +1,6 @@
 # !/bin/sh
 
-cp -R public/* .
+cp -R public/* ../
 
 cat <<EOF 
 
