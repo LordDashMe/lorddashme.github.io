@@ -1,7 +1,6 @@
 # [lorddashme.github.io](https://lorddashme.github.io/)
 
-As I progress learning things about software engineering, I compiled all the tools and technologies that are notable for me.
-I also shared my career history and experience through the years of challenges in the industry.
+As I advanced in learning about software engineering, I compiled all the tools and technologies that were notable to me using this site. I also shared my career history and experience through the years of challenges in the industry in the format of gists or tidbits.
 
 ## Common Files
 
