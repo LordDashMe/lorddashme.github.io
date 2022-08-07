@@ -20,11 +20,9 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
+    "start": "gatsby develop --host=0.0.0.0",
+    "serve": "gatsby serve --host=0.0.0.0",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "start:dev": "gatsby develop --host=0.0.0.0",
-    "build:serve": "gatsby serve --host=0.0.0.0"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }

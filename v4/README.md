@@ -56,7 +56,7 @@ Note: The Development mode right now is not stable as you may see, because in th
 
 ### Starter Prepartion with Docker Compose
 
-1. The steps below describe how we set up the Gatsby starter default during the early stages of development for v4.
+- The steps below describe how we set up the Gatsby starter default during the early stages of development for v4.
 
   - Create ```docker-compose.yml``` and define the desired envinronment.
 
@@ -80,7 +80,7 @@ Note: The Development mode right now is not stable as you may see, because in th
 
   - That's all! we are now successfully prepared the Gatsby starter default.
 
-2. Other reference for this preparation.
+- Other reference for this preparation.
 
   - [Gatsby Installation Guide](https://www.gatsbyjs.com/docs/tutorial/part-0/#installation-guide)
 
