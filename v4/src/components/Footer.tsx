@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-interface IFooterProps {
-  page: string;
-}
+import * as styles from './Footer.module.scss';
 
-interface IFooterState {}
-
-export default class Footer extends React.Component<IFooterProps, IFooterState> {
+export default class Footer extends Component {
 
   public render(): JSX.Element {
+    
     return (
       <footer>
-        <div>Page: {this.props.page}</div>
-        <div>Made with Love</div>
+        <div className="container container-padding">
+          <div className={styles.innerFooter}>
+            <div className={styles.content}>Made with Love</div> 
+          </div>
+        </div>
       </footer>
     );
   }

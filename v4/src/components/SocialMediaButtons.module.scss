@@ -1,0 +1,38 @@
+.container {
+  padding: 6px 0;
+
+  a {
+    text-decoration: none;
+    margin: 0 16px 0 0;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    i {
+      font-size: 2em;
+      color: var(--color-dark);
+    }
+  }
+}
+
+.faGithub {
+
+  &:before {
+    content: "\f09b";
+  }
+}
+
+.faTwitter {
+
+  &:before {
+    content: "\f099";
+  }
+}
+
+.faLinkedin {
+
+  &:before {
+    content: "\f08c";
+  }
+}

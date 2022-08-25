@@ -1,24 +1,37 @@
 import React from 'react';
 
-import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import Layout from '../components/Layout';
+import Header from '../components/Header';
+import Banner from '../components/Banner';
+import Footer from '../components/Footer';
+import SocialMediaButtons from '../components/SocialMediaButtons';
 
-export const Head = () => <SEO 
-  title="Home"
-  description="This is the home page of Joshua Clifford Reyes website."
-  canonical="/"
-  image="/favicon-32x32.png"
-/>;
+import '../styles/fontawesome.scss';
 
-export default class Home extends React.Component {
+export const Head = (): JSX.Element => {
 
-  public render(): JSX.Element {
+  return (
+    <SEO 
+      canonical="/"
+      image="/img/profile-tianzifang.min.jpg"
+      imageAlt="Author Profile"
+    />
+  );
+};
 
-    return (
-      <React.Fragment>
-        <h1>Hello, World! GatsbyJS is here.</h1>
-        <Footer page={'Home'}></Footer>
-      </React.Fragment>
-    );
-  }
-}
+export default (): JSX.Element => {
+
+  return (
+    <Layout>
+      <Header />
+      <Banner>
+        <span>Hello, World!</span>
+        <h1>Joshua Clifford <span>"Dash"</span> Reyes</h1>
+        <p>Clean Code, Test Driven, Design Patterns and Best Practices. A Software Enginner, Computer Science, Computer Networking and Web Developer.</p>
+        <SocialMediaButtons />
+      </Banner>
+      <Footer />
+    </Layout>
+  );
+};

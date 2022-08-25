@@ -49,4 +49,4 @@ sitemap.xml
 
   - Decomissioned on June 2022.
 
-- [v4](v4/) 
+- [v4](v4/) is again powered by [Gatsby](https://www.gatsbyjs.org/).

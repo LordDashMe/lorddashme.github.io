@@ -1,0 +1,95 @@
+@import '../styles/breakpoints.scss';
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 100px 0;
+
+  @include screen-mobile-small-and-xtra-small {
+    padding-top: 68px;
+  }
+
+  &:before {
+    content: '';
+    background: #4f009f;
+    width: 650px;
+    height: 650px;
+    border-radius: 100%;
+    position: absolute;
+    top: 80px;
+    right: -80px;
+    transform: skew(60deg, -60deg);
+    z-index: -1;
+    opacity: 0.1;
+
+    @include screen-desktop-small {
+      width: 450px;
+      height: 450px;
+    }
+
+    @include screen-tablet {
+      width: 350px;
+      height: 350px;
+    }
+
+    @include screen-mobile {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+
+.innerBanner {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  max-width: 600px;
+
+  @include screen-mobile {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  > span {
+    font-size: 1.2em;
+    letter-spacing: 4px;
+    line-height: 1;
+
+    @include screen-mobile {
+      font-size: 1em;
+    }
+  }
+  
+  > h1 {
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+    font-size: 4.4em;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    background: linear-gradient(134deg, #a463e7 0%, #4f009f 99%);
+    color: transparent;
+    background-clip: text;
+
+    @include screen-mobile {
+      font-size: 3.6em;
+    }
+
+    > span {
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+  }
+
+  > p {
+    font-size: 1.25em;
+    letter-spacing: 1.25px;
+    margin: 0 0 12px 0;
+
+    @include screen-mobile {
+      font-size: 1.15em;
+    }
+  }
+}

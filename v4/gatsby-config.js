@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@lorddashme`,
+    title: `Joshua Clifford "Dash" Reyes`,
+    description: `Clean Code, Test Driven, Design Patterns and Best Practices. A Software Enginner, Computer Science, Computer Networking and Web Developer.`,
+    author: `Joshua Clifford "Dash" Reyes`,
+    authorTwitter: `@lorddashme`,
+    siteName: `Joshua Clifford "Dash" Reyes`,
     siteUrl: `https://lorddashme.github.io/`,
   },
   plugins: [
@@ -25,7 +27,7 @@ module.exports = {
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/my-logo.svg`, // This path is relative to the root of the site.
       },
@@ -33,5 +35,19 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    
+    // ======================== User Added Plugins ========================
+    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          // This is allowed in Typekit Webfontloader: https://github.com/typekit/webfontloader/issues/430#issuecomment-627441012
+          api: 'https://fonts.googleapis.com/css2',
+          families: ['Poppins:wght@400;500;600;700;800;900&display=swap']
+        }
+      }
+    }
+    // ======================== User Added Plugins ========================
   ],
 }

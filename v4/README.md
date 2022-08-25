@@ -30,6 +30,12 @@ The version 4 of the [lorddashme.github.io](https://lorddashme.github.io/).
 
 - [react-dom](https://www.npmjs.com/package/react-dom): This package serves as the entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
 
+### GatsbyJS
+
+The current version used is v4 so most of the technical documentation are can be found here: [GatsbyJS Docs](https://www.gatsbyjs.com/docs/).
+
+As much as possible we implement this website by using all the recommended setup provided in the technical documentation.
+
 ### Usage
 
 #### Development

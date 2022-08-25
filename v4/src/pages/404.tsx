@@ -1,22 +1,31 @@
 import React from 'react';
 
-import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import Layout from '../components/Layout';
+import Header from '../components/Header';
+import Banner from '../components/Banner';
+import Footer from '../components/Footer';
 
-export const Head = () => <SEO 
-  title="Not Found"
-  description="This is the not found page." 
-/>;
+export const Head = (): JSX.Element => {
 
-export default class NotFound extends React.Component {
+  return (
+    <SEO 
+      title="Oops! Something's not right"
+      description="Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again." 
+    />
+  );
+};
 
-  public render(): JSX.Element {
+export default (): JSX.Element => {
 
-    return (
-      <React.Fragment>
-        <div>Oops! I don't know your query.</div>
-        <Footer page={'Not Found'}></Footer>
-      </React.Fragment>
-    );
-  }
-}
+  return (
+    <Layout>
+      <Header />
+      <Banner>
+        <h1>Oops! Something's not right</h1>
+        <p>Hmm. Looks like the page you're trying to visit is not available. Maybe check the address again.</p>
+      </Banner>
+      <Footer />
+    </Layout>
+  );
+};
