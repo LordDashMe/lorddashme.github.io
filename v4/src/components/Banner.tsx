@@ -12,7 +12,7 @@ export default class Banner extends Component<BannerProps> {
     
     return (
       <div className={styles.banner}>
-        <div className="container container-padding">
+        <div className={styles.bannerWrapper + ' container container-padding'}>
           <div className={styles.innerBanner}>
             <div className={styles.content}>
               {this.props.children}

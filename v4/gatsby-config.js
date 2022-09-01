@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Joshua Clifford "Dash" Reyes`,
+    title: `Joshua Clifford Reyes`,
     description: `Clean Code, Test Driven, Design Patterns and Best Practices. A Software Enginner, Computer Science, Computer Networking and Web Developer.`,
-    author: `Joshua Clifford "Dash" Reyes`,
+    author: `Joshua Clifford Reyes`,
     authorTwitter: `@lorddashme`,
-    siteName: `Joshua Clifford "Dash" Reyes`,
+    siteName: `Joshua Clifford Reyes`,
     siteUrl: `https://lorddashme.github.io/`,
   },
   plugins: [

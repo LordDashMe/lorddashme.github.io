@@ -1,0 +1,38 @@
+@import '../styles/breakpoints.scss';
+
+.container {
+  position: relative;
+  margin: 0 0 50px 0;
+}
+
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 150px 0;
+
+  @include screen-tablet-and-mobile {
+    display: block;
+    justify-content: unset;
+  }
+
+  h2 {
+    color: var(--color-light);
+    font-size: 3.2em;
+  }
+
+  p {
+    color: var(--color-light);
+    font-size: 1.25em;
+    letter-spacing: 1.15px;
+  }
+
+  div:first-child, 
+  div:last-child {
+    max-width: 600px;
+
+    @include screen-tablet-and-mobile {
+      max-width: unset;
+      display: block;
+    }
+  }
+}

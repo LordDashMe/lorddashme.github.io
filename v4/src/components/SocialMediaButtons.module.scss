@@ -9,7 +9,11 @@
       margin-right: 0px;
     }
 
-    i {
+    > div {
+      display: none;
+    }
+
+    > i {
       font-size: 2em;
       color: var(--color-dark);
     }

@@ -26,9 +26,8 @@ export default class NavigationBar extends Component {
               />
             </Link>
             <div className={styles.navigation}>
-              <Link to="/#about">About</Link>
-              <Link to="/#work">Work</Link>
-              <Link to="#">Blog</Link>
+              <Link to="/#about-me">About Me</Link>
+              <Link to="/#">Blog</Link>
             </div>
           </div>
         </div>

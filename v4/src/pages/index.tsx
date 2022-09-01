@@ -5,7 +5,11 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
+import AboutMeImage from '../components/AboutMeImage';
+import AboutMeContent from '../components/AboutMeContent';
 import SocialMediaButtons from '../components/SocialMediaButtons';
+import IntroductionContent from '../components/IntroductionContent';
+import TwoColumnsContentWIthImage from '../components/TwoColumnsContentWIthImage';
 
 import '../styles/fontawesome.scss';
 
@@ -26,11 +30,14 @@ export default (): JSX.Element => {
     <Layout>
       <Header />
       <Banner>
-        <span>Hello, World!</span>
-        <h1>Joshua Clifford <span>"Dash"</span> Reyes</h1>
-        <p>Clean Code, Test Driven, Design Patterns and Best Practices. A Software Enginner, Computer Science, Computer Networking and Web Developer.</p>
+        <IntroductionContent />
         <SocialMediaButtons />
       </Banner>
+      <TwoColumnsContentWIthImage>
+        <AboutMeImage />
+        <AboutMeContent />
+      </TwoColumnsContentWIthImage>
+      <div className="content-clearfix"></div>
       <Footer />
     </Layout>
   );

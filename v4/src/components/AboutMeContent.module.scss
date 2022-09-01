@@ -1,0 +1,9 @@
+@import '../styles/breakpoints.scss';
+
+.container {
+  text-align: left;
+
+  @include screen-tablet-and-mobile {
+    text-align: center;
+  }
+}
