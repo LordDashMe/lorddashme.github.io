@@ -62,7 +62,7 @@ Note: The Development mode right now is not stable as you may see, because in th
 
 ### Starter Prepartion with Docker Compose
 
-- The steps below describe how we set up the Gatsby starter default during the early stages of development for v4.
+- The steps below describes how we set up the Gatsby starter default during the early stages of development for v4.
 
   - Create ```docker-compose.yml``` and define the desired envinronment.
 
@@ -95,3 +95,7 @@ Note: The Development mode right now is not stable as you may see, because in th
 ### Common Issues
 
 - When running ```npm install``` make sure that the user must own the directory ```npm install``` is run in.
+
+#### M1 Apple Chip
+
+- Install first the essential packages for the node alpine version ```apk add g++ make py3-pip``` before running the npm install command.

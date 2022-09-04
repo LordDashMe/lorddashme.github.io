@@ -17,18 +17,22 @@
 
   h2 {
     color: var(--color-light);
-    font-size: 3.2em;
+    font-size: 2.6em;
   }
 
   p {
     color: var(--color-light);
-    font-size: 1.25em;
+    font-size: 1.2em;
     letter-spacing: 1.15px;
   }
 
-  div:first-child, 
-  div:last-child {
+  > div:first-child, 
+  > div:last-child {
     max-width: 600px;
+
+    @include screen-desktop-small {
+      max-width: 550px;
+    }
 
     @include screen-tablet-and-mobile {
       max-width: unset;

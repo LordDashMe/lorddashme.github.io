@@ -8,7 +8,7 @@ export default class AboutMeImage extends Component {
       <React.Fragment>
         <span>Hello, World! I'm,</span>
         <h1>Joshua Clifford Reyes</h1>
-        <p>Clean Code, Test Driven, Design Patterns and Best Practices. A Fullstack Developer and Open Source Contributor.</p>
+        <p>I'm a Fullstack Developer and Open Source Contributor. Promoting Clean Code, Test-Driven Development, Design Patterns, and Best Practices.</p>
       </React.Fragment>
     );
   }

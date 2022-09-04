@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Joshua Clifford Reyes`,
-    description: `Clean Code, Test Driven, Design Patterns and Best Practices. A Software Enginner, Computer Science, Computer Networking and Web Developer.`,
+    description: `I'm a Fullstack Developer and Open Source Contributor. Promoting Clean Code, Test-Driven Development, Design Patterns, and Best Practices.`,
     author: `Joshua Clifford Reyes`,
     authorTwitter: `@lorddashme`,
     siteName: `Joshua Clifford Reyes`,

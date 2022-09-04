@@ -27,6 +27,10 @@ header {
     margin: 0 16px 0 0;
     letter-spacing: 4px;
 
+    &:hover {
+      color: var(--color-primary-theme);
+    }
+
     @include screen-mobile-small-and-xtra-small {
       font-size: 0.7em;
     }
