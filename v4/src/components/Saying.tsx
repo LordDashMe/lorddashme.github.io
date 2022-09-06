@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as styles from './Sayings.module.scss';
+import * as styles from './Saying.module.scss';
 
 interface SayingsData {
   sayings: SayingData[]

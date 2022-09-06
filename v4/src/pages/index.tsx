@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
-import Sayings from '../components/Sayings';
+import Saying from '../components/Saying';
 import AboutMeImage from '../components/AboutMeImage';
 import AboutMeContent from '../components/AboutMeContent';
 import OneColumn from '../components/Containers/OneColumn';
@@ -41,7 +41,7 @@ export default (): JSX.Element => {
       </TwoColumns>
       <div className="content-clearfix"></div>
       <OneColumn>
-        <Sayings />
+        <Saying />
       </OneColumn>
       <Footer />
     </Layout>
