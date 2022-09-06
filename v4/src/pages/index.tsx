@@ -5,11 +5,13 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
+import Sayings from '../components/Sayings';
 import AboutMeImage from '../components/AboutMeImage';
 import AboutMeContent from '../components/AboutMeContent';
+import OneColumn from '../components/Containers/OneColumn';
+import TwoColumns from '../components/Containers/TwoColumns';
 import SocialMediaButtons from '../components/SocialMediaButtons';
 import IntroductionContent from '../components/IntroductionContent';
-import TwoColumnsContentWIthImage from '../components/TwoColumnsContentWIthImage';
 
 import '../styles/fontawesome.scss';
 
@@ -18,8 +20,8 @@ export const Head = (): JSX.Element => {
   return (
     <SEO 
       canonical="/"
-      image="/img/profile-tianzifang.min.jpg"
-      imageAlt="Author Profile"
+      image="img/dash-in-tianzifang.min.jpg"
+      imageAlt="Dash in Tianzifang"
     />
   );
 };
@@ -33,11 +35,14 @@ export default (): JSX.Element => {
         <IntroductionContent />
         <SocialMediaButtons />
       </Banner>
-      <TwoColumnsContentWIthImage>
+      <TwoColumns>
         <AboutMeImage />
         <AboutMeContent />
-      </TwoColumnsContentWIthImage>
+      </TwoColumns>
       <div className="content-clearfix"></div>
+      <OneColumn>
+        <Sayings />
+      </OneColumn>
       <Footer />
     </Layout>
   );

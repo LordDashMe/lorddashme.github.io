@@ -24,11 +24,12 @@ header {
     color: var(--color-light);
     text-transform: uppercase;
     font-weight: 800;
-    margin: 0 16px 0 0;
+    margin: 0 20px 0 0;
     letter-spacing: 4px;
 
     &:hover {
-      color: var(--color-primary-theme);
+      color: var(--theme-color);
+      transition: all ease 0.5s;
     }
 
     @include screen-mobile-small-and-xtra-small {
@@ -36,7 +37,7 @@ header {
     }
 
     &:last-child {
-      margin-right: 0px;
+      margin-right: 0;
     }
   }
 }

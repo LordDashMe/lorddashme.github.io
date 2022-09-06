@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import '../styles/background-skew.scss';
+import '../../styles/background-skew.scss';
 
-import * as styles from './TwoColumnsContentWIthImage.module.scss';
+import * as styles from './TwoColumns.module.scss';
 
-interface TwoColumnsContentWIthImageProps {
+interface TwoColumnsProps {
   children?: any;
 }
 
-export default class TwoColumnsContentWIthImage extends Component<TwoColumnsContentWIthImageProps> {
+export default class TwoColumns extends Component<TwoColumnsProps> {
 
   public render(): JSX.Element {
     

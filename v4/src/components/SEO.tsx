@@ -12,13 +12,21 @@ interface SEOProps {
   imageAlt?: string;
 }
 
+interface SiteMetaDataAuthor {
+  name: string;
+  twitterUsername: string;
+}
+
+interface SiteMetaDataSite {
+  name: string;
+  url: string;
+}
+
 interface SiteMetaData {
   title: string;
   description: string;
-  author: string;
-  authorTwitter: string;
-  siteName: string;
-  siteUrl: string;
+  author: SiteMetaDataAuthor;
+  site: SiteMetaDataSite;
 }
 
 class SEO extends Component<SEOProps> {
@@ -39,8 +47,8 @@ class SEO extends Component<SEOProps> {
     let canonical: string = '';
     let image: string = '';
     let imageAlt: string = '';
-    let authorTwitter: string = this.siteMetaData.authorTwitter;
-    let siteName: string = this.siteMetaData.siteName;
+    let authorTwitter: string = this.siteMetaData.author.twitterUsername;
+    let siteName: string = this.siteMetaData.site.name;
 
     if (typeof this.props.title !== 'undefined' && this.props.title) {
       title = this.props.title;
@@ -51,11 +59,11 @@ class SEO extends Component<SEOProps> {
     }
 
     if (typeof this.props.canonical !== 'undefined' && this.props.canonical) {
-      canonical = this.siteMetaData.siteUrl + (this.props.canonical ? this.props.canonical.replace(/^(\/)/g, '') : '');
+      canonical = this.siteMetaData.site.url + (this.props.canonical ? this.props.canonical.replace(/^(\/)/g, '') : '');
     }
 
     if (typeof this.props.image !== 'undefined' && this.props.image) {
-      image = this.props.image;
+      image = this.siteMetaData.site.url + this.props.image;
     }
 
     if (typeof this.props.imageAlt !== 'undefined' && this.props.imageAlt) {
@@ -117,10 +125,14 @@ export default (props: SEOProps): JSX.Element => {
           siteMetadata {
             title
             description
-            author
-            authorTwitter
-            siteName
-            siteUrl
+            author {
+              name
+              twitterUsername
+            }
+            site {
+              name
+              url
+            }
           }
         }
       }

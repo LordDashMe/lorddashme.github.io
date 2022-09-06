@@ -1,8 +1,8 @@
-@import '../styles/breakpoints.scss';
+@import '../../styles/breakpoints.scss';
 
 .container {
   position: relative;
-  margin: 0 0 50px 0;
+  margin: 0 0 75px 0;
 }
 
 .innerContainer {
@@ -13,17 +13,6 @@
   @include screen-tablet-and-mobile {
     display: block;
     justify-content: unset;
-  }
-
-  h2 {
-    color: var(--color-light);
-    font-size: 2.6em;
-  }
-
-  p {
-    color: var(--color-light);
-    font-size: 1.2em;
-    letter-spacing: 1.15px;
   }
 
   > div:first-child, 

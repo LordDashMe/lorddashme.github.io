@@ -2,10 +2,14 @@ module.exports = {
   siteMetadata: {
     title: `Joshua Clifford Reyes`,
     description: `I'm a Fullstack Developer and Open Source Contributor. Promoting Clean Code, Test-Driven Development, Design Patterns, and Best Practices.`,
-    author: `Joshua Clifford Reyes`,
-    authorTwitter: `@lorddashme`,
-    siteName: `Joshua Clifford Reyes`,
-    siteUrl: `https://lorddashme.github.io/`,
+    author: {
+      name: `Joshua Clifford Reyes`,
+      twitterUsername: `@lorddashme`,
+    },
+    site: {
+      name: `Joshua Clifford Reyes`,
+      url: `https://lorddashme.github.io/`,
+    }
   },
   plugins: [
     `gatsby-plugin-image`,
