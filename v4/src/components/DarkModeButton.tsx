@@ -18,11 +18,19 @@ interface DarkModeButtonState {
 export default class DarkModeButton extends Component<{}, DarkModeButtonState> {
 
   public constructor(props: any) {
-    
+
     super(props);
 
+    let isDarkMode = false;
+
+    if (typeof window !== 'undefined' && window.__theme !== 'undefined') {
+      if (window.__theme === window.__themeConstant.DARK) {
+        isDarkMode = true;
+      }
+    }
+
     this.state = {
-      isDarkMode: (window.__theme === 'light' ? false : true)
+      isDarkMode: isDarkMode
     };
   }
 
@@ -36,12 +44,13 @@ export default class DarkModeButton extends Component<{}, DarkModeButtonState> {
       theme = window.__themeConstant.DARK;
     }
 
-    this.setState({ isDarkMode: isDarkMode });
     window.__setTheme(theme);
+
+    this.setState({ isDarkMode: isDarkMode });
   }
 
   public render(): JSX.Element {
-    
+
     return (
       <div className={styles.container} onClick={this.onClick.bind(this)}>
         <i className={'fas ' + (this.state.isDarkMode ? styles.faSun : styles.faMoon)}></i>

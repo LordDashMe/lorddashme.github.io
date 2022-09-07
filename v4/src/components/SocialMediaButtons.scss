@@ -16,6 +16,11 @@
     > i {
       font-size: 2em;
       color: var(--color-dark);
+
+      &:hover {
+        color: var(--theme-color) !important;
+        transition: all ease 0.3s;
+      }
     }
   }
 
