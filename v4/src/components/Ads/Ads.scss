@@ -1,0 +1,37 @@
+.ads {
+  position: relative;
+  margin: 0 0 50px 0;
+
+  .ads-wrapper {
+
+    &:before {
+      content: 'Advertisement';
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+      font-size: 0.5em;
+      letter-spacing: 3px;
+    }
+  
+    ins {
+      min-height: 100px;
+      background-color: #f1f1f125;
+    }
+  }
+}
+
+body {
+
+  &.dark {
+
+    .ads {
+
+      .ads-wrapper {
+
+        ins {
+          background-color: #f1f1f102;
+        }
+      }
+    }
+  }
+}

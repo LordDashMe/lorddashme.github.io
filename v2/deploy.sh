@@ -18,7 +18,6 @@ find $(pwd)/* ! \( \
 
 # The command is deprecated because this version is no longer the current production released.
 # This build can only be deploy to its version root directory.
-# cp -R build/* ../
 cp -R build/* .
 
 cat <<EOF 

@@ -1,0 +1,14 @@
+@import '../styles/breakpoints.scss';
+
+.container {
+  margin: 0 30px 0 0;
+  text-align: center;
+
+  @include screen-tablet-and-mobile {
+    margin: auto 30px;
+  }
+
+  img {
+    border-radius: 12px;
+  }
+}

@@ -10,6 +10,7 @@ archives/
 v1/
 v2/
 v3/
+v4/
 .gitignore
 ads.txt
 google764e0d137ba9e2a9.html
@@ -44,4 +45,8 @@ sitemap.xml
 
   - Decomissioned on February 2020.
 
-- [v3](v3/) utilized [Gatsby](https://www.gatsbyjs.org/) static site generator for React.
+- [v3](v3/) is made using [Gatsby](https://www.gatsbyjs.org/) a static site generator for React.
+
+  - Decomissioned on June 2022.
+
+- [v4](v4/) is again powered by [Gatsby](https://www.gatsbyjs.org/).

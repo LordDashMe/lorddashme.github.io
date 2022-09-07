@@ -1,0 +1,26 @@
+.container {
+  display: inline-block;
+
+  i {
+    font-size: 1.4em;
+    line-height: 1.6;
+  }
+}
+
+.faSun {
+  color: var(--color-light);
+  cursor: pointer;
+
+  &:before {
+    content: "\f185";
+  }
+}
+
+.faMoon {
+  color: var(--theme-color);
+  cursor: pointer;
+
+  &:before {
+    content: "\f186";
+  }
+}

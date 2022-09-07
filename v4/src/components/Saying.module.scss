@@ -1,0 +1,12 @@
+.container {
+  text-align: center;
+
+  p {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+
+    > i {
+      font-size: 0.85em;
+    }
+  }
+}

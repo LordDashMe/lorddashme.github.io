@@ -1,4 +1,5 @@
 version: '3.4'
+
 services:
   site:
     container_name: 'lorddashme.github.io_v3'
@@ -7,3 +8,9 @@ services:
     image: 'node:12-alpine'
     volumes:
       - '.:/var/www/site/'
+    networks:
+      - default
+
+networks:
+  default: 
+    name: 'lorddashme.github.io_v3_network'

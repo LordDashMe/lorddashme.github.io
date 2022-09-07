@@ -1,0 +1,31 @@
+@import '../../styles/breakpoints.scss';
+
+.container {
+  position: relative;
+  margin: 0 0 75px 0;
+}
+
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 150px 0;
+
+  @include screen-tablet-and-mobile {
+    display: block;
+    justify-content: unset;
+  }
+
+  > div:first-child, 
+  > div:last-child {
+    max-width: 600px;
+
+    @include screen-desktop-small {
+      max-width: 550px;
+    }
+
+    @include screen-tablet-and-mobile {
+      max-width: unset;
+      display: block;
+    }
+  }
+}

@@ -3,4 +3,6 @@
 User-agent: *
 Sitemap: https://lorddashme.github.io/sitemap.xml
 
-Disallow: /index.html
+Disallow: /v1/*
+Disallow: /v2/*
+Disallow: /v3/*

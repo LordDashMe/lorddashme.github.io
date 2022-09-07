@@ -1,0 +1,59 @@
+@import '../styles/breakpoints.scss';
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 100px 0;
+
+  @include screen-mobile-small-and-xtra-small {
+    padding-top: 68px;
+  }
+}
+
+.innerBanner {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  max-width: 700px;
+
+  @include screen-mobile {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  > span {
+    font-size: 1.1em;
+    letter-spacing: 4px;
+
+    @include screen-mobile {
+      font-size: 1em;
+    }
+  }
+  
+  > h1 {
+    margin: 0 0 6px 0;
+    font-size: 3.4em;
+    font-weight: 800;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--theme-color-start) 0%, var(--theme-color-end) 100%);
+    color: transparent;
+    background-clip: text;
+
+    @include screen-mobile {
+      font-size: 2.4em;
+    }
+  }
+
+  > p {
+    font-size: 1.2em;
+    letter-spacing: 1.15px;
+    margin: 0 0 12px 0;
+
+    @include screen-mobile {
+      font-size: 1.15em;
+    }
+  }
+}
