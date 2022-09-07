@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 
+declare global {
+
+  interface Window {
+    adsbygoogle: any;
+  }
+}
+
 interface GoogleAdsenseResponsiveAdProps {
   adClient: string;
   adSlot: string;
 }
 
 export default class GoogleAdsenseResponsiveAd extends Component<GoogleAdsenseResponsiveAdProps> {
+
+  public componentDidMount(): void {
+    
+    if (typeof window !== 'undefined') {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }
 
   public render(): JSX.Element {
 
