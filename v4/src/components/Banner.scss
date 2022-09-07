@@ -65,10 +65,12 @@ body {
     .banner-wrapper {
 
       &:before {
+        background: var(--theme-color-start);
         opacity: 0.3;
       }
 
       &:after {
+        background: var(--theme-color-start);
         opacity: 0.15;
       }
     }

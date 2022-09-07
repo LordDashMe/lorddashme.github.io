@@ -12,7 +12,7 @@ declare global {
 };
 
 interface DarkModeButtonState {
-  isDarkMode: boolean;
+  isDarkMode: boolean | null;
 }
 
 export default class DarkModeButton extends Component<{}, DarkModeButtonState> {
@@ -21,40 +21,49 @@ export default class DarkModeButton extends Component<{}, DarkModeButtonState> {
 
     super(props);
 
-    let isDarkMode = false;
-
-    if (typeof window !== 'undefined' && window.__theme !== 'undefined') {
-      if (window.__theme === window.__themeConstant.DARK) {
-        isDarkMode = true;
-      }
-    }
-
     this.state = {
-      isDarkMode: isDarkMode
+      isDarkMode: null
     };
   }
 
-  private onClick(): void {
+  public componentDidMount(): void {
 
+    if (typeof window !== 'undefined' && window.__theme !== 'undefined') {
+      
+      let isDarkMode: boolean = false;
+
+      if (window.__theme === window.__themeConstant.DARK) {
+        isDarkMode = true;
+      }
+
+      this.setState({ isDarkMode: isDarkMode });
+    }
+  }
+
+  private onClick(): void {
+    
     let isDarkMode = false;
     let theme = window.__themeConstant.LIGHT;
 
-    if (! this.state.isDarkMode) {
+    if (this.state.isDarkMode === false) {
       isDarkMode = true;
       theme = window.__themeConstant.DARK;
     }
 
     window.__setTheme(theme);
-
     this.setState({ isDarkMode: isDarkMode });
   }
 
   public render(): JSX.Element {
 
+    let content: JSX.Element = <React.Fragment></React.Fragment>;
+
+    if (typeof this.state.isDarkMode === 'boolean') {
+      content = <i className={'fas ' + (this.state.isDarkMode ? styles.faSun : styles.faMoon)}></i>;
+    }
+
     return (
-      <div className={styles.container} onClick={this.onClick.bind(this)}>
-        <i className={'fas ' + (this.state.isDarkMode ? styles.faSun : styles.faMoon)}></i>
-      </div>
+      <div className={styles.container} onClick={this.onClick.bind(this)}>{content}</div>
     );
   }
 }
