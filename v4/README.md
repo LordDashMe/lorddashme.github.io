@@ -12,13 +12,19 @@ The version 4 of the [lorddashme.github.io](https://lorddashme.github.io/).
 
 - [gatsby](https://www.npmjs.com/package/gatsby): Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps.
 
+- [gatsby-plugin-google-gtag](https://www.npmjs.com/package/gatsby-plugin-google-gtag): Easily add Google Global Site Tag to your Gatsby site.
+
 - [gatsby-plugin-image](https://www.npmjs.com/package/gatsby-plugin-image): Adding responsive images to your site while maintaining high performance scores can be difficult to do manually. The Gatsby Image plugin handles the hard parts of producing images in multiple sizes and formats for you!
 
 - [gatsby-plugin-manifest](https://www.npmjs.com/package/gatsby-plugin-manifest): The web app manifest (part of the PWA specification) enabled by this plugin allows users to add your site to their home screen on most mobile browsers
 
 - [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline): Adds drop-in support for making a Gatsby site work offline and more resistant to bad network connections.
 
+- [gatsby-plugin-sass](https://www.npmjs.com/package/gatsby-plugin-sass): Provides drop-in support for Sass/SCSS stylesheets
+
 - [gatsby-plugin-sharp](https://www.npmjs.com/package/gatsby-plugin-sharp): Exposes several image processing functions built on the [Sharp image processing library](https://github.com/lovell/sharp). This is a low-level helper plugin generally used by other Gatsby plugins. You generally shouldn't be using this directly but might find it helpful if doing very custom image processing.
+
+- [gatsby-plugin-web-font-loader](https://www.npmjs.com/package/gatsby-plugin-web-font-loader): A Gatsby plugin to asynchronously load webfonts using Web Font Loader. Can load fonts from Google Fonts, Typekit, Fonts.com, and Fontdeck, as well as self-hosted web fonts.
 
 - [gatsby-source-filesystem](https://www.npmjs.com/package/gatsby-source-filesystem): A Gatsby source plugin for sourcing data into your Gatsby application from your local filesystem.
 
@@ -29,6 +35,8 @@ The version 4 of the [lorddashme.github.io](https://lorddashme.github.io/).
 - [react](https://www.npmjs.com/package/react): React is a JavaScript library for creating user interfaces.
 
 - [react-dom](https://www.npmjs.com/package/react-dom): This package serves as the entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
+
+- [sass](https://www.npmjs.com/package/sass): A pure JavaScript implementation of Sass. Sass makes CSS fun again.
 
 ### GatsbyJS
 

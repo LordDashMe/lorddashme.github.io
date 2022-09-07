@@ -51,6 +51,17 @@ module.exports = {
           families: ['Poppins:wght@400;500;600;700;800;900&display=swap']
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          'UA-128894279-1'
+        ],
+        pluginConfig: {
+          head: false
+        }
+      }
     }
     // ======================== User Added Plugins ========================
   ],

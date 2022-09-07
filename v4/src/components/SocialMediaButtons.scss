@@ -1,0 +1,58 @@
+.social-media-buttons {
+  padding: 6px 0;
+
+  a {
+    text-decoration: none;
+    margin: 0 16px 0 0;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    > div {
+      display: none;
+    }
+
+    > i {
+      font-size: 2em;
+      color: var(--color-dark);
+    }
+  }
+
+  .fa-github {
+
+    &:before {
+      content: "\f09b";
+    }
+  }
+  
+  .fa-twitter {
+  
+    &:before {
+      content: "\f099";
+    }
+  }
+  
+  .fa-linkedin {
+  
+    &:before {
+      content: "\f08c";
+    }
+  }
+}
+
+body {
+
+  &.dark {
+
+    .social-media-buttons {
+
+      a {
+
+        > i {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
+}

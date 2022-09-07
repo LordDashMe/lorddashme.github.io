@@ -11,7 +11,8 @@ services:
     networks:
       - default
     ports:
-      - "8000:8000"
+      - '8000:8000'
+      - '9000:9000'
 
 networks:
   default: 

@@ -17,6 +17,8 @@ header {
 }
 
 .navigation {
+  display: flex;
+  align-items: center;
 
   a {
     text-decoration: none;
@@ -29,7 +31,7 @@ header {
 
     &:hover {
       color: var(--theme-color);
-      transition: all ease 0.5s;
+      transition: all ease 0.3s;
     }
 
     @include screen-mobile-small-and-xtra-small {

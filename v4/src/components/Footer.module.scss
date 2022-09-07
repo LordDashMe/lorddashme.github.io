@@ -1,3 +1,5 @@
+@import '../styles/breakpoints.scss';
+
 footer {
   width: 100%;
   background: linear-gradient(135deg, var(--theme-color-start) 0%, var(--theme-color-end) 100%);
@@ -12,9 +14,13 @@ footer {
 }
 
 .content {
-  color: #FFF;
+  color: var(--color-light);
   font-size: 1.2em;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 4px;
+
+  @include screen-mobile-small-and-xtra-small {
+    font-size: 1em;
+  }
 }

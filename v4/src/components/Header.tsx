@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import React, { Component } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import DarkModeButton from './DarkModeButton';
+
 import * as styles from './Header.module.scss';
 
 export default class NavigationBar extends Component {
@@ -28,6 +30,7 @@ export default class NavigationBar extends Component {
             <div className={styles.navigation}>
               <Link to="/#about-me">About Me</Link>
               <Link to="/#">Blog</Link>
+              <DarkModeButton />
             </div>
           </div>
         </div>

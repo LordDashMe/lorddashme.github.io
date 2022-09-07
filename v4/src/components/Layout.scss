@@ -35,6 +35,15 @@ body {
   font-family: var(--font-family-primary);
   overflow-x: hidden;
   position: relative;
+  background-color: var(--background-color-light);
+  color: var(--color-dark);
+
+  &.dark {
+    --color-light: #dadada;
+
+    background-color: #252525;
+    color: var(--color-light);
+  }
 }
 
 .container {

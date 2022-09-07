@@ -1,0 +1,76 @@
+@import '../styles/breakpoints.scss';
+
+.banner-wrapper {
+  position: relative;
+    
+  &:before {
+    content: '';
+    background: var(--theme-color-end);
+    width: 1128px;
+    height: 1128px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -700px;
+    z-index: -1;
+    opacity: 0.08;
+
+    @include screen-tablet {
+      width: 660px;
+      height: 660px;
+      right: -380px;
+    }
+
+    @include screen-mobile {
+      width: 460px;
+      height: 460px;
+      right: -280px;
+    }
+  }
+
+  &:after {
+    content: '';
+    background: var(--theme-color-end);
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-30%);
+    left: -350px;
+    z-index: -1;
+    opacity: 0.04;
+
+    @include screen-tablet {
+      width: 250px;
+      height: 250px;
+      left: -150px;
+    }
+
+    @include screen-mobile {
+      width: 150px;
+      height: 150px;
+      left: -80px;
+      top: 90%;
+      transform: translateY(-10%);
+    }
+  }
+}
+
+body {
+
+  &.dark {
+
+    .banner-wrapper {
+
+      &:before {
+        opacity: 0.3;
+      }
+
+      &:after {
+        opacity: 0.15;
+      }
+    }
+  }
+}
