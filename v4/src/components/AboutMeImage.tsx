@@ -14,7 +14,7 @@ export default class AboutMeImage extends Component {
           loading="lazy"
           width={450}
           quality={100}
-          formats={['auto', 'webp', 'avif']}
+          formats={['auto', 'webp']}
           placeholder="none"
           backgroundColor={'transparent'}
           alt="Dash in Shanghai"
