@@ -21,9 +21,9 @@
 
 @mixin screen-mobile-common () {
 
-@media (max-width: 375px) {
-  @content;
-}  
+  @media (max-width: 375px) {
+    @content;
+  }  
 }
 
 @mixin screen-mobile-large () {
