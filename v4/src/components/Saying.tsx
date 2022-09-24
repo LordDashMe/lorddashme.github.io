@@ -54,6 +54,21 @@ const sayings: SayingData[] = [
     id: 'saying_9',
     saying: 'Legends say, there are 10 types of people in this world those who understand binary and those who don\'t.',
     author: 'Unknown'
+  },
+  {
+    id: 'saying_10',
+    saying: 'Success is not final; failure is not fatal: It is the courage to continue that counts.',
+    author: 'Winston S. Churchill'
+  },
+  {
+    id: 'saying_11',
+    saying: 'The road to success and the road to failure are almost exactly the same.',
+    author: 'Colin R. Davis'
+  },
+  {
+    id: 'saying_12',
+    saying: 'Success usually comes to those who are too busy looking for it.',
+    author: 'Henry David Thoreau'
   }
 ];
 
