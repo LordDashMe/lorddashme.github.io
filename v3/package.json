@@ -1,7 +1,19 @@
 {
   "name": "v3",
   "private": true,
-  "version": "3.0.0",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "start:dev": "gatsby develop --host=0.0.0.0",
+    "build:deploy": "gatsby build && . deploy.sh",
+    "build:clean": "gatsby clean",
+    "build:serve": "gatsby serve --host=0.0.0.0"
+  },
   "dependencies": {
     "@loadable/babel-plugin": "^5.13.0",
     "@loadable/component": "^5.13.1",
@@ -36,29 +48,5 @@
     "gatsby-plugin-typescript": "^2.4.16",
     "node-sass": "^7.0.0",
     "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "start:dev": "gatsby develop --host=0.0.0.0",
-    "build:deploy": "gatsby build && . deploy.sh",
-    "build:clean": "gatsby clean",
-    "build:serve": "gatsby serve --host=0.0.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

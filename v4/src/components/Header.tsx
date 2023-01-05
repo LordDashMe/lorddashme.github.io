@@ -18,7 +18,7 @@ export default class NavigationBar extends Component {
               <StaticImage 
                 src="../images/my-logo.svg"
                 loading="eager"
-                width={48}
+                width={38}
                 quality={100}
                 formats={['auto', 'webp', 'avif']}
                 placeholder="none"
@@ -29,7 +29,6 @@ export default class NavigationBar extends Component {
             </Link>
             <div className={styles.navigation}>
               <Link to="/#about-me">About Me</Link>
-              <Link to="/#">Blog</Link>
               <DarkModeButton />
             </div>
           </div>

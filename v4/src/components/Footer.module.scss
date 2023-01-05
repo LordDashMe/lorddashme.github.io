@@ -15,12 +15,8 @@ footer {
 
 .content {
   color: var(--color-light);
-  font-size: 1.2em;
+  font-size: 0.9em;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 4px;
-
-  @include screen-mobile-small-and-xtra-small {
-    font-size: 1em;
-  }
 }

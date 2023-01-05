@@ -47,8 +47,7 @@ exports.onRenderBody = ({ pathname, setHtmlAttributes, setHeadComponents, setPre
     ])
 
     setPostBodyComponents([
-      <script key="google-adsense" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript" defer></script>,
-      <script key="crazyegg" type="text/javascript" src="//script.crazyegg.com/pages/scripts/0115/0881.js" async="async"></script>
+      <script key="google-adsense" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript" defer></script>
     ]);
   }
 }

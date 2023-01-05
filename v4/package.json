@@ -1,6 +1,15 @@
 {
   "name": "v4",
   "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop --host=0.0.0.0",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "start": "gatsby develop --host=0.0.0.0",
+    "serve": "gatsby serve --host=0.0.0.0",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
   "dependencies": {
     "gatsby": "^4.19.2",
     "gatsby-plugin-google-gtag": "^4.22.0",
@@ -19,14 +28,5 @@
   },
   "devDependencies": {
     "prettier": "^2.7.1"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop --host=0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "start": "gatsby develop --host=0.0.0.0",
-    "serve": "gatsby serve --host=0.0.0.0",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
