@@ -37,7 +37,7 @@ export default (): JSX.Element => {
         <IntroductionContent />
         <SocialMediaButtons />
       </Banner>
-      <TwoColumns>
+      <TwoColumns justifyContent='space-around'>
         <AboutMeImage />
         <AboutMeContent />
       </TwoColumns>

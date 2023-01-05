@@ -12,7 +12,7 @@ export default class AboutMeImage extends Component {
         <StaticImage 
           src="../images/dash-in-shanghai.jpg"
           loading="lazy"
-          width={450}
+          width={350}
           quality={100}
           formats={['auto', 'webp']}
           placeholder="none"
