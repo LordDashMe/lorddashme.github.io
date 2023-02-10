@@ -30,6 +30,13 @@
       content: "\f09b";
     }
   }
+
+  .fa-linkedin {
+  
+    &:before {
+      content: "\f08c";
+    }
+  }
   
   .fa-twitter {
   
@@ -37,11 +44,11 @@
       content: "\f099";
     }
   }
-  
-  .fa-linkedin {
+
+  .fa-instagram-square {
   
     &:before {
-      content: "\f08c";
+      content: "\e055";
     }
   }
 }

@@ -16,7 +16,7 @@ export default class TwoColumns extends Component<TwoColumnsProps> {
     let styleAttr = {};
 
     if (this.props.justifyContent) {
-      styleAttr['justify-content'] = this.props.justifyContent;
+      styleAttr['justifyContent?'] = this.props.justifyContent;
     }
 
     return (
