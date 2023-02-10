@@ -56,14 +56,11 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: [
-          'UA-128894279-1'
-        ],
-        pluginConfig: {
-          head: false
-        }
+        id: 'GTM-NFJK276',
+        includeInDevelopment: true,
+        enableWebVitalsTracking: true,
       }
     }
     // ======================== User Added Plugins ========================
