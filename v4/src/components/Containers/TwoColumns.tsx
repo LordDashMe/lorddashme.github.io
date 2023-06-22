@@ -7,6 +7,7 @@ import * as styles from './TwoColumns.module.scss';
 interface TwoColumnsProps {
   children?: any;
   justifyContent?: string;
+  alignItems?: string;
 }
 
 export default class TwoColumns extends Component<TwoColumnsProps> {
@@ -16,7 +17,11 @@ export default class TwoColumns extends Component<TwoColumnsProps> {
     let styleAttr = {};
 
     if (this.props.justifyContent) {
-      styleAttr['justifyContent?'] = this.props.justifyContent;
+      styleAttr['justifyContent'] = this.props.justifyContent;
+    }
+
+    if (this.props.alignItems) {
+      styleAttr['alignItems'] = this.props.alignItems;
     }
 
     return (
