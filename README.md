@@ -1,6 +1,6 @@
 # [lorddashme.github.io](https://lorddashme.github.io/)
 
-As I continue to learn about software engineering, I've compiled all of the tools and technologies that have stood out to me on this website. I also shared some of my experiences in the said industry in the format of gists or tidbits.
+As I delve deeper into the realm of software engineering, I've curated a comprehensive collection of tools and technologies that have markedly resonated with me, all showcased on this platform. Additionally, I've interspersed my journey with insights and narratives from my industry experience, presented as succinct gists and insightful tidbits.
 
 ## Common Files
 
