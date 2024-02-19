@@ -48,17 +48,17 @@ As much as possible we implement this website by using all the recommended setup
 
 #### Development
 
-To start the development run ```npm run start:dev``` this will run in host 0.0.0.0 that will be exposed outside of the container.
+To start the development run ```npm run start``` this will run in host 0.0.0.0 that will be exposed outside of the container.
 
 Note: The Development mode right now is not stable as you may see, because in the Development mode all the assets are loaded across all pages. So better to test it with Pre Production Build files.
 
 ##### Testing Pre Production Build Files
 
-- To clean the gatsby build files: ```npm run build:clean```.
+- To clean the gatsby build files: ```npm run clean```.
 
 - To build the current source code: ```npm run build```.
 
-- To serve the actual build files with temporary server: ```npm run build:serve```.
+- To serve the actual build files with temporary server: ```npm run serve```.
 
 #### Production
 

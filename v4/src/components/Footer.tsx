@@ -10,7 +10,7 @@ export default class Footer extends Component {
       <footer>
         <div className="container container-padding">
           <div className={styles.innerFooter}>
-            <div className={styles.content}>Made with Love</div> 
+            <div className={styles.content}>Cheers! 🍻</div> 
           </div>
         </div>
       </footer>
