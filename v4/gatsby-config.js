@@ -4,7 +4,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Joshua Clifford Reyes`,
-    description: `I'm a Full-Stack developer, an Open Source author and contributor. Promoting software development best practices.`,
+    description: `Experienced Full Stack developer and Cloud DevOps engineer. Passionate open source author and contributor to software development.`,
     author: {
       name: `Joshua Clifford Reyes`,
       twitterUsername: `@lorddashme`,
