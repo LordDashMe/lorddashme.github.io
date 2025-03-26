@@ -8,7 +8,7 @@ export default class AboutMeImage extends Component {
     return (
       <div className={styles.container}>
         <StaticImage
-          src="../images/dash-in-shirakawa.jpg"
+          src="../images/dash-in-shanghai.jpg"
           loading="lazy"
           width={350}
           quality={100}
