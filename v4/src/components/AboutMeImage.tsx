@@ -15,8 +15,8 @@ export default class AboutMeImage extends Component {
           formats={["auto", "webp"]}
           placeholder="none"
           backgroundColor={"transparent"}
-          alt="Dash in Shirakawa"
-          title="Dash in Shirakawa"
+          alt="Dash in Shanghai"
+          title="Dash in Shanghai"
         />
       </div>
     )
