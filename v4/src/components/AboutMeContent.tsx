@@ -8,27 +8,29 @@ export default class AboutMeContent extends Component {
       <div className={styles.container}>
         <h2 id="about-me">About Me</h2>
         <p>
-          Hello, I'm Joshua Clifford "Dash" Reyes, with over 10 years of
-          experience in the tech industry. Throughout my career, I've had the
-          privilege to contribute to the open source community through various
-          projects, many of which I continue to support and maintain. My
-          approach to development is flexible; I value design patterns and best
-          practices for their structure, yet I'm equally inclined to prioritize
-          simplicity and directness in my projects, aiming for code that's
-          straightforward and maintainable.
+          Hi, I'm Joshua Clifford "Dash" Reyes, a software engineer with over 10
+          years of hands-on experience building scalable, real-world
+          applications across mobile, web, cloud, and eCommerce platforms. I
+          started my journey in the early 2010s, coding Android apps on
+          underpowered laptops (back when every compile felt like a coffee
+          break). Since then, I've grown into backend systems, cloud
+          infrastructure, and full-stack development using technologies like
+          AWS, GCP, and Shopify.
         </p>
         <p>
-          Beyond coding, I have a passion for gaming. Role-playing games (RPGs),
-          chess, and strategy games are my go-to genres. I'm particularly fond
-          of the Nintendo Switch for its versatility, being able to switch from
-          handheld to tabletop to TV mode is a game-changer for me. The
-          innovation it represents has me eagerly anticipating what the future
-          holds for gaming technology.
+          Over the years, I've had the opportunity to lead development teams,
+          helping others grow while pushing projects forward with clean,
+          maintainable code and thoughtful engineering decisions. I value design
+          patterns and best practices for their structure, yet I'm equally
+          inclined to prioritize simplicity and directness, aiming for solutions
+          that are efficient, clear, and built to last.
         </p>
         <p>
-          My enthusiasm for coding, continuous learning, and problem-solving is
-          boundless. It's hard to picture a time when these activities won't be
-          part of my daily life.
+          I actively contribute to the open source community and continue to
+          sharpen my skills through collaboration and shared learning. Outside
+          the keyboard, I enjoy chess and strategy games, as they reflect the
+          same mindset I bring to problem-solving in tech: plan smart, adapt
+          fast, and play the long game.
         </p>
       </div>
     )
